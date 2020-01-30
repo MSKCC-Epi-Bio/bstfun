@@ -1,0 +1,5 @@
+^bstfun\.Rproj$
+^\.Rproj\.user$
+^\.github/workflows/R-CMD-check\.yaml$
+^README\.Rmd$
+^\.travis\.yml$
