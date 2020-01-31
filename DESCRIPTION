@@ -8,11 +8,11 @@ Authors@R:
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
-License: What license it uses
+License: MIT + file LICENSE
 URL: https://github.com/ddsjoberg/bstfun
 Suggests: 
     spelling,
-    testthat
+    testthat (>= 2.1.0)
 Encoding: UTF-8
 Language: en-US
 LazyData: true
