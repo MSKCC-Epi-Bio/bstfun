@@ -47,6 +47,7 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
         ~ gtsummary::tbl_regression(
           x = ..1, conf.level = conf.level,
           show_single_row = .env$x,
+          estimate_fun = estimate_fun, pvalue_fun = pvalue_fun,
           label = glue::glue("{.env$x} ~ '{..3}'") %>% as.formula(),
           include = .env$x
         )

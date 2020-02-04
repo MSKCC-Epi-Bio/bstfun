@@ -1,15 +1,35 @@
 Package: bstfun
-Title: What the Package Does (One Line, Title Case)
+Title: Misc functions for the dept
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    c(person(given = "Daniel D.",
+             family = "Sjoberg",
+             role = c("aut", "cre"),
+             email = "danield.sjoberg@gmail.com",
+             comment = c(ORCID = "0000-0003-0862-2018")),
+      person(given = "Margie",
+             family = "Hannum",
+             role = "aut",
+             comment = c(ORCID = "0000-0002-2953-0449")),
+      person(given = "Karissa",
+             family = "Whiting",
+             role = "aut",
+             comment = c(ORCID = "0000-0002-4683-1868")))
+Description: Collection of functions to include in biostatR that
+    don't have a clear place to live the in more defined department
+    packages.
 License: MIT + file LICENSE
 URL: https://github.com/ddsjoberg/bstfun
+Imports: 
+    dplyr,
+    forcats,
+    glue,
+    gtsummary,
+    magrittr,
+    purrr,
+    rlang,
+    stringr,
+    tibble
 Suggests: 
     spelling,
     testthat (>= 2.1.0)
@@ -18,13 +38,3 @@ Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2
-Imports: 
-    glue,
-    purrr,
-    dplyr,
-    rlang,
-    gtsummary,
-    stringr,
-    forcats,
-    magrittr,
-    tibble
