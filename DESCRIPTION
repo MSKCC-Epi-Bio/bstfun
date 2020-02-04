@@ -18,3 +18,13 @@ Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2
+Imports: 
+    glue,
+    purrr,
+    dplyr,
+    rlang,
+    gtsummary,
+    stringr,
+    forcats,
+    magrittr,
+    tibble
