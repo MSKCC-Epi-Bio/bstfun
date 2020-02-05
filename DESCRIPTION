@@ -33,6 +33,8 @@ Imports:
 Suggests: 
     spelling,
     testthat (>= 2.1.0)
+Remotes:
+    ddsjoberg/gtsummary
 Encoding: UTF-8
 Language: en-US
 LazyData: true
