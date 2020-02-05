@@ -18,7 +18,7 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
                        method.args = NULL, conf.level = 0.95,
                        estimate_fun = NULL, pvalue_fun = NULL,
                        method = stats::lm, digits = NULL) {
-  # convering inputs to strings
+  # converting inputs to strings
   y <- dplyr::select(data[0, ], {{ y }}) %>% names()
   x <- dplyr::select(data[0, ], {{ x }}) %>% names()
 
