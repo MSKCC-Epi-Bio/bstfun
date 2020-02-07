@@ -20,6 +20,8 @@ Description: Collection of functions to include in biostatR that
     packages.
 License: MIT + file LICENSE
 URL: https://github.com/ddsjoberg/bstfun
+Depends: 
+    R (>= 3.3)
 Imports: 
     dplyr,
     forcats,
@@ -29,7 +31,8 @@ Imports:
     purrr,
     rlang,
     stringr,
-    tibble
+    tibble,
+    tidyselect
 Suggests: 
     spelling,
     testthat (>= 2.1.0)

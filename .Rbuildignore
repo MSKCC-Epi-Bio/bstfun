@@ -4,3 +4,4 @@
 ^README\.Rmd$
 ^\.travis\.yml$
 ^LICENSE\.md$
+^data-raw$
