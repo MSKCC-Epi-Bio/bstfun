@@ -24,7 +24,7 @@
 #' @export
 #' @return A `tbl_cross` object
 #' @examples
-#' tbl_cross_ex <-
+#' tbl_cross_ex1 <-
 #'   trial[c("response", "trt")] %>%
 #'   tbl_cross(row = trt, col = response)
 #'

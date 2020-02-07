@@ -65,8 +65,14 @@ to 1 decimal place, and the SD to 2 use \code{digits = list(age ~ c(1, 2))}.}
 Returns an ANCOVA table showing the means of two groups and the
 difference in means
 }
+\section{Example Output}{
+
+\if{html}{\figure{tbl_ancova_ex1.png}{options: width=80\%}}
+}
+
 \examples{
-gtsummary::trial \%>\%
+tbl_ancova_ex1 <-
+  trial \%>\%
   tbl_ancova(y = c("age", "marker"), x = "trt")
 }
 \author{

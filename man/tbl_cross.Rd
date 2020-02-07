@@ -76,7 +76,7 @@ Wrapper for \link{tbl_summary} to cross tabulate two variables
 }
 
 \examples{
-tbl_cross_ex <-
+tbl_cross_ex1 <-
   trial[c("response", "trt")] \%>\%
   tbl_cross(row = trt, col = response)
 

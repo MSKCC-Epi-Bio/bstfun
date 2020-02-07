@@ -9,10 +9,13 @@
 #' @inheritParams gtsummary::tbl_uvregression
 #' @inheritParams gtsummary::tbl_summary
 #' @author Daniel D. Sjoberg
-#' @examples
-#' gtsummary::trial %>%
-#'   tbl_ancova(y = c("age", "marker"), x = "trt")
 #' @export
+#' @examples
+#' tbl_ancova_ex1 <-
+#'   trial %>%
+#'   tbl_ancova(y = c("age", "marker"), x = "trt")
+#' @section Example Output:
+#' \if{html}{\figure{tbl_ancova_ex1.png}{options: width=80\%}}
 
 tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
                        method.args = NULL, conf.level = 0.95,

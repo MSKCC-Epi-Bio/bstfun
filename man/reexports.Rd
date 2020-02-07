@@ -4,6 +4,8 @@
 \name{reexports}
 \alias{reexports}
 \alias{\%>\%}
+\alias{as_gt}
+\alias{as_kable}
 \alias{style_pvalue}
 \alias{style_percent}
 \alias{style_sigfig}
@@ -25,7 +27,7 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{gtsummary}{\code{\link[gtsummary]{style_percent}}, \code{\link[gtsummary]{style_pvalue}}, \code{\link[gtsummary]{style_ratio}}, \code{\link[gtsummary]{style_sigfig}}}
+  \item{gtsummary}{\code{\link[gtsummary]{as_gt}}, \code{\link[gtsummary]{as_kable}}, \code{\link[gtsummary]{style_percent}}, \code{\link[gtsummary]{style_pvalue}}, \code{\link[gtsummary]{style_ratio}}, \code{\link[gtsummary]{style_sigfig}}}
 
   \item{magrittr}{\code{\link[magrittr]{\%>\%}}}
 

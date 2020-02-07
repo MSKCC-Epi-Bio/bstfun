@@ -5,6 +5,14 @@ magrittr::`%>%`
 
 # gtsummary --------------------------------------------------------------------
 #' @export
+#' @importFrom gtsummary as_gt
+gtsummary::as_gt
+
+#' @export
+#' @importFrom gtsummary as_kable
+gtsummary::as_kable
+
+#' @export
 #' @importFrom gtsummary style_pvalue
 gtsummary::style_pvalue
 
