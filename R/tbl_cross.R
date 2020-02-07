@@ -12,8 +12,8 @@
 #' be replaced with the numeric statistic (see glue::glue).
 #' The default is `{n}`. If percent argument is `"column"`, `"row"`, or `"cell"`,
 #' default is `{n} ({p}%)`.
-#' @inheritParams add_p
-#' @inheritParams tbl_summary
+#' @inheritParams gtsummary::add_p
+#' @inheritParams gtsummary::tbl_summary
 #' @param add_p Logical value indicating whether to add p-value to compare
 #' `col` and `row` variables. Default is `FALSE`.
 #' @param test A string specifying statistical test to perform. Default is
@@ -43,14 +43,14 @@ tbl_cross <- function(data,
                       test = NULL,
                       pvalue_fun = function(x) style_pvalue(x, prepend_p = TRUE) ) {
 
-  row <- var_input_to_string(
+  row <- gtsummary:::var_input_to_string(
     data = data,
     select_input = !!rlang::enquo(row),
     arg_name = "row",
     select_single = TRUE
   )
 
-  col <- var_input_to_string(
+  col <- gtsummary:::var_input_to_string(
     data = data,
     select_input = !!rlang::enquo(col),
     arg_name = "col",
@@ -82,7 +82,7 @@ tbl_cross <- function(data,
      mutate(..total.. = 1)
 
   # get labels --------------------------------------------
-  label <- tidyselect_to_list(data, label)
+  label <- gtsummary:::tidyselect_to_list(data, label)
   new_label <-  list()
 
   new_label[[row]] <- label[[row]] %||% attr(data[[row]], "label") %||% row
@@ -118,22 +118,22 @@ tbl_cross <- function(data,
   # create main table ----------------------------------------------------------
   x <- data %>%
     select(one_of(row, col, "..total..")) %>%
-    tbl_summary(
+    gtsummary::tbl_summary(
       by = col,
       statistic = stats::as.formula(glue::glue("everything() ~ '{statistic}'")),
       percent = switch(percent != "none", percent),
       label = new_label,
       missing_text = missing_text
     ) %>%
-    add_overall(last = TRUE) %>%
-    bold_labels() %>%
-    modify_header(
+    gtsummary::add_overall(last = TRUE) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::modify_header(
       stat_by = "{level}",
       stat_0 = " "
     )
 
   # get text for gt source note
-  stat_source_note_text <- footnote_stat_label(x$meta_data)
+  stat_source_note_text <- gtsummary:::footnote_stat_label(x$meta_data)
 
   # calculate and format p-value for source note as needed --------------------
 
@@ -146,14 +146,14 @@ tbl_cross <- function(data,
                            glue::glue("everything() ~ '{test}'")))
 
 
-    x <- x %>% add_p(include = c(row, col),
+    x <- x %>% gtsummary::add_p(include = c(row, col),
                      test = input_test)
 
     x$table_header <- x$table_header %>%
       mutate(hide = case_when(column == "p.value" ~ TRUE,
                        TRUE ~ hide))
 
-      x <- update_calls_from_table_header(x)
+      x <- gtsummary:::update_calls_from_table_header(x)
 
       p_value <-  x$table_body$p.value[!is.na(x$table_body$p.value)] %>%
         pvalue_fun()
@@ -165,13 +165,13 @@ tbl_cross <- function(data,
 
   # clear existing tbl_summary footnote
   x$table_header$footnote <- list(NULL)
-  x <- update_calls_from_table_header(x)
+  x <- gtsummary:::update_calls_from_table_header(x)
 
   # update inputs and call list in return
   x[["call_list"]] <- list(tbl_cross = match.call())
   x[["inputs"]] <- tbl_cross_inputs
 
-  class(x) <- c("tbl_cross", "tbl_summary")
+  class(x) <- c("tbl_cross", "tbl_summary", "gtsummary")
 
   # gt function calls ------------------------------------------------------------
   # quoting returns an expression to be evaluated later
