@@ -30,7 +30,7 @@
 #'
 #' @section Example Output:
 #' \if{html}{\figure{tbl_cross_ex.png}{options: width=50\%}}
-#'
+
 tbl_cross <- function(data,
                       row = NULL,
                       col = NULL,
@@ -41,47 +41,52 @@ tbl_cross <- function(data,
                       missing_text = "Unknown",
                       add_p = FALSE,
                       test = NULL,
-                      pvalue_fun = function(x) style_pvalue(x, prepend_p = TRUE) ) {
+                      pvalue_fun = function(x) style_pvalue(x, prepend_p = TRUE)) {
+  # checking data input --------------------------------------------------------
+  if (!is.data.frame(data) || nrow(data) == 0 || ncol(data) < 2) {
+    stop("`data=` argument must be a data frame with at least one row and two columns.",
+         call. = FALSE)
+  }
 
+  # converting inputs to string ------------------------------------------------
   row <- gtsummary:::var_input_to_string(
-    data = data,
-    select_input = !!rlang::enquo(row),
-    arg_name = "row",
-    select_single = TRUE
+    data = data, select_input = !!rlang::enquo(row),
+    arg_name = "row", select_single = TRUE
   )
 
   col <- gtsummary:::var_input_to_string(
-    data = data,
-    select_input = !!rlang::enquo(col),
-    arg_name = "col",
-    select_single = TRUE
+    data = data, select_input = !!rlang::enquo(col),
+    arg_name = "col", select_single = TRUE
   )
 
   # matching arguments ---------------------------------------------------------
   missing <- match.arg(missing)
   percent <- match.arg(percent)
 
+  # saving function intputs
   tbl_cross_inputs <- as.list(environment())
 
   # if no col AND no row provided, default to first two columns of data --------
-
-  if (is.null(row) & is.null(col)) {
-
+  if (is.null(row) && is.null(col)) {
     row <- names(data)[1]
     col <- names(data)[2]
   }
 
   # if only one of col/row provided, error
   if(sum(is.null(row), is.null(col)) == 1) {
-    stop("Please specify which columns to use for both `col` and `row` arguments",
+    stop("Please specify which columns to use for both `col=` and `row=` arguments",
          call. = FALSE)
+  }
+  if ("..total.." %in% c(row, col)) {
+    stop("Arguments `row=` and `col=` cannot be named '..total..'", call. = FALSE)
   }
 
   # create new dummy col for tabulating column totals in cross table
   data <- data %>%
-     mutate(..total.. = 1)
+    select(one_of(row, col)) %>%
+    mutate(..total.. = 1)
 
-  # get labels --------------------------------------------
+  # get labels -----------------------------------------------------------------
   label <- gtsummary:::tidyselect_to_list(data, label)
   new_label <-  list()
 
@@ -92,6 +97,9 @@ tbl_cross <- function(data,
   # statistic argument ---------------------------------------------------------
   # if no user-defined stat, default to {n} if percent is "none"
   statistic <- statistic %||% ifelse(percent == "none", "{n}", "{n} ({p}%)")
+  if (!rlang::is_string(statistic)) {
+    stop("`statistic=` argument must be a string of length one.", call. = FALSE)
+  }
 
   # omit missing data, or factorize missing level ------------------------------
   data <- data %>%
@@ -108,11 +116,10 @@ tbl_cross <- function(data,
     )
 
   if (missing == "no") {
+    n_missing <- !stats::complete.cases(data) %>% sum()
     data <- stats::na.omit(data)
 
-    message(glue(
-      "{sum(is.na(data))} observations with missing data have been removed."
-    ))
+    message(glue("{n_missing} observations with missing data have been removed."))
   }
 
   # create main table ----------------------------------------------------------
@@ -120,7 +127,7 @@ tbl_cross <- function(data,
     select(one_of(row, col, "..total..")) %>%
     gtsummary::tbl_summary(
       by = col,
-      statistic = stats::as.formula(glue::glue("everything() ~ '{statistic}'")),
+      statistic = stats::as.formula(glue("everything() ~ '{statistic}'")),
       percent = switch(percent != "none", percent),
       label = new_label,
       missing_text = missing_text
@@ -136,31 +143,29 @@ tbl_cross <- function(data,
   stat_source_note_text <- gtsummary:::footnote_stat_label(x$meta_data)
 
   # calculate and format p-value for source note as needed --------------------
-
   p_value = vector("character", length=0)
 
-  if(add_p == TRUE | !is.null(test)) {
-
+  if(add_p == TRUE || !is.null(test)) {
+    # adding test name if supplied (NULL otherwise)
     input_test <- switch(!is.null(test),
-                         stats::as.formula(
-                           glue::glue("everything() ~ '{test}'")))
-
-
-    x <- x %>% gtsummary::add_p(include = c(row, col),
-                     test = input_test)
+                         stats::as.formula(glue("everything() ~ '{test}'")))
+    # running add_p to add thep-value to the output
+    x <- gtsummary::add_p(x, include = c(row, col), test = input_test)
 
     x$table_header <- x$table_header %>%
-      mutate(hide = case_when(column == "p.value" ~ TRUE,
-                       TRUE ~ hide))
+      mutate(
+        hide = case_when(
+          column == "p.value" ~ TRUE,
+          TRUE ~ hide
+        )
+      )
 
-      x <- gtsummary:::update_calls_from_table_header(x)
-
-      p_value <-  x$table_body$p.value[!is.na(x$table_body$p.value)] %>%
-        pvalue_fun()
-
-      p_val_source_note_text <- x$table_header %>%
-        filter(.data$column == "p.value") %>%
-        pull(.data$footnote)
+    # formatting p-value, and grabbing test name from footnote
+    p_value <-  x$table_body$p.value[!is.na(x$table_body$p.value)] %>%
+      pvalue_fun()
+    p_val_source_note_text <- x$table_header %>%
+      filter(.data$column == "p.value") %>%
+      pull(.data$footnote)
   }
 
   # clear existing tbl_summary footnote
@@ -173,7 +178,7 @@ tbl_cross <- function(data,
 
   class(x) <- c("tbl_cross", "tbl_summary", "gtsummary")
 
-  # gt function calls ------------------------------------------------------------
+  # gt function calls ----------------------------------------------------------
   # quoting returns an expression to be evaluated later
   x$gt_calls[["tab_spanner"]] <-
     glue(
@@ -187,13 +192,13 @@ tbl_cross <- function(data,
   x$gt_calls[["tab_source_note"]] <-
     ifelse(
       length(p_value) > 0,
-        glue("gt::tab_source_note(source_note = '{stat_source_note_text}') %>%",
-             "gt::tab_source_note(source_note =
+      glue("gt::tab_source_note(source_note = '{stat_source_note_text}') %>%",
+           "gt::tab_source_note(source_note =
               glue::glue('{p_val_source_note_text}', ', ',
              '{p_value}'))"),
       glue("gt::tab_source_note(source_note = '{stat_source_note_text}')"))
 
+  # returning results ----------------------------------------------------------
   x
-
 }
 
