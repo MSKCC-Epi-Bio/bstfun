@@ -1,9 +1,0 @@
-^bstfun\.Rproj$
-^\.Rproj\.user$
-^\.github/workflows/R-CMD-check\.yaml$
-^README\.Rmd$
-^\.travis\.yml$
-^LICENSE\.md$
-^data-raw$
-^codecov\.yml$
-^\.github/workflows/pr-commands\.yaml$
