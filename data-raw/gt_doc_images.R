@@ -22,10 +22,10 @@ for (f in gt_functions) {
   # save example code to temp file
   example_chr <- Rd2roxygen::parse_file(here("man", str_glue("{f}.Rd")))$examples
   if (is.null(example_chr)) next
-  readr::write_lines(example_chr, path = file.path(tempdir(), str_glue("{f}.R")))
+  readr::write_lines(example_chr, path = file.path(path_bst, str_glue("{f}.R")))
 
   # run the code
-  source(file.path(tempdir(), str_glue("{f}.R")))
+  source(file.path(path_bst, str_glue("{f}.R")))
 
   # get list of example objects that end in "_ex###"
   example_objs <- ls()[str_ends(ls(), "_ex[:digit:]+") | str_ends(ls(), "_ex")]
