@@ -35,7 +35,8 @@ Imports:
     tidyselect
 Suggests: 
     spelling,
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    covr
 Remotes:
     ddsjoberg/gtsummary
 Encoding: UTF-8
