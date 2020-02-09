@@ -21,9 +21,11 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
                        method.args = NULL, conf.level = 0.95,
                        estimate_fun = NULL, pvalue_fun = NULL,
                        method = stats::lm, digits = NULL) {
-  # converting inputs to strings
+  # converting inputs to strings/lists
   y <- dplyr::select(data[0, ], {{ y }}) %>% names()
   x <- dplyr::select(data[0, ], {{ x }}) %>% names()
+  digits <- gtsummary:::tidyselect_to_list(data, digits)
+  label <- gtsummary:::tidyselect_to_list(data, label)
 
   # will return call, and all object passed to in tbl_regression call
   # the object func_inputs is a list of every object passed to the function
@@ -51,7 +53,7 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
           x = ..1, conf.level = conf.level,
           show_single_row = .env$x,
           estimate_fun = estimate_fun, pvalue_fun = pvalue_fun,
-          label = glue::glue("{.env$x} ~ '{..3}'") %>% as.formula(),
+          label = glue("{.env$x} ~ '{..3}'") %>% as.formula(),
           include = .env$x
         )
       ),
@@ -97,7 +99,7 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
             label = glue::glue("everything() ~ '{.y}'") %>% as.formula(),
             type = everything() ~ "continuous",
             statistic = everything() ~ "{mean} ({sd})",
-            digits = digits
+            digits = {{ digits }}
           ) %>%
           gtsummary::modify_header(stat_by = "**{level}**") %>%
           gtsummary::add_n()
