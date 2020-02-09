@@ -1,6 +1,6 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: R
+language: r
 cache: packages
 jobs:
   include:
@@ -13,6 +13,9 @@ jobs:
   - r: devel
   - r: oldrel
   - r: 3.4
+
+sudo: false
+cache: packages
 
 before_install:
   - Rscript -e 'install.packages("remotes")'
