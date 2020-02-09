@@ -16,6 +16,7 @@ jobs:
 
 os: linux
 cache: packages
+warnings_are_errors: false
 
 before_install:
   - Rscript -e 'install.packages("remotes")'
