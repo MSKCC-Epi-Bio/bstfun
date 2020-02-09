@@ -1,7 +1,6 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: r
-cache: packages
 jobs:
   include:
   - r: release
@@ -14,12 +13,13 @@ jobs:
   - r: oldrel
   - r: 3.4
 
-os: linux
+
+sudo: false
 cache: packages
 warnings_are_errors: false
 
-before_install:
-  - Rscript -e 'install.packages("remotes")'
+r_github_packages:
+  - rstudio/gt
 
 after_success:
   - Rscript -e 'covr::codecov()'
