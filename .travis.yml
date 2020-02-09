@@ -14,7 +14,7 @@ jobs:
   - r: oldrel
   - r: 3.4
 
-sudo: false
+os: linux
 cache: packages
 
 before_install:
