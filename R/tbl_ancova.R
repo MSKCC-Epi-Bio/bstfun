@@ -99,7 +99,7 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
             label = glue::glue("everything() ~ '{.y}'") %>% as.formula(),
             type = everything() ~ "continuous",
             statistic = everything() ~ "{mean} ({sd})",
-            digits = {{ digits }}
+            digits = digits
           ) %>%
           gtsummary::modify_header(stat_by = "**{level}**") %>%
           gtsummary::add_n()
