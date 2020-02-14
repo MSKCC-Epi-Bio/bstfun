@@ -1,7 +1,8 @@
 url: http://www.danieldsjoberg.com/bstfun/
 
 template:
-    bootswatch: flatly
+    params:
+      bootswatch: flatly
 development:
   mode: auto
   version_label: default
