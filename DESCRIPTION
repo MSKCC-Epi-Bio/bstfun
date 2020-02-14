@@ -27,6 +27,7 @@ Imports:
     forcats,
     glue,
     gtsummary,
+    lubridate,
     magrittr,
     purrr,
     rlang,
@@ -36,6 +37,7 @@ Imports:
 Suggests: 
     spelling,
     testthat (>= 2.1.0),
+    tidyr,
     covr
 Remotes:
     ddsjoberg/gtsummary

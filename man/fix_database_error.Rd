@@ -4,7 +4,7 @@
 \alias{fix_database_error}
 \title{Function to make database fixes after import}
 \usage{
-fix_database_error(data, engine = readr::csv, ...)
+fix_database_error(data, engine = readr::read_csv, ...)
 }
 \arguments{
 \item{data}{data frame with errors}

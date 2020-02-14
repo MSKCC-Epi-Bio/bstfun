@@ -1,32 +1,25 @@
-# library(tidyverse)
-#
-# # Load data and make sure we have variables of all data types...
-# data <-
-#   readxl::read_excel("~/GitHub/baddata.xlsx") %>%
-#   janitor::clean_names("all_caps") %>%
-#   # Create EBL as integer
-#   mutate_at(vars(EBL), ~as.integer(.)) %>%
-#   # Calculate a difftime to use
-#   mutate(TTRECUR = DATE_OF_RECURRENCE_STATUS - DATE_OF_RC) %>%
-#   # Dates are posix dates - create lubridate dates to check as well
-#   mutate(LUB_DATE_OF_RECURRENCE_STATUS = lubridate::as_date(DATE_OF_RECURRENCE_STATUS),
-#          LUB_DATE_OF_RC = lubridate::as_date(DATE_OF_RC),
-#          LUB_TTRECUR = LUB_DATE_OF_RECURRENCE_STATUS - LUB_DATE_OF_RC) %>%
-#   # Lubridate datetime
-#   mutate(NEW_DATE = lubridate::ymd_hms("2020-02-13 12:00:00")) %>%
-#   # Create gender a factor
-#   #mutate(GENDER = factor(GENDER)) %>%
-#   # Create recurrence as a logical
-#   mutate(RECURRENCE = as.logical(as.numeric(RECURRENCE)))
-#
-# data
-#
-# database_fixes <-
-#   readxl::read_excel("~/GitHub/fixes1.xlsx") %>%
-#   filter(value != "6/11/2020" & value != "43993")
-
-# This will induce errors, use for checking
-#database_fixes_error <- readxl::read_excel("~/GitHub/fixes1.xlsx")
+#' Function to make database fixes after import
+#'
+#' @param data data frame with errors
+#' @param engine function to import file of database fixes
+#' @param ... arguments passed to the engine function to import the database fixes
+#'
+#' @return updated data frame
+#' @export
+#'
+#' @examples
+#' df_fixes <-
+#'   tibble::tribble(
+#'     ~id, ~variable, ~value,
+#'     "id == 1", "age", "56",
+#'     "id == 2", "trt", "Drug C"
+#'   )
+#' trial %>%
+#'   dplyr::mutate(id = dplyr::row_number()) %>%
+#'   fix_database_error(
+#'     engine = I,
+#'     x = df_fixes
+#'   )
 
 fix_database_error <- function(data, engine = readr::read_csv, ...) {
 
@@ -60,8 +53,7 @@ fix_database_error <- function(data, engine = readr::read_csv, ...) {
         "The following variables are factors: ",
         glue::glue_collapse(
           data %>% dplyr::select(dplyr::intersect(database_fixes[["variable"]], names(data))) %>%
-            dplyr::select_if(is.factor) %>% names()),
-        sep = ", "
+            dplyr::select_if(is.factor) %>% names(), sep = ", ")
       ),
       call. = FALSE
     )
@@ -74,21 +66,22 @@ fix_database_error <- function(data, engine = readr::read_csv, ...) {
     stop("There are duplicates in the database fixes.", call. = FALSE)
   }
 
-  # TODO: Note... there is no difference between a date and a datetime in POSIX dates.
+  # Note... there is no difference between a date and a datetime in POSIX dates.
   # The lubridate::as_datetime function gives you a POSIX object (because these can deal with times)
   # If there is a time associated with a date this will automatically be included in POSIX
   # TODO: Confirm that merging a "date" (from database fixes) with a "datetime" (from main data) works correctly
 
-  # TODO: What happens if more than one check adds a different factor level...
-
-
   # setting up fixed data ------------------------------------------
+  #browser()
   database_fixes2 <-
     database_fixes %>%
     dplyr::mutate(
       id_expr = purrr::map(.data$id, rlang::parse_expr),
-      nrows_modified = purrr::map_int(
-        .data$id_expr, ~with(data, eval(.x)) %>% sum()),
+      nrows_modified =
+        purrr::pmap_int(
+          list(.data$id_expr, .data$id),
+          ~ check_id_logical(data, ..1, ..2)
+        ),
       variable_type = purrr::map_chr(.data$variable, ~ class(data[[.x]])[1]),
       value_type = purrr::pmap(
         list(.data$id, .data$variable, .data$variable_type, .data$value),
@@ -120,7 +113,7 @@ fix_database_error <- function(data, engine = readr::read_csv, ...) {
       glue::glue(
         "The following IDs did not match any rows: ",
         glue::glue_collapse(
-          database_fixes2 %>% dplyr::filter(nrows_modified == 0) %>% dplyr::pull(id),
+          database_fixes2 %>% dplyr::filter(.data$nrows_modified == 0) %>% dplyr::pull(.data$id),
           sep = ", ")))
   }
 
@@ -140,11 +133,6 @@ fix_database_error <- function(data, engine = readr::read_csv, ...) {
          call. = FALSE)
   }
 
-  # checking expression in id results in a logical vector
-  if (!purrr::every(database_fixes2$id_expr, ~is.logical(with(data, eval(.x))))) {
-    stop("Each expression in `id` column must evaluate to a logical.", call. = FALSE)
-  }
-
   # make changes in database ---------------------------------------------------
 
   # create updated dataset
@@ -159,7 +147,8 @@ fix_database_error <- function(data, engine = readr::read_csv, ...) {
     stop("Error in column names after updating data.", call. = FALSE)
   }
 
-  if (!identical(purrr::map_chr(data, ~class(.x)[1]), purrr::map_chr(data_updated, ~class(.x)[1]))) {
+  if (!identical(purrr::map_chr(data, ~class(.x)[1]), purrr::map_chr(data_updated, ~class(.x)[1])) |
+      !identical(purrr::map_chr(data, ~typeof(.x)[1]), purrr::map_chr(data_updated, ~typeof(.x)[1]))) {
     stop("Error where column class changed after updating data.", call. = FALSE)
   }
 

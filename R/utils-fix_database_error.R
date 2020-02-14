@@ -1,6 +1,18 @@
-# These functions check and fix correct values based on class
 
-# Confirm value in database_fixes is integer if corresponding value is integer
+# Checks whether "id" column evaluates to logical
+# If so, returns number of rows modified
+check_id_logical <- function(data, id_expr, id) {
+
+  nrows_modified <- tryCatch(
+    with(data, eval(id_expr)) %>% sum(),
+    error = function(e) {stop(glue::glue("In the `id` column, \'{id}\' does not evaluate to a logical."), call. = FALSE)}
+  )
+
+  return(nrows_modified)
+
+}
+
+# Checks that the replacement value for an integer variable is also an integer
 fix_integer <- function(variable, value, id) {
 
   # Confirm new value is integer
@@ -17,7 +29,7 @@ fix_integer <- function(variable, value, id) {
 
 }
 
-# For factor variables, check if level exists, and if not, create
+# Checks if factor level of replacement value exists, if not, creates new level
 fix_factor <- function(data, variable, value, id) {
 
   # If the new label in database_fixes exists in factor variable
@@ -45,13 +57,12 @@ fix_factor <- function(data, variable, value, id) {
 
 }
 
-# Check whether new value can be coerced to date, if not give error
+# Checks whether replacement value can be coerced to date (date is in correct format), if not give error
 fix_date <- function(variable_type, variable, value, id) {
 
   # Note: need to specify a format or you won't get NA for non-R date format (for as.Date)
   if(variable_type %in% c("POSIXct", "POSIXlt", "POSIXt")) newdate <- as.Date(value, format = "%Y-%m-%d")
-  # TODO: Can we hide the warning from lubridate::ymd and just use our own?
-  if(variable_type %in% c("Date")) newdate <- lubridate::ymd(value)
+  if(variable_type %in% c("Date")) newdate <- suppressWarnings(lubridate::ymd(value))
 
   # Warning if this generates NA
   if(is.na(newdate)) {
@@ -64,8 +75,7 @@ fix_date <- function(variable_type, variable, value, id) {
 
 }
 
-# To convert to a difftime object, units are needed
-# Take units from the original difftime variable and convert
+# Extracts unit from difftime variable in main data and converts new value to difftime
 fix_difftime <- function(data, variable, value) {
 
   # Pull the units from the original variable
@@ -75,7 +85,6 @@ fix_difftime <- function(data, variable, value) {
   newdifftime <- as.difftime(as.numeric(value), units = units)
 
   return(newdifftime)
-
 
 }
 
