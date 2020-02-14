@@ -15,28 +15,27 @@ Authors@R:
              family = "Whiting",
              role = "aut",
              comment = c(ORCID = "0000-0002-4683-1868")))
-Description: Collection of functions to include in biostatR that
-    don't have a clear place to live the in more defined department
-    packages.
+Description: A miscellaneous collection of functions to used by
+    members of the Biostatistics Department at MSKCC.
 License: MIT + file LICENSE
 URL: https://github.com/ddsjoberg/bstfun
 Depends: 
     R (>= 3.3)
 Imports: 
-    dplyr,
-    forcats,
-    glue,
-    gtsummary,
-    magrittr,
-    purrr,
-    rlang,
-    stringr,
-    tibble,
-    tidyselect
+    dplyr (>= 0.8.4),
+    forcats (>= 0.4.0),
+    glue (>= 1.3.1),
+    gtsummary (>= 1.2.6),
+    magrittr (>= 1.5),
+    purrr (>= 0.3.3),
+    rlang (>= 0.4.4),
+    stringr (>= 1.4.0),
+    tibble (>= 2.1.3),
+    tidyselect (>= 1.0.0)
 Suggests: 
-    spelling,
-    testthat (>= 2.1.0),
-    covr
+    covr (>= 3.4.0),
+    spelling (>= 2.1),
+    testthat (>= 2.1.0)
 Remotes:
     ddsjoberg/gtsummary
 Encoding: UTF-8
