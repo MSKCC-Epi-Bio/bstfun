@@ -2,4 +2,7 @@ pandoc: '2.2'
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles: []
+urls:
+  reference: http://www.danieldsjoberg.com/bstfun//reference
+  article: http://www.danieldsjoberg.com/bstfun//articles
 
