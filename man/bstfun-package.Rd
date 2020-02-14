@@ -6,9 +6,8 @@
 \alias{bstfun-package}
 \title{bstfun: Misc functions for the dept}
 \description{
-Collection of functions to include in biostatR that
-    don't have a clear place to live the in more defined department
-    packages.
+A miscellaneous collection of functions to used by
+    members of the Biostatistics Department at MSKCC.
 }
 \seealso{
 Useful links:

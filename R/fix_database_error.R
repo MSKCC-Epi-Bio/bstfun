@@ -1,12 +1,17 @@
 #' Function to make database fixes after import
 #'
+#' Use this function to make updates to your data while avoiding adding PHI,
+#' such as MRNs, to your code and subsequently PHI in GitHub. You provide a file
+#' of database fixes that is three columns: 1. An expression that selects a line
+#' in the database to update (e.g. `MRN == "12345678"`), 2. The column name that
+#' will be updated, and 3. The updated value.  See the examples for the
+#' structure of the database fix input.
+#'
 #' @param data data frame with errors
 #' @param engine function to import file of database fixes
 #' @param ... arguments passed to the engine function to import the database fixes
-#'
 #' @return updated data frame
 #' @export
-#'
 #' @examples
 #' df_fixes <-
 #'   tibble::tribble(

@@ -17,7 +17,12 @@ fix_database_error(data, engine = readr::read_csv, ...)
 updated data frame
 }
 \description{
-Function to make database fixes after import
+Use this function to make updates to your data while avoiding adding PHI,
+such as MRNs, to your code and subsequently PHI in GitHub. You provide a file
+of database fixes that is three columns: 1. An expression that selects a line
+in the database to update (e.g. \code{MRN == "12345678"}), 2. The column name that
+will be updated, and 3. The updated value.  See the examples for the
+structure of the database fix input.
 }
 \examples{
 df_fixes <-

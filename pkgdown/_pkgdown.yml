@@ -32,6 +32,8 @@ reference:
       Functions to use in specific table settings
     contents:
       - starts_with("tbl_")
+      - fix_database_error
+
   - title: "Example Datasets"
     desc: >
       Simulated data to illustrate package use

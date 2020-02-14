@@ -7,3 +7,4 @@
 ^data-raw$
 ^codecov\.yml$
 ^\.github/workflows/pr-commands\.yaml$
+^pkgdown$
