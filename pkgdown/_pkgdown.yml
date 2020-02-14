@@ -1,7 +1,8 @@
 url: http://www.danieldsjoberg.com/bstfun/
 
 template:
-    bootswatch: flatly
+    params:
+      bootswatch: flatly
 development:
   mode: auto
   version_label: default
@@ -24,3 +25,15 @@ navbar:
   - icon: fa-github fa-lg
     href: https://github.com/ddsjoberg/bstfun
 
+
+reference:
+  - title: "Table Functions"
+    desc: >
+      Functions to use in specific table settings
+    contents:
+      - starts_with("tbl_")
+  - title: "Example Datasets"
+    desc: >
+      Simulated data to illustrate package use
+    contents:
+      - trial
