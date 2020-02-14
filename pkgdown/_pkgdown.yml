@@ -1,0 +1,39 @@
+url: http://www.danieldsjoberg.com/bstfun/
+
+template:
+    params:
+      bootswatch: flatly
+development:
+  mode: auto
+  version_label: default
+
+authors:
+  Daniel D. Sjoberg:
+    href: "http://www.danieldsjoberg.com/"
+  Margie Hannum:
+    href: "http://margarethannum.github.io/"
+
+navbar:
+  type: default
+  left:
+  - icon: fa-home
+    href: index.html
+  - text: Reference
+    href: reference/index.html
+
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/ddsjoberg/bstfun
+
+
+reference:
+  - title: "Table Functions"
+    desc: >
+      Functions to use in specific table settings
+    contents:
+      - starts_with("tbl_")
+  - title: "Example Datasets"
+    desc: >
+      Simulated data to illustrate package use
+    contents:
+      - trial

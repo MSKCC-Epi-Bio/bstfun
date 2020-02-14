@@ -15,9 +15,8 @@ Authors@R:
              family = "Whiting",
              role = "aut",
              comment = c(ORCID = "0000-0002-4683-1868")))
-Description: Collection of functions to include in biostatR that
-    don't have a clear place to live the in more defined department
-    packages.
+Description: A miscellaneous collection of functions to used by
+    members of the Biostatistics Department at MSKCC.
 License: MIT + file LICENSE
 URL: https://github.com/ddsjoberg/bstfun
 Depends: 
