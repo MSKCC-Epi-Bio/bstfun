@@ -17,46 +17,16 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R build status](https://github.com/ddsjoberg/bstfun/workflows/R-CMD-check/badge.svg)](https://github.com/ddsjoberg/bstfun)
-[![Travis build status](https://travis-ci.org/ddsjoberg/bstfun.svg?branch=master)](https://travis-ci.org/ddsjoberg/bstfun)
+[![Travis build status](https://travis-ci.com/ddsjoberg/bstfun.svg?branch=master)](https://travis-ci.com/ddsjoberg/bstfun)
+[![Codecov test coverage](https://codecov.io/gh/ddsjoberg/bstfun/branch/master/graph/badge.svg)](https://codecov.io/gh/ddsjoberg/bstfun?branch=master)
 <!-- badges: end -->
 
-The goal of bstfun is to ...
+A miscellaneous collection of functions to used by members of the Biostatistics Department at MSKCC. Functions in the {bstfun} package do not fall within the well-defined packages with more narrow scope used by the department. 
 
 ## Installation
 
-You can install the released version of bstfun from [CRAN](https://CRAN.R-project.org) with:
+You can install the most recent version of {bstfun} with:
 
 ``` r
-install.packages("bstfun")
-```
-
-And the development version from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
 devtools::install_github("ddsjoberg/bstfun")
 ```
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(bstfun)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!

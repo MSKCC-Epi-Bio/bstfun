@@ -4,9 +4,11 @@
 \name{bstfun-package}
 \alias{bstfun}
 \alias{bstfun-package}
-\title{bstfun: What the Package Does (One Line, Title Case)}
+\title{bstfun: Misc functions for the dept}
 \description{
-What the package does (one paragraph).
+Collection of functions to include in biostatR that
+    don't have a clear place to live the in more defined department
+    packages.
 }
 \seealso{
 Useful links:
@@ -16,7 +18,13 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Daniel D. Sjoberg \email{danield.sjoberg@gmail.com} (\href{https://orcid.org/0000-0003-0862-2018}{ORCID})
+
+Authors:
+\itemize{
+  \item Margie Hannum (\href{https://orcid.org/0000-0002-2953-0449}{ORCID})
+  \item Karissa Whiting (\href{https://orcid.org/0000-0002-4683-1868}{ORCID})
+}
 
 }
 \keyword{internal}
