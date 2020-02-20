@@ -72,7 +72,7 @@ Wrapper for \link{tbl_summary} to cross tabulate two variables
 }
 \section{Example Output}{
 
-\if{html}{\figure{tbl_cross_ex.png}{options: width=50\%}}
+\if{html}{\figure{tbl_cross_ex1.png}{options: width=50\%}}
 }
 
 \examples{

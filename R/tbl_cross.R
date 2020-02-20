@@ -29,7 +29,7 @@
 #'   tbl_cross(row = trt, col = response)
 #'
 #' @section Example Output:
-#' \if{html}{\figure{tbl_cross_ex.png}{options: width=50\%}}
+#' \if{html}{\figure{tbl_cross_ex1.png}{options: width=50\%}}
 
 tbl_cross <- function(data,
                       row = NULL,
