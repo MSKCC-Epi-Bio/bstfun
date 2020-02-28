@@ -16,6 +16,12 @@
 #' @inheritParams gtsummary::tbl_summary
 #' @param add_p Logical value indicating whether to add p-value to compare
 #' `col` and `row` variables. Default is `FALSE`.
+#' @param pval_source_note Logical value indicating whether to show p-value
+#' in the table source notes instead of as a column.
+#' If `TRUE` p-value column will be hidden and
+#' p-value will be shown in the table source notes instead. This feature is only
+#' available when using gt to print tables, and is not available for
+#' kable summary tables.
 #' @param test A string specifying statistical test to perform. Default is
 #' "`chisq.test`" when expected cell counts >=5 and and "`fisher.test`" when
 #' expected cell counts <5.
@@ -27,6 +33,10 @@
 #' tbl_cross_ex1 <-
 #'   trial[c("response", "trt")] %>%
 #'   tbl_cross(row = trt, col = response)
+#'
+#' tbl_cross_ex2 <-
+#'   trial %>%
+#'   tbl_cross(row = stage, col = trt, add_p = TRUE, pval_source_note = TRUE)
 #'
 #' @section Example Output:
 #' \if{html}{\figure{tbl_cross_ex1.png}{options: width=50\%}}
@@ -40,12 +50,15 @@ tbl_cross <- function(data,
                       missing = c("ifany", "always", "no"),
                       missing_text = "Unknown",
                       add_p = FALSE,
+                      pval_source_note = FALSE,
                       test = NULL,
                       pvalue_fun = function(x) style_pvalue(x, prepend_p = TRUE)) {
+
   # checking data input --------------------------------------------------------
   if (!is.data.frame(data) || nrow(data) == 0 || ncol(data) < 2) {
     stop("`data=` argument must be a data frame with at least one row and two columns.",
-         call. = FALSE)
+      call. = FALSE
+    )
   }
 
   # converting inputs to string ------------------------------------------------
@@ -63,6 +76,7 @@ tbl_cross <- function(data,
   missing <- match.arg(missing)
   percent <- match.arg(percent)
 
+
   # saving function intputs
   tbl_cross_inputs <- as.list(environment())
 
@@ -73,9 +87,10 @@ tbl_cross <- function(data,
   }
 
   # if only one of col/row provided, error
-  if(sum(is.null(row), is.null(col)) == 1) {
+  if (sum(is.null(row), is.null(col)) == 1) {
     stop("Please specify which columns to use for both `col=` and `row=` arguments",
-         call. = FALSE)
+      call. = FALSE
+    )
   }
   if ("..total.." %in% c(row, col)) {
     stop("Arguments `row=` and `col=` cannot be named '..total..'", call. = FALSE)
@@ -88,13 +103,14 @@ tbl_cross <- function(data,
 
   # get labels -----------------------------------------------------------------
   label <- gtsummary:::tidyselect_to_list(data, label)
-  new_label <-  list()
+  new_label <- list()
 
   new_label[[row]] <- label[[row]] %||% attr(data[[row]], "label") %||% row
   new_label[[col]] <- label[[col]] %||% attr(data[[col]], "label") %||% col
   new_label[["..total.."]] <- "Total"
 
   # statistic argument ---------------------------------------------------------
+
   # if no user-defined stat, default to {n} if percent is "none"
   statistic <- statistic %||% ifelse(percent == "none", "{n}", "{n} ({p}%)")
   if (!rlang::is_string(statistic)) {
@@ -136,41 +152,40 @@ tbl_cross <- function(data,
     gtsummary::bold_labels() %>%
     gtsummary::modify_header(
       stat_by = "{level}",
-      stat_0 = " "
+      stat_0 = "**Total**"
     )
 
-  # get text for gt source note
-  stat_source_note_text <- gtsummary:::footnote_stat_label(x$meta_data)
+  # clear all existing footnotes
+  x$table_header$footnote <- list(NULL)
 
   # calculate and format p-value for source note as needed --------------------
-  p_value = vector("character", length=0)
+  if (add_p == TRUE || !is.null(test) || pval_source_note == TRUE) {
 
-  if(add_p == TRUE || !is.null(test)) {
     # adding test name if supplied (NULL otherwise)
     input_test <- switch(!is.null(test),
-                         stats::as.formula(glue("everything() ~ '{test}'")))
+      stats::as.formula(glue("everything() ~ '{test}'"))
+    )
+
     # running add_p to add thep-value to the output
     x <- gtsummary::add_p(x, include = c(row, col), test = input_test)
 
-    x$table_header <- x$table_header %>%
-      mutate(
-        hide = case_when(
-          column == "p.value" ~ TRUE,
-          TRUE ~ hide
-        )
-      )
-
     # formatting p-value, and grabbing test name from footnote
-    p_value <-  x$table_body$p.value[!is.na(x$table_body$p.value)] %>%
+    p_value <- x$table_body$p.value[!is.na(x$table_body$p.value)] %>%
       pvalue_fun()
-    p_val_source_note_text <- x$table_header %>%
-      filter(.data$column == "p.value") %>%
-      pull(.data$footnote)
+
+    stat_test_lbl <- x$meta_data$stat_test_lbl %>%
+      purrr::keep(~ !is.na(.))
+
+    # slightly modify footnote for p-val
+    x$table_header <- x$table_header %>%
+      mutate(footnote = case_when(
+        column == "p.value" ~ list(stat_test_lbl),
+        TRUE ~ footnote
+      ))
   }
 
-  # clear existing tbl_summary footnote
-  x$table_header$footnote <- list(NULL)
   x <- gtsummary:::update_calls_from_table_header(x)
+
 
   # update inputs and call list in return
   x[["call_list"]] <- list(tbl_cross = match.call())
@@ -179,26 +194,38 @@ tbl_cross <- function(data,
   class(x) <- c("tbl_cross", "tbl_summary", "gtsummary")
 
   # gt function calls ----------------------------------------------------------
-  # quoting returns an expression to be evaluated later
-  x$gt_calls[["tab_spanner"]] <-
-    glue(
-      "gt::tab_spanner(",
-      "label = gt::md('**{new_label[[col]]}**'), ",
-      "columns = contains('stat_')) %>%",
-      "gt::tab_spanner(label = gt::md('**Total**'), ",
-      "columns = vars(stat_0))"
+
+  #  if user wants p-value source note, hide p-val col in gt and warn in kable
+  if (pval_source_note == TRUE) {
+
+    x$gt_calls[["tab_footnote"]] <- NULL
+    x$gt_calls[["hide_p"]] <-
+      glue::glue(
+        "gt::cols_hide(columns = gt::vars(p.value))"
+      )
+
+    x$kable_calls[["kable"]] <- glue::glue(
+      "message('`pval_source_note` not available when using kable print engine'); ",
+      x$kable_calls[["kable"]]
     )
 
-  x$gt_calls[["tab_source_note"]] <-
-    ifelse(
-      length(p_value) > 0,
-      glue("gt::tab_source_note(source_note = '{stat_source_note_text}') %>%",
-           "gt::tab_source_note(source_note =
-              glue::glue('{p_val_source_note_text}', ', ',
-             '{p_value}'))"),
-      glue("gt::tab_source_note(source_note = '{stat_source_note_text}')"))
+    if (length(p_value) > 0) {
+      x$gt_calls[["tab_source_note"]] <-
+        glue(
+          "gt::tab_source_note(source_note =",
+          "glue::glue('{stat_test_lbl}: {p_value}'))"
+        )
+    }
+  }
+
+  x$gt_calls[["tab_spanner"]] <-
+    glue::glue(
+      "gt::tab_spanner(",
+      "label = gt::md('**{new_label[[col]]}**'), ",
+      "columns = vars({names(x$table_body)[startsWith(names(x$table_body),",
+      "'stat_')] %>% setdiff('stat_0') %>% paste(collapse = ', ')}))"
+    )
 
   # returning results ----------------------------------------------------------
   x
 }
-

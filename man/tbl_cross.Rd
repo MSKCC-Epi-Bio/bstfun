@@ -14,6 +14,7 @@ tbl_cross(
   missing = c("ifany", "always", "no"),
   missing_text = "Unknown",
   add_p = FALSE,
+  pval_source_note = FALSE,
   test = NULL,
   pvalue_fun = function(x) style_pvalue(x, prepend_p = TRUE)
 )
@@ -52,6 +53,13 @@ Default is \code{"Unknown"}.}
 \item{add_p}{Logical value indicating whether to add p-value to compare
 \code{col} and \code{row} variables. Default is \code{FALSE}.}
 
+\item{pval_source_note}{Logical value indicating whether to show p-value
+in the table source notes instead of as a column.
+If \code{TRUE} p-value column will be hidden and
+p-value will be shown in the table source notes instead. This feature is only
+available when using gt to print tables, and is not available for
+kable summary tables.}
+
 \item{test}{A string specifying statistical test to perform. Default is
 "\code{chisq.test}" when expected cell counts >=5 and and "\code{fisher.test}" when
 expected cell counts <5.}
@@ -79,6 +87,10 @@ Wrapper for \link{tbl_summary} to cross tabulate two variables
 tbl_cross_ex1 <-
   trial[c("response", "trt")] \%>\%
   tbl_cross(row = trt, col = response)
+
+tbl_cross_ex2 <-
+  trial \%>\%
+  tbl_cross(row = stage, col = trt, add_p = TRUE, pval_source_note = TRUE)
 
 }
 \author{

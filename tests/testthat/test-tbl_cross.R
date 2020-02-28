@@ -149,6 +149,11 @@ test_that("tbl_cross add_p returns p", {
     sum(na.omit(x$table_body$p.value)) > 0,
     TRUE
   )
+
+  expect_false(
+    is.null(x$gt_calls$tab_footnote),
+    TRUE
+  )
 })
 
 test_that("tbl_cross returns p if test is not null but no add_p arg", {
@@ -171,6 +176,38 @@ test_that("tbl_cross returns warning when p val issue but no error", {
   expect_equal(
     sum(na.omit(x$table_body$p.value)) > 0,
     FALSE
+  )
+})
+
+test_that("tbl_cross has no p val in output when p_val_source_note = TRUE", {
+  x <- tbl_cross(trial,
+                 row = trt,
+                 col = grade,
+                 pval_source_note = TRUE)
+  expect_true(
+    !is.null(x$gt_calls$hide_p)
+  )
+  expect_true(
+    is.null(x$gt_calls$tab_footnote)
+  )
+})
+
+
+test_that("tbl_cross returns message when pval_source_note = TRUE and kable", {
+  expect_message(
+    tbl_cross(trial,
+              row = trt,
+              col = grade,
+              pval_source_note = TRUE) %>% as_kable(),
+    "*"
+  )
+})
+
+test_that("tbl_cross runs with p warning", {
+  expect_message(
+    iris %>%
+      tbl_cross(add_p = TRUE, pval_source_note = TRUE),
+    "*"
   )
 })
 
