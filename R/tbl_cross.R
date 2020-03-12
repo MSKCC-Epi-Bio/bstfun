@@ -12,6 +12,9 @@
 #' be replaced with the numeric statistic (see glue::glue).
 #' The default is `{n}`. If percent argument is `"column"`, `"row"`, or `"cell"`,
 #' default is `{n} ({p}%)`.
+#' @param percent Indicates the type of percentage to return.
+#' Must be one of "none", "column", "row", or "cell". Default is "cell" when
+#' `{N}` or `{p}` is used in statistic.
 #' @inheritParams gtsummary::add_p
 #' @inheritParams gtsummary::tbl_summary
 #' @param add_p Logical value indicating whether to add p-value to compare
@@ -116,6 +119,14 @@ tbl_cross <- function(data,
   if (!rlang::is_string(statistic)) {
     stop("`statistic=` argument must be a string of length one.", call. = FALSE)
   }
+
+#  If statistic is {N} or {p} and percent not provided, default percent to cell
+  stat_is_N_or_p <- stringr::str_detect(string = stringr::fixed(statistic),
+    pattern = stringr::fixed("{N}")) |
+    stringr::str_detect(string = stringr::fixed(statistic),
+    pattern = stringr::fixed("{p}"))
+
+  if (percent == "none" & stat_is_N_or_p) percent = "cell"
 
   # omit missing data, or factorize missing level ------------------------------
   data <- data %>%

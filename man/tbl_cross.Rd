@@ -39,8 +39,9 @@ be replaced with the numeric statistic (see glue::glue).
 The default is \code{{n}}. If percent argument is \code{"column"}, \code{"row"}, or \code{"cell"},
 default is \verb{\{n\} (\{p\}\%)}.}
 
-\item{percent}{Indicates the type of percentage to return. Must be one of
-\code{"column"}, \code{"row"}, or \code{"cell"}. Default is \code{"column"}.}
+\item{percent}{Indicates the type of percentage to return.
+Must be one of "none", "column", "row", or "cell". Default is "cell" when
+\code{{N}} or \code{{p}} is used in statistic.}
 
 \item{missing}{Indicates whether to include counts of \code{NA} values in the table.
 Allowed values are \code{"no"} (never display NA values),
