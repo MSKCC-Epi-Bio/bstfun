@@ -101,7 +101,7 @@ tbl_cross <- function(data,
 
   # create new dummy col for tabulating column totals in cross table
   data <- data %>%
-    select(one_of(row, col)) %>%
+    select(any_of(c(row, col))) %>%
     mutate(..total.. = 1)
 
   # get labels -----------------------------------------------------------------
@@ -119,14 +119,6 @@ tbl_cross <- function(data,
   if (!rlang::is_string(statistic)) {
     stop("`statistic=` argument must be a string of length one.", call. = FALSE)
   }
-
-#  If statistic is {N} or {p} and percent not provided, default percent to cell
-  stat_is_N_or_p <- stringr::str_detect(string = stringr::fixed(statistic),
-    pattern = stringr::fixed("{N}")) |
-    stringr::str_detect(string = stringr::fixed(statistic),
-    pattern = stringr::fixed("{p}"))
-
-  if (percent == "none" & stat_is_N_or_p) percent = "cell"
 
   # omit missing data, or factorize missing level ------------------------------
   data <- data %>%
@@ -151,11 +143,11 @@ tbl_cross <- function(data,
 
   # create main table ----------------------------------------------------------
   x <- data %>%
-    select(one_of(row, col, "..total..")) %>%
+    select(any_of(c(row, col, "..total.."))) %>%
     gtsummary::tbl_summary(
       by = col,
       statistic = stats::as.formula(glue("everything() ~ '{statistic}'")),
-      percent = switch(percent != "none", percent),
+      percent = ifelse(percent == "none", "cell", percent),
       label = new_label,
       missing_text = missing_text
     ) %>%
