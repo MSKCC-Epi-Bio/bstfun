@@ -22,8 +22,8 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
                        estimate_fun = NULL, pvalue_fun = NULL,
                        method = stats::lm, digits = NULL) {
   # converting inputs to strings/lists
-  y <- dplyr::select(data[0, ], {{ y }}) %>% names()
-  x <- dplyr::select(data[0, ], {{ x }}) %>% names()
+  y <- dplyr::select(data[0, , drop = FALSE], {{ y }}) %>% names()
+  x <- dplyr::select(data[0, , drop = FALSE], {{ x }}) %>% names()
   digits <- gtsummary:::tidyselect_to_list(data, digits)
   label <- gtsummary:::tidyselect_to_list(data, label)
 
@@ -31,9 +31,9 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
   # the object func_inputs is a list of every object passed to the function
   func_inputs <- as.list(environment())
 
-  # checking the by variable has two levels
-  if (data[[x]] %>% unique() %>% length() != 2) {
-    stop(glue::glue("The stratifying variable, '{by}', must have two levels."))
+  # checking the x variable has two levels
+  if (data[[x]] %>% stats::na.omit() %>% unique() %>% length() != 2) {
+    stop(glue::glue("The stratifying variable, '{x}', must have two levels."))
   }
 
   # building models ------------------------------------------------------------
