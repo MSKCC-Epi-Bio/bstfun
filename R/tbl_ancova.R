@@ -109,8 +109,10 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
   gts_summary <- gtsummary::tbl_stack(df_summary$tbl_summary)
 
   # merging summary stats and ancova results -----------------------------------
-  result <-gtsummary::tbl_merge(list(gts_summary, gts_ancova))
-  result$gt_calls$tab_spanner <- NULL
+  result <- gtsummary::tbl_merge(list(gts_summary, gts_ancova))
+
+  # removing spanning header ---------------------------------------------------
+  result$table_header$spanning_header <- NA_character_
 
   class(result) <- c("tbl_ancova", "gtsummary")
   result
