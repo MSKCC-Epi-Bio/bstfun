@@ -1,9 +1,10 @@
-#' @importFrom purrr %||% map imap map_chr map2 pmap
+#' @importFrom purrr %||% map imap map_chr map2 pmap map_lgl flatten negate
 #' @importFrom dplyr select mutate mutate_at case_when filter pull vars
-#'   group_by pull
+#'   group_by pull rename coalesce
+#' @importFrom tibble tibble as_tibble
 #' @importFrom forcats fct_rev as_factor
 #' @importFrom stringr fixed str_replace str_detect
-#' @importFrom rlang := .data .env enquo enexpr
+#' @importFrom rlang := .data .env enquo enexpr set_names
 #' @importFrom glue glue
 #' @keywords internal
 "_PACKAGE"

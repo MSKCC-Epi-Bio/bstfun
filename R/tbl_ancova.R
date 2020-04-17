@@ -24,8 +24,8 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
   # converting inputs to strings/lists
   y <- dplyr::select(data[0, , drop = FALSE], {{ y }}) %>% names()
   x <- dplyr::select(data[0, , drop = FALSE], {{ x }}) %>% names()
-  digits <- gtsummary:::tidyselect_to_list(data, digits)
-  label <- gtsummary:::tidyselect_to_list(data, label)
+  label <- tidyselect_to_list(data, label)
+  digits <- tidyselect_to_list(data, digits)
 
   # will return call, and all object passed to in tbl_regression call
   # the object func_inputs is a list of every object passed to the function
