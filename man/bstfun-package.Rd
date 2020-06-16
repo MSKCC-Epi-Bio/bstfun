@@ -25,5 +25,10 @@ Authors:
   \item Karissa Whiting (\href{https://orcid.org/0000-0002-4683-1868}{ORCID})
 }
 
+Other contributors:
+\itemize{
+  \item Emily Vertosick [contributor]
+}
+
 }
 \keyword{internal}

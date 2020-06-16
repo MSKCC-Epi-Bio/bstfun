@@ -1,3 +1,3 @@
-# bstfun (development version)
+# bstfun 0.1.0
 
 * First release
