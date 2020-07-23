@@ -72,7 +72,7 @@ gts_add_p_footnotes <- function(x, printer = c("gt", "flextable"), index_start =
     # other calls to apply to x
     prepping_calls <-
       list(rlang::expr(gtsummary::modify_footnote(x, p.value ~ NA_character_)),
-           rlang::expr(gtsummary::as_flextable()))
+           rlang::expr(gtsummary::as_flex_table()))
 
     ret <-
       pmap(
