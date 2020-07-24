@@ -1,7 +1,7 @@
 #' Set custom gtsummary themes
 #'
-#' The function contains the personal themes for members of the department.
-#' Reach out if you're interested in adding your own personal theme!
+#' This is a place for any member of the MSK community to add a personal gtsummary theme.
+#' Reach out if you're interested in adding yours!
 #'
 #' Visit the [gtsummary themes vignette](http://www.danieldsjoberg.com/gtsummary/articles/themes.html#writing-themes-1) for a full list of preferences that can be set.
 #'
@@ -9,8 +9,8 @@
 #'
 #' @export
 #' @examples
-#' theme_gtsummary_bst("karissa")
-theme_gtsummary_bst <- function(name = c("hot", "karissa")) {
+#' theme_gtsummary_msk("hot")
+theme_gtsummary_msk <- function(name = c("hot")) {
   # picking theme
   name <- match.arg(name)
 
