@@ -77,7 +77,7 @@ structure of the database fix input." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -127,7 +127,7 @@ will be updated, and 3. The updated value.  See the examples for the
 structure of the database fix input.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fix_database_error</span>(<span class='kw'>data</span>, engine = <span class='kw'>readr</span>::<span class='kw'>read_csv</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>fix_database_error</span>(<span class='no'>data</span>, <span class='kw'>engine</span> <span class='kw'>=</span> <span class='kw pkg'>readr</span><span class='kw ns'>::</span><span class='no'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,31 +151,31 @@ structure of the database fix input.</p>
     <p>updated data frame</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>df_fixes</span> <span class='op'>&lt;-</span>
-  <span class='kw'>tibble</span>::<span class='fu'><a href='https://tibble.tidyverse.org/reference/tribble.html'>tribble</a></span>(
-    <span class='op'>~</span><span class='kw'>id</span>, <span class='op'>~</span><span class='kw'>variable</span>, <span class='op'>~</span><span class='kw'>value</span>,
+    <pre class="examples"><div class='input'><span class='no'>df_fixes</span> <span class='kw'>&lt;-</span>
+  <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tribble.html'>tribble</a></span>(
+    ~<span class='no'>id</span>, ~<span class='no'>variable</span>, ~<span class='no'>value</span>,
     <span class='st'>"id == 1"</span>, <span class='st'>"age"</span>, <span class='st'>"56"</span>,
     <span class='st'>"id == 2"</span>, <span class='st'>"trt"</span>, <span class='st'>"Drug C"</span>
   )
-<span class='kw'>trial</span> <span class='op'>%&gt;%</span>
-  <span class='kw'>dplyr</span>::<span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(id = <span class='kw'>dplyr</span>::<span class='fu'><a href='https://dplyr.tidyverse.org/reference/ranking.html'>row_number</a></span>()) <span class='op'>%&gt;%</span>
+<span class='no'>trial</span> <span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/ranking.html'>row_number</a></span>()) <span class='kw'>%&gt;%</span>
   <span class='fu'>fix_database_error</span>(
-    engine = <span class='kw'>I</span>,
-    x = <span class='kw'>df_fixes</span>
-  )</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 200 x 9</span><span>
+    <span class='kw'>engine</span> <span class='kw'>=</span> <span class='no'>I</span>,
+    <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>df_fixes</span>
+  )</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 200 x 9</span><span>
 #&gt;    trt      age marker stage grade response death ttdeath    id
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> Drug A    56  0.16  T1    II           0     0    24       1
-#&gt; </span><span style='color: #555555;'> 2</span><span> Drug C     9  1.11  T2    I            1     0    24       2
-#&gt; </span><span style='color: #555555;'> 3</span><span> Drug A    31  0.277 T1    II           0     0    24       3
-#&gt; </span><span style='color: #555555;'> 4</span><span> Drug A    </span><span style='color: #BB0000;'>NA</span><span>  2.07  T3    III          1     1    17.6     4
-#&gt; </span><span style='color: #555555;'> 5</span><span> Drug A    51  2.77  T4    III          1     1    16.4     5
-#&gt; </span><span style='color: #555555;'> 6</span><span> Drug B    39  0.613 T4    I            0     1    15.6     6
-#&gt; </span><span style='color: #555555;'> 7</span><span> Drug A    37  0.354 T1    II           0     0    24       7
-#&gt; </span><span style='color: #555555;'> 8</span><span> Drug A    32  1.74  T1    I            0     1    18.4     8
-#&gt; </span><span style='color: #555555;'> 9</span><span> Drug A    31  0.144 T1    II           0     0    24       9
-#&gt; </span><span style='color: #555555;'>10</span><span> Drug B    34  0.205 T3    I            0     1    10.5    10
-#&gt; </span><span style='color: #555555;'># … with 190 more rows</span><span></div></span></pre>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Drug A    56  0.16  T1    II           0     0    24       1
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Drug C     9  1.11  T2    I            1     0    24       2
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> Drug A    31  0.277 T1    II           0     0    24       3
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Drug A    </span><span style='color: #BB0000;'>NA</span><span>  2.07  T3    III          1     1    17.6     4
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Drug A    51  2.77  T4    III          1     1    16.4     5
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Drug B    39  0.613 T4    I            0     1    15.6     6
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> Drug A    37  0.354 T1    II           0     0    24       7
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> Drug A    32  1.74  T1    I            0     1    18.4     8
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Drug A    31  0.144 T1    II           0     0    24       9
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Drug B    34  0.205 T3    I            0     1    10.5    10
+#&gt; </span><span style='color: #949494;'># ... with 190 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -191,7 +191,7 @@ structure of the database fix input.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

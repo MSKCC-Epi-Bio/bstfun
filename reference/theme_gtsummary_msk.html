@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Results from a simulated study of two chemotherapy agents: Drug A and Drug B — trial • bstfun</title>
+<title>Set custom gtsummary themes — theme_gtsummary_msk • bstfun</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,9 @@
 
 
 
-<meta property="og:title" content="Results from a simulated study of two chemotherapy agents: Drug A and Drug B — trial" />
-<meta property="og:description" content="A dataset containing the baseline characteristics of 200 patients
-who received Drug A or Drug B.  Dataset also contains the outcome of
-tumor response to the treatment." />
+<meta property="og:title" content="Set custom gtsummary themes — theme_gtsummary_msk" />
+<meta property="og:description" content="This is a place for any member of the MSK community to add a personal gtsummary theme.
+Reach out if you're interested in adding yours!" />
 
 
 
@@ -110,35 +109,33 @@ tumor response to the treatment." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Results from a simulated study of two chemotherapy agents: Drug A and Drug B</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>trial.Rd</code></div>
+    <h1>Set custom gtsummary themes</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/theme_gtsummary_msk.R'><code>R/theme_gtsummary_msk.R</code></a></small>
+    <div class="hidden name"><code>theme_gtsummary_msk.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing the baseline characteristics of 200 patients
-who received Drug A or Drug B.  Dataset also contains the outcome of
-tumor response to the treatment.</p>
+    <p>This is a place for any member of the MSK community to add a personal gtsummary theme.
+Reach out if you're interested in adding yours!</p>
     </div>
 
-    <pre class="usage"><span class='no'>trial</span></pre>
+    <pre class="usage"><span class='fu'>theme_gtsummary_msk</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"hot"</span>))</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>name</th>
+      <td><p>string indicating the custom theme to set.</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>A data frame with 200 rows--one row per patient</p><dl'>
-<dt>trt</dt><dd><p>Chemotherapy Treatment</p></dd>
-<dt>age</dt><dd><p>Age, yrs</p></dd>
-<dt>marker</dt><dd><p>Marker Level, ng/mL</p></dd>
-<dt>stage</dt><dd><p>T Stage</p></dd>
-<dt>grade</dt><dd><p>Grade</p></dd>
-<dt>response</dt><dd><p>Tumor Response</p></dd>
-<dt>death</dt><dd><p>Patient Died</p></dd>
-<dt>ttdeath</dt><dd><p>Months to Death/Censor</p></dd>
+    <p>Visit the <a href='http://www.danieldsjoberg.com/gtsummary/articles/themes.html#writing-themes-1'>gtsummary themes vignette</a> for a full list of preferences that can be set.</p>
 
-</dl>
-
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>theme_gtsummary_msk</span>(<span class='st'>"hot"</span>)</div><div class='output co'>#&gt; <span class='message'>Setting `H.O.T.` theme</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
