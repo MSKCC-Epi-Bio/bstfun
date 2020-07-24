@@ -17,7 +17,7 @@ path to data folder
 }
 \description{
 Similar to \code{here::here()} which returns your project directory, \code{here_data()}
-returns the path to your current data folder based on the current \code{data_date.txt}
+returns the path to your current data folder based on the date in \code{data_date.txt}
 }
 \details{
 The function expects the user to version their data using a text file indicating

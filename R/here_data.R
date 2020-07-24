@@ -1,7 +1,7 @@
 #' Find your data folder
 #'
 #' Similar to `here::here()` which returns your project directory, `here_data()`
-#' returns the path to your current data folder based on the current `data_date.txt`
+#' returns the path to your current data folder based on the date in `data_date.txt`
 #'
 #' The function expects the user to version their data using a text file indicating
 #' the date the data was last received, and the data to be stored in a corresponding
