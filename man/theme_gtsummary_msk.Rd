@@ -4,7 +4,9 @@
 \alias{theme_gtsummary_msk}
 \title{Set custom gtsummary themes}
 \usage{
-theme_gtsummary_msk(name = c("hot"))
+theme_gtsummary_msk(
+  name = c("hot", "karissa", "ally", "mauguen", "esther", "curry")
+)
 }
 \arguments{
 \item{name}{string indicating the custom theme to set.}

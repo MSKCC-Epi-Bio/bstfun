@@ -1,3 +1,7 @@
+# bstfun (development version)
+
+* Added new themes to `theme_gtsummary_msk()`
+
 # bstfun 0.1.1
 
 * Added the `theme_gtsummary_msk()` function. This is a place for any member of the MSK community to add their person gtsummary theme.
