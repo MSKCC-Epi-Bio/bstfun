@@ -41,6 +41,7 @@ lst_theme_karissa <- list(
   "pkgwide-str:theme_name" = "Karissa Whiting",
   "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2),
   "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE),
+  # display a greek beta as header in tbl_regression
   "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
   "add_p.tbl_cross-arg:source_note" = TRUE
 )
@@ -50,6 +51,7 @@ lst_theme_curry <- list(
   "pkgwide-str:theme_name" = "Mike Curry",
   "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2),
   "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE),
+  # display a greek beta as header in tbl_regression
   "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
 )
 
@@ -58,6 +60,7 @@ lst_theme_ally <- list(
   "pkgwide-str:theme_name" = "Ally Maschino-Hinton",
   "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2),
   "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE),
+  # display a greek beta as header in tbl_regression
   "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
 )
 
@@ -76,5 +79,7 @@ lst_theme_mauguen <- list(
 lst_theme_esther <- list(
   "pkgwide-str:theme_name" = "Esther Drill",
   "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2),
-  "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE)
+  "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE),
+  # display a greek beta as header in tbl_regression
+  "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
 )
