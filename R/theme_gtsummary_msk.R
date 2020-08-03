@@ -41,7 +41,8 @@ lst_theme_karissa <- list(
   "pkgwide-str:theme_name" = "Karissa Whiting",
   "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2),
   "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE),
-  "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
+  "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
+  "add_p.tbl_cross-arg:source_note" = TRUE
 )
 
 # Mike Curry -------------------------------------------------------------------
