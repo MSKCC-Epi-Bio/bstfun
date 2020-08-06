@@ -11,7 +11,7 @@
 #' @examples
 #' theme_gtsummary_msk("hot")
 theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
-                                         "esther", "curry", "lavery")) {
+                                         "esther", "curry", "lavery", "meier")) {
   # picking theme name
   name <- match.arg(name)
 
@@ -24,7 +24,8 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
     "mauguen" = lst_theme_mauguen,
     "esther" = lst_theme_esther,
     "curry" = lst_theme_curry,
-    "lavery" = lst_theme_lavery
+    "lavery" = lst_theme_lavery,
+    "meier" = lst_theme_meier
   ) %>%
     # setting theme
     gtsummary::set_gtsummary_theme()
@@ -99,13 +100,27 @@ lst_theme_lavery <- list(
   "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 1),
   "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 1, prepend_p = TRUE),
   # as_gt additional commands
-  "as_gt-lst:addl_cmds" = list(gt = rlang::expr(gt::tab_options(table.font.size = "small", data_row.padding = gt::px(1), 
-                                                                summary_row.padding = gt::px(1), grand_summary_row.padding = gt::px(1), 
-                                                                footnotes.padding = gt::px(1), source_notes.padding = gt::px(1), 
+  "as_gt-lst:addl_cmds" = list(gt = rlang::expr(gt::tab_options(table.font.size = "small", data_row.padding = gt::px(1),
+                                                                summary_row.padding = gt::px(1), grand_summary_row.padding = gt::px(1),
+                                                                footnotes.padding = gt::px(1), source_notes.padding = gt::px(1),
                                                                 row_group.padding = gt::px(1)))),
   # flextable formatting
-  "as_flex_table-lst:addl_cmds" = list(autofit = list(rlang::expr(flextable::font(fontname = "Arial", part = "all")), 
+  "as_flex_table-lst:addl_cmds" = list(autofit = list(rlang::expr(flextable::font(fontname = "Arial", part = "all")),
                                                       rlang::expr(flextable::fontsize(size = 11, part = "all")))),
   # display a greek beta as header in tbl_regression
   "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
 )
+
+# Meier Hsu --------------------------------------------------------------------
+lst_theme_meier <- list(
+  "pkgwide-str:theme_name" = "Meier Hsu",
+  # round all percentages to 1 decimal place
+  "tbl_summary-fn:percent_fun" = function(x) gtsummary::style_number(x, scale = 100, digits = 1),
+  # round large pvalues to 2 places
+  "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2),
+  "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE),
+  # default Fisher test for categorical
+  "add_p.tbl_summary-attr:test.categorical" = "fisher.test"
+) %>%
+  # adding compact theme (removing name, however)
+  c(gtsummary::theme_gtsummary_compact(set_theme = FALSE)[-1])
