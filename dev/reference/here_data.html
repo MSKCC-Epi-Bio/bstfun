@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Table difference between two groups — tbl_ancova • bstfun</title>
+<title>Find your data folder — here_data • bstfun</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,9 @@
 
 
 
-<meta property="og:title" content="Table difference between two groups — tbl_ancova" />
-<meta property="og:description" content="Returns an ANCOVA table showing the means of two groups and the
-difference in means" />
+<meta property="og:title" content="Find your data folder — here_data" />
+<meta property="og:description" content="Similar to here::here() which returns your project directory, here_data()
+returns the path to your current data folder based on the date in data_date.txt" />
 
 
 <meta name="robots" content="noindex">
@@ -109,112 +109,49 @@ difference in means" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Table difference between two groups</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/tbl_ancova.R'><code>R/tbl_ancova.R</code></a></small>
-    <div class="hidden name"><code>tbl_ancova.Rd</code></div>
+    <h1>Find your data folder</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/here_data.R'><code>R/here_data.R</code></a></small>
+    <div class="hidden name"><code>here_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Returns an ANCOVA table showing the means of two groups and the
-difference in means</p>
+    <p>Similar to <code><a href='https://rdrr.io/pkg/here/man/here.html'>here::here()</a></code> which returns your project directory, <code>here_data()</code>
+returns the path to your current data folder based on the date in <code>data_date.txt</code></p>
     </div>
 
-    <pre class="usage"><span class='fu'>tbl_ancova</span>(
-  <span class='kw'>data</span>,
-  <span class='kw'>y</span>,
-  <span class='kw'>x</span>,
-  formula = <span class='st'>"{y} ~ {x}"</span>,
-  label = <span class='kw'>NULL</span>,
-  method.args = <span class='kw'>NULL</span>,
-  conf.level = <span class='fl'>0.95</span>,
-  estimate_fun = <span class='kw'>NULL</span>,
-  pvalue_fun = <span class='kw'>NULL</span>,
-  method = <span class='kw'>stats</span>::<span class='kw'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span>,
-  digits = <span class='kw'>NULL</span>
-)</pre>
+    <pre class="usage"><span class='fu'>here_data</span>(<span class='kw'>...</span>, data_folder_name = <span class='st'>"secure_data"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>data</th>
-      <td><p>frame to be used in ANCOVA models</p></td>
+      <th>...</th>
+      <td><p><code>[character]</code><br />
+Path components below the project root, can be empty.</p></td>
     </tr>
     <tr>
-      <th>y</th>
-      <td><p>vector of continuous outcome variables. One-way ANOVA/ANCOVA models
-will be computed for each outcome.</p></td>
-    </tr>
-    <tr>
-      <th>x</th>
-      <td><p>string indicating the binary comparison variable</p></td>
-    </tr>
-    <tr>
-      <th>formula</th>
-      <td><p>String of the model formula.
-Uses <a href='https://glue.tidyverse.org/reference/glue.html'>glue::glue</a> syntax. Default is <code>"{y} ~ {x}"</code>, where <code>{y}</code>
-is the dependent variable, and <code>{x}</code> represents a single covariate. For a
-random intercept model, the formula may be <code>formula = "{y} ~ {x} + (1 | gear)"</code>.</p></td>
-    </tr>
-    <tr>
-      <th>label</th>
-      <td><p>List of formulas specifying variables labels,
-e.g. <code><a href='https://rdrr.io/r/base/list.html'>list(age ~ "Age", stage ~ "Path T Stage")</a></code></p></td>
-    </tr>
-    <tr>
-      <th>method.args</th>
-      <td><p>List of additional arguments passed on to the regression
-function defined by <code>method</code>.</p></td>
-    </tr>
-    <tr>
-      <th>conf.level</th>
-      <td><p>Must be strictly greater than 0 and less than 1.
-Defaults to 0.95, which corresponds to a 95 percent confidence interval.</p></td>
-    </tr>
-    <tr>
-      <th>estimate_fun</th>
-      <td><p>Function to round and format coefficient estimates.
-Default is <a href='http://www.danieldsjoberg.com/gtsummary//reference/style_sigfig.html'>style_sigfig</a> when the coefficients are not transformed, and
-<a href='http://www.danieldsjoberg.com/gtsummary//reference/style_ratio.html'>style_ratio</a> when the coefficients have been exponentiated.</p></td>
-    </tr>
-    <tr>
-      <th>pvalue_fun</th>
-      <td><p>Function to round and format p-values.
-Default is <a href='http://www.danieldsjoberg.com/gtsummary//reference/style_pvalue.html'>style_pvalue</a>.
-The function must have a numeric vector input (the numeric, exact p-value),
-and return a string that is the rounded/formatted p-value (e.g.
-<code>pvalue_fun = function(x) style_pvalue(x, digits = 2)</code> or equivalently,
-<code><a href='https://purrr.tidyverse.org/reference/partial.html'>purrr::partial(style_pvalue, digits = 2)</a></code>).</p></td>
-    </tr>
-    <tr>
-      <th>method</th>
-      <td><p>Regression method (e.g. <a href='https://rdrr.io/r/stats/lm.html'>lm</a>, <a href='https://rdrr.io/r/stats/glm.html'>glm</a>, <a href='https://rdrr.io/pkg/survival/man/coxph.html'>survival::coxph</a>, and more).</p></td>
-    </tr>
-    <tr>
-      <th>digits</th>
-      <td><p>List of formulas specifying the number of decimal
-places to round continuous summary statistics. If not specified,
-<code>tbl_summary</code> guesses an appropriate number of decimals to round statistics.
-When multiple statistics are displayed for a single variable, supply a vector
-rather than an integer.  For example, if the
-statistic being calculated is <code>"{mean} ({sd})"</code> and you want the mean rounded
-to 1 decimal place, and the SD to 2 use <code>digits = list(age ~ c(1, 2))</code>.</p></td>
+      <th>data_folder_name</th>
+      <td><p>name of data folder. Default is <code>"secure_data"</code></p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="example-output"><a class="anchor" href="#example-output"></a>Example Output</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
+    <p>path to data folder</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-<p><img src='figures/tbl_ancova_ex1.png' width=80% /></p>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>Daniel D. Sjoberg</p>
+    <p>The function expects the user to version their data using a text file indicating
+the date the data was last received, and the data to be stored in a corresponding
+folder name, e.g. <code>~\Project Folder\secure_data\2020-01-01</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>tbl_ancova_ex1</span> <span class='op'>&lt;-</span>
-  <span class='kw'>trial</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>tbl_ancova</span>(y = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"age"</span>, <span class='st'>"marker"</span>), x = <span class='st'>"trt"</span>)</div></pre>
+    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'>here_data</span>()
+<span class='co'>#&gt; "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01"</span>
+
+<span class='fu'>here_data</span>(<span class='st'>"Raw Data.xlsx"</span>)
+<span class='co'>#&gt; "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01\Raw Data.xlsx"</span>
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
