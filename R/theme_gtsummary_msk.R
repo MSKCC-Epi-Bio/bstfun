@@ -11,7 +11,7 @@
 #' @examples
 #' theme_gtsummary_msk("hot")
 theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
-                                         "esther", "curry")) {
+                                         "esther", "curry", "lavery")) {
   # picking theme name
   name <- match.arg(name)
 
@@ -23,7 +23,8 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
     "karissa" = lst_theme_karissa,
     "mauguen" = lst_theme_mauguen,
     "esther" = lst_theme_esther,
-    "curry" = lst_theme_curry
+    "curry" = lst_theme_curry,
+    "lavery" = lst_theme_lavery
   ) %>%
     # setting theme
     gtsummary::set_gtsummary_theme()
@@ -96,9 +97,12 @@ lst_theme_lavery <- list(
   "pkgwide-str:theme_name" = "Jessica Lavery",
   # round large pvalues to 2 places
   "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 1),
-  "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE),
+  "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 1, prepend_p = TRUE),
   # as_gt additional commands
-  "as_gt-lst:addl_cmds" = list(gt = rlang::expr(gt::tab_options(table.font.size = 'small', data_row.padding = gt::px(0)))),
+  "as_gt-lst:addl_cmds" = list(gt = rlang::expr(gt::tab_options(table.font.size = "small", data_row.padding = gt::px(1), 
+                                                                summary_row.padding = gt::px(1), grand_summary_row.padding = gt::px(1), 
+                                                                footnotes.padding = gt::px(1), source_notes.padding = gt::px(1), 
+                                                                row_group.padding = gt::px(1)))),
   # flextable formatting
   "as_flex_table-lst:addl_cmds" = list(autofit = list(rlang::expr(flextable::font(fontname = "Arial", part = "all")), 
                                                       rlang::expr(flextable::fontsize(size = 11, part = "all")))),
