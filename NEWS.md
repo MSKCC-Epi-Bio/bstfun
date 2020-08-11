@@ -1,4 +1,6 @@
-# bstfun (development version)
+# bstfun 0.1.2
+
+* Added new function `gts_add_p_footnotes()`
 
 * Added new themes to `theme_gtsummary_msk()`
 
