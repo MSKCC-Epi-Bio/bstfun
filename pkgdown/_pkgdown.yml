@@ -32,7 +32,13 @@ reference:
       Functions to use in specific table settings
     contents:
       - starts_with("tbl_")
+      - gts_add_p_footnotes
+      - theme_gtsummary_msk
       - fix_database_error
+
+  - title: "Utility Functions"
+    contents:
+      - here_data
 
   - title: "Example Datasets"
     desc: >
