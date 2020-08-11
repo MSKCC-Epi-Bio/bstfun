@@ -53,8 +53,8 @@ gts_add_p_footnotes <- function(x, printer = c("gt", "flextable"), index_start =
             gt::tab_footnote(
               footnote = !!x,
               locations = gt::cells_body(
-                columns = gt::vars(p.value),
-                rows = variable %in% !!y$variable & row_type == "label"
+                columns = gt::vars("p.value"),
+                rows = .data$variable %in% !!y$variable & .data$row_type == "label"
               )
             )
           )
