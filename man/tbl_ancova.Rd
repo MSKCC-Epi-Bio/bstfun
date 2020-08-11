@@ -32,7 +32,7 @@ is the dependent variable, and \code{{x}} represents a single covariate. For a
 random intercept model, the formula may be \code{formula = "{y} ~ {x} + (1 | gear)"}.}
 
 \item{label}{List of formulas specifying variables labels,
-e.g. \code{list(age ~ "Age, yrs", stage ~ "Path T Stage")}}
+e.g. \code{list(age ~ "Age", stage ~ "Path T Stage")}}
 
 \item{method.args}{List of additional arguments passed on to the regression
 function defined by \code{method}.}
