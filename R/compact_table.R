@@ -32,8 +32,7 @@ compact_table <- function(data) {
     purrr::pluck(theme_name) %>%
     unlist() %>%
     purrr::compact() %>% # removes null elements of list (there shouldn't be any)
-    {c(list(data), .)} %>%
-    purrr::reduce(function(x, y) rlang::expr(!!x %>% !!y)) %>%
+    purrr::reduce(function(x, y) rlang::expr(!!x %>% !!y), .init = data) %>%
     eval()
 }
 
