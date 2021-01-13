@@ -1,3 +1,7 @@
+# bstfun 0.1.3
+
+* Added new function `compact_table()` that makes the compact styling available in `gtsummary::theme_gtsummary_compact()` to any {gt}, {flextable}, {huxtable}, or `knitr::kable()` table.
+
 # bstfun 0.1.2
 
 * Added new function `gts_add_p_footnotes()`
