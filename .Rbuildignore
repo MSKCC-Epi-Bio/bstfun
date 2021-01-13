@@ -9,3 +9,4 @@
 ^\.github/workflows/pr-commands\.yaml$
 ^pkgdown$
 ^\.github$
+^docs$

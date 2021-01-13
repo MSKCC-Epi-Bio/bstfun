@@ -46,6 +46,9 @@ Imports:
 Suggests: 
     covr (>= 3.5.0),
     flextable (>= 0.5.10),
+    huxtable,
+    kableExtra,
+    knitr,
     spelling (>= 2.1),
     testthat (>= 2.3.2)
 RdMacros: 

@@ -59,7 +59,8 @@ places to round continuous summary statistics. If not specified,
 When multiple statistics are displayed for a single variable, supply a vector
 rather than an integer.  For example, if the
 statistic being calculated is \code{"{mean} ({sd})"} and you want the mean rounded
-to 1 decimal place, and the SD to 2 use \code{digits = list(age ~ c(1, 2))}.}
+to 1 decimal place, and the SD to 2 use \code{digits = list(age ~ c(1, 2))}. User
+may also pass a styling function: \code{digits = age ~ style_sigfig}}
 }
 \description{
 Returns an ANCOVA table showing the means of two groups and the
