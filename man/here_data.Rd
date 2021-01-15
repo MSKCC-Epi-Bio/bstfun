@@ -7,8 +7,10 @@
 here_data(..., data_folder_name = "secure_data")
 }
 \arguments{
-\item{...}{\code{[character]}\cr
-Path components below the project root, can be empty.}
+\item{...}{\verb{[character]}\cr
+Path components below the project root, can be empty.
+Each argument should be a string containing one or more
+path components separated by a forward slash \code{"/"}.}
 
 \item{data_folder_name}{name of data folder. Default is \code{"secure_data"}}
 }
