@@ -8,11 +8,11 @@
 #' @export
 #'
 #' @examples
-#' compact_table_ex1 <-
+#' style_tbl_compact_ex1 <-
 #'   head(trial) %>%
 #'   gt::gt() %>%
-#'   compact_table()
-compact_table <- function(data) {
+#'   style_tbl_compact()
+style_tbl_compact <- function(data) {
   # first extract the theme element names of the commands that make tables compact
   # from the `gtsummary::theme_gtsummary_compact()` theme function
   if (inherits(data, "gt_tbl")) theme_name <- "as_gt-lst:addl_cmds"
