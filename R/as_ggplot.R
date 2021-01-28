@@ -15,20 +15,20 @@
 #' library(ggplot2)
 #' library(patchwork)
 #'
-#' # convert gtsummary table to ggplot
+#' # # convert gtsummary table to ggplot
 #' # tbl <-
 #' #  trial %>%
 #' #  select(age, marker, trt) %>%
 #' #  tbl_summary(by = trt, missing = "no") %>%
 #' #  as_ggplot()
-#'
-#' # create basic ggplot
+#' #
+#' # # create basic ggplot
 #' # gg <-
 #' #  trial %>%
 #' #  ggplot(aes(x = age, y = marker, color = trt)) +
 #' #  geom_point()
-#'
-#' # stack tables using patchwork
+#' #
+#' # # stack tables using patchwork
 #' # gg / tbl
 as_ggplot <- function(x, ...) {
   # checks ---------------------------------------------------------------------
