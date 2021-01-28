@@ -34,7 +34,9 @@ reference:
       - starts_with("tbl_")
       - gts_add_p_footnotes
       - theme_gtsummary_msk
+      - style_tbl_compact
       - fix_database_error
+      - as_ggplot
 
   - title: "Utility Functions"
     contents:

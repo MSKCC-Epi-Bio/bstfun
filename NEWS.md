@@ -1,3 +1,7 @@
+# bstfun (development version)
+
+* Adding `as_ggplot()` function to convert gt and gtsummary tables to ggplot
+
 # bstfun 0.1.3
 
 * Added new function `style_tbl_compact()` that makes the compact styling available in `gtsummary::theme_gtsummary_compact()` to any {gt}, {flextable}, {huxtable}, or `knitr::kable()` table.

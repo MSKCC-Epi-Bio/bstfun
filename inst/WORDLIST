@@ -7,12 +7,17 @@ MSKCC
 ORCID
 coxph
 flextable
+ggplot
 glm
 gtsummary
+https
 huxtable
 kableExtra
 lm
 mL
+magick
 ng
 pvalue
+ropensci
 stlying
+svyglm
