@@ -25,18 +25,20 @@ library(ggplot2)
 library(patchwork)
 
 # convert gtsummary table to ggplot
-tbl <-
-  trial \%>\%
-  select(age, marker, trt) \%>\%
-  tbl_summary(by = trt, missing = "no") \%>\%
-  as_ggplot()
+if (webshot::is_phantomjs_installed()) {
+  tbl <-
+    trial \%>\%
+    select(age, marker, trt) \%>\%
+    tbl_summary(by = trt, missing = "no") \%>\%
+    as_ggplot()
 
-# create basic ggplot
-gg <-
-  trial \%>\%
-  ggplot(aes(x = age, y = marker, color = trt)) +
-  geom_point()
+  # create basic ggplot
+  gg <-
+    trial \%>\%
+    ggplot(aes(x = age, y = marker, color = trt)) +
+    geom_point()
 
-# stack tables using {patchwork}
-gg / tbl
+  # stack tables using {patchwork}
+  gg / tbl
+}
 }
