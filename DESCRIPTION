@@ -55,7 +55,8 @@ Suggests:
     patchwork,
     spelling (>= 2.1),
     survey,
-    testthat (>= 2.3.2)
+    testthat (>= 2.3.2),
+    webshot
 RdMacros: 
     lifecycle
 Encoding: UTF-8
