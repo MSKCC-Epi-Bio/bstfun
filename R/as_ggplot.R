@@ -1,6 +1,8 @@
 #' Convert gt/gtsummary table to ggplot
 #'
-#' useful when you want to place a ggplot and gt table side-by-side
+#' useful when you want to place a ggplot and gt table side-by-side.
+#' To use this function you must install the magick R package AND system program
+#' (see https://docs.ropensci.org/magick/articles/intro.html#installing-magick-1)
 #'
 #' @param x gt or gtsummary table
 #' @param ... arguments passed to `gt::gtsave()`
