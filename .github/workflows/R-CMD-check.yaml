@@ -45,7 +45,7 @@ jobs:
 
       - name: Install phantomjs on macOS
         if: runner.os == 'macOS'
-        run: brew cask install phantomjs
+        run: brew install phantomjs --cask
 
       - name: Install imagemagick Linux
         if: runner.os == 'Linux'
