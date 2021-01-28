@@ -42,7 +42,6 @@ jobs:
       - name: Install imagemagick on macOS
         if: runner.os == 'macOS'
         run: brew install imagemagick@6
-        run: brew cask install phantomjs
 
       - name: Install phantomjs on macOS
         if: runner.os == 'macOS'
