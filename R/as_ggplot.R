@@ -16,22 +16,20 @@
 #' library(patchwork)
 #'
 #' # convert gtsummary table to ggplot
-#' if (FALSE) {
-#'   tbl <-
-#'     trial %>%
-#'     select(age, marker, trt) %>%
-#'     tbl_summary(by = trt, missing = "no") %>%
-#'     as_ggplot()
+#' # tbl <-
+#' #  trial %>%
+#' #  select(age, marker, trt) %>%
+#' #  tbl_summary(by = trt, missing = "no") %>%
+#' #  as_ggplot()
 #'
-#'   # create basic ggplot
-#'   gg <-
-#'     trial %>%
-#'     ggplot(aes(x = age, y = marker, color = trt)) +
-#'     geom_point()
+#' # create basic ggplot
+#' # gg <-
+#' #  trial %>%
+#' #  ggplot(aes(x = age, y = marker, color = trt)) +
+#' #  geom_point()
 #'
-#'   # stack tables using {patchwork}
-#'   gg / tbl
-#' }
+#' # stack tables using patchwork
+#' # gg / tbl
 as_ggplot <- function(x, ...) {
   # checks ---------------------------------------------------------------------
   if (!inherits(x, c("gt_tbl", "gtsummary"))) stop("`x=` must be a 'gt' or 'gtsummary' table", call. = FALSE)
