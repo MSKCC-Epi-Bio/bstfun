@@ -25,7 +25,7 @@ library(ggplot2)
 library(patchwork)
 
 # convert gtsummary table to ggplot
-if (webshot::is_phantomjs_installed()) {
+\donttest {
   tbl <-
     trial \%>\%
     select(age, marker, trt) \%>\%
