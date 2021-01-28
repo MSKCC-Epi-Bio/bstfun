@@ -16,7 +16,7 @@
 #' library(patchwork)
 #'
 #' # convert gtsummary table to ggplot
-#' \donttest {
+#' if (FALSE) {
 #'   tbl <-
 #'     trial %>%
 #'     select(age, marker, trt) %>%

@@ -39,20 +39,6 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@master
 
-      - name: Install imagemagick on macOS
-        if: runner.os == 'macOS'
-        run: brew install imagemagick@6
-
-      - name: Install phantomjs on macOS
-        if: runner.os == 'macOS'
-        run: brew install phantomjs --cask
-
-      - name: Install imagemagick Linux
-        if: runner.os == 'Linux'
-        run: sudo apt-get install libmagick++-dev
-
-
-
       - name: Query dependencies
         run: |
           install.packages('remotes')
