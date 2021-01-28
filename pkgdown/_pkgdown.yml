@@ -35,6 +35,7 @@ reference:
       - gts_add_p_footnotes
       - theme_gtsummary_msk
       - fix_database_error
+      - as_ggplot
 
   - title: "Utility Functions"
     contents:
