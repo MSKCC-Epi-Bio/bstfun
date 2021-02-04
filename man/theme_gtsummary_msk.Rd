@@ -5,7 +5,8 @@
 \title{Set custom gtsummary themes}
 \usage{
 theme_gtsummary_msk(
-  name = c("hot", "karissa", "ally", "mauguen", "esther", "curry", "lavery", "meier")
+  name = c("hot", "karissa", "ally", "mauguen", "esther", "curry", "lavery", "meier",
+    "leej")
 )
 }
 \arguments{

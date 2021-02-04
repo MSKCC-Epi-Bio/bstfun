@@ -11,7 +11,7 @@
 #' @examples
 #' theme_gtsummary_msk("hot")
 theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
-                                         "esther", "curry", "lavery", "meier")) {
+                                         "esther", "curry", "lavery", "meier", "leej")) {
   # picking theme name
   name <- match.arg(name)
 

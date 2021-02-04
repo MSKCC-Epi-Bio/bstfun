@@ -51,8 +51,7 @@ and return a string that is the rounded/formatted p-value (e.g.
 \code{pvalue_fun = function(x) style_pvalue(x, digits = 2)} or equivalently,
 \code{purrr::partial(style_pvalue, digits = 2)}).}
 
-\item{method}{Regression method (e.g. \link{lm}, \link{glm}, \link[survival:coxph]{survival::coxph},
-\link[survey:svyglm]{survey::svyglm}, and more).}
+\item{method}{Regression method (e.g. \link{lm}, \link{glm}, \link[survival:coxph]{survival::coxph}, and more).}
 
 \item{digits}{List of formulas specifying the number of decimal
 places to round continuous summary statistics. If not specified,
