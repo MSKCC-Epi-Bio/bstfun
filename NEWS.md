@@ -2,6 +2,8 @@
 
 * Adding `as_ggplot()` function to convert gt and gtsummary tables to ggplot
 
+* Added `"leej"` theme to `theme_gtsummary_msk()`
+
 # bstfun 0.1.3
 
 * Added new function `style_tbl_compact()` that makes the compact styling available in `gtsummary::theme_gtsummary_compact()` to any {gt}, {flextable}, {huxtable}, or `knitr::kable()` table.
