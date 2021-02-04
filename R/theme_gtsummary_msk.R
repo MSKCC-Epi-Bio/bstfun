@@ -25,7 +25,8 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
     "esther" = lst_theme_esther,
     "curry" = lst_theme_curry,
     "lavery" = lst_theme_lavery,
-    "meier" = lst_theme_meier
+    "meier" = lst_theme_meier,
+    "leej" = lst_theme_leej
   ) %>%
     # setting theme
     gtsummary::set_gtsummary_theme()
@@ -124,3 +125,20 @@ lst_theme_meier <- list(
 ) %>%
   # adding compact theme (removing name, however)
   c(gtsummary::theme_gtsummary_compact(set_theme = FALSE)[-1])
+
+
+# Jasme Lee --------------------------------------------------------------------
+lst_theme_leej <-
+  list(
+    # Remove comma for thousands place and beyond
+    "style_number-arg:big.mark" = "",
+    # Would like rounding for estimates to be 2 decimal places
+    "tbl_regression-arg:estimate_fun" = function(x) style_number(x, digits = 2, scale = 100),
+    # tbl summary default to show range rather than IQR
+    "tbl_summary-str:continuous_stat" = "{median} [{min} \U2013 {max}]",
+    # display a greek beta as header in tbl_regression
+    "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
+    # as_gt settings
+    "as_gt-lst:addl_cmds" = list(gt = rlang::expr(gt::tab_options(table.font.size = 'medium',
+                                                                  data_row.padding = gt::px(3))))
+  )
