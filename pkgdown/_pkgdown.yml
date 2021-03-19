@@ -33,6 +33,7 @@ reference:
     contents:
       - starts_with("tbl_")
       - gts_add_p_footnotes
+      - tbl_split
       - theme_gtsummary_msk
       - style_tbl_compact
       - fix_database_error
