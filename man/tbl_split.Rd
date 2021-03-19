@@ -22,9 +22,19 @@ tbl_split object
 \description{
 Split gtsummary Table
 }
+\section{Possible Changes}{
+
+\itemize{
+\item Function may be migrated to the gtsummary package
+\item May update print method within R markdown to add a page break between tables
+}
+}
+
 \examples{
 library(gtsummary)
+
 tbl <-
   tbl_summary(trial) \%>\%
   tbl_split(variables = c(marker, grade))
+
 }

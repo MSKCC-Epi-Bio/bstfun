@@ -9,9 +9,14 @@
 #'
 #' @examples
 #' library(gtsummary)
+#'
 #' tbl <-
 #'   tbl_summary(trial) %>%
 #'   tbl_split(variables = c(marker, grade))
+#'
+#' @section Possible Changes:
+#' - Function may be migrated to the gtsummary package
+#' - May update print method within R markdown to add a page break between tables
 NULL
 
 #' @export
@@ -46,7 +51,7 @@ tbl_split <- function(x, variables) {
         c(purrr::list_modify(x, "table_body" = NULL)) %>% # add the other parts of the gtsummary table
         `class<-`(class(x)) # add original class from `x`
     ) %>%
-    `class<-`("tbl_split")
+    `class<-`("tbl_split") # assign class (can't assign gtsummary becuase of print definitions)
 }
 
 #' @export
