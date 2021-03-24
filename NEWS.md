@@ -4,6 +4,8 @@
 
 * Added `as_ggplot()` function to convert gt and gtsummary tables to ggplot
 
+* Added `tbl_split()` function to actively split a gtsummary table to more easily show on multiple pages.
+
 * Added `"leej"` theme to `theme_gtsummary_msk()`
 
 # bstfun 0.1.3
