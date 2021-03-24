@@ -1,6 +1,8 @@
 # bstfun (development version)
 
-* Adding `as_ggplot()` function to convert gt and gtsummary tables to ggplot
+* Added `hpcc_get_arg()` and `hpcc_get_seq_number()` functions to aid working with the high performance computing cluster. (#19)
+
+* Added `as_ggplot()` function to convert gt and gtsummary tables to ggplot
 
 * Added `"leej"` theme to `theme_gtsummary_msk()`
 
