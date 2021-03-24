@@ -43,6 +43,10 @@ reference:
     contents:
       - here_data
 
+  - title: "High Performance Computing Cluster"
+    contents:
+      - starts_with("hpcc_")
+
   - title: "Example Datasets"
     desc: >
       Simulated data to illustrate package use
