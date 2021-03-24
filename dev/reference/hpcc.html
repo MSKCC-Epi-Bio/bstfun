@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Objects exported from other packages — reexports • bstfun</title>
+<title>HPCC Functions — hpcc • bstfun</title>
 
 
 <!-- jquery -->
@@ -39,15 +39,12 @@
 
 
 
-<meta property="og:title" content="Objects exported from other packages — reexports" />
-<meta property="og:description" content="These objects are imported from other packages. Follow the links
-below to see their documentation.
-
-  gtsummaryas_gt, as_kable, style_percent, style_pvalue, style_ratio, style_sigfig
-
-  magrittr%&amp;gt;%
-
-  tidyselectall_of, any_of, contains, ends_with, everything, last_col, matches, num_range, one_of, starts_with
+<meta property="og:title" content="HPCC Functions — hpcc" />
+<meta property="og:description" content="Functions for working with the high performance computing cluster
+hpcc_get_arg() retrieve character argument passed from terminal,
+e.g. qsubR bootstrap_analysis.R &quot;mets&quot;
+hpcc_get_seq_number() retrieve sequence integer when a sequence of jobs
+were submitted from the terminal, e.g qsubR -a 1-50%10 bootstrap_analysis.R
 
 " />
 
@@ -126,24 +123,24 @@ below to see their documentation.
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Objects exported from other packages</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/reexport.R'><code>R/reexport.R</code></a></small>
-    <div class="hidden name"><code>reexports.Rd</code></div>
+    <h1>HPCC Functions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/hpcc.R'><code>R/hpcc.R</code></a></small>
+    <div class="hidden name"><code>hpcc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>These objects are imported from other packages. Follow the links
-below to see their documentation.</p>
-<dl>
-  <dt>gtsummary</dt><dd><p><code><a href='http://www.danieldsjoberg.com/gtsummary//reference/as_gt.html'>as_gt</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/as_kable.html'>as_kable</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/style_percent.html'>style_percent</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/style_pvalue.html'>style_pvalue</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/style_ratio.html'>style_ratio</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/style_sigfig.html'>style_sigfig</a></code></p></dd>
+    <p>Functions for working with the high performance computing cluster</p><ul>
+<li><p><code>hpcc_get_arg()</code> retrieve character argument passed from terminal,
+e.g. <code>qsubR bootstrap_analysis.R "mets"</code></p></li>
+<li><p><code>hpcc_get_seq_number()</code> retrieve sequence integer when a sequence of jobs
+were submitted from the terminal, e.g <code>qsubR -a 1-50%10 bootstrap_analysis.R</code></p></li>
+</ul>
 
-  <dt>magrittr</dt><dd><p><code>%&gt;%</code></p></dd>
-
-  <dt>tidyselect</dt><dd><p><code><a href='https://tidyselect.r-lib.org/reference/all_of.html'>all_of</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/all_of.html'>any_of</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>contains</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/everything.html'>last_col</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>matches</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>num_range</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/one_of.html'>one_of</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></code></p></dd>
-
-</dl>
     </div>
 
+    <pre class="usage"><span class='fu'>hpcc_get_arg</span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='fu'>hpcc_get_seq_number</span><span class='op'>(</span><span class='op'>)</span></pre>
 
 
 
