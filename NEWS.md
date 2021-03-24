@@ -1,8 +1,10 @@
 # bstfun (development version)
 
-* Added `tbl_split()` function to actively split a gtsummary table to more easily show on multiple pages.
+* Added `hpcc_get_arg()` and `hpcc_get_seq_number()` functions to aid working with the high performance computing cluster. (#19)
 
-* Adding `as_ggplot()` function to convert gt and gtsummary tables to ggplot
+* Added `as_ggplot()` function to convert gt and gtsummary tables to ggplot
+
+* Added `tbl_split()` function to actively split a gtsummary table to more easily show on multiple pages.
 
 * Added `"leej"` theme to `theme_gtsummary_msk()`
 
