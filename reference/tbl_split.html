@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Results from a simulated study of two chemotherapy agents: Drug A and Drug B — trial • bstfun</title>
+<title>Split gtsummary Table — tbl_split • bstfun</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,8 @@
 
 
 
-<meta property="og:title" content="Results from a simulated study of two chemotherapy agents: Drug A and Drug B — trial" />
-<meta property="og:description" content="A dataset containing the baseline characteristics of 200 patients
-who received Drug A or Drug B.  Dataset also contains the outcome of
-tumor response to the treatment." />
+<meta property="og:title" content="Split gtsummary Table — tbl_split" />
+<meta property="og:description" content="Split gtsummary Table" />
 
 
 
@@ -59,6 +57,8 @@ tumor response to the treatment." />
 <![endif]-->
 
 
+
+<!-- dependencies from examples -->
 
 
   
@@ -119,35 +119,58 @@ tumor response to the treatment." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Results from a simulated study of two chemotherapy agents: Drug A and Drug B</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>trial.Rd</code></div>
+    <h1>Split gtsummary Table</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/tbl_split.R'><code>R/tbl_split.R</code></a></small>
+    <div class="hidden name"><code>tbl_split.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing the baseline characteristics of 200 patients
-who received Drug A or Drug B.  Dataset also contains the outcome of
-tumor response to the treatment.</p>
+    <p>Split gtsummary Table</p>
     </div>
 
-    <pre class="usage"><span class='va'>trial</span></pre>
+    <pre class="usage"><span class='fu'>tbl_split</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>variables</span><span class='op'>)</span>
+
+<span class='co'># S3 method for tbl_split</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>gtsummary table</p></td>
+    </tr>
+    <tr>
+      <th>variables</th>
+      <td><p>variables to split gtsummary table at</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>not used</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>tbl_split object</p>
+    <h2 class="hasAnchor" id="possible-changes"><a class="anchor" href="#possible-changes"></a>Possible Changes</h2>
+
+    
+
+<ul>
+<li><p>Function may be migrated to the gtsummary package</p></li>
+<li><p>May update print method within R markdown to add a page break between tables</p></li>
+</ul>
 
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/ddsjoberg/gtsummary'>gtsummary</a></span><span class='op'>)</span>
 
-    <p>A data frame with 200 rows--one row per patient</p><dl>
-<dt>trt</dt><dd><p>Chemotherapy Treatment</p></dd>
-<dt>age</dt><dd><p>Age, yrs</p></dd>
-<dt>marker</dt><dd><p>Marker Level, ng/mL</p></dd>
-<dt>stage</dt><dd><p>T Stage</p></dd>
-<dt>grade</dt><dd><p>Grade</p></dd>
-<dt>response</dt><dd><p>Tumor Response</p></dd>
-<dt>death</dt><dd><p>Patient Died</p></dd>
-<dt>ttdeath</dt><dd><p>Months to Death/Censor</p></dd>
+<span class='va'>tbl</span> <span class='op'>&lt;-</span>
+  <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/tbl_summary.html'>tbl_summary</a></span><span class='op'>(</span><span class='va'>trial</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>tbl_split</span><span class='op'>(</span>variables <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>marker</span>, <span class='va'>grade</span><span class='op'>)</span><span class='op'>)</span>
 
-</dl>
-
-
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

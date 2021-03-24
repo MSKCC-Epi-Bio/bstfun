@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Results from a simulated study of two chemotherapy agents: Drug A and Drug B — trial • bstfun</title>
+<title>HPCC Functions — hpcc • bstfun</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,14 @@
 
 
 
-<meta property="og:title" content="Results from a simulated study of two chemotherapy agents: Drug A and Drug B — trial" />
-<meta property="og:description" content="A dataset containing the baseline characteristics of 200 patients
-who received Drug A or Drug B.  Dataset also contains the outcome of
-tumor response to the treatment." />
+<meta property="og:title" content="HPCC Functions — hpcc" />
+<meta property="og:description" content="Functions for working with the high performance computing cluster
+hpcc_get_arg() retrieve character argument passed from terminal,
+e.g. qsubR bootstrap_analysis.R &quot;mets&quot;
+hpcc_get_seq_number() retrieve sequence integer when a sequence of jobs
+were submitted from the terminal, e.g qsubR -a 1-50%10 bootstrap_analysis.R
+
+" />
 
 
 
@@ -119,33 +123,25 @@ tumor response to the treatment." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Results from a simulated study of two chemotherapy agents: Drug A and Drug B</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>trial.Rd</code></div>
+    <h1>HPCC Functions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/hpcc.R'><code>R/hpcc.R</code></a></small>
+    <div class="hidden name"><code>hpcc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing the baseline characteristics of 200 patients
-who received Drug A or Drug B.  Dataset also contains the outcome of
-tumor response to the treatment.</p>
+    <p>Functions for working with the high performance computing cluster</p><ul>
+<li><p><code>hpcc_get_arg()</code> retrieve character argument passed from terminal,
+e.g. <code>qsubR bootstrap_analysis.R "mets"</code></p></li>
+<li><p><code>hpcc_get_seq_number()</code> retrieve sequence integer when a sequence of jobs
+were submitted from the terminal, e.g <code>qsubR -a 1-50%10 bootstrap_analysis.R</code></p></li>
+</ul>
+
     </div>
 
-    <pre class="usage"><span class='va'>trial</span></pre>
+    <pre class="usage"><span class='fu'>hpcc_get_arg</span><span class='op'>(</span><span class='op'>)</span>
 
+<span class='fu'>hpcc_get_seq_number</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A data frame with 200 rows--one row per patient</p><dl>
-<dt>trt</dt><dd><p>Chemotherapy Treatment</p></dd>
-<dt>age</dt><dd><p>Age, yrs</p></dd>
-<dt>marker</dt><dd><p>Marker Level, ng/mL</p></dd>
-<dt>stage</dt><dd><p>T Stage</p></dd>
-<dt>grade</dt><dd><p>Grade</p></dd>
-<dt>response</dt><dd><p>Tumor Response</p></dd>
-<dt>death</dt><dd><p>Patient Died</p></dd>
-<dt>ttdeath</dt><dd><p>Months to Death/Censor</p></dd>
-
-</dl>
 
 
   </div>

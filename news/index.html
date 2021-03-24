@@ -44,6 +44,8 @@
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -55,9 +57,16 @@
 
 
 
+
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -71,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -79,7 +88,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home"></span>
+    <span class="fas fa-home"></span>
      
   </a>
 </li>
@@ -90,7 +99,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ddsjoberg/bstfun">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fas fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -111,6 +120,23 @@
       <small>Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="bstfun-014" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.4">
+<a href="#bstfun-014" class="anchor"></a>bstfun 0.1.4</h1>
+<ul>
+<li><p>Added <code><a href="../reference/hpcc.html">hpcc_get_arg()</a></code> and <code><a href="../reference/hpcc.html">hpcc_get_seq_number()</a></code> functions to aid working with the high performance computing cluster. (<a href='https://github.com/ddsjoberg/bstfun/issues/19'>#19</a>)</p></li>
+<li><p>Added <code><a href="../reference/as_ggplot.html">as_ggplot()</a></code> function to convert gt and gtsummary tables to ggplot</p></li>
+<li><p>Added <code><a href="../reference/tbl_split.html">tbl_split()</a></code> function to actively split a gtsummary table to more easily show on multiple pages.</p></li>
+<li><p>Added <code>"leej"</code> theme to <code><a href="../reference/theme_gtsummary_msk.html">theme_gtsummary_msk()</a></code></p></li>
+</ul>
+</div>
+    <div id="bstfun-013" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.3">
+<a href="#bstfun-013" class="anchor"></a>bstfun 0.1.3</h1>
+<ul>
+<li>Added new function <code><a href="../reference/style_tbl_compact.html">style_tbl_compact()</a></code> that makes the compact styling available in <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/theme_gtsummary.html" class="external-link">gtsummary::theme_gtsummary_compact()</a></code> to any {gt}, {flextable}, {huxtable}, or <code><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">knitr::kable()</a></code> table.</li>
+</ul>
+</div>
     <div id="bstfun-012" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.2">
 <a href="#bstfun-012" class="anchor"></a>bstfun 0.1.2</h1>
@@ -124,7 +150,7 @@
 <a href="#bstfun-011" class="anchor"></a>bstfun 0.1.1</h1>
 <ul>
 <li><p>Added the <code><a href="../reference/theme_gtsummary_msk.html">theme_gtsummary_msk()</a></code> function. This is a place for any member of the MSK community to add their person gtsummary theme.</p></li>
-<li><p>Added the <code><a href="../reference/here_data.html">here_data()</a></code> function. Similar to <code><a href="https://rdrr.io/pkg/here/man/here.html">here::here()</a></code> which returns your project directory, <code><a href="../reference/here_data.html">here_data()</a></code> returns the path to your current data folder based on the date in <code>data_date.txt</code>.</p></li>
+<li><p>Added the <code><a href="../reference/here_data.html">here_data()</a></code> function. Similar to <code><a href="https://here.r-lib.org//reference/here.html" class="external-link">here::here()</a></code> which returns your project directory, <code><a href="../reference/here_data.html">here_data()</a></code> returns the path to your current data folder based on the date in <code>data_date.txt</code>.</p></li>
 </ul>
 </div>
     <div id="bstfun-010" class="section level1">
@@ -147,11 +173,11 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='http://www.danieldsjoberg.com/'>Daniel D. Sjoberg</a>, <a href='http://margarethannum.github.io/'>Margie Hannum</a>, Karissa Whiting.</p>
+  <p><p>Developed by <a href="http://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, <a href="http://margarethannum.github.io/" class="external-link">Margie Hannum</a>, Karissa Whiting.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -159,6 +185,8 @@
 
   
 
+
+  
 
   </body>
 </html>
