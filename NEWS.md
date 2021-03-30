@@ -2,6 +2,8 @@
 
 * Added `tbl_2way_summary()` function.
 
+* Deprecated `tbl_ancova()` in favor of `gtsummary::add_difference()`.
+
 # bstfun 0.1.4
 
 * Added `hpcc_get_arg()` and `hpcc_get_seq_number()` functions to aid working with the high performance computing cluster. (#19)

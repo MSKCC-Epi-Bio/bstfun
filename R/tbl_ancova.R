@@ -21,6 +21,8 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
                        method.args = NULL, conf.level = 0.95,
                        estimate_fun = NULL, pvalue_fun = NULL,
                        method = stats::lm, digits = NULL) {
+  lifecycle::deprecate_warn("0.1.5", "bstfun::tbl_ancova()", "gtsummary::add_difference()")
+
   # converting inputs to strings/lists
   y <- dplyr::select(data[0, , drop = FALSE], {{ y }}) %>% names()
   x <- dplyr::select(data[0, , drop = FALSE], {{ x }}) %>% names()
