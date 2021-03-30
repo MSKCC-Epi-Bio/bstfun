@@ -21,11 +21,14 @@
 
 tbl_2way_summary <- function(data, row, col, con, label = NULL,
                              statistic = "{median} ({p25}, {p75})") {
-  row <- dplyr::select(data, {{ row }}) %>% names()
-  col <- dplyr::select(data, {{ col }}) %>% names()
-  con <- dplyr::select(data, {{ con }}) %>% names()
+  row <- broom.helpers::.select_to_varnames({{ row }}, data = data,
+                                            select_single = TRUE, arg_name = "row")
+  col <- broom.helpers::.select_to_varnames({{ col }}, data = data,
+                                            select_single = TRUE, arg_name = "col")
+  con <- broom.helpers::.select_to_varnames({{ con }}, data = data,
+                                            select_single = TRUE, arg_name = "con")
 
-  label = broom.helpers::.formula_list_to_named_list(label, data = data)
+  label <- broom.helpers::.formula_list_to_named_list(label, data = data, arg_name = "label")
   lbl_col <- label[[col]] %||% attr(data[[col]], "label") %||% col
   lbl_col <- stringr::str_glue("**{lbl_col}**")
   lbl_row <- label[[row]] %||% attr(data[[row]], "label") %||% row
