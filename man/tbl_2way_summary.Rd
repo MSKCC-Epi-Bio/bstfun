@@ -34,8 +34,16 @@ a gtsummary table
 \description{
 Summarize a continuous variable by two categorical variables
 }
+\section{Example Output}{
+
+\if{html}{Example 1}
+
+\if{html}{\figure{tbl_2way_summary_ex1.png}{options: width=60\%}}
+}
+
 \examples{
-tbl <-
+tbl_2way_summary_ex1 <-
   trial \%>\%
   tbl_2way_summary(grade, trt, marker)
+
 }

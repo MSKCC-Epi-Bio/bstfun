@@ -15,10 +15,14 @@
 #' @export
 #'
 #' @examples
-#' tbl <-
+#' tbl_2way_summary_ex1 <-
 #'   trial %>%
 #'   tbl_2way_summary(grade, trt, marker)
-
+#'
+#' @section Example Output:
+#' \if{html}{Example 1}
+#'
+#' \if{html}{\figure{tbl_2way_summary_ex1.png}{options: width=60\%}}
 tbl_2way_summary <- function(data, row, col, con, label = NULL,
                              statistic = "{median} ({p25}, {p75})") {
   row <- broom.helpers::.select_to_varnames({{ row }}, data = data,
