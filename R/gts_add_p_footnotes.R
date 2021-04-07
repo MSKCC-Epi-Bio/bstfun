@@ -13,11 +13,15 @@
 #' @export
 #' @examples
 #' library(gtsummary)
-#' trial %>%
+#' gts_add_p_footnotes_ex1 <-
+#'   trial %>%
 #'   select(trt, age, grade) %>%
 #'   tbl_summary(by = trt) %>%
 #'   add_p() %>%
 #'   gts_add_p_footnotes()
+#'
+#' @section Example Output:
+#' \if{html}{\figure{gts_add_p_footnotes_ex1.png}{options: width=80\%}}
 
 gts_add_p_footnotes <- function(x, printer = c("gt", "flextable"), index_start = 2) {
   printer <- match.arg(printer)

@@ -20,11 +20,18 @@ This function converts a gtsummary object to the output type indicated in
 \verb{printer=}: your object will no longer be of class gtsummary and you can
 no longer use gtsummary functions to modify the object.
 }
+\section{Example Output}{
+
+\if{html}{\figure{gts_add_p_footnotes_ex1.png}{options: width=80\%}}
+}
+
 \examples{
 library(gtsummary)
-trial \%>\%
+gts_add_p_footnotes_ex1 <-
+  trial \%>\%
   select(trt, age, grade) \%>\%
   tbl_summary(by = trt) \%>\%
   add_p() \%>\%
   gts_add_p_footnotes()
+
 }
