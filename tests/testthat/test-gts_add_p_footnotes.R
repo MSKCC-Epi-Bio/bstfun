@@ -7,6 +7,5 @@ gts_tbl <- trial %>%
   add_p()
 
 test_that("gts_add_p_footnotes works", {
-  expect_error(gts_add_p_footnotes(gts_tbl, printer = "flextable"), NA)
-  expect_error(gts_add_p_footnotes(gts_tbl, printer = "gt"), NA)
+  expect_error(gts_add_p_footnotes(gts_tbl), NA)
 })

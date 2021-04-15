@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Updated `gts_add_p_footnotes()` to maintain 'gtsummary' class, where previously the table was converted to gt or flextable.
+
 * Added `tbl_2way_summary()` function.
 
 * Deprecated `tbl_ancova()` in favor of `gtsummary::add_difference()`.

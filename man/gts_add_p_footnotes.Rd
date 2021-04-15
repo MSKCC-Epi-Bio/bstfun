@@ -4,21 +4,17 @@
 \alias{gts_add_p_footnotes}
 \title{Moves p-value footnotes to individual p-values}
 \usage{
-gts_add_p_footnotes(x, printer = c("gt", "flextable"), index_start = 2)
+gts_add_p_footnotes(x, printer = NULL, index_start = NULL)
 }
 \arguments{
 \item{x}{object with class \code{"tbl_summary"} created from the gtsummary package}
 
-\item{printer}{String indicating the output format. Must be one of \code{"gt"}, or
-\code{"flextable"}}
+\item{printer}{DEPRECATED}
 
-\item{index_start}{for flextable output, this is the number the footnotes begin
-counting from}
+\item{index_start}{DEPRECATED}
 }
 \description{
-This function converts a gtsummary object to the output type indicated in
-\verb{printer=}: your object will no longer be of class gtsummary and you can
-no longer use gtsummary functions to modify the object.
+Moves p-value footnotes to individual p-values
 }
 \section{Example Output}{
 
