@@ -1,4 +1,4 @@
-# bstfun (development version)
+# bstfun 0.1.5
 
 * Updated `gts_add_p_footnotes()` to maintain 'gtsummary' class, where previously the table was converted to gt or flextable.
 
