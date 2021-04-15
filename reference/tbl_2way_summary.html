@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Objects exported from other packages — reexports • bstfun</title>
+<title>Two-way Summary — tbl_2way_summary • bstfun</title>
 
 
 <!-- jquery -->
@@ -39,17 +39,8 @@
 
 
 
-<meta property="og:title" content="Objects exported from other packages — reexports" />
-<meta property="og:description" content="These objects are imported from other packages. Follow the links
-below to see their documentation.
-
-  gtsummaryas_gt, as_kable, style_percent, style_pvalue, style_ratio, style_sigfig
-
-  magrittr%&amp;gt;%
-
-  tidyselectall_of, any_of, contains, ends_with, everything, last_col, matches, num_range, one_of, starts_with
-
-" />
+<meta property="og:title" content="Two-way Summary — tbl_2way_summary" />
+<meta property="og:description" content="Summarize a continuous variable by two categorical variables" />
 
 
 
@@ -66,6 +57,8 @@ below to see their documentation.
 <![endif]-->
 
 
+
+<!-- dependencies from examples -->
 
 
   
@@ -126,27 +119,71 @@ below to see their documentation.
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Objects exported from other packages</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/reexport.R'><code>R/reexport.R</code></a></small>
-    <div class="hidden name"><code>reexports.Rd</code></div>
+    <h1>Two-way Summary</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/tbl_2way_summary.R'><code>R/tbl_2way_summary.R</code></a></small>
+    <div class="hidden name"><code>tbl_2way_summary.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>These objects are imported from other packages. Follow the links
-below to see their documentation.</p>
-<dl>
-  <dt>gtsummary</dt><dd><p><code><a href='http://www.danieldsjoberg.com/gtsummary//reference/as_gt.html'>as_gt</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/as_kable.html'>as_kable</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/style_percent.html'>style_percent</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/style_pvalue.html'>style_pvalue</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/style_ratio.html'>style_ratio</a></code>, <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/style_sigfig.html'>style_sigfig</a></code></p></dd>
-
-  <dt>magrittr</dt><dd><p><code>%&gt;%</code></p></dd>
-
-  <dt>tidyselect</dt><dd><p><code><a href='https://tidyselect.r-lib.org/reference/all_of.html'>all_of</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/all_of.html'>any_of</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>contains</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/everything.html'>last_col</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>matches</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>num_range</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/one_of.html'>one_of</a></code>, <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></code></p></dd>
-
-</dl>
+    <p>Summarize a continuous variable by two categorical variables</p>
     </div>
 
+    <pre class="usage"><span class='fu'>tbl_2way_summary</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  <span class='va'>row</span>,
+  <span class='va'>col</span>,
+  <span class='va'>con</span>,
+  label <span class='op'>=</span> <span class='cn'>NULL</span>,
+  statistic <span class='op'>=</span> <span class='st'>"{median} ({p25}, {p75})"</span>
+<span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>data</th>
+      <td><p>a data frame</p></td>
+    </tr>
+    <tr>
+      <th>row</th>
+      <td><p>column name from <code>data=</code> making the rows of the resulting table</p></td>
+    </tr>
+    <tr>
+      <th>col</th>
+      <td><p>column name from <code>data=</code> making the columns of the resulting table</p></td>
+    </tr>
+    <tr>
+      <th>con</th>
+      <td><p>column name from <code>data=</code>of a continuous variable that will be
+summarized in each cell of the table</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>list of formulas specifying variables labels</p></td>
+    </tr>
+    <tr>
+      <th>statistic</th>
+      <td><p>string indicating the summary statistics. Default
+is <code>"{median} ({p25}, {p75})"</code></p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>a gtsummary table</p>
+    <h2 class="hasAnchor" id="example-output"><a class="anchor" href="#example-output"></a>Example Output</h2>
+
+    
+
+<p>Example 1</p>
+<p><img src='figures/tbl_2way_summary_ex1.png' width=60% /></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>tbl_2way_summary_ex1</span> <span class='op'>&lt;-</span>
+  <span class='va'>trial</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>tbl_2way_summary</span><span class='op'>(</span><span class='va'>grade</span>, <span class='va'>trt</span>, <span class='va'>marker</span><span class='op'>)</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
