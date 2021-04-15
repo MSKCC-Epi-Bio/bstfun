@@ -25,7 +25,10 @@ gts_add_p_footnotes <- function(x, printer = NULL, index_start = NULL) {
     stop("The `x$meta_data` data frame must have a column called 'stat_test_lbl'.")
 
   if (!is.null(printer) || !is.null(index_start))
-    message("Arguments `printer=` and `index_start=` are deprecated and were ignored.")
+    paste("Arguments `printer=` and `index_start=` are deprecated and were ignored.",
+          "gtsummary table is no longer converted to gt or flextable; rather,",
+          "it maintains its gtsummary class.") %>%
+    message()
 
   # remove p-value column footnote ---------------------------------------------
   x <- gtsummary::modify_footnote(x, p.value ~ NA_character_)
