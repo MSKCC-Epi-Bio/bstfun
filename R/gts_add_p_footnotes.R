@@ -36,7 +36,7 @@ gts_add_p_footnotes <- function(x, printer = NULL, index_start = NULL) {
   # add footnotes to the body of the table -------------------------------------
   footnote_calls <-
     x$meta_data %>%
-    dplyr::select(variable, stat_test_lbl) %>%
+    dplyr::select(.data$variable, .data$stat_test_lbl) %>%
     tibble::deframe() %>%
     purrr::imap(
       ~rlang::expr(
