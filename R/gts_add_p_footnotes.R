@@ -1,14 +1,8 @@
 #' Moves p-value footnotes to individual p-values
 #'
-#' This function converts a gtsummary object to the output type indicated in
-#' `printer=`: your object will no longer be of class gtsummary and you can
-#' no longer use gtsummary functions to modify the object.
-#'
 #' @param x object with class `"tbl_summary"` created from the gtsummary package
-#' @param printer String indicating the output format. Must be one of `"gt"`, or
-#' `"flextable"`
-#' @param index_start for flextable output, this is the number the footnotes begin
-#' counting from
+#' @param printer DEPRECATED
+#' @param index_start DEPRECATED
 #'
 #' @export
 #' @examples
@@ -23,87 +17,37 @@
 #' @section Example Output:
 #' \if{html}{\figure{gts_add_p_footnotes_ex1.png}{options: width=80\%}}
 
-gts_add_p_footnotes <- function(x, printer = c("gt", "flextable"), index_start = 2) {
-  printer <- match.arg(printer)
+gts_add_p_footnotes <- function(x, printer = NULL, index_start = NULL) {
+  # check inputs ---------------------------------------------------------------
+  if (!inherits(x, "gtsummary") || !"p.value" %in% names(x$table_body))
+    stop("x must be a gtsummary table with a p-value column.", call. = FALSE)
+  if (!"stat_test_lbl" %in% names(x$meta_data))
+    stop("The `x$meta_data` data frame must have a column called 'stat_test_lbl'.")
 
-  # grouping data, one line per type of test performed
-  prep_to_create_code <-
+  if (!is.null(printer) || !is.null(index_start))
+    message("Arguments `printer=` and `index_start=` are deprecated and were ignored.")
+
+  # remove p-value column footnote ---------------------------------------------
+  x <- gtsummary::modify_footnote(x, p.value ~ NA_character_)
+
+  # add footnotes to the body of the table -------------------------------------
+  footnote_calls <-
     x$meta_data %>%
-    dplyr::filter(!is.na(.data$stat_test_lbl) & .data$stat_test_lbl != "") %>%
-    dplyr::select(.data$variable, .data$stat_test_lbl) %>%
-    dplyr::mutate(row_id = dplyr::row_number()) %>%
-    dplyr::group_nest(.data$stat_test_lbl) %>%
-    dplyr::mutate(
-      sort_id = purrr::map_dbl(.data$data, ~min(.x$row_id)),
-    ) %>%
-    dplyr::arrange(.data$sort_id) %>%
-    dplyr::mutate(
-      index = seq(.env$index_start, length.out = nrow(.)) %>% as.character()
+    dplyr::select(variable, stat_test_lbl) %>%
+    tibble::deframe() %>%
+    purrr::imap(
+      ~rlang::expr(
+        gtsummary::modify_table_styling(columns = "p.value",
+                                        rows = .data$variable %in% !!.y & !is.na(.data$p.value),
+                                        footnote = !!.x)
+      )
     )
 
-  # creating then executing code to add footnotes to each p-value
-  if (printer == "gt") {
-    # other calls to apply to x
-    prepping_calls <-
-      list(rlang::expr(gtsummary::modify_footnote(x, p.value ~ NA_character_)),
-           rlang::expr(gtsummary::as_gt()))
-
-    ret <-
-      map2(
-        prep_to_create_code$stat_test_lbl,
-        prep_to_create_code$data,
-        function(x, y) {
-          rlang::expr(
-            gt::tab_footnote(
-              footnote = !!x,
-              locations = gt::cells_body(
-                columns = gt::vars("p.value"),
-                rows = .data$variable %in% !!y$variable & .data$row_type == "label"
-              )
-            )
-          )
-        }
-      ) %>%
-      # concatenating expressions with %>% between each of them
-      {c(prepping_calls, .)} %>%
-      purrr::reduce(function(x, y) rlang::expr(!!x %>% !!y)) %>%
-      # evaluating expressions
-      eval()
-  }
-  else if (printer == "flextable") {
-    assert_package("flextable", "gts_add_p_footnotes")
-
-    # other calls to apply to x
-    prepping_calls <-
-      list(rlang::expr(gtsummary::modify_footnote(x, p.value ~ NA_character_)),
-           rlang::expr(gtsummary::as_flex_table()))
-
-    ret <-
-      pmap(
-        list(prep_to_create_code$stat_test_lbl,
-             prep_to_create_code$data,
-             prep_to_create_code$index),
-        function(x, y, z) {
-          rlang::expr(
-            flextable::footnote(
-              j = ~p.value,
-              i = which(x$table_body$variable %in% !!y$variable &
-                          x$table_body$row_type == "label"),
-              part = "body",
-              value = flextable::as_paragraph(!!x),
-              ref_symbols = !!z
-            )
-          )
-        }
-      ) %>%
-      # concatenating expressions with %>% between each of them
-      {c(prepping_calls, .)} %>%
-      purrr::reduce(function(x, y) rlang::expr(!!x %>% !!y)) %>%
-      # evaluating expressions
-      eval()
-  }
-
-  return(ret)
+  # concatenating expressions with %>% between each of them
+  footnote_calls %>%
+    purrr::reduce(function(x, y) rlang::expr(!!x %>% !!y), .init = rlang::expr(!!x)) %>%
+    # evaluating expressions
+    eval()
 }
 
 
