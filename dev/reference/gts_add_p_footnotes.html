@@ -40,9 +40,7 @@
 
 
 <meta property="og:title" content="Moves p-value footnotes to individual p-values — gts_add_p_footnotes" />
-<meta property="og:description" content="This function converts a gtsummary object to the output type indicated in
-printer=: your object will no longer be of class gtsummary and you can
-no longer use gtsummary functions to modify the object." />
+<meta property="og:description" content="Moves p-value footnotes to individual p-values" />
 
 
 <meta name="robots" content="noindex">
@@ -85,7 +83,7 @@ no longer use gtsummary functions to modify the object." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.4.9003</span>
       </span>
     </div>
 
@@ -127,12 +125,10 @@ no longer use gtsummary functions to modify the object." />
     </div>
 
     <div class="ref-description">
-    <p>This function converts a gtsummary object to the output type indicated in
-<code>printer=</code>: your object will no longer be of class gtsummary and you can
-no longer use gtsummary functions to modify the object.</p>
+    <p>Moves p-value footnotes to individual p-values</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gts_add_p_footnotes</span><span class='op'>(</span><span class='va'>x</span>, printer <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"gt"</span>, <span class='st'>"flextable"</span><span class='op'>)</span>, index_start <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>gts_add_p_footnotes</span><span class='op'>(</span><span class='va'>x</span>, printer <span class='op'>=</span> <span class='cn'>NULL</span>, index_start <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -143,13 +139,11 @@ no longer use gtsummary functions to modify the object.</p>
     </tr>
     <tr>
       <th>printer</th>
-      <td><p>String indicating the output format. Must be one of <code>"gt"</code>, or
-<code>"flextable"</code></p></td>
+      <td><p>DEPRECATED</p></td>
     </tr>
     <tr>
       <th>index_start</th>
-      <td><p>for flextable output, this is the number the footnotes begin
-counting from</p></td>
+      <td><p>DEPRECATED</p></td>
     </tr>
     </table>
 
