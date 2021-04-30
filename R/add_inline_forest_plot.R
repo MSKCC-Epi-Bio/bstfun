@@ -25,7 +25,7 @@ add_inline_forest_plot <- function(x) {
   if (!all(c("estimate", "conf.low", "conf.high") %in% names(x$table_body)))
     abort("`x$table_body` must contain columns 'estimate', 'conf.low', 'conf.high'")
   assert_package("kableExtra", "add_inline_forest_plot()")
-  updated_call_list <- c(x$call_list, list(add_q = match.call()))
+  updated_call_list <- c(x$call_list, list(add_inline_forest_plot = match.call()))
 
   # set NULL value for plot ----------------------------------------------------
   null_value <-
