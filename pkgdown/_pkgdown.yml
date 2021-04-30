@@ -32,6 +32,7 @@ reference:
       Functions to use in specific table settings
     contents:
       - starts_with("tbl_")
+      - add_inline_forest_plot
       - gts_add_p_footnotes
       - theme_gtsummary_msk
       - style_tbl_compact
