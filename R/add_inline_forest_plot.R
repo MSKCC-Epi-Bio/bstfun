@@ -41,7 +41,7 @@ add_inline_forest_plot <- function(x, header = "**Forest Plot**",
   # if exponentiated, plot on the log scale ------------------------------------
   scale_fun <-
     switch(
-      inherits(x, c("tbl_regression", "tbl_uvregression")) & x$inputs$exponentiate,
+      inherits(x, c("tbl_regression", "tbl_uvregression")) && x$inputs$exponentiate,
       log
     ) %||%
     identity
@@ -59,14 +59,18 @@ add_inline_forest_plot <- function(x, header = "**Forest Plot**",
     gtsummary::modify_table_body(
       x = x,
       ~.x %>%
+        # construct the forest plots and add to `x$table_body`
         dplyr::bind_cols(
           tibble::tibble(
-            forest_plot = rlang::inject(kableExtra::spec_pointrange(!!!spec_pointrange.args)) %>%
+            forest_plot =
+              rlang::inject(kableExtra::spec_pointrange(!!!spec_pointrange.args)) %>%
               purrr::map("svg_text") %>%
               purrr::map(~gt::html(as.character(.x)))
           )
         ) %>%
+        # move forest plot to before the coef
         dplyr::relocate(.data$forest_plot, .before = .data$estimate) %>%
+        # remove empty forest plots
         dplyr::mutate(forest_plot = map2(.data$estimate, .data$forest_plot,
                                          ~switch(!is.na(.x), .y)))
     ) %>%
