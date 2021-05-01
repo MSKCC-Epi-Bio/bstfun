@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Adding `add_inline_forest_plot()` function to add forest plots to gtsummary tables. (#27)
+
 # bstfun 0.1.5
 
 * Updated `gts_add_p_footnotes()` to maintain 'gtsummary' class, where previously the table was converted to gt or flextable.

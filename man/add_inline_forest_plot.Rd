@@ -4,10 +4,22 @@
 \alias{add_inline_forest_plot}
 \title{Add inline forest plot}
 \usage{
-add_inline_forest_plot(x)
+add_inline_forest_plot(
+  x,
+  header = "**Forest Plot**",
+  spec_pointrange.args = NULL
+)
 }
 \arguments{
 \item{x}{a gtsummary object}
+
+\item{header}{string indicating column header of new forest plot column.
+Default is \code{"**Forest Plot**"}.}
+
+\item{spec_pointrange.args}{named list of arguments that will be passed to
+\code{kableExtra::spec_pointrange()}. Use this argument to modify the
+default ascetics of the forest plot, e.g. color, size, symbols, etc.
+Default is \code{list(width = 250, cex = .75, col = "black", pch = 16)}}
 }
 \value{
 gtsummary object
@@ -15,6 +27,10 @@ gtsummary object
 \description{
 This function works with HTML output from the gt package only.
 Adds an in-line forest plot to a summary table.
+}
+\details{
+\emph{Estimates from \code{tbl_regression()} and \code{tbl_uvregression()} that have
+been exponentiated are shown on the log scale.}
 }
 \section{Example Output}{
 
@@ -24,6 +40,7 @@ Adds an in-line forest plot to a summary table.
 \examples{
 library(gtsummary)
 
+# Example 1 ----------------------------------
 add_inline_forest_plot_ex1 <-
   lm(mpg ~ cyl + am + drat, mtcars) \%>\%
   tbl_regression() \%>\%
