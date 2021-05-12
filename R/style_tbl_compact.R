@@ -7,6 +7,7 @@
 #' @param data a {gt}, {flextable}, {huxtable}, or `knitr::kable()` table.
 #' @export
 #'
+#' @family gtsummary-related functions
 #' @examples
 #' style_tbl_compact_ex1 <-
 #'   head(trial) %>%

@@ -10,6 +10,7 @@
 #' @return a ggplot object
 #' @export
 #'
+#' @family gtsummary-related functions
 #' @examples
 #' library(gtsummary)
 #' library(ggplot2)

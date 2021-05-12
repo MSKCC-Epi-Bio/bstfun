@@ -7,6 +7,7 @@
 #'
 #' @param name string indicating the custom theme to set.
 #'
+#' @family gtsummary-related functions
 #' @export
 #' @examples
 #' theme_gtsummary_msk("hot")

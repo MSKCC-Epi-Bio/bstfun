@@ -47,3 +47,12 @@ tbl_2way_summary_ex1 <-
   tbl_2way_summary(grade, trt, marker)
 
 }
+\seealso{
+Other gtsummary-related functions: 
+\code{\link{add_inline_forest_plot}()},
+\code{\link{as_ggplot}()},
+\code{\link{style_tbl_compact}()},
+\code{\link{tbl_split}()},
+\code{\link{theme_gtsummary_msk}()}
+}
+\concept{gtsummary-related functions}

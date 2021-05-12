@@ -22,3 +22,12 @@ Visit the \href{http://www.danieldsjoberg.com/gtsummary/articles/themes.html#wri
 \examples{
 theme_gtsummary_msk("hot")
 }
+\seealso{
+Other gtsummary-related functions: 
+\code{\link{add_inline_forest_plot}()},
+\code{\link{as_ggplot}()},
+\code{\link{style_tbl_compact}()},
+\code{\link{tbl_2way_summary}()},
+\code{\link{tbl_split}()}
+}
+\concept{gtsummary-related functions}

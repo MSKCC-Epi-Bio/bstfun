@@ -59,6 +59,7 @@ gts_add_p_footnotes <- function(x, printer = NULL, index_start = NULL) {
 #' @param pkg Package required
 #' @param fn Calling function from the user perspective
 #'
+#' @family gtsummary-related functions
 #' @return Returns NULL or not at all.
 #'
 #' @noRd

@@ -14,6 +14,7 @@
 #' @return a gtsummary table
 #' @export
 #'
+#' @family gtsummary-related functions
 #' @examples
 #' tbl_2way_summary_ex1 <-
 #'   trial %>%

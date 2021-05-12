@@ -21,3 +21,12 @@ style_tbl_compact_ex1 <-
   gt::gt() \%>\%
   style_tbl_compact()
 }
+\seealso{
+Other gtsummary-related functions: 
+\code{\link{add_inline_forest_plot}()},
+\code{\link{as_ggplot}()},
+\code{\link{tbl_2way_summary}()},
+\code{\link{tbl_split}()},
+\code{\link{theme_gtsummary_msk}()}
+}
+\concept{gtsummary-related functions}

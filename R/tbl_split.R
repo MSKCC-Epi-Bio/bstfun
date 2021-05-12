@@ -7,6 +7,7 @@
 #' @return tbl_split object
 #' @name tbl_split
 #'
+#' @family gtsummary-related functions
 #' @examples
 #' library(gtsummary)
 #'
