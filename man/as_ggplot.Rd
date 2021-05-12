@@ -40,3 +40,12 @@ library(patchwork)
 # # stack tables using patchwork
 # gg / tbl
 }
+\seealso{
+Other gtsummary-related functions: 
+\code{\link{add_inline_forest_plot}()},
+\code{\link{style_tbl_compact}()},
+\code{\link{tbl_2way_summary}()},
+\code{\link{tbl_split}()},
+\code{\link{theme_gtsummary_msk}()}
+}
+\concept{gtsummary-related functions}

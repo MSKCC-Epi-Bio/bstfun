@@ -64,6 +64,7 @@ to 1 decimal place, and the SD to 2 use \code{digits = list(age ~ c(1, 2))}. Use
 may also pass a styling function: \code{digits = age ~ style_sigfig}}
 }
 \description{
+\lifecycle{deprecated}
 Returns an ANCOVA table showing the means of two groups and the
 difference in means
 }

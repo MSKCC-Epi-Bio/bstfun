@@ -15,6 +15,7 @@
 #' Default is `list(width = 250, cex = .75, col = "black", pch = 16)`
 #'
 #' @return gtsummary object
+#' @family gtsummary-related functions
 #' @export
 #'
 #' @examples
