@@ -27,7 +27,7 @@ navbar:
 
 
 reference:
-  - title: "Table Functions"
+  - title: "gtsummary-related Functions"
     desc: >
       Functions to use in specific table settings
     contents:
@@ -36,12 +36,12 @@ reference:
       - gts_add_p_footnotes
       - theme_gtsummary_msk
       - style_tbl_compact
-      - fix_database_error
       - as_ggplot
 
   - title: "Utility Functions"
     contents:
       - here_data
+      - fix_database_error
 
   - title: "High Performance Computing Cluster"
     contents:
