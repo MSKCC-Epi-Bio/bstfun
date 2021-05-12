@@ -1,3 +1,5 @@
+# bstfun (development version)
+
 # bstfun 0.1.6
 
 * Added `here_data(path_to_data_date=)` argument to specify location of data date file.
