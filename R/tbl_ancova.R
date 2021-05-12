@@ -1,7 +1,9 @@
 #' Table difference between two groups
 #'
+#' \lifecycle{deprecated}
 #' Returns an ANCOVA table showing the means of two groups and the
 #' difference in means
+#'
 #' @param data frame to be used in ANCOVA models
 #' @param y vector of continuous outcome variables. One-way ANOVA/ANCOVA models
 #' will be computed for each outcome.
