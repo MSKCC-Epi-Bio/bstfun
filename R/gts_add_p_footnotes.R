@@ -5,6 +5,7 @@
 #' @param index_start DEPRECATED
 #'
 #' @export
+#' @family gtsummary-related functions
 #' @examples
 #' library(gtsummary)
 #' gts_add_p_footnotes_ex1 <-
