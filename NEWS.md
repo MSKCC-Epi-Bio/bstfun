@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Added function `gtsummary_butcher()` to reduce the size of a gtsummary table. After an object has been butchered, other gtsummary functions may not be able to execute on the object.
+
 # bstfun 0.1.6
 
 * Added `here_data(path_to_data_date=)` argument to specify location of data date file.
