@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add inline forest plot — add_inline_forest_plot • bstfun</title>
+<title>Reduce size of gtsummary objects — gtsummary_butcher • bstfun</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,16 @@
 
 
 
-<meta property="og:title" content="Add inline forest plot — add_inline_forest_plot" />
-<meta property="og:description" content="This function works with HTML output from the gt package only.
-Adds an in-line forest plot to a summary table." />
+<meta property="og:title" content="Reduce size of gtsummary objects — gtsummary_butcher" />
+<meta property="og:description" content="Some gtsummary objects can become large and the size becomes cumbersome
+when working with the object.
+The function removes all elements from a gtsummary object, except those
+required to print the table. This may result in gtsummary functions
+that add information or modify the table, such as add_global_p(),
+will no longer execute
+after the excess elements have been removed (aka butchered). Of note,
+the majority of inline_text() calls will continue to execute
+properly." />
 
 
 <meta name="robots" content="noindex">
@@ -117,21 +124,24 @@ Adds an in-line forest plot to a summary table." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add inline forest plot</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/add_inline_forest_plot.R'><code>R/add_inline_forest_plot.R</code></a></small>
-    <div class="hidden name"><code>add_inline_forest_plot.Rd</code></div>
+    <h1>Reduce size of gtsummary objects</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/gtsummary_butcher.R'><code>R/gtsummary_butcher.R</code></a></small>
+    <div class="hidden name"><code>gtsummary_butcher.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function works with HTML output from the gt package only.
-Adds an in-line forest plot to a summary table.</p>
+    <p>Some gtsummary objects can become large and the size becomes cumbersome
+when working with the object.
+The function removes all elements from a gtsummary object, except those
+required to print the table. This may result in gtsummary functions
+that add information or modify the table, such as <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/add_global_p.html'>add_global_p()</a></code>,
+will no longer execute
+after the excess elements have been removed (aka butchered). Of note,
+the majority of <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/inline_text.html'>inline_text()</a></code> calls will continue to execute
+properly.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>add_inline_forest_plot</span><span class='op'>(</span>
-  <span class='va'>x</span>,
-  header <span class='op'>=</span> <span class='st'>"**Forest Plot**"</span>,
-  spec_pointrange.args <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span></code></pre></div>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>gtsummary_butcher</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -140,38 +150,17 @@ Adds an in-line forest plot to a summary table.</p>
       <th>x</th>
       <td><p>a gtsummary object</p></td>
     </tr>
-    <tr>
-      <th>header</th>
-      <td><p>string indicating column header of new forest plot column.
-Default is <code>"**Forest Plot**"</code>.</p></td>
-    </tr>
-    <tr>
-      <th>spec_pointrange.args</th>
-      <td><p>named list of arguments that will be passed to
-<code><a href='https://rdrr.io/pkg/kableExtra/man/spec_pointrange.html'>kableExtra::spec_pointrange()</a></code>. Use this argument to modify the
-default ascetics of the forest plot, e.g. color, size, symbols, etc.
-Default is <code>list(width = 250, cex = .75, col = "black", pch = 16)</code></p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>gtsummary object</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p><em>Estimates from <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/tbl_regression.html'>tbl_regression()</a></code> and <code><a href='http://www.danieldsjoberg.com/gtsummary//reference/tbl_uvregression.html'>tbl_uvregression()</a></code> that have
-been exponentiated are shown on the log scale.</em></p>
-    <h2 class="hasAnchor" id="example-output"><a class="anchor" href="#example-output"></a>Example Output</h2>
-
-    
-
-<p><img src='figures/add_inline_forest_plot_ex1.png' width=80% /></p>
+    <p>a gtsummary object</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other gtsummary-related functions: 
+<code><a href='add_inline_forest_plot.html'>add_inline_forest_plot</a>()</code>,
 <code><a href='as_ggplot.html'>as_ggplot</a>()</code>,
 <code><a href='gts_add_p_footnotes.html'>gts_add_p_footnotes</a>()</code>,
-<code><a href='gtsummary_butcher.html'>gtsummary_butcher</a>()</code>,
 <code><a href='style_tbl_compact.html'>style_tbl_compact</a>()</code>,
 <code><a href='tbl_2way_summary.html'>tbl_2way_summary</a>()</code>,
 <code><a href='tbl_split.html'>tbl_split</a>()</code>,
@@ -179,18 +168,23 @@ been exponentiated are shown on the log scale.</em></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/ddsjoberg/gtsummary'>gtsummary</a></span><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> Attaching package: ‘gtsummary’</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> The following object is masked from ‘package:bstfun’:</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span>     trial</span>
 <span class='r-in'></span>
-<span class='r-in'><span class='co'># Example 1 ----------------------------------</span></span>
-<span class='r-in'><span class='va'>add_inline_forest_plot_ex1</span> <span class='op'>&lt;-</span></span>
-<span class='r-in'>  <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>mpg</span> <span class='op'>~</span> <span class='va'>cyl</span> <span class='op'>+</span> <span class='va'>am</span> <span class='op'>+</span> <span class='va'>drat</span>, <span class='va'>mtcars</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
-<span class='r-in'>  <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/tbl_regression.html'>tbl_regression</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
-<span class='r-in'>  <span class='fu'>add_inline_forest_plot</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>tbl_large</span> <span class='op'>&lt;-</span></span>
+<span class='r-in'> <span class='va'>trial</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span class='r-in'> <span class='fu'><a href='http://www.danieldsjoberg.com/gtsummary//reference/tbl_uvregression.html'>tbl_uvregression</a></span><span class='op'>(</span></span>
+<span class='r-in'>   y <span class='op'>=</span> <span class='va'>age</span>,</span>
+<span class='r-in'>   method <span class='op'>=</span> <span class='va'>lm</span></span>
+<span class='r-in'> <span class='op'>)</span></span>
 <span class='r-in'></span>
+<span class='r-in'> <span class='va'>tbl_butchered</span> <span class='op'>&lt;-</span></span>
+<span class='r-in'>   <span class='va'>tbl_large</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span class='r-in'>   <span class='fu'>gtsummary_butcher</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='co'># size comparison</span></span>
+<span class='r-in'> <span class='fu'><a href='https://rdrr.io/r/utils/object.size.html'>object.size</a></span><span class='op'>(</span><span class='va'>tbl_large</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://rdrr.io/r/base/format.html'>format</a></span><span class='op'>(</span>units <span class='op'>=</span> <span class='st'>"Mb"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "16.1 Mb"</span>
+<span class='r-in'> <span class='fu'><a href='https://rdrr.io/r/utils/object.size.html'>object.size</a></span><span class='op'>(</span><span class='va'>tbl_butchered</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://rdrr.io/r/base/format.html'>format</a></span><span class='op'>(</span>units <span class='op'>=</span> <span class='st'>"Mb"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "5 Mb"</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

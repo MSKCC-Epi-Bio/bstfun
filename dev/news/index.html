@@ -57,7 +57,6 @@
 
 
 
-
   
 
   
@@ -80,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.5.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.6.9001</span>
       </span>
     </div>
 
@@ -123,59 +122,51 @@
     <div id="bstfun-development-version" class="section level1">
 <h1 class="page-header" data-toc-text="development version">
 <a href="#bstfun-development-version" class="anchor" aria-hidden="true"></a>bstfun (development version)</h1>
-<ul>
-<li>Adding <code><a href="../reference/add_inline_forest_plot.html">add_inline_forest_plot()</a></code> function to add forest plots to gtsummary tables. (<a href='https://github.com/ddsjoberg/bstfun/issues/27'>#27</a>)</li>
-</ul>
-</div>
+<ul><li>Added function <code><a href="../reference/gtsummary_butcher.html">gtsummary_butcher()</a></code> to reduce the size of a gtsummary table. After an object has been butchered, other gtsummary functions may not be able to execute on the object.</li>
+</ul></div>
+    <div id="bstfun-016" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.6">
+<a href="#bstfun-016" class="anchor" aria-hidden="true"></a>bstfun 0.1.6</h1>
+<ul><li><p>Added <code>here_data(path_to_data_date=)</code> argument to specify location of data date file.</p></li>
+<li><p>Adding <code><a href="../reference/add_inline_forest_plot.html">add_inline_forest_plot()</a></code> function to add forest plots to gtsummary tables. (<a href='https://github.com/ddsjoberg/bstfun/issues/27'>#27</a>)</p></li>
+</ul></div>
     <div id="bstfun-015" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.5">
 <a href="#bstfun-015" class="anchor" aria-hidden="true"></a>bstfun 0.1.5</h1>
-<ul>
-<li><p>Updated <code><a href="../reference/gts_add_p_footnotes.html">gts_add_p_footnotes()</a></code> to maintain ‘gtsummary’ class, where previously the table was converted to gt or flextable.</p></li>
+<ul><li><p>Updated <code><a href="../reference/gts_add_p_footnotes.html">gts_add_p_footnotes()</a></code> to maintain ‘gtsummary’ class, where previously the table was converted to gt or flextable.</p></li>
 <li><p>Added <code><a href="../reference/tbl_2way_summary.html">tbl_2way_summary()</a></code> function.</p></li>
 <li><p>Deprecated <code><a href="../reference/tbl_ancova.html">tbl_ancova()</a></code> in favor of <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_difference.html" class="external-link">gtsummary::add_difference()</a></code>.</p></li>
-</ul>
-</div>
+</ul></div>
     <div id="bstfun-014" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.4">
 <a href="#bstfun-014" class="anchor" aria-hidden="true"></a>bstfun 0.1.4</h1>
-<ul>
-<li><p>Added <code><a href="../reference/hpcc.html">hpcc_get_arg()</a></code> and <code><a href="../reference/hpcc.html">hpcc_get_seq_number()</a></code> functions to aid working with the high performance computing cluster. (<a href='https://github.com/ddsjoberg/bstfun/issues/19'>#19</a>)</p></li>
+<ul><li><p>Added <code><a href="../reference/hpcc.html">hpcc_get_arg()</a></code> and <code><a href="../reference/hpcc.html">hpcc_get_seq_number()</a></code> functions to aid working with the high performance computing cluster. (<a href='https://github.com/ddsjoberg/bstfun/issues/19'>#19</a>)</p></li>
 <li><p>Added <code><a href="../reference/as_ggplot.html">as_ggplot()</a></code> function to convert gt and gtsummary tables to ggplot</p></li>
 <li><p>Added <code><a href="../reference/tbl_split.html">tbl_split()</a></code> function to actively split a gtsummary table to more easily show on multiple pages.</p></li>
 <li><p>Added <code>"leej"</code> theme to <code><a href="../reference/theme_gtsummary_msk.html">theme_gtsummary_msk()</a></code></p></li>
-</ul>
-</div>
+</ul></div>
     <div id="bstfun-013" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.3">
 <a href="#bstfun-013" class="anchor" aria-hidden="true"></a>bstfun 0.1.3</h1>
-<ul>
-<li>Added new function <code><a href="../reference/style_tbl_compact.html">style_tbl_compact()</a></code> that makes the compact styling available in <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/theme_gtsummary.html" class="external-link">gtsummary::theme_gtsummary_compact()</a></code> to any {gt}, {flextable}, {huxtable}, or <code><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">knitr::kable()</a></code> table.</li>
-</ul>
-</div>
+<ul><li>Added new function <code><a href="../reference/style_tbl_compact.html">style_tbl_compact()</a></code> that makes the compact styling available in <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/theme_gtsummary.html" class="external-link">gtsummary::theme_gtsummary_compact()</a></code> to any {gt}, {flextable}, {huxtable}, or <code><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">knitr::kable()</a></code> table.</li>
+</ul></div>
     <div id="bstfun-012" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.2">
 <a href="#bstfun-012" class="anchor" aria-hidden="true"></a>bstfun 0.1.2</h1>
-<ul>
-<li><p>Added new function <code><a href="../reference/gts_add_p_footnotes.html">gts_add_p_footnotes()</a></code></p></li>
+<ul><li><p>Added new function <code><a href="../reference/gts_add_p_footnotes.html">gts_add_p_footnotes()</a></code></p></li>
 <li><p>Added new themes to <code><a href="../reference/theme_gtsummary_msk.html">theme_gtsummary_msk()</a></code></p></li>
-</ul>
-</div>
+</ul></div>
     <div id="bstfun-011" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.1">
 <a href="#bstfun-011" class="anchor" aria-hidden="true"></a>bstfun 0.1.1</h1>
-<ul>
-<li><p>Added the <code><a href="../reference/theme_gtsummary_msk.html">theme_gtsummary_msk()</a></code> function. This is a place for any member of the MSK community to add their person gtsummary theme.</p></li>
+<ul><li><p>Added the <code><a href="../reference/theme_gtsummary_msk.html">theme_gtsummary_msk()</a></code> function. This is a place for any member of the MSK community to add their person gtsummary theme.</p></li>
 <li><p>Added the <code><a href="../reference/here_data.html">here_data()</a></code> function. Similar to <code><a href="https://here.r-lib.org//reference/here.html" class="external-link">here::here()</a></code> which returns your project directory, <code><a href="../reference/here_data.html">here_data()</a></code> returns the path to your current data folder based on the date in <code>data_date.txt</code>.</p></li>
-</ul>
-</div>
+</ul></div>
     <div id="bstfun-010" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.0">
 <a href="#bstfun-010" class="anchor" aria-hidden="true"></a>bstfun 0.1.0</h1>
-<ul>
-<li>First release</li>
-</ul>
-</div>
+<ul><li>First release</li>
+</ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/404.html</loc>
-  </url>
-  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/LICENSE-text.html</loc>
   </url>
   <url>
@@ -32,6 +29,9 @@
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/gts_add_p_footnotes.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/gtsummary_butcher.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/here_data.html</loc>
