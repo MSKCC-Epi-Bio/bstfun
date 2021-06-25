@@ -16,3 +16,20 @@
 #'     \item{ttdeath}{Months to Death/Censor}
 #' }
 "trial"
+
+#' Biostatistics project templates
+#'
+#' The `project_templates` object defines the contents of the Biostatistics project
+#' templates used in `create_biostat_project()` and `use_biostat_file()`.
+#'
+#' @format A named list containing the Biostatistics project template.
+#' @examples
+#' \donttest{\dontrun{
+#' create_hot_project(
+#'   path = file.path(tempdir(), "Sjoberg New Project"),
+#'   template = bstfun::project_templates[["default"]]
+#' )
+#' }}
+#' @seealso [create_biostat_project()]
+#' @seealso [use_biostat_file()]
+"project_templates"

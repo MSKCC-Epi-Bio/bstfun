@@ -1,0 +1,67 @@
+---
+title: "Initial Setup"
+date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+renv::settings$snapshot.type("all")
+```
+
+# Raw Data Import
+
+```{r import}
+library(biostatR); library(tidyverse)
+# library(tidylog)
+
+# setting MSK ggplot theme and color palette
+theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
+
+# example code for importing excel file
+df_raw_data <-
+  readxl::read_excel(
+    path = here_data("Raw Data from PI.xlsx")
+  ) %>%
+  janitor::clean_names(case = "all_caps") %>% # uppercase col names
+  mutate(across(where(lubridate::is.POSIXt), lubridate::as_date)) # use lubridates
+```
+
+# Create Master Analytic Data Set
+
+```{r cleaning}
+
+```
+
+
+# Check Variable Derivations
+
+```{r checking}
+
+```
+
+# Save Analytic Data
+
+```{r save}
+# applying variable labels, and dropping raw variables
+df_main <- 
+  df_main %>%
+  labelled::set_variable_labels(
+    mrn = "Patient MRN",
+    tstage = "T Stage"
+  )
+
+# overview of master analytic dataset
+skimr::skim(df_main)
+
+# saving master analytic data set
+saveRDS(
+  object = df_main,
+  file = here_data("df_main.Rds")
+)
+```

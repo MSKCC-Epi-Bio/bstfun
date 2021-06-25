@@ -40,6 +40,10 @@ reference:
       - as_ggplot
 
   - title: "Utility Functions"
+      - create_biostat_project
+      - use_biostat_file
+
+  - title: "Utility Functions"
     contents:
       - here_data
       - fix_database_error
