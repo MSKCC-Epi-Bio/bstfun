@@ -6,7 +6,9 @@
 #' sets the default template to `template = hotfun::project_template`
 #'
 #' @param template Specifies template for `starter::create_project(template=)`.
-#' Default is `bstfun::project_template`
+#' Default is the template in `bstfun::project_templates` whose name matches
+#' the lowercase system username, if it exists;
+#' otherwise, `bstfun::project_templates[["default"]]`
 #' @inheritParams starter::create_project
 #'
 #' @export
@@ -31,12 +33,15 @@ create_biostat_project <- function(path,
                                    overwrite = NA,
                                    open = interactive()) {
   # if template is NULL, use default template ----------------------------------
-  template <- template %||% "default"
+  template <-
+    template %||%
+    bstfun::project_templates[[tolower(Sys.info()[["user"]])]] %||%
+    bstfun::project_templates[["default"]]
 
   # if string, select template among bstfun saved templates --------------------
   if (rlang::is_string(template)) {
     if (!template %in% names(bstfun::project_templates)) {
-      paste("Pass one of the fiollowing template names or a user-defined template:",
+      paste("Pass one of the following template names or a user-defined template:",
             paste(names(bstfun::project_templates), collapse = ", ")) %>%
       stop(call. = FALSE)
     }

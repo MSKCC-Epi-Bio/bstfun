@@ -22,7 +22,9 @@ created.}
 \code{NULL}.  When supplied, a symbolic link to data folder will be created.}
 
 \item{template}{Specifies template for \code{starter::create_project(template=)}.
-Default is \code{bstfun::project_template}}
+Default is the template in \code{bstfun::project_templates} whose name matches
+the lowercase system username, if it exists;
+otherwise, \code{bstfun::project_templates[["default"]]}}
 
 \item{git}{Logical indicating whether to create Git repository.  Default is \code{TRUE}
 When \code{NA}, user will be prompted whether to initialise Git repo.}
