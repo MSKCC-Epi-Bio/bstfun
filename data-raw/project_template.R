@@ -81,7 +81,7 @@ whitingk_project_template <-
       copy = TRUE
     )
   ))
-attr(project_template_default, "label") <- "Default Biostistics Project Template"
+attr(whitingk_project_template, "label") <- "Karissa's Project Template"
 
 
 # Create template object -----
