@@ -9,7 +9,12 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 renv::settings$snapshot.type("all")
 ```
@@ -17,11 +22,8 @@ renv::settings$snapshot.type("all")
 # Raw Data Import
 
 ```{r import}
-library(biostatR); library(tidyverse)
-# library(tidylog)
-
-# setting MSK ggplot theme and color palette
-theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
+library(biostatR)
+library(tidyverse)
 
 # example code for importing excel file
 df_raw_data <-
@@ -39,7 +41,7 @@ df_raw_data <-
 ```
 
 
-# Check Variable Derivations
+# Check Variables
 
 ```{r checking}
 
@@ -52,8 +54,7 @@ df_raw_data <-
 df_main <- 
   df_main %>%
   labelled::set_variable_labels(
-    mrn = "Patient MRN",
-    tstage = "T Stage"
+    mrn = "Patient MRN"
   )
 
 # overview of master analytic dataset

@@ -1,6 +1,6 @@
 ## code to prepare project template goes here
 
-# hot template
+# default template ----
 project_template_default <-
   quote(list(
     readme = list(
@@ -20,17 +20,17 @@ project_template_default <-
     ),
     setup = list(
       template_filename = fs::path_package("project_templates/setup.Rmd", package = 'bstfun'),
-      filename = glue::glue("setup1.Rmd"),
+      filename = glue::glue("setup.Rmd"),
       copy = FALSE
     ),
     analysis = list(
       template_filename = fs::path_package("project_templates/analysis.Rmd", package = 'bstfun'),
-      filename = glue::glue("analysis1.Rmd"),
+      filename = glue::glue("analysis.Rmd"),
       copy = FALSE
     ),
     report = list(
       template_filename = fs::path_package("project_templates/report.Rmd", package = 'bstfun'),
-      filename = glue::glue("report1.Rmd"),
+      filename = glue::glue("report.Rmd"),
       copy = FALSE
     ),
     doc_template = list(
@@ -46,7 +46,48 @@ project_template_default <-
   ))
 attr(project_template_default, "label") <- "Default Biostistics Project Template"
 
+# whitingk template -----
+
+whitingk_project_template <-
+  quote(list(
+    readme = list(
+      template_filename = fs::path_package("project_templates/readme.md", package = 'bstfun'),
+      filename = "README.md",
+      copy = FALSE
+    ),
+    gitignore = list(
+      template_filename = fs::path_package("project_templates/gitignore.txt", package = 'bstfun'),
+      filename = ".gitignore",
+      copy = TRUE
+    ),
+    setup = list(
+      template_filename = fs::path_package("project_templates/whitingk_template_files/01_clean-data.R", package = 'bstfun'),
+      filename = glue::glue("scripts/01_clean-data.R"),
+      copy = FALSE
+    ),
+    analysis = list(
+      template_filename = fs::path_package("project_templates/whitingk_template_files/02_analysis.Rmd", package = 'bstfun'),
+      filename = glue::glue("scripts/02_analysis.Rmd"),
+      copy = FALSE
+    ),
+    report = list(
+      template_filename = fs::path_package("project_templates/whitingk_template_files/03_report.Rmd", package = 'bstfun'),
+      filename = glue::glue("scripts/03_report.Rmd"),
+      copy = FALSE
+    ),
+    rproj = list(
+      template_filename = fs::path_package("project_templates/default_rproj.Rproj", package = 'bstfun'),
+      filename = glue::glue("_rstudio_project.Rproj"),
+      copy = TRUE
+    )
+  ))
+attr(project_template_default, "label") <- "Default Biostistics Project Template"
+
+
+# Create template object -----
+
 project_templates <- list()
 project_templates[["default"]] <- project_template_default
+project_templates[["whitingk"]] <- whitingk_project_template
 
 usethis::use_data(project_templates, overwrite = TRUE)
