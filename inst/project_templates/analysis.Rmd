@@ -9,11 +9,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-	echo = FALSE,
-	message = FALSE,
-	warning = FALSE
-)
+knitr::opts_chunk$set(echo = TRUE)
 
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
