@@ -26,6 +26,12 @@ use_biostat_file <- function(name = NULL,
                              filename = NULL,
                              template = NULL,
                              open = interactive()) {
+  # if template is NULL, use default template ----------------------------------
+  template <-
+    template %||%
+    bstfun::project_templates[[tolower(Sys.info()[["user"]])]] %||%
+    bstfun::project_templates[["default"]]
+
   starter::use_project_file(name = name, filename = filename,
                             template = template, open = open)
 }
