@@ -20,7 +20,7 @@
 #' Biostatistics project templates
 #'
 #' The `project_templates` object defines the contents of the Biostatistics project
-#' templates used in `create_biostat_project()` and `use_biostat_file()`.
+#' templates used in `create_bst_project()` and `use_bst_file()`.
 #'
 #' @format A named list containing the Biostatistics project template.
 #' @examples
@@ -30,6 +30,6 @@
 #'   template = bstfun::project_templates[["default"]]
 #' )
 #' }}
-#' @seealso [create_biostat_project()]
-#' @seealso [use_biostat_file()]
+#' @seealso [create_bst_project()]
+#' @seealso [use_bst_file()]
 "project_templates"

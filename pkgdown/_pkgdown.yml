@@ -40,8 +40,8 @@ reference:
       - as_ggplot
 
   - title: "Utility Functions"
-      - create_biostat_project
-      - use_biostat_file
+      - create_bst_project
+      - use_bst_file
 
   - title: "Utility Functions"
     contents:

@@ -12,7 +12,7 @@ project_templates
 }
 \description{
 The \code{project_templates} object defines the contents of the Biostatistics project
-templates used in \code{create_biostat_project()} and \code{use_biostat_file()}.
+templates used in \code{create_bst_project()} and \code{use_bst_file()}.
 }
 \examples{
 \donttest{\dontrun{
@@ -23,8 +23,8 @@ create_hot_project(
 }}
 }
 \seealso{
-\code{\link[=create_biostat_project]{create_biostat_project()}}
+\code{\link[=create_bst_project]{create_bst_project()}}
 
-\code{\link[=use_biostat_file]{use_biostat_file()}}
+\code{\link[=use_bst_file]{use_bst_file()}}
 }
 \keyword{datasets}

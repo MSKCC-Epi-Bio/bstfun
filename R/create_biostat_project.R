@@ -1,4 +1,4 @@
-#' Start a new Biostatistics project
+#' Start a New Biostatistics project
 #'
 #' Creates a directory with the essential files for a new project.
 #' The function can be used on existing project directories as well.
@@ -23,9 +23,9 @@
 #' dir.create(secure_data_path)
 #'
 #' # creating new project folder
-#' create_biostat_project(project_path, path_data = secure_data_path)
+#' create_bst_project(project_path, path_data = secure_data_path)
 #' }}
-create_biostat_project <- function(path,
+create_bst_project <- function(path,
                                    path_data = NULL,
                                    template = NULL,
                                    git = NA,
