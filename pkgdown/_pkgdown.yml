@@ -39,7 +39,7 @@ reference:
       - style_tbl_compact
       - as_ggplot
 
-  - title: "Utility Functions"
+  - title: "Project Start-up Functions"
       - create_bst_project
       - use_bst_file
 

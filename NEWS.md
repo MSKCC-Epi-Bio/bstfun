@@ -1,4 +1,4 @@
-# bstfun (development version)
+# bstfun 0.2.0
 
 * Added new function `create_bst_project()`, a wrapper for `starter::create_project()` that drops a copy of the Biostatistics project template into a new or existing folder. The function defaults to the Biostatistics template, but any template may be passed.
 
