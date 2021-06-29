@@ -1,5 +1,11 @@
 # bstfun (development version)
 
+* Added new function `create_bst_project()`, a wrapper for `starter::create_project()` that drops a copy of the Biostatistics project template into a new or existing folder. The function defaults to the Biostatistics template, but any template may be passed.
+
+* Added new functions `use_bst_file()`, `use_bst_gitignore()`, and `use_bst_readme()` to drop files from the HOT template into the active project.
+
+* Migrated the Biostatistics template from the biostatR package (behind a firewall) to the bstfun package.
+
 * Added function `gtsummary_butcher()` to reduce the size of a gtsummary table. After an object has been butchered, other gtsummary functions may not be able to execute on the object.
 
 # bstfun 0.1.6
