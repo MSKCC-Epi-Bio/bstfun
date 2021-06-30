@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Find your data folder — here_data • bstfun</title>
+<title>Start a New Biostatistics project — create_bst_project • bstfun</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,11 @@
 
 
 
-<meta property="og:title" content="Find your data folder — here_data" />
-<meta property="og:description" content="Similar to here::here() which returns your project directory, here_data()
-returns the path to your current data folder based on the date in data_date.txt" />
+<meta property="og:title" content="Start a New Biostatistics project — create_bst_project" />
+<meta property="og:description" content="Creates a directory with the essential files for a new project.
+The function can be used on existing project directories as well.
+This is a thin wrapper for starter::create_project() that
+sets the default template to template = hotfun::project_template" />
 
 
 <meta name="robots" content="noindex">
@@ -117,57 +119,73 @@ returns the path to your current data folder based on the date in data_date.txt"
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Find your data folder</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/here_data.R'><code>R/here_data.R</code></a></small>
-    <div class="hidden name"><code>here_data.Rd</code></div>
+    <h1>Start a New Biostatistics project</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ddsjoberg/bstfun/blob/master/R/create_biostat_project.R'><code>R/create_biostat_project.R</code></a></small>
+    <div class="hidden name"><code>create_bst_project.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Similar to <code><a href='https://here.r-lib.org//reference/here.html'>here::here()</a></code> which returns your project directory, <code>here_data()</code>
-returns the path to your current data folder based on the date in <code>data_date.txt</code></p>
+    <p>Creates a directory with the essential files for a new project.
+The function can be used on existing project directories as well.
+This is a thin wrapper for <code><a href='https://rdrr.io/pkg/starter/man/create_project.html'>starter::create_project()</a></code> that
+sets the default template to <code>template = hotfun::project_template</code></p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>here_data</span><span class='op'>(</span><span class='va'>...</span>, data_folder_name <span class='op'>=</span> <span class='st'>"secure_data"</span>, path_to_data_date <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></code></pre></div>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>create_bst_project</span><span class='op'>(</span>
+  <span class='va'>path</span>,
+  path_data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  template <span class='op'>=</span> <span class='cn'>NULL</span>,
+  git <span class='op'>=</span> <span class='cn'>NA</span>,
+  renv <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  overwrite <span class='op'>=</span> <span class='cn'>NA</span>,
+  open <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p><code>[character]</code><br />
-Path components below the project root, can be empty.
-Each argument should be a string containing one or more
-path components separated by a forward slash <code>"/"</code>.</p></td>
+      <th>path</th>
+      <td><p>A path. If it exists, it is used. If it does not exist, it is
+created.</p></td>
     </tr>
     <tr>
-      <th>data_folder_name</th>
-      <td><p>name of data folder. Default is <code>"secure_data"</code></p></td>
+      <th>path_data</th>
+      <td><p>A path. The directory where the secure data exist. Default is
+<code>NULL</code>.  When supplied, a symbolic link to data folder will be created.</p></td>
     </tr>
     <tr>
-      <th>path_to_data_date</th>
-      <td><p>path to data date file. If <code>NULL</code>, the data date
-file is expected in the project's root directory.</p></td>
+      <th>template</th>
+      <td><p>Specifies template for <code>starter::create_project(template=)</code>.
+Default is the template in <code><a href='project_templates.html'>bstfun::project_templates</a></code> whose name matches
+the lowercase system username, if it exists;
+otherwise, <code>bstfun::project_templates[["default"]]</code></p></td>
+    </tr>
+    <tr>
+      <th>git</th>
+      <td><p>Logical indicating whether to create Git repository.  Default is <code>TRUE</code>
+When <code>NA</code>, user will be prompted whether to initialise Git repo.</p></td>
+    </tr>
+    <tr>
+      <th>renv</th>
+      <td><p>Logical indicating whether to add renv to a project.
+Default is <code>TRUE</code>. When <code>NA</code> which interactively asks user preference.</p></td>
+    </tr>
+    <tr>
+      <th>overwrite</th>
+      <td><p>Overwrite any existing files if they exist.  Options are
+<code>TRUE</code>, <code>FALSE</code>, and <code>NA</code> (aka ask interactively).  Default is <code>NA</code></p></td>
+    </tr>
+    <tr>
+      <th>open</th>
+      <td><p>Logical indicating whether to open new project in fresh RStudio
+session</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>path to data folder</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The function expects the user to version their data using a text file indicating
-the date the data was last received, and the data to be stored in a corresponding
-folder name, e.g. <code>~\Project Folder\secure_data\2020-01-01</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='fu'>here_data</span><span class='op'>(</span><span class='op'>)</span></span>
-<span class='r-in'><span class='co'>#&gt; "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01"</span></span>
-<span class='r-in'></span>
-<span class='r-in'><span class='fu'>here_data</span><span class='op'>(</span><span class='st'>"Raw Data.xlsx"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='co'>#&gt; "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01\Raw Data.xlsx"</span></span>
-<span class='r-in'><span class='op'>}</span></span>
-</code></pre></div>
+    <div class="ref-examples sourceCode"></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

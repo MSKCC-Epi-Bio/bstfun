@@ -25,6 +25,9 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/bstfun-package.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/create_bst_project.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/fix_database_error.html</loc>
   </url>
   <url>
@@ -41,6 +44,9 @@
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/project_templates.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/reexports.html</loc>
@@ -62,5 +68,8 @@
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/trial.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_file.html</loc>
   </url>
 </urlset>
