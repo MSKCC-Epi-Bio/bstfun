@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_biostat_project.R
 \name{create_bst_project}
 \alias{create_bst_project}
-\title{Start a new Biostatistics project}
+\title{Start a New Biostatistics project}
 \usage{
 create_bst_project(
   path,
