@@ -103,6 +103,8 @@ whitingk_project_template <-
         )
       )
   ))
+attr(whitingk_project_template, "script_path") <-
+  expression(fs::path_package("project_templates/whitingk_template_files/write_directories.R", package = 'bstfun'))
 attr(whitingk_project_template, "label") <- "Karissa's Project Template"
 
 
