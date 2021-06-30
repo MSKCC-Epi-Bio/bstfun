@@ -42,7 +42,18 @@ project_template_default <-
       template_filename = fs::path_package("project_templates/default_rproj.Rproj", package = 'bstfun'),
       filename = glue::glue("_rstudio_project.Rproj"),
       copy = TRUE
-    )
+    ),
+    # only add Rprofile if renv was used
+    rprofile =
+      switch(
+        renv,
+        list(
+          template_filename =
+            fs::path_package(package = "starter", "project_templates/default_rprofile.R"),
+          filename = stringr::str_glue(".Rprofile"),
+          glue = TRUE
+        )
+      )
   ))
 attr(project_template_default, "label") <- "Default Biostistics Project Template"
 
@@ -79,7 +90,18 @@ whitingk_project_template <-
       template_filename = fs::path_package("project_templates/default_rproj.Rproj", package = 'bstfun'),
       filename = glue::glue("_rstudio_project.Rproj"),
       copy = TRUE
-    )
+    ),
+    # only add Rprofile if renv was used
+    rprofile =
+      switch(
+        renv,
+        list(
+          template_filename =
+            fs::path_package(package = "starter", "project_templates/default_rprofile.R"),
+          filename = stringr::str_glue(".Rprofile"),
+          glue = TRUE
+        )
+      )
   ))
 attr(whitingk_project_template, "label") <- "Karissa's Project Template"
 
