@@ -2,9 +2,12 @@
 % Please edit documentation in R/here_data.R
 \name{here_data}
 \alias{here_data}
+\alias{path_data}
 \title{Find your data folder}
 \usage{
 here_data(..., data_folder_name = "secure_data", path_to_data_date = NULL)
+
+path_data(path, ..., data_folder_name = "secure_data")
 }
 \arguments{
 \item{...}{\verb{[character]}\cr
@@ -27,14 +30,17 @@ returns the path to your current data folder based on the date in \code{data_dat
 \details{
 The function expects the user to version their data using a text file indicating
 the date the data was last received, and the data to be stored in a corresponding
-folder name, e.g. \verb{~\\Project Folder\\secure_data\\2020-01-01}.
+folder name, e.g. \verb{~/Project Folder/secure_data/2020-01-01}.
 }
 \examples{
 \dontrun{
 here_data()
-#> "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01"
+#> "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01"
 
 here_data("Raw Data.xlsx")
-#> "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01\Raw Data.xlsx"
+#> "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01/Raw Data.xlsx"
+
+path_data(path = "O:/My Project", "Raw Data.xlsx")
+#> "O:/My Project/secure_data/2020-01-01/Raw Data.xlsx"
 }
 }
