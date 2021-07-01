@@ -5,27 +5,40 @@
 \alias{path_data}
 \title{Find your data folder}
 \usage{
-here_data(..., data_folder_name = "secure_data", path_to_data_date = NULL)
+here_data(
+  ...,
+  data_folder_name = "secure_data",
+  path_to_data_date = here::here()
+)
 
-path_data(path, ..., data_folder_name = "secure_data")
+path_data(
+  path,
+  ...,
+  data_folder_name = "secure_data",
+  path_to_data_date = here::here()
+)
 }
 \arguments{
-\item{...}{\verb{[character]}\cr
-Path components below the project root, can be empty.
-Each argument should be a string containing one or more
-path components separated by a forward slash \code{"/"}.}
+\item{...}{Path components to be appended to the end of the returned path string.}
 
 \item{data_folder_name}{name of data folder. Default is \code{"secure_data"}}
 
-\item{path_to_data_date}{path to data date file. If \code{NULL}, the data date
-file is expected in the project's root directory.}
+\item{path_to_data_date}{path to data date folder or file. If folder is passed,
+expecting the data date file to be named one of
+\code{c("data_date.txt", "data_date", "dataDate.txt", "dataDate")}.
+Default value is \code{here::here()}}
+
+\item{path}{path to folder where data is saved, e.g. \code{fs::path(path, )}}
 }
 \value{
 path to data folder
 }
 \description{
-Similar to \code{here::here()} which returns your project directory, \code{here_data()}
-returns the path to your current data folder based on the date in \code{data_date.txt}
+Uses \code{data_date.txt} to create a path with the data date populated.
+\itemize{
+\item \code{here_data()}: Returns \code{here::here("secure_data", data_date, ...)}
+\item \code{path_data()}: Returns \code{fs::path(path, "secure_data", data_date, ...)}
+}
 }
 \details{
 The function expects the user to version their data using a text file indicating

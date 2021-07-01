@@ -1,16 +1,20 @@
 #' Find your data folder
 #'
-#' Similar to `here::here()` which returns your project directory, `here_data()`
-#' returns the path to your current data folder based on the date in `data_date.txt`
+#' Uses `data_date.txt` to create a path with the data date populated.
+#' - `here_data()`: Returns `here::here("secure_data", data_date, ...)`
+#' - `path_data()`: Returns `fs::path(path, "secure_data", data_date, ...)`
 #'
 #' The function expects the user to version their data using a text file indicating
 #' the date the data was last received, and the data to be stored in a corresponding
 #' folder name, e.g. `~/Project Folder/secure_data/2020-01-01`.
 #'
-#' @inheritParams here::here
+#' @param ... Path components to be appended to the end of the returned path string.
 #' @param data_folder_name name of data folder. Default is `"secure_data"`
-#' @param path_to_data_date path to data date file. If `NULL`, the data date
-#' file is expected in the project's root directory.
+#' @param path path to folder where data is saved, e.g. `fs::path(path, )`
+#' @param path_to_data_date path to data date folder or file. If folder is passed,
+#' expecting the data date file to be named one of
+#' `c("data_date.txt", "data_date", "dataDate.txt", "dataDate")`.
+#' Default value is `here::here()`
 #'
 #' @rdname here_data
 #' @return path to data folder
@@ -29,16 +33,9 @@
 #' }
 here_data <- function(...,
                       data_folder_name = "secure_data",
-                      path_to_data_date = NULL) {
-  # DEPRECATED -----------------------------------------------------------------
-  if (!is.null(path_to_data_date)) {
-    lifecycle::deprecate_stop("0.2.2",
-                              "bstfun::here_data(path_to_data_date)",
-                              "path_data(path)")
-  }
-
+                      path_to_data_date = here::here()) {
   # import data date -----------------------------------------------------------
-  data_date <- get_data_date(here::here())
+  data_date <- get_data_date(path_to_data_date)
 
   # returning full data path ---------------------------------------------------
   here::here(data_folder_name, data_date, ...)
@@ -46,9 +43,10 @@ here_data <- function(...,
 
 #' @rdname here_data
 #' @export
-path_data <- function(path, ..., data_folder_name = "secure_data") {
+path_data <- function(path, ..., data_folder_name = "secure_data",
+                      path_to_data_date = here::here()) {
   # import data date -----------------------------------------------------------
-  data_date <- get_data_date(path)
+  data_date <- get_data_date(path_to_data_date)
 
   # returning full data path ---------------------------------------------------
   fs::path(path, data_folder_name, data_date, ...)
