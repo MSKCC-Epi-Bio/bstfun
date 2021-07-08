@@ -12,7 +12,7 @@ here_data(
 )
 
 path_data(
-  path,
+  path = getOption("path_data"),
   ...,
   data_folder_name = "secure_data",
   path_to_data_date = here::here()
@@ -28,7 +28,9 @@ expecting the data date file to be named one of
 \code{c("data_date.txt", "data_date", "dataDate.txt", "dataDate")}.
 Default value is \code{here::here()}}
 
-\item{path}{path to folder where data is saved, e.g. \code{fs::path(path, )}}
+\item{path}{path to folder where data is saved, e.g. \code{fs::path(path, )}
+Default value is \code{getOption("path_data")} where \code{path_data} can be initialized
+at the top of the script with \code{options(path_data = "H:/.../data")}}
 }
 \value{
 path to data folder

@@ -11,6 +11,8 @@
 #' @param ... Path components to be appended to the end of the returned path string.
 #' @param data_folder_name name of data folder. Default is `"secure_data"`
 #' @param path path to folder where data is saved, e.g. `fs::path(path, )`
+#' Default value is `getOption("path_data")` where `path_data` can be initialized
+#'  at the top of the script with `options(path_data = "H:/.../data")`
 #' @param path_to_data_date path to data date folder or file. If folder is passed,
 #' expecting the data date file to be named one of
 #' `c("data_date.txt", "data_date", "dataDate.txt", "dataDate")`.
@@ -43,8 +45,13 @@ here_data <- function(...,
 
 #' @rdname here_data
 #' @export
-path_data <- function(path, ..., data_folder_name = "secure_data",
+path_data <- function(path = getOption("path_data"), ..., data_folder_name = "secure_data",
                       path_to_data_date = here::here()) {
+  # check path_data is initialized -----------------------------------------------------------
+  if(is.null(path)){
+    stop("path argument is NULL", call. = FALSE)
+  }
+
   # import data date -----------------------------------------------------------
   data_date <- get_data_date(path_to_data_date)
 
