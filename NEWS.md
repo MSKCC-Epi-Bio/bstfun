@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Added `path_data()` function.
+
 # bstfun 0.2.1
 
 * Updates to project templates.
