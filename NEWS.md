@@ -2,6 +2,8 @@
 
 * Bug fix in `tbl_2way_summary()`. Now forcing the continuous variable to be summaraized continuously.
 
+* Added `path_data()` function.
+
 # bstfun 0.2.1
 
 * Updates to project templates.
