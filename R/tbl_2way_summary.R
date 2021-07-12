@@ -53,6 +53,7 @@ tbl_2way_summary <- function(data, row, col, con, label = NULL,
         # build summary table, and use the grade level as the label
         gtsummary::tbl_summary(by = .env$col,
                                label = list(as.character(.data$row)) %>% rlang::set_names(.env$con),
+                               type = list("continuous") %>% rlang::set_names(.env$con),
                                statistic = list(statistic) %>% rlang::set_names(.env$con),
                                missing = "no") %>%
         gtsummary::modify_header(gtsummary::all_stat_cols() ~ "{level}") %>%
