@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Switched {starter} dependency from GitHub to CRAN.
+
 * Bug fix in `tbl_2way_summary()`. Now forcing the continuous variable to be summaraized continuously.
 
 * Added `path_data()` function.
