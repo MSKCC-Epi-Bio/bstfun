@@ -51,7 +51,14 @@
 #' @export
 #'
 #' @examples
-#' cite_r()
+#' # cite R and the tidyverse
+#' cite_r(pkgs = "tidyverse")
+#'
+#' # cite R and the tidyverse, but text only
+#' cite_r(pkgs = "tidyverse", add_citations = FALSE)
+#'
+#' # only cite R
+#' cite_r(pkgs = NULL)
 cite_r <- function(pkgs = c("tidyverse", "gtsummary"),
                    add_citations = TRUE) {
   # citing R language ----------------------------------------------------------
