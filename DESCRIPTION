@@ -58,6 +58,7 @@ Suggests:
     spelling (>= 2.1),
     survey,
     testthat (>= 2.3.2),
+    tidyverse,
     webshot
 RdMacros: 
     lifecycle
