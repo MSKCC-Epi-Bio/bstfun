@@ -2,7 +2,7 @@
 
 * Switched {starter} dependency from GitHub to CRAN.
 
-* Bug fix in `tbl_2way_summary()`. Now forcing the continuous variable to be summaraized continuously.
+* Bug fix in `tbl_2way_summary()`. Now forcing the continuous variable to be summarized continuously.
 
 * Added `path_data()` function.
 
