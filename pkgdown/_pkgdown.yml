@@ -33,10 +33,16 @@ reference:
     contents:
       - starts_with("tbl_")
       - add_inline_forest_plot
+      - gtsummary_butcher
       - gts_add_p_footnotes
       - theme_gtsummary_msk
       - style_tbl_compact
       - as_ggplot
+
+  - title: "Project Start-up Functions"
+    contents:
+      - create_bst_project
+      - use_bst_file
 
   - title: "Utility Functions"
     contents:
@@ -47,8 +53,7 @@ reference:
     contents:
       - starts_with("hpcc_")
 
-  - title: "Example Datasets"
-    desc: >
-      Simulated data to illustrate package use
+  - title: "Data Objects"
     contents:
       - trial
+      - project_templates

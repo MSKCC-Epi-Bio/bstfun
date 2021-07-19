@@ -1,0 +1,60 @@
+---
+title: "Analysis"
+author: "Karissa Whiting"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile, 
+    output_dir = here::here("outputs"))
+     })
+output:
+  html_document:
+    theme: sandstone
+    toc: yes
+    toc_float: yes
+    number_sections: true
+fontsize: 12pt
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+```
+
+# Analytic Data Import
+
+```{r import}
+library(biostatR)
+library(tidyverse)
+
+# setting MSK ggplot theme and color palette
+theme_set(mskRvis::theme_biostat())
+mskRvis::set_msk_palette()
+
+# importing master analytic data set
+df_main <- readRDS(file = here_data("df_main.Rds"))
+```
+
+
+# Analysis
+
+```{r analysis1}
+
+```
+
+# Save Results
+
+```{r save}
+# list result objects here. save only those needed for the final report
+save(
+  df_results, gts_table1,
+  file = here_data("results.Rdata")
+)
+```
+

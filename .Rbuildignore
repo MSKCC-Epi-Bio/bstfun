@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 ^bstfun\.Rproj$
 ^\.Rproj\.user$
 ^\.github/workflows/R-CMD-check\.yaml$

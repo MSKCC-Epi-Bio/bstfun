@@ -2,39 +2,60 @@
 % Please edit documentation in R/here_data.R
 \name{here_data}
 \alias{here_data}
+\alias{path_data}
 \title{Find your data folder}
 \usage{
-here_data(..., data_folder_name = "secure_data", path_to_data_date = NULL)
+here_data(
+  ...,
+  data_folder_name = "secure_data",
+  path_to_data_date = here::here()
+)
+
+path_data(
+  path = getOption("path_data"),
+  ...,
+  data_folder_name = "secure_data",
+  path_to_data_date = here::here()
+)
 }
 \arguments{
-\item{...}{\verb{[character]}\cr
-Path components below the project root, can be empty.
-Each argument should be a string containing one or more
-path components separated by a forward slash \code{"/"}.}
+\item{...}{Path components to be appended to the end of the returned path string.}
 
 \item{data_folder_name}{name of data folder. Default is \code{"secure_data"}}
 
-\item{path_to_data_date}{path to data date file. If \code{NULL}, the data date
-file is expected in the project's root directory.}
+\item{path_to_data_date}{path to data date folder or file. If folder is passed,
+expecting the data date file to be named one of
+\code{c("data_date.txt", "data_date", "dataDate.txt", "dataDate")}.
+Default value is \code{here::here()}}
+
+\item{path}{path to folder where data is saved, e.g. \code{fs::path(path, )}
+Default value is \code{getOption("path_data")} where \code{path_data} can be initialized
+at the top of the script with \code{options(path_data = "H:/.../data")}}
 }
 \value{
 path to data folder
 }
 \description{
-Similar to \code{here::here()} which returns your project directory, \code{here_data()}
-returns the path to your current data folder based on the date in \code{data_date.txt}
+Uses \code{data_date.txt} to create a path with the data date populated.
+\itemize{
+\item \code{here_data()}: Returns \code{here::here("secure_data", data_date, ...)}
+\item \code{path_data()}: Returns \code{fs::path(path, "secure_data", data_date, ...)}
+}
 }
 \details{
 The function expects the user to version their data using a text file indicating
 the date the data was last received, and the data to be stored in a corresponding
-folder name, e.g. \verb{~\\Project Folder\\secure_data\\2020-01-01}.
+folder name, e.g. \verb{~/Project Folder/secure_data/2020-01-01}.
 }
 \examples{
 \dontrun{
 here_data()
-#> "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01"
+#> "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01"
 
 here_data("Raw Data.xlsx")
-#> "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01\Raw Data.xlsx"
+#> "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01/Raw Data.xlsx"
+
+path_data(path = "O:/My Project", "Raw Data.xlsx")
+#> "O:/My Project/secure_data/2020-01-01/Raw Data.xlsx"
 }
 }
