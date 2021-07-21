@@ -1,6 +1,6 @@
 ## code to prepare project template goes here
 
-# default template ----
+# default template -------------------------------------------------------------
 project_template_default <-
   quote(list(
     readme = list(
@@ -38,6 +38,11 @@ project_template_default <-
       filename = "templates/doc_template.docx",
       copy = TRUE
     ),
+    references = list(
+      template_filename = fs::path_package("project_templates/references.bib", package = 'bstfun'),
+      filename = glue::glue("templates/references.bib"),
+      copy = TRUE
+    ),
     rproj = list(
       template_filename = fs::path_package("project_templates/default_rproj.Rproj", package = 'bstfun'),
       filename = glue::glue("_rstudio_project.Rproj"),
@@ -57,7 +62,7 @@ project_template_default <-
   ))
 attr(project_template_default, "label") <- "Default Biostistics Project Template"
 
-# whitingk template -----
+# whitingk template ------------------------------------------------------------
 
 whitingk_project_template <-
   quote(list(

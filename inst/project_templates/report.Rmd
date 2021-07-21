@@ -7,19 +7,15 @@ output:
     toc_float: true
     toc_depth: 2
   word_document:
-    reference_docx: "templates/doc_template.docx"
+    reference_docx: "`r here::here('templates/doc_template.docx')`"
+bibliography: "`r here::here('templates/references.bib')`"
 ---
 
 <!-- YAML options for both HTML and Word documents are given here. Delete output type not being used. -->
 
 ```{r setup, include=FALSE}
 # set chunk defaults
-knitr::opts_chunk$set(
-	echo = FALSE,
-	message = FALSE,
-	warning = FALSE
-)
-
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
 
@@ -43,7 +39,7 @@ results <- load(here_data("results.Rdata"))
 
 Describe cohort and analytic methods here.
 
-All analyses were conducted using R `r getRversion()`.
+All analyses were conducted using `r cite_r(pkgs = c("tidyverse", "gtsummary"), add_citation = TRUE)`.
 
 # Results
 
