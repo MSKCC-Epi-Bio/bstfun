@@ -40,8 +40,11 @@
 
 
 <meta property="og:title" content="Find your data folder — here_data" />
-<meta property="og:description" content="Similar to here::here() which returns your project directory, here_data()
-returns the path to your current data folder based on the date in data_date.txt" />
+<meta property="og:description" content="Uses data_date.txt to create a path with the data date populated.
+here_data(): Returns here::here(&quot;secure_data&quot;, data_date, ...)
+path_data(): Returns fs::path(path, &quot;secure_data&quot;, data_date, ...)
+
+" />
 
 
 
@@ -81,7 +84,7 @@ returns the path to your current data folder based on the date in data_date.txt"
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -123,21 +126,32 @@ returns the path to your current data folder based on the date in data_date.txt"
     </div>
 
     <div class="ref-description">
-    <p>Similar to <code><a href='https://here.r-lib.org//reference/here.html'>here::here()</a></code> which returns your project directory, <code>here_data()</code>
-returns the path to your current data folder based on the date in <code>data_date.txt</code></p>
+    <p>Uses <code>data_date.txt</code> to create a path with the data date populated.</p><ul>
+<li><p><code>here_data()</code>: Returns <code>here::here("secure_data", data_date, ...)</code></p></li>
+<li><p><code>path_data()</code>: Returns <code>fs::path(path, "secure_data", data_date, ...)</code></p></li>
+</ul>
+
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>here_data</span><span class='op'>(</span><span class='va'>...</span>, data_folder_name <span class='op'>=</span> <span class='st'>"secure_data"</span>, path_to_data_date <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></code></pre></div>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>here_data</span><span class='op'>(</span>
+  <span class='va'>...</span>,
+  data_folder_name <span class='op'>=</span> <span class='st'>"secure_data"</span>,
+  path_to_data_date <span class='op'>=</span> <span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span>
+
+<span class='fu'>path_data</span><span class='op'>(</span>
+  path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"path_data"</span><span class='op'>)</span>,
+  <span class='va'>...</span>,
+  data_folder_name <span class='op'>=</span> <span class='st'>"secure_data"</span>,
+  path_to_data_date <span class='op'>=</span> <span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p><code>[character]</code><br />
-Path components below the project root, can be empty.
-Each argument should be a string containing one or more
-path components separated by a forward slash <code>"/"</code>.</p></td>
+      <td><p>Path components to be appended to the end of the returned path string.</p></td>
     </tr>
     <tr>
       <th>data_folder_name</th>
@@ -145,8 +159,16 @@ path components separated by a forward slash <code>"/"</code>.</p></td>
     </tr>
     <tr>
       <th>path_to_data_date</th>
-      <td><p>path to data date file. If <code>NULL</code>, the data date
-file is expected in the project's root directory.</p></td>
+      <td><p>path to data date folder or file. If folder is passed,
+expecting the data date file to be named one of
+<code>c("data_date.txt", "data_date", "dataDate.txt", "dataDate")</code>.
+Default value is <code><a href='https://here.r-lib.org//reference/here.html'>here::here()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>path</th>
+      <td><p>path to folder where data is saved, e.g. <code>fs::path(path, )</code>
+Default value is <code>getOption("path_data")</code> where <code>path_data</code> can be initialized
+at the top of the script with <code>options(path_data = "H:/.../data")</code></p></td>
     </tr>
     </table>
 
@@ -157,15 +179,18 @@ file is expected in the project's root directory.</p></td>
 
     <p>The function expects the user to version their data using a text file indicating
 the date the data was last received, and the data to be stored in a corresponding
-folder name, e.g. <code>~\Project Folder\secure_data\2020-01-01</code>.</p>
+folder name, e.g. <code>~/Project Folder/secure_data/2020-01-01</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='fu'>here_data</span><span class='op'>(</span><span class='op'>)</span></span>
-<span class='r-in'><span class='co'>#&gt; "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01"</span></span>
+<span class='r-in'><span class='co'>#&gt; "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01"</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='fu'>here_data</span><span class='op'>(</span><span class='st'>"Raw Data.xlsx"</span><span class='op'>)</span></span>
-<span class='r-in'><span class='co'>#&gt; "C:\Users\SjobergD\GitHub\My Project\secure_data\2020-01-01\Raw Data.xlsx"</span></span>
+<span class='r-in'><span class='co'>#&gt; "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01/Raw Data.xlsx"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>path_data</span><span class='op'>(</span>path <span class='op'>=</span> <span class='st'>"O:/My Project"</span>, <span class='st'>"Raw Data.xlsx"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='co'>#&gt; "O:/My Project/secure_data/2020-01-01/Raw Data.xlsx"</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 </code></pre></div>
   </div>
