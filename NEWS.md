@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Added function `use_varnames_as_labels()` to assign title case (or all CAP) labels from the column names of a data frame.
+
 * Added function `gtsummary_butcher()` to reduce the size of a gtsummary table. After an object has been butchered, other gtsummary functions may not be able to execute on the object.
 
 # bstfun 0.1.6

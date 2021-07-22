@@ -15,6 +15,9 @@
 #'   tbl_summary() %>%
 #'   as_kable()
 use_varnames_as_labels <- function(data, caps = NULL, exclude = NULL) {
+  # check inputs ---------------------------------------------------------------
+  stopifnot(is.data.frame(data))
+
   # evaluate caps and exclude arguments ----------------------------------------
   exclude <- data %>% select({{ exclude }}) %>% names()
   caps <- data %>% select({{ caps }}) %>% names() %>% setdiff(exclude)
