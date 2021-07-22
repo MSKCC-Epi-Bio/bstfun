@@ -1,10 +1,10 @@
 #' Use Variable Names as Labels
 #'
-#' @param data a dataframe
+#' @param data a data frame
 #' @param caps variables to be entirely capitalized
 #' @param exclude variables to exclude from labeling
 #'
-#' @return a labeled dataframe
+#' @return a labeled data frame
 #' @export
 #'
 #' @examples
@@ -15,20 +15,18 @@
 #'   tbl_summary() %>%
 #'   as_kable()
 use_varnames_as_labels <- function(data, caps = NULL, exclude = NULL) {
-  exclude <- data %>%
-    select({{ exclude }}) %>%
-    names()
+  # evaluate caps and exclude arguments ----------------------------------------
+  exclude <- data %>% select({{ exclude }}) %>% names()
+  caps <- data %>% select({{ caps }}) %>% names() %>% setdiff(exclude)
 
-  caps <- data %>%
-    select({{ caps }}) %>%
-    names() %>%
-    setdiff(exclude)
-
+  # variables that will be set to title case -----------------------------------
   title <- setdiff(names(data), c(caps, exclude))
 
+  # initialize empty list that labels will be added to (as a named list)
   label_list <- list()
 
-  if (!rlang::is_empty(title_names)) {
+  # title case labels ----------------------------------------------------------
+  if (!rlang::is_empty(title)) {
     label_list <- stringr::str_replace_all(title, "_", " ") %>%
       stringr::str_to_lower(.) %>%
       stringr::str_to_title(.) %>%
@@ -37,6 +35,7 @@ use_varnames_as_labels <- function(data, caps = NULL, exclude = NULL) {
       c(label_list)
   }
 
+  # ALL CAPS labels ------------------------------------------------------------
   if (!rlang::is_empty(caps)) {
     label_list <- stringr::str_to_upper(caps) %>%
       as.list() %>%
@@ -44,11 +43,10 @@ use_varnames_as_labels <- function(data, caps = NULL, exclude = NULL) {
       c(label_list)
   }
 
-  data_labelled <- data %>%
+  # label the data -------------------------------------------------------------
+  data %>%
     labelled::set_variable_labels(
       .labels = label_list,
       .strict = FALSE
     )
-
-  return(data_labelled)
 }
