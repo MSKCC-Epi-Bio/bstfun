@@ -11,9 +11,10 @@
 #' library(gtsummary)
 #'
 #' mtcars %>%
-#'   use_varnames_as_labels(caps = vs, exclude = mpg) %>%
+#'   select(mpg, cyl, vs, am, carb) %>%
+#'   use_varnames_as_labels(caps = c(mpg, vs, am), exclude = cyl) %>%
 #'   tbl_summary() %>%
-#'   as_kable()
+#'   as_kable(format = "simple")
 use_varnames_as_labels <- function(data, caps = NULL, exclude = NULL) {
   # check inputs ---------------------------------------------------------------
   stopifnot(is.data.frame(data))

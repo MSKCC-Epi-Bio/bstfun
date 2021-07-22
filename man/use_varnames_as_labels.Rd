@@ -7,14 +7,14 @@
 use_varnames_as_labels(data, caps = NULL, exclude = NULL)
 }
 \arguments{
-\item{data}{a dataframe}
+\item{data}{a data frame}
 
 \item{caps}{variables to be entirely capitalized}
 
 \item{exclude}{variables to exclude from labeling}
 }
 \value{
-a labeled dataframe
+a labeled data frame
 }
 \description{
 Use Variable Names as Labels
@@ -23,7 +23,8 @@ Use Variable Names as Labels
 library(gtsummary)
 
 mtcars \%>\%
-  use_varnames_as_labels(caps = vs, exclude = mpg) \%>\%
+  select(mpg, cyl, vs, am, carb) \%>\%
+  use_varnames_as_labels(caps = c(mpg, vs, am), exclude = cyl) \%>\%
   tbl_summary() \%>\%
-  as_kable()
+  as_kable(format = "simple")
 }
