@@ -30,9 +30,10 @@ otherwise, \code{bstfun::project_templates[["default"]]}}
 When \code{NA}, user will be prompted whether to initialise Git repo.}
 
 \item{renv}{Logical indicating whether to add renv to a project.
-Default is \code{TRUE}. When \code{NA} which interactively asks user preference.}
+Default is \code{TRUE}. When \code{NA} user is asked interactively for preference.}
 
-\item{overwrite}{Overwrite any existing files if they exist.  Options are
+\item{overwrite}{Logical indicating whether to overwrite existing files
+if they exist.  Options are
 \code{TRUE}, \code{FALSE}, and \code{NA} (aka ask interactively).  Default is \code{NA}}
 
 \item{open}{Logical indicating whether to open new project in fresh RStudio

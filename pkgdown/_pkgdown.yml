@@ -47,6 +47,7 @@ reference:
   - title: "Utility Functions"
     contents:
       - here_data
+      - cite_r
       - fix_database_error
       - use_varnames_as_labels
 
