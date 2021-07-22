@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Added function `use_varnames_as_labels()` to assign title case (or all CAP) labels from the column names of a data frame.
+
 * Switched {starter} dependency from GitHub to CRAN.
 
 * Bug fix in `tbl_2way_summary()`. Now forcing the continuous variable to be summarized continuously.
