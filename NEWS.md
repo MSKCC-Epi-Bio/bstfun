@@ -2,7 +2,7 @@
 
 * Added function `cite_r()` to assist in citing R and R packages in R markdown reports.
 
-* Updated default project template to include referernces in `report.Rmd`.
+* Updated default project template to include references in `report.Rmd`.
 
 * Added function `use_varnames_as_labels()` to assign title case (or all CAP) labels from the column names of a data frame.
 
