@@ -6,6 +6,8 @@ MRNs
 MSK
 MSKCC
 ORCID
+RStudio
+biostatR
 coxph
 flextable
 ggplot
@@ -13,12 +15,15 @@ glm
 gtsummary
 https
 huxtable
+initialise
 kableExtra
 lm
 mL
 magick
 ng
 pvalue
+renv
+repo
 ropensci
 stlying
 tbl
