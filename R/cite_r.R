@@ -63,7 +63,7 @@ cite_r <- function(pkgs = c("tidyverse", "gtsummary"),
                    add_citations = TRUE) {
   # citing R language ----------------------------------------------------------
   r_version <-
-    glue::glue("v{getRversion()}") %>%
+    glue::glue("version {getRversion()}") %>%
     {ifelse(add_citations, glue::glue("{.} [@r]"), .)}
 
   # citing R pkgs --------------------------------------------------------------
