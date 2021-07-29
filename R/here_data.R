@@ -81,7 +81,7 @@ get_data_date <- function(path_to_data_date) {
 
   # importing the data date ----------------------------------------------------
   tryCatch(
-    readr::read_lines(path_to_data_date, n_max = 1),
+    readr::read_lines(path_to_data_date, skip_empty_rows = TRUE),
     error = function(e) {
       ui_oops("There was an error importing data date from file '{path_to_data_date}'")
       stop(as.character(e))
