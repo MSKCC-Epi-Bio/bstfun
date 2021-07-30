@@ -69,22 +69,31 @@ get_data_date <- function(path_to_data_date) {
       {purrr::pluck(potential_filenames, .[1])}
 
     # error if no file found ---------------------------------------------------
-    if (is.null(data_date_file))
+    if (is.null(data_date_file)) {
       paste("No text file containing the data date could be found. Expecting one of",
             paste(shQuote(potential_filenames, type = "csh"), collapse = ", "),
-            "in the project's root directomry.") %>%
+            "in the project's root directory.") %>%
       stringr::str_wrap() %>%
       stop(call. = FALSE)
+    }
 
     path_to_data_date <- file.path(path_to_data_date, data_date_file)
   }
 
   # importing the data date ----------------------------------------------------
-  tryCatch(
-    readr::read_lines(path_to_data_date, n_max = 1),
-    error = function(e) {
-      ui_oops("There was an error importing data date from file '{path_to_data_date}'")
-      stop(as.character(e))
-    }
-  )
+  data_date <-
+    tryCatch(
+      readr::read_lines(path_to_data_date, skip_empty_rows = TRUE),
+      error = function(e) {
+        ui_oops("There was an error importing data date from file '{path_to_data_date}'")
+        stop(as.character(e))
+      }
+    )
+
+  if (rlang::is_empty(data_date) || !rlang::is_string(data_date)) {
+    "Expecting imported data date to be a string of length one and it is not." %>%
+      stop(call. = FALSE)
+  }
+
+  data_date
 }
