@@ -1,3 +1,7 @@
+# bstfun (development version)
+
+* Update to `here_data()` to import the data date properly when the date is not followed by a hard return. (#42)
+
 # bstfun 0.2.2
 
 * Added function `cite_r()` to assist in citing R and R packages in R markdown reports.
