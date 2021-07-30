@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.1.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.2.9000</span>
       </span>
     </div>
 
@@ -122,7 +122,14 @@
     <div id="bstfun-development-version" class="section level1">
 <h1 class="page-header" data-toc-text="development version">
 <a href="#bstfun-development-version" class="anchor" aria-hidden="true"></a>bstfun (development version)</h1>
-<ul><li><p>Added function <code><a href="../reference/use_varnames_as_labels.html">use_varnames_as_labels()</a></code> to assign title case (or all CAP) labels from the column names of a data frame.</p></li>
+<ul><li>Update to <code><a href="../reference/here_data.html">here_data()</a></code> to import the data date properly when the date is not followed by a hard return. (<a href='https://github.com/ddsjoberg/bstfun/issues/42'>#42</a>)</li>
+</ul></div>
+    <div id="bstfun-022" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.2">
+<a href="#bstfun-022" class="anchor" aria-hidden="true"></a>bstfun 0.2.2</h1>
+<ul><li><p>Added function <code><a href="../reference/cite_r.html">cite_r()</a></code> to assist in citing R and R packages in R markdown reports.</p></li>
+<li><p>Updated default project template to include references in <code>report.Rmd</code>.</p></li>
+<li><p>Added function <code><a href="../reference/use_varnames_as_labels.html">use_varnames_as_labels()</a></code> to assign title case (or all CAP) labels from the column names of a data frame.</p></li>
 <li><p>Switched {starter} dependency from GitHub to CRAN.</p></li>
 <li><p>Bug fix in <code><a href="../reference/tbl_2way_summary.html">tbl_2way_summary()</a></code>. Now forcing the continuous variable to be summarized continuously.</p></li>
 <li><p>Added <code><a href="../reference/here_data.html">path_data()</a></code> function.</p></li>
