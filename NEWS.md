@@ -1,3 +1,5 @@
+# bstfun (development version)
+
 # bstfun 0.2.3
 
 * Update to `here_data()` to import the data date properly when the date is not followed by a hard return. (#42)
