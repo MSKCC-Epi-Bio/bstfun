@@ -1,3 +1,5 @@
+# bstfun 0.2.3
+
 # bstfun 0.2.2
 
 * Added function `cite_r()` to assist in citing R and R packages in R markdown reports.
