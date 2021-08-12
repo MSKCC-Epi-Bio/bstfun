@@ -59,7 +59,9 @@ path_data <- function(path = getOption("path_data"), ..., data_folder_name = "se
   fs::path(path, data_folder_name, data_date, ...)
 }
 
-get_data_date <- function(path_to_data_date) {
+#' @rdname here_data
+#' @export
+get_data_date <- function(path_to_data_date = here::here()) {
   # first looking for data_date file -------------------------------------------
   if (fs::is_dir(path_to_data_date)) {
     potential_filenames <- c("data_date.txt", "data_date", "dataDate.txt", "dataDate")

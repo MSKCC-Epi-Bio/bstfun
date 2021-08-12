@@ -2,6 +2,8 @@
 
 * Updated the references file in the {bstfun} project template.
 
+* Exporting `get_data_date()` function used in `here_data()`
+
 # bstfun 0.2.3
 
 * Update to `here_data()` to import the data date properly when the date is not followed by a hard return. (#42)
