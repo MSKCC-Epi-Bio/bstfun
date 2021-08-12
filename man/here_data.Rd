@@ -3,6 +3,7 @@
 \name{here_data}
 \alias{here_data}
 \alias{path_data}
+\alias{get_data_date}
 \title{Find your data folder}
 \usage{
 here_data(
@@ -17,6 +18,8 @@ path_data(
   data_folder_name = "secure_data",
   path_to_data_date = here::here()
 )
+
+get_data_date(path_to_data_date = here::here())
 }
 \arguments{
 \item{...}{Path components to be appended to the end of the returned path string.}
