@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Updated the references file in the {bstfun} project template.
+
 * Exporting `get_data_date()` function used in `here_data()`
 
 # bstfun 0.2.3
