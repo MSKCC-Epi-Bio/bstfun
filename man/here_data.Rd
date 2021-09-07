@@ -13,8 +13,8 @@ here_data(
 )
 
 path_data(
-  path = getOption("path_data"),
   ...,
+  path = getOption("path_data"),
   data_folder_name = "secure_data",
   path_to_data_date = here::here()
 )
