@@ -1,8 +1,10 @@
-# bstfun (development version)
+# bstfun 0.2.4
 
 * Updated the references file in the {bstfun} project template.
 
 * Exporting `get_data_date()` function used in `here_data()`
+
+* Bug fix in `path_data()` where `getOption("path_data")` was not correctly being imported. The arguments of `path_data()` have been re-arranged.
 
 # bstfun 0.2.3
 
