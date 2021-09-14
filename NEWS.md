@@ -1,3 +1,5 @@
+# bstfun (development version)
+
 # bstfun 0.2.4
 
 * Updated the references file in the {bstfun} project template.
