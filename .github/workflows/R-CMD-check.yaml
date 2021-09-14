@@ -41,7 +41,7 @@ jobs:
 
       - name: Query dependencies
         run: |
-          install.packages('remotes')
+          install.packages('remotes', repos = c(CRAN = 'https://cran.rstudio.com'))
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
         shell: Rscript {0}
@@ -63,14 +63,15 @@ jobs:
         env:
           RHUB_PLATFORM: linux-x86_64-ubuntu-gcc
         run: |
+          echo "options(repos = c(CRAN = 'https://cran.rstudio.com'))" >.Rprofile
           Rscript -e "remotes::install_github('r-hub/sysreqs')"
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
 
       - name: Install dependencies
         run: |
-          remotes::install_deps(dependencies = TRUE)
-          remotes::install_cran("rcmdcheck")
+          remotes::install_deps(dependencies = TRUE, repos = c(CRAN = 'https://cran.rstudio.com'))
+          remotes::install_cran("rcmdcheck", repos = c(CRAN = 'https://cran.rstudio.com'))
         shell: Rscript {0}
 
       - name: Session info

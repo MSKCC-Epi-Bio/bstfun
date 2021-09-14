@@ -45,9 +45,11 @@ here_data <- function(...,
 
 #' @rdname here_data
 #' @export
-path_data <- function(path = getOption("path_data"), ..., data_folder_name = "secure_data",
+path_data <- function(...,
+                      path = getOption("path_data"),
+                      data_folder_name = "secure_data",
                       path_to_data_date = here::here()) {
-  # check path_data is initialized -----------------------------------------------------------
+  # check path_data is initialized ---------------------------------------------
   if(is.null(path)){
     stop("path argument is NULL", call. = FALSE)
   }
