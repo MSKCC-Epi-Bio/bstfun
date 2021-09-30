@@ -20,6 +20,9 @@ set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 library(biostatR)
 library(tidyverse)
 
+# Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
+{{(ifelse(tolower(Sys.info()[["login"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['login']])}')"), ""))}}
+
 # example code for importing excel file
 df_raw_data <-
   readxl::read_excel(
