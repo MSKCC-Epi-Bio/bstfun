@@ -7,13 +7,13 @@
 #' @export
 #' @family gtsummary-related functions
 #' @examples
-#' library(gtsummary)
-#' gts_add_p_footnotes_ex1 <-
-#'   trial %>%
-#'   select(trt, age, grade) %>%
-#'   tbl_summary(by = trt) %>%
-#'   add_p() %>%
-#'   gts_add_p_footnotes()
+#' # library(gtsummary)
+#' # gts_add_p_footnotes_ex1 <-
+#'   # trial %>%
+#'   # select(trt, age, grade) %>%
+#'   # tbl_summary(by = trt) %>%
+#'   # add_p() %>%
+#'   # gts_add_p_footnotes()
 #'
 #' @section Example Output:
 #' \if{html}{\figure{gts_add_p_footnotes_ex1.png}{options: width=80\%}}

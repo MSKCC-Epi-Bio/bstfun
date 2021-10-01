@@ -31,11 +31,11 @@ Split gtsummary Table
 }
 
 \examples{
-library(gtsummary)
+# library(gtsummary)
 
-tbl <-
-  tbl_summary(trial) \%>\%
-  tbl_split(variables = c(marker, grade))
+# tbl <-
+  # tbl_summary(trial) \%>\%
+  # tbl_split(variables = c(marker, grade))
 
 }
 \seealso{

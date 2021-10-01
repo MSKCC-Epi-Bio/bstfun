@@ -9,11 +9,11 @@
 #'
 #' @family gtsummary-related functions
 #' @examples
-#' library(gtsummary)
+#' # library(gtsummary)
 #'
-#' tbl <-
-#'   tbl_summary(trial) %>%
-#'   tbl_split(variables = c(marker, grade))
+#' # tbl <-
+#'   # tbl_summary(trial) %>%
+#'   # tbl_split(variables = c(marker, grade))
 #'
 #' @section Possible Changes:
 #' - Function may be migrated to the gtsummary package
