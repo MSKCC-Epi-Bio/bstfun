@@ -129,32 +129,32 @@ leej22_project_template <-
     ),
     data_date = list(
       template_filename = fs::path_package("project_templates/data_date.txt", package = 'bstfun'),
-      filename = "code/data_date.txt",
+      filename = "data_date.txt",
       copy = FALSE
     ),
     setup = list(
       template_filename = fs::path_package("project_templates/leej22_template_files/01_data_setup.Rmd", package = 'bstfun'),
-      filename = glue::glue("code/01_data_setup.Rmd"),
+      filename = glue::glue("code/{folder_name}_01_data_setup.Rmd"),
       copy = FALSE
     ),
     data_checks = list(
       template_filename = fs::path_package("project_templates/leej22_template_files/02_data_checks.Rmd", package = 'bstfun'),
-      filename = glue::glue("code/02_data_checks.Rmd"),
+      filename = glue::glue("code/{folder_name}_02_data_checks.Rmd"),
       copy = FALSE
     ),
     analysis = list(
       template_filename = fs::path_package("project_templates/leej22_template_files/03_analysis.Rmd", package = 'bstfun'),
-      filename = glue::glue("code/03_analysis.Rmd"),
+      filename = glue::glue("code/{folder_name}_03_analysis.Rmd"),
       copy = FALSE
     ),
     report = list(
       template_filename = fs::path_package("project_templates/leej22_template_files/04_report.Rmd", package = 'bstfun'),
-      filename = glue::glue("code/04_report.Rmd"),
+      filename = glue::glue("code/{folder_name}_04_report.Rmd"),
       copy = FALSE
     ),
     rproj = list(
       template_filename = fs::path_package("project_templates/default_rproj.Rproj", package = 'bstfun'),
-      filename = glue::glue("code/{folder_name}.Rproj"),
+      filename = glue::glue("{folder_name}.Rproj"),
       copy = TRUE
     ),
     # only add Rprofile if renv was used

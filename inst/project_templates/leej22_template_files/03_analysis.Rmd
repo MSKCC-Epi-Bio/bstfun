@@ -15,7 +15,7 @@ output:
 knit: (function(input, ...) {
     rmarkdown::render(
       input,
-      output_file = {{glue::glue("../report/{folder_name}_03_analysis_v01{Sys.Date()}.html")}},
+      output_file = here::here(glue::glue('reports/{{folder_name}}_03_analysis_v01_{Sys.Date()}.html')),
       envir = globalenv()
     )
   })
@@ -31,10 +31,8 @@ set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```{r import, results = "hide"}
 ## Set up
 library(biostatR)
-library(bstfun)
 library(tidyverse)
 library(gt)
-library(gtsummary)
 library(magrittr)
 library(captioner)
 library(lubridate)
@@ -42,7 +40,6 @@ library(glue)
 library(survival)
 library(survminer)
 library(cmprsk)
-
 
 # setting MSK ggplot theme, and color palette
 plot_font_size = 13
@@ -55,11 +52,8 @@ theme_set(theme_set(mskRvis::theme_biostat()) +
                      axis.text = element_text(color = "black"), 
                      legend.position = 'bottom') )
 
-
-
 # Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
-{{(ifelse(tolower(Sys.info()[["login"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['login']])}')"), ""))}}
-
+bstfun::theme_gtsummary_msk('leej22')
 ```
 
 ```{r data_import}
@@ -86,7 +80,7 @@ df_main <- readRDS(file = here_data("df_main.Rds"))
 
 # Summary {-}
 
-**v01 (`r Sys.Date()`)
+**v01 (`r Sys.Date()`)**
 
 # Questions {-}
 
