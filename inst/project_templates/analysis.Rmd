@@ -24,8 +24,8 @@ library(tidyverse)
 theme_set(mskRvis::theme_biostat())
 mskRvis::set_msk_palette()
 
-# Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
-{{(ifelse(tolower(Sys.info()[["login"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['login']])}')"), ""))}}
+{{(ifelse(tolower(Sys.info()[["login"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("# Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
+                                                                                                          bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['login']])}')"), ""))}}
 
 # importing master analytic data set
 df_main <- readRDS(file = here_data("df_main.Rds"))
