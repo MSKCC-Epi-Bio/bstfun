@@ -29,6 +29,7 @@ tblreg_forest<-function(gtsum_tb,
   require(tidyr)
   require(biostatR)
   require(stringr)
+  require(forestplot)
 
   #######################################
   #Output the main text part table ###
