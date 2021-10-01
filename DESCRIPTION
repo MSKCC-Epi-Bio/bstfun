@@ -15,6 +15,9 @@ Authors@R:
              family = "Whiting",
              role = "aut",
              comment = c(ORCID = "0000-0002-4683-1868")),
+      person(given = "Caroline",
+             family = "Kostrzewa",
+             role = "ctb"),
       person(given = "Emily",
              family = "Vertosick",
              role = "ctb"))
