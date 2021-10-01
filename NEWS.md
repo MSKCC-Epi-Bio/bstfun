@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Adding new function `use_bst_rstudio_prefs()`
+
 # bstfun 0.2.4
 
 * Updated the references file in the {bstfun} project template.
