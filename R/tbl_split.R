@@ -1,5 +1,6 @@
 #' Split gtsummary Table
 #'
+#' \lifecycle{deprecated}
 #' @param x gtsummary table
 #' @param variables variables to split gtsummary table at
 #' @param ... not used

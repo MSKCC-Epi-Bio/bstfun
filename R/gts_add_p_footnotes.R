@@ -1,5 +1,6 @@
 #' Moves p-value footnotes to individual p-values
 #'
+#' \lifecycle{deprecated}
 #' @param x object with class `"tbl_summary"` created from the gtsummary package
 #' @param printer DEPRECATED
 #' @param index_start DEPRECATED

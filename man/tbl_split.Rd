@@ -20,7 +20,7 @@ tbl_split(x, variables)
 tbl_split object
 }
 \description{
-Split gtsummary Table
+\lifecycle{deprecated}
 }
 \section{Possible Changes}{
 
