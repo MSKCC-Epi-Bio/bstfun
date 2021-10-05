@@ -141,12 +141,13 @@ lst_theme_meier <- list(
 # Jasme Lee --------------------------------------------------------------------
 lst_theme_leej <-
   list(
+    "pkgwide-str:theme_name" = "Jasme Lee",
     # Remove comma for thousands place and beyond
     "style_number-arg:big.mark" = "",
     # Would like rounding for estimates to be 2 decimal places
     "tbl_regression-arg:estimate_fun" = function(x) style_number(x, digits = 2),
     # tbl summary default to show range rather than IQR
-    "tbl_summary-str:continuous_stat" = "{median} [{min} \U2013 {max}]",
+    "tbl_summary-str:continuous_stat" = "{median} [{min}, {max}]",
     # display a greek beta as header in tbl_regression
     "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
     # as_gt settings
