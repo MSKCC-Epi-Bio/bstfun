@@ -75,6 +75,6 @@ df_main <-
 # saving master analytic data set
 saveRDS(
   object = df_main,
-  file = here_data("dat.Rds")
+  file = bstfun::path_data("dat.Rds", data_folder_name = "data")
 )
 ```
