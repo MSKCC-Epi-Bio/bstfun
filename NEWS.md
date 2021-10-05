@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Updated Rmd files in project template to use user's custom `gtsummary` theme if it exists within `bstfun::theme_gtsummary_msk()`, matching the system login name to the `name` in `bstfun::theme_gtsummary_msk()`
+
 * Adding new function `use_bst_rstudio_prefs()`
 
 # bstfun 0.2.4

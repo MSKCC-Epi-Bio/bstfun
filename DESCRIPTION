@@ -18,6 +18,9 @@ Authors@R:
       person(given = "Caroline",
              family = "Kostrzewa",
              role = "ctb"),
+      person(given = "Jasme",
+             family = "Lee",
+             role = "ctb"),
       person(given = "Emily",
              family = "Vertosick",
              role = "ctb"))

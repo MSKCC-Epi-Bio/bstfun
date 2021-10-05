@@ -26,6 +26,7 @@ Authors:
 
 Other contributors:
 \itemize{
+  \item Jasme Lee [contributor]
   \item Emily Vertosick [contributor]
 }
 

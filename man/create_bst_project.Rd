@@ -23,7 +23,7 @@ created.}
 
 \item{template}{Specifies template for \code{starter::create_project(template=)}.
 Default is the template in \code{bstfun::project_templates} whose name matches
-the lowercase system username, if it exists;
+the lowercase system username (\code{Sys.info()[["user"]]}), if it exists;
 otherwise, \code{bstfun::project_templates[["default"]]}}
 
 \item{git}{Logical indicating whether to create Git repository.  Default is \code{TRUE}

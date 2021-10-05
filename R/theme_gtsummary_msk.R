@@ -12,7 +12,9 @@
 #' @examples
 #' theme_gtsummary_msk("hot")
 theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
-                                         "esther", "curry", "lavery", "meier", "leej")) {
+                                         "esther", "curry", "lavery", "meier", "leej",
+                                         "whitingk", "mauguena",
+                                         "drille", "currym1", "laveryj", "hsum1", "leej22")) {
   # picking theme name
   name <- match.arg(name)
 
@@ -27,7 +29,15 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
     "curry" = lst_theme_curry,
     "lavery" = lst_theme_lavery,
     "meier" = lst_theme_meier,
-    "leej" = lst_theme_leej
+    "leej" = lst_theme_leej,
+    # match previous users to their sys.info login
+    "whitingk" = lst_theme_karissa,
+    "mauguena" = lst_theme_mauguen,
+    "drille" = lst_theme_esther,
+    "currym1" = lst_theme_curry,
+    "laveryj" = lst_theme_lavery,
+    "hsum1" = lst_theme_meier,
+    "leej22" = lst_theme_leej
   ) %>%
     # setting theme
     gtsummary::set_gtsummary_theme()
