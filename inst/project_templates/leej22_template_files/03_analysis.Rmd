@@ -59,8 +59,11 @@ bstfun::theme_gtsummary_msk('leej22')
 ```{r data_import}
 ## Data import
 
+# Location of data
+options(path_data = "")
+
 # importing master analytic data set
-df_main <- readRDS(file = here_data("df_main.Rds"))
+dat <- readRDS(file = bstfun::path_data("dat.Rds", data_folder_name = "data"))
 ```
 
 ```{r cap_setup, echo=F, message=FALSE, results = FALSE}
