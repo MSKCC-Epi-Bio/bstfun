@@ -32,7 +32,7 @@ Imports:
     ggplot2 (>= 3.3.5),
     glue (>= 1.4.1),
     gt (>= 0.2.2),
-    gtsummary (>= 1.4.2),
+    gtsummary (>= 1.5.0),
     here (>= 0.1),
     labelled (>= 2.8.0),
     lifecycle (>= 0.2.0),
