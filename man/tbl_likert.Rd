@@ -4,8 +4,53 @@
 \alias{tbl_likert}
 \title{Likert Summary}
 \usage{
-tbl_likert(data)
+tbl_likert(
+  data,
+  label = NULL,
+  statistic = NULL,
+  digits = NULL,
+  include = everything()
+)
+}
+\arguments{
+\item{data}{A data frame}
+
+\item{label}{List of formulas specifying variables labels,
+e.g. \code{list(age ~ "Age", stage ~ "Path T Stage")}.  If a
+variable's label is not specified here, the label attribute
+(\code{attr(data$age, "label")}) is used.  If
+attribute label is \code{NULL}, the variable name will be used.}
+
+\item{statistic}{List of formulas specifying types of summary statistics to
+display for each variable.  The default is
+\code{list(all_continuous() ~ "{median} ({p25}, {p75})", all_categorical() ~ "{n} ({p}\%)")}.
+See below for details.}
+
+\item{digits}{List of formulas specifying the number of decimal
+places to round continuous summary statistics. If not specified,
+\code{tbl_summary} guesses an appropriate number of decimals to round statistics.
+When multiple statistics are displayed for a single variable, supply a vector
+rather than an integer.  For example, if the
+statistic being calculated is \code{"{mean} ({sd})"} and you want the mean rounded
+to 1 decimal place, and the SD to 2 use \code{digits = list(age ~ c(1, 2))}. User
+may also pass a styling function: \code{digits = age ~ style_sigfig}}
+
+\item{include}{variables to include in the summary table. Default is \code{everything()}}
 }
 \description{
 Likert Summary
+}
+\examples{
+df <-
+  tibble::tibble(
+    f1 =
+      sample.int(100, n = 3, replace = TRUE) \%>\%
+      factor(levels = 1:3, labels = c("bad", "meh", "good")),
+    f2 =
+      sample.int(100, n = 3, replace = TRUE) \%>\%
+      factor(levels = 1:3, labels = c("bad", "meh", "good")),
+  )
+
+tbl_likert(df) \%>\%
+  gtsummary::as_kable()
 }
