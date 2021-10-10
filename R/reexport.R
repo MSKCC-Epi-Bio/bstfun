@@ -68,3 +68,7 @@ gtsummary::style_sigfig
 #' @importFrom gtsummary style_ratio
 gtsummary::style_ratio
 
+#' @export
+#' @importFrom gtsummary add_n
+gtsummary::add_n
+
