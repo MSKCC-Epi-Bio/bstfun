@@ -14,7 +14,7 @@ tbl_likert(
   sort = c("default", "ascending", "descending")
 )
 
-\method{add_n}{tbl_likert}(x)
+\method{add_n}{tbl_likert}(x, ...)
 }
 \arguments{
 \item{data}{A data frame}

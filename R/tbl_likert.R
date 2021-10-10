@@ -131,7 +131,7 @@ tbl_likert <- function(data,
 
 #' @export
 #' @rdname tbl_likert
-add_n.tbl_likert <- function(x) {
+add_n.tbl_likert <- function(x, ...) {
   # check inputs ---------------------------------------------------------------
   if (!inherits(x, "tbl_likert"))
     stop("`x=` must be class 'tbl_likert'", call. = FALSE)
@@ -156,7 +156,7 @@ add_n.tbl_likert <- function(x) {
         dplyr::relocate(.data$n, .after = .data$label)
     ) %>%
     gtsummary::modify_table_styling(
-      columns = n,
+      columns = .data$n,
       hide = FALSE,
       label = "**N**",
       fmt_fun = gtsummary::style_number
