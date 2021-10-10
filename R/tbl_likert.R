@@ -4,6 +4,7 @@
 #' @param sort Sort table based on mean scores? Must be one of
 #' `c("default", "ascending", "descending")`
 #' @param x Table of class 'tbl_likert'
+#' @param ... not used
 #' @export
 #' @name tbl_likert
 #' @examples

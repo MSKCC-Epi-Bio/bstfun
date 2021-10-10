@@ -45,6 +45,8 @@ may also pass a styling function: \code{digits = age ~ style_sigfig}}
 \code{c("default", "ascending", "descending")}}
 
 \item{x}{Table of class 'tbl_likert'}
+
+\item{...}{not used}
 }
 \description{
 Likert Summary
