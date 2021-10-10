@@ -49,7 +49,7 @@ may also pass a styling function: \code{digits = age ~ style_sigfig}}
 \item{...}{not used}
 }
 \description{
-Likert Summary
+\lifecycle{experimental}
 }
 \examples{
 df <-
