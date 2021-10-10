@@ -3,7 +3,9 @@
 #' @inheritParams gtsummary::tbl_summary
 #' @param sort Sort table based on mean scores? Must be one of
 #' `c("default", "ascending", "descending")`
+#' @param x Table of class 'tbl_likert'
 #' @export
+#' @name tbl_likert
 #' @examples
 #' df <-
 #'   tibble::tibble(
@@ -16,7 +18,12 @@
 #'   )
 #'
 #' tbl_likert(df) %>%
+#'   add_n() %>%
 #'   gtsummary::as_kable()
+NULL
+
+#' @export
+#' @rdname tbl_likert
 tbl_likert <- function(data,
                        label = NULL, statistic = NULL, digits = NULL,
                        include = everything(),
@@ -117,5 +124,41 @@ tbl_likert <- function(data,
   }
 
   # return tbl -----------------------------------------------------------------
+  class(result) <- c("tbl_likert", "gtsummary")
   result
+}
+
+
+#' @export
+#' @rdname tbl_likert
+add_n.tbl_likert <- function(x) {
+  # check inputs ---------------------------------------------------------------
+  if (!inherits(x, "tbl_likert"))
+    stop("`x=` must be class 'tbl_likert'", call. = FALSE)
+
+  # add n column ---------------------------------------------------------------
+  df_n <-
+    x$inputs$include %>%
+    purrr::map_dfr(
+      ~tibble::tibble(
+        variable = .x,
+        n = sum(!is.na(x$inputs$data[[.x]]))
+      )
+    )
+
+  x %>%
+    gtsummary::modify_table_body(
+      ~dplyr::left_join(
+        .x,
+        df_n,
+        by = "variable"
+      ) %>%
+        dplyr::relocate(.data$n, .after = .data$label)
+    ) %>%
+    gtsummary::modify_table_styling(
+      columns = n,
+      hide = FALSE,
+      label = "**N**",
+      fmt_fun = gtsummary::style_number
+    )
 }

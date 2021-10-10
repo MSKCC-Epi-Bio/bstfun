@@ -2,6 +2,7 @@
 % Please edit documentation in R/tbl_likert.R
 \name{tbl_likert}
 \alias{tbl_likert}
+\alias{add_n.tbl_likert}
 \title{Likert Summary}
 \usage{
 tbl_likert(
@@ -12,6 +13,8 @@ tbl_likert(
   include = everything(),
   sort = c("default", "ascending", "descending")
 )
+
+\method{add_n}{tbl_likert}(x)
 }
 \arguments{
 \item{data}{A data frame}
@@ -40,6 +43,8 @@ may also pass a styling function: \code{digits = age ~ style_sigfig}}
 
 \item{sort}{Sort table based on mean scores? Must be one of
 \code{c("default", "ascending", "descending")}}
+
+\item{x}{Table of class 'tbl_likert'}
 }
 \description{
 Likert Summary
@@ -56,5 +61,6 @@ df <-
   )
 
 tbl_likert(df) \%>\%
+  add_n() \%>\%
   gtsummary::as_kable()
 }
