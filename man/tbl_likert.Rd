@@ -9,7 +9,8 @@ tbl_likert(
   label = NULL,
   statistic = NULL,
   digits = NULL,
-  include = everything()
+  include = everything(),
+  sort = c("default", "ascending", "descending")
 )
 }
 \arguments{
@@ -36,6 +37,11 @@ to 1 decimal place, and the SD to 2 use \code{digits = list(age ~ c(1, 2))}. Use
 may also pass a styling function: \code{digits = age ~ style_sigfig}}
 
 \item{include}{variables to include in the summary table. Default is \code{everything()}}
+
+\item{sort}{List of formulas specifying the type of sorting to perform for
+categorical data. Options are \code{frequency} where results are sorted in
+descending order of frequency and \code{alphanumeric},
+e.g. \code{sort = list(everything() ~ "frequency")}}
 }
 \description{
 Likert Summary
