@@ -1,6 +1,8 @@
 #' Likert Summary
 #'
 #' @inheritParams gtsummary::tbl_summary
+#' @param sort Sort table based on mean scores? Must be one of
+#' `c("default", "ascending", "descending")`
 #' @export
 #' @examples
 #' df <-
