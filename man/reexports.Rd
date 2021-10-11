@@ -27,10 +27,10 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
+  \item{dplyr}{\code{\link[dplyr:reexports]{all_of}}, \code{\link[dplyr:reexports]{any_of}}, \code{\link[dplyr:reexports]{contains}}, \code{\link[dplyr:reexports]{ends_with}}, \code{\link[dplyr:reexports]{everything}}, \code{\link[dplyr:reexports]{last_col}}, \code{\link[dplyr:reexports]{matches}}, \code{\link[dplyr:reexports]{num_range}}, \code{\link[dplyr:reexports]{one_of}}, \code{\link[dplyr:reexports]{starts_with}}}
+
   \item{gtsummary}{\code{\link[gtsummary]{as_gt}}, \code{\link[gtsummary]{as_kable}}, \code{\link[gtsummary]{style_percent}}, \code{\link[gtsummary]{style_pvalue}}, \code{\link[gtsummary]{style_ratio}}, \code{\link[gtsummary]{style_sigfig}}}
 
   \item{magrittr}{\code{\link[magrittr:pipe]{\%>\%}}}
-
-  \item{tidyselect}{\code{\link[tidyselect]{all_of}}, \code{\link[tidyselect:all_of]{any_of}}, \code{\link[tidyselect:starts_with]{contains}}, \code{\link[tidyselect:starts_with]{ends_with}}, \code{\link[tidyselect]{everything}}, \code{\link[tidyselect:everything]{last_col}}, \code{\link[tidyselect:starts_with]{matches}}, \code{\link[tidyselect:starts_with]{num_range}}, \code{\link[tidyselect]{one_of}}, \code{\link[tidyselect]{starts_with}}}
 }}
 

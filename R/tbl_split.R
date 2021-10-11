@@ -28,12 +28,5 @@ tbl_split <- function(x, variables) {
                             with = "gtsummary::tbl_split()")
 
   gtsummary::tbl_split(x, variables)
-
-  }
-
-#' @export
-#' @rdname tbl_split
-print.tbl_split <- function(x, ...) {
-  purrr::walk(x, print)
 }
 

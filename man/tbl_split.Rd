@@ -2,12 +2,9 @@
 % Please edit documentation in R/tbl_split.R
 \name{tbl_split}
 \alias{tbl_split}
-\alias{print.tbl_split}
 \title{Split gtsummary Table}
 \usage{
 tbl_split(x, variables)
-
-\method{print}{tbl_split}(x, ...)
 }
 \arguments{
 \item{x}{gtsummary table}

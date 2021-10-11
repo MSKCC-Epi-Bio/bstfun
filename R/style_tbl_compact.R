@@ -17,12 +17,17 @@ style_tbl_compact <- function(data) {
   # first extract the theme element names of the commands that make tables compact
   # from the `gtsummary::theme_gtsummary_compact()` theme function
   if (inherits(data, "gt_tbl")) theme_name <- "as_gt-lst:addl_cmds"
-  else if (inherits(data, "flextable")) theme_name <- "as_flex_table-lst:addl_cmds"
-  else if (inherits(data, "huxtable")) theme_name <- "as_hux_table.gtsummary-lst:addl_cmds"
+  else if (inherits(data, "flextable"))  {
+    assert_package("flextable", "style_tbl_compact()")
+    theme_name <- "as_flex_table-lst:addl_cmds"
+  }
+  else if (inherits(data, "huxtable")) {
+    assert_package("huxtable", "style_tbl_compact()")
+    theme_name <- "as_hux_table.gtsummary-lst:addl_cmds"
+  }
   else if (inherits(data, "knitr_kable")) {
+    assert_package("kableExtra", "style_tbl_compact()")
     theme_name <- "as_kable_extra-lst:addl_cmds"
-    if (!requireNamespace("kableExtra"))
-      rlang::abort("Styling a `knitr::kable()` table requires the {kableExtra} package.")
   }
   else rlang::abort("`data=` must be a {gt}, {flextable}, {huxtable}, or `knitr::kable()` table.")
 
