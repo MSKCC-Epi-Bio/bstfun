@@ -6,7 +6,8 @@
 \alias{bstfun-package}
 \title{bstfun: Misc functions for the dept}
 \description{
-A miscellaneous collection of functions to used by members of the Biostatistics Department at MSKCC.
+A miscellaneous collection of functions to used by members of
+    the Biostatistics Department at MSKCC.
 }
 \seealso{
 Useful links:
@@ -26,6 +27,7 @@ Authors:
 
 Other contributors:
 \itemize{
+  \item Caroline Kostrzewa [contributor]
   \item Jasme Lee [contributor]
   \item Emily Vertosick [contributor]
 }
