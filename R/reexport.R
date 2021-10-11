@@ -1,34 +1,8 @@
-# magrittr ---------------------------------------------------------------------
-#' @export
-#' @importFrom magrittr %>%
-magrittr::`%>%`
-
-# gtsummary --------------------------------------------------------------------
-#' @export
-#' @importFrom gtsummary as_gt
-gtsummary::as_gt
-
-#' @export
-#' @importFrom gtsummary as_kable
-gtsummary::as_kable
-
-#' @export
-#' @importFrom gtsummary style_pvalue
-gtsummary::style_pvalue
-
-#' @export
-#' @importFrom gtsummary style_percent
-gtsummary::style_percent
-
-#' @export
-#' @importFrom gtsummary style_sigfig
-gtsummary::style_sigfig
-
-#' @export
-#' @importFrom gtsummary style_ratio
-gtsummary::style_ratio
-
 # dplyr ------------------------------------------------------------------------
+#' @export
+#' @importFrom dplyr %>%
+dplyr::`%>%`
+
 #' @importFrom dplyr starts_with
 #' @export
 dplyr::starts_with
@@ -68,3 +42,32 @@ dplyr::last_col
 #' @importFrom dplyr one_of
 #' @export
 dplyr::one_of
+
+# gtsummary --------------------------------------------------------------------
+#' @export
+#' @importFrom gtsummary as_gt
+gtsummary::as_gt
+
+#' @export
+#' @importFrom gtsummary as_kable
+gtsummary::as_kable
+
+#' @export
+#' @importFrom gtsummary style_pvalue
+gtsummary::style_pvalue
+
+#' @export
+#' @importFrom gtsummary style_percent
+gtsummary::style_percent
+
+#' @export
+#' @importFrom gtsummary style_sigfig
+gtsummary::style_sigfig
+
+#' @export
+#' @importFrom gtsummary style_ratio
+gtsummary::style_ratio
+
+#' @export
+#' @importFrom gtsummary add_n
+gtsummary::add_n

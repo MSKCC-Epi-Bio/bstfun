@@ -7,7 +7,7 @@
 #'
 #' @param template Specifies template for `starter::create_project(template=)`.
 #' Default is the template in `bstfun::project_templates` whose name matches
-#' the lowercase system username, if it exists;
+#' the lowercase system username (`Sys.info()[["user"]]`), if it exists;
 #' otherwise, `bstfun::project_templates[["default"]]`
 #' @inheritParams starter::create_project
 #'

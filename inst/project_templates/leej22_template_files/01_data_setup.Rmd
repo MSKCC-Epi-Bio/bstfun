@@ -1,6 +1,8 @@
 ---
-title: "Initial Setup"
-date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+title: "{{folder_name}}"
+subtitle: "Data Setup"
+author: "Jasme Lee"
+date: "`r format(Sys.Date(), format = '%B %d, %Y')`"
 output:
   html_document:
     toc: true
@@ -19,17 +21,31 @@ set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```{r import}
 library(biostatR)
 library(tidyverse)
-{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("
+library(labelled)
+library(lubridate)
+library(glue)
+
 # Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
-bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')
-"), ""))}}
+bstfun::theme_gtsummary_msk('leej22')
+
+# Location of data
+options(path_data = "")
+
 # example code for importing excel file
-df_raw_data <-
+raw_dat <-
   readxl::read_excel(
-    path = here_data("Raw Data from PI.xlsx")
+    path = paste(
+      bstfun::path_data(data_folder_name = "data"),
+      "raw.xlsx",
+      sep = "/"
+      )
   ) %>%
   janitor::clean_names(case = "all_caps") %>% # uppercase col names
-  mutate(across(where(lubridate::is.POSIXt), lubridate::as_date)) # use lubridates
+  mutate(across(where(lubridate::is.POSIXt), lubridate::as_date)) %>%# use lubridates 
+  # convert all character/string fields to all upper case 
+  mutate_if(is.character, toupper) %>%
+  mutate_if(is.character, trimws, which = "both", whitespace = "[\\h\\v]") # get rid of whitespace
+
 ```
 
 # Create Master Analytic Data Set
@@ -55,12 +71,10 @@ df_main <-
     mrn = "Patient MRN"
   )
 
-# overview of master analytic dataset
-skimr::skim(df_main)
 
 # saving master analytic data set
 saveRDS(
   object = df_main,
-  file = here_data("df_main.Rds")
+  file = bstfun::path_data("dat.Rds", data_folder_name = "data")
 )
 ```

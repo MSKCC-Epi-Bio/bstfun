@@ -27,6 +27,8 @@ Authors:
 
 Other contributors:
 \itemize{
+  \item Caroline Kostrzewa [contributor]
+  \item Jasme Lee [contributor]
   \item Emily Vertosick [contributor]
 }
 

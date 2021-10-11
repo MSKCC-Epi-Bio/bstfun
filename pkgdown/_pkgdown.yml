@@ -41,6 +41,7 @@ reference:
     contents:
       - create_bst_project
       - use_bst_file
+      - use_bst_rstudio_prefs
 
   - title: "Utility Functions"
     contents:

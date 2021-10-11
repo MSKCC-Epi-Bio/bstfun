@@ -12,7 +12,9 @@
 #' @examples
 #' theme_gtsummary_msk("hot")
 theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
-                                         "esther", "curry", "lavery", "meier", "leej")) {
+                                         "esther", "curry", "lavery", "meier", "leej",
+                                         "whitingk", "mauguena",
+                                         "drille", "currym1", "laveryj", "hsum1", "leej22")) {
   # picking theme name
   name <- match.arg(name)
 
@@ -27,7 +29,15 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
     "curry" = lst_theme_curry,
     "lavery" = lst_theme_lavery,
     "meier" = lst_theme_meier,
-    "leej" = lst_theme_leej
+    "leej" = lst_theme_leej,
+    # match previous users to their sys.info login
+    "whitingk" = lst_theme_karissa,
+    "mauguena" = lst_theme_mauguen,
+    "drille" = lst_theme_esther,
+    "currym1" = lst_theme_curry,
+    "laveryj" = lst_theme_lavery,
+    "hsum1" = lst_theme_meier,
+    "leej22" = lst_theme_leej
   ) %>%
     # setting theme
     gtsummary::set_gtsummary_theme()
@@ -131,12 +141,13 @@ lst_theme_meier <- list(
 # Jasme Lee --------------------------------------------------------------------
 lst_theme_leej <-
   list(
+    "pkgwide-str:theme_name" = "Jasme Lee",
     # Remove comma for thousands place and beyond
     "style_number-arg:big.mark" = "",
     # Would like rounding for estimates to be 2 decimal places
     "tbl_regression-arg:estimate_fun" = function(x) style_number(x, digits = 2),
     # tbl summary default to show range rather than IQR
-    "tbl_summary-str:continuous_stat" = "{median} [{min} \U2013 {max}]",
+    "tbl_summary-str:continuous_stat" = "{median} [{min}, {max}]",
     # display a greek beta as header in tbl_regression
     "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
     # as_gt settings
