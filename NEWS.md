@@ -4,6 +4,8 @@
 
 * Adding new function `use_bst_rstudio_prefs()`
 
+* Added new functions `tbl_likert()` and `add_n.tbl_likert()` for summarizing likert-scale data. (#53) 
+
 # bstfun 0.2.4
 
 * Updated the references file in the {bstfun} project template.
