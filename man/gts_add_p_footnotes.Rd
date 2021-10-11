@@ -22,13 +22,13 @@ gts_add_p_footnotes(x, printer = NULL, index_start = NULL)
 }
 
 \examples{
-# library(gtsummary)
-# gts_add_p_footnotes_ex1 <-
-  # trial \%>\%
-  # select(trt, age, grade) \%>\%
-  # tbl_summary(by = trt) \%>\%
-  # add_p() \%>\%
-  # gts_add_p_footnotes()
+library(gtsummary)
+gts_add_p_footnotes_ex1 <-
+  trial \%>\%
+  select(trt, age, grade) \%>\%
+  tbl_summary(by = trt) \%>\%
+  add_p() \%>\%
+  gts_add_p_footnotes()
 
 }
 \seealso{

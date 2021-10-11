@@ -3,22 +3,17 @@
 #' \lifecycle{deprecated}
 #' @param x gtsummary table
 #' @param variables variables to split gtsummary table at
-#' @param ... not used
 #'
 #' @return tbl_split object
 #' @name tbl_split
 #'
 #' @family gtsummary-related functions
 #' @examples
-#' # library(gtsummary)
+#' library(gtsummary)
 #'
-#' # tbl <-
-#'   # tbl_summary(trial) %>%
-#'   # tbl_split(variables = c(marker, grade))
-#'
-#' @section Possible Changes:
-#' - Function may be migrated to the gtsummary package
-#' - May update print method within R markdown to add a page break between tables
+#' tbl <-
+#'   tbl_summary(trial) %>%
+#'   tbl_split(variables = c(marker, grade))
 NULL
 
 #' @export
