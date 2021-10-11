@@ -17,6 +17,7 @@
 #'   as_kable(format = "simple")
 use_varnames_as_labels <- function(data, caps = NULL, exclude = NULL) {
   # check inputs ---------------------------------------------------------------
+  assert_package("labelled")
   stopifnot(is.data.frame(data))
 
   # evaluate caps and exclude arguments ----------------------------------------
