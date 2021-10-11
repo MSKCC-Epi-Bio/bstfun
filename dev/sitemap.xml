@@ -64,6 +64,9 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/tbl_ancova.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/tbl_likert.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/tbl_split.html</loc>
   </url>
   <url>
@@ -74,6 +77,9 @@
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_file.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_rstudio_prefs.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/use_varnames_as_labels.html</loc>
