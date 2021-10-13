@@ -105,6 +105,11 @@ tblreg_forest<-function(gtsum_tb,
                hrzl_lines = list("2"=gpar(lwd=2,col=title_line_col) ),
                ...
     )
+
+  ## plot the forestplot if not saving ##
+  forestplot.obj
+
+  ## save the obj and relavant data ##
   return(list(forestplot.obj=forestplot.obj, forestplot_tb=forestplot_tb) )
 }
 
@@ -118,6 +123,7 @@ tblreg_forest<-function(gtsum_tb,
 ### ==============
 
 #fplot1<-tblreg_forest(gtsum_tb=tbl_uv_ex1)
+#fplot1
 
 ###==============
 # Use tbl_uvregression example 2: tbl_uv_ex2
@@ -125,6 +131,7 @@ tblreg_forest<-function(gtsum_tb,
 
 #fplot2<-tblreg_forest(gtsum_tb=tbl_uv_ex2,
 #                       txt_vars = c("N","HR","CI","p-value"))
+#fplot2
 
 
 ###==============
@@ -135,5 +142,6 @@ tblreg_forest<-function(gtsum_tb,
 #                        txt_vars = c("hr","pv"),
 #                        boxsize=0.2,
 #                        col=fpColors(box="darkred"))
+# fplot3
 
 
