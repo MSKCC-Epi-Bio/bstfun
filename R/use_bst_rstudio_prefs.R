@@ -27,6 +27,7 @@ use_bst_rstudio_prefs <- function() {
 # save preferences in list -----------------------------------------------------
 bst_prefs <-
   list(always_save_history = FALSE,
+       graphics_backend = "ragg",
        load_workspace = FALSE,
        margin_column = 80L,
        rainbow_parentheses = TRUE,
