@@ -11,6 +11,7 @@ The function wraps \code{rstudio.prefs::use_rstudio_prefs()} and sets the follow
 preferences in RStudio.\tabular{ll}{
    \strong{Preference} \tab \strong{Value} \cr
    always_save_history \tab FALSE \cr
+   graphics_backend \tab ragg \cr
    load_workspace \tab FALSE \cr
    margin_column \tab 80 \cr
    rainbow_parentheses \tab TRUE \cr
