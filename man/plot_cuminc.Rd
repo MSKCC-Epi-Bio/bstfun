@@ -36,6 +36,7 @@ plot_cuminc(
 Plot \code{cuminc()} Estimates
 }
 \examples{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 library(cmprsk)
 library(survival)
 
@@ -50,7 +51,7 @@ cif1 <- cuminc(ftime = pbc$time.y, fstatus = pbc$status2)
 km1 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ 1)
 
 # Plot and add risk table for no strata (numgrps=1)
-grDevices::windows(5, 5)
+windows(5, 5)
 par(mfrow = c(1, 1),
     mar = c(12.5, 5.7, 2, 2),
     mgp = c(2, 0.65, 0))
@@ -71,7 +72,7 @@ cif2 <- cuminc(ftime = pbc$time.y,
 km2 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ pbc$sex)
 
 # Plot and add risk table for 2 groups (numgrps=2)
-grDevices::windows(5, 5)
+windows(5, 5)
 par(mfrow = c(1, 1),
     mar = c(12.5, 5.7, 2, 2),
     mgp = c(2, 0.65, 0))
@@ -87,6 +88,7 @@ plot_cuminc(cif2, km2,
             timepts = seq(0, 12, 3),
             lg = c("male", "female"),
             numgrps = 2)
+\dontshow{\}) # examplesIf}
 }
 \author{
 Meier Hsu
