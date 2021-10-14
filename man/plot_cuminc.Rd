@@ -21,10 +21,75 @@ plot_cuminc(
 
 \item{survfit}{\code{survival::survfit()} object}
 
-\item{col.list}{}
+\item{timepts}{x}
+
+\item{lg}{x}
+
+\item{numgrps}{x}
+
+\item{lgd.at}{x}
+
+\item{line}{x}
+
+\item{at}{x}
+
+\item{col.list}{x}
 }
 \description{
 Plot \code{cuminc()} Estimates
+}
+\examples{
+library(cmprsk)
+library(survival)
+
+data(pbc)
+# recode time and status
+pbc$time.y <- pbc$time / 365.25
+pbc$status2 <- ifelse(pbc$status > 0, ifelse(pbc$status == 1, 2, 1), 0)
+
+# Example 1 -------------------------------------
+# CIR and KM for no strata
+cif1 <- cuminc(ftime = pbc$time.y, fstatus = pbc$status2)
+km1 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ 1)
+
+# Plot and add risk table for no strata (numgrps=1)
+windows(5, 5)
+par(mfrow = c(1, 1),
+    mar = c(12.5, 5.7, 2, 2),
+    mgp = c(2, 0.65, 0))
+plot(cif1,
+     curvlab = c("recurred", "died"),
+     xlim = c(0, 12), xaxt = "n")
+axis(1, at = seq(0, 12, 3))
+
+plot_cuminc(cif1, km1,
+            timepts = seq(0, 12, 3),
+            lg = "",
+            numgrps = 1)
+
+# Example 2 -------------------------------------
+cif2 <- cuminc(ftime = pbc$time.y,
+               fstatus = pbc$status2,
+               group = pbc$sex)
+km2 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ pbc$sex)
+
+# Plot and add risk table for 2 groups (numgrps=2)
+windows(5, 5)
+par(mfrow = c(1, 1),
+    mar = c(12.5, 5.7, 2, 2),
+    mgp = c(2, 0.65, 0))
+
+plot(cif2,
+     curvlab = c("male", "female", "", ""),
+     lty = c(1, 2, 0, 0),
+     xlim = c(0, 12),
+     xaxt = "n", col = c(1, 3, 0, 0))
+axis(1, at = seq(0, 12, 3))
+
+plot_cuminc(cif2, km2,
+            timepts = seq(0, 12, 3),
+            lg = c("male", "female"),
+            numgrps = 2)
 }
 \author{
 Meier Hsu

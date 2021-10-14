@@ -2,13 +2,13 @@
 #'
 #' @param cuminc `cmprsk::cuminc()` object
 #' @param survfit `survival::survfit()` object
-#' @param timepts
-#' @param lg
-#' @param numgrps
-#' @param lgd.at
-#' @param line
-#' @param at
-#' @param col.list
+#' @param timepts x
+#' @param lg x
+#' @param numgrps x
+#' @param lgd.at x
+#' @param line x
+#' @param at x
+#' @param col.list x
 #'
 #' @author Meier Hsu
 #' @export
@@ -49,7 +49,7 @@
 #'
 #' # Plot and add risk table for 2 groups (numgrps=2)
 #' windows(5, 5)
-#' par(mfrow = c(1, 1),it's
+#' par(mfrow = c(1, 1),
 #'     mar = c(12.5, 5.7, 2, 2),
 #'     mgp = c(2, 0.65, 0))
 #'
@@ -78,7 +78,7 @@ plot_cuminc <- function(cuminc, survfit, timepts, lg, numgrps,
   aa1 <- summary(survfit, times = timepts)
 
   # critical value for confidence interval
-  z <- qnorm(1 - (1 - .95) / 2)
+  z <- stats::qnorm(1 - (1 - .95) / 2)
 
   if (numgrps == 1) {
     # reformat data for number at risk
@@ -96,25 +96,25 @@ plot_cuminc <- function(cuminc, survfit, timepts, lg, numgrps,
         )
       )
 
-    mtext("No. At Risk:", side = 1, line = 3, at = at, adj = 1, cex = 0.9, font = 2)
-    mtext(lg[1], side = 1, line = line, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
-    mtext("CIR (%):", side = 1, line = line + 1, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
-    mtext("95% CI:", side = 1, line = line + 2, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
+    graphics::mtext("No. At Risk:", side = 1, line = 3, at = at, adj = 1, cex = 0.9, font = 2)
+    graphics::mtext(lg[1], side = 1, line = line, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
+    graphics::mtext("CIR (%):", side = 1, line = line + 1, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
+    graphics::mtext("95% CI:", side = 1, line = line + 2, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
 
     ### NUMBER AT RISK FOR FIRST SUBGROUP AFTER TIME 0
     for (i in 1:length(timepts)) {
       nindex <- which(nrisk[, 2] == timepts[i]) # the ith timepoint
-      mtext(nrisk[nindex[1], 1], side = 1, line = line, at = timepts[i], cex = .9, col = 1)
+      graphics::mtext(nrisk[nindex[1], 1], side = 1, line = line, at = timepts[i], cex = .9, col = 1)
     }
 
     ### CIR Estimates
     for (i in 1:length(timepts)) {
-      mtext(CIR1[i], side = 1, line = line + 1, at = timepts[i], cex = 1)
+      graphics::mtext(CIR1[i], side = 1, line = line + 1, at = timepts[i], cex = 1)
     }
 
     ### 95% CI
     for (i in 1:length(timepts)) {
-      mtext(confint1[i], side = 1, line = line + 2, at = timepts[i], cex = 0.95)
+      graphics::mtext(confint1[i], side = 1, line = line + 2, at = timepts[i], cex = 0.95)
     }
   }
 
@@ -125,13 +125,13 @@ plot_cuminc <- function(cuminc, survfit, timepts, lg, numgrps,
     # number at Risk for 2 groups
     nrisk <- cbind(aa1$strata, aa1$n.risk, aa1$time)
     # make wide dataset by time
-    nriskmat <- tidyr::spread(as_tibble(nrisk), key = V1, value = V2)
+    nriskmat <- tidyr::spread(as_tibble(nrisk), key = .data$V1, value = .data$V2)
     # nriskmat = as_tibble(nrisk) %>%
     #   tidyr::spread(V1,V2)
     # replace NA with 0, if needed
     nriskmat[is.na(nriskmat)] <- 0
     # make long dataset stacking by group
-    nrisklong <- tidyr::gather(nriskmat, value = nrisk, key = group, "1":"2")
+    nrisklong <- tidyr::gather(nriskmat, value = .data$nrisk, key = .data$group, "1":"2")
 
 
     # Estimates for 2 group
@@ -154,40 +154,40 @@ plot_cuminc <- function(cuminc, survfit, timepts, lg, numgrps,
       ")"
     ))
 
-    mtext("No. At Risk:", side = 1, line = 3, at = at, adj = 1, cex = 0.9, font = 2)
-    mtext(lg[1], side = 1, line = line, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
-    mtext("CIR (%):", side = 1, line = line + 1, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
-    mtext("95% CI:", side = 1, line = line + 2, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
+    graphics::mtext("No. At Risk:", side = 1, line = 3, at = at, adj = 1, cex = 0.9, font = 2)
+    graphics::mtext(lg[1], side = 1, line = line, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
+    graphics::mtext("CIR (%):", side = 1, line = line + 1, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
+    graphics::mtext("95% CI:", side = 1, line = line + 2, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[1])
 
-    mtext(lg[2], side = 1, line = line + 3, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[2])
-    mtext("CIR (%):", side = 1, line = line + 4, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[2])
-    mtext("95% CI:", side = 1, line = line + 5, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[2])
+    graphics::mtext(lg[2], side = 1, line = line + 3, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[2])
+    graphics::mtext("CIR (%):", side = 1, line = line + 4, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[2])
+    graphics::mtext("95% CI:", side = 1, line = line + 5, at = at, adj = 1, cex = 0.9, font = 2, col = col.list[2])
 
 
     ### Number at risk both groups
     for (i in 1:length(timepts)) {
       nindex <- which(nrisklong[, 1] == timepts[i])
-      mtext(nrisklong[nindex[1], 3], side = 1, line = line, at = timepts[i], cex = .9, col = 1)
-      mtext(nrisklong[nindex[2], 3], side = 1, line = line + 3, at = timepts[i], cex = .9, col = 1)
+      graphics::mtext(nrisklong[nindex[1], 3], side = 1, line = line, at = timepts[i], cex = .9, col = 1)
+      graphics::mtext(nrisklong[nindex[2], 3], side = 1, line = line + 3, at = timepts[i], cex = .9, col = 1)
     }
 
     ### Estimates for group 1
     for (i in 1:length(timepts)) {
-      mtext(CIR1[i], side = 1, line = line + 1, at = timepts[i], cex = 1)
+      graphics::mtext(CIR1[i], side = 1, line = line + 1, at = timepts[i], cex = 1)
     }
     ### 95% CI for  group 1
     for (i in 1:length(timepts)) {
-      mtext(confint1[i], side = 1, line = line + 2, at = timepts[i], cex = .95)
+      graphics::mtext(confint1[i], side = 1, line = line + 2, at = timepts[i], cex = .95)
     }
 
     # Estimates for group 2
     for (i in 1:length(timepts)) {
-      mtext(CIR2[i], side = 1, line = line + 4, at = timepts[i], cex = 1)
+      graphics::mtext(CIR2[i], side = 1, line = line + 4, at = timepts[i], cex = 1)
     }
 
     # 95% CI for  group 2
     for (i in 1:length(timepts)) {
-      mtext(confint2[i], side = 1, line = line + 5, at = timepts[i], cex = .95)
+      graphics::mtext(confint2[i], side = 1, line = line + 5, at = timepts[i], cex = .95)
     }
   }
 }
