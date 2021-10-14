@@ -57,6 +57,10 @@ reference:
     contents:
       - starts_with("hpcc_")
 
+- title: "Other Functions"
+    contents:
+      - plot_cuminc
+
   - title: "Data Objects"
     contents:
       - trial
