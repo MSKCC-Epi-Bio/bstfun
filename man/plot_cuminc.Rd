@@ -20,17 +20,22 @@ plot_cuminc(
 
 \item{survfit}{\code{survival::survfit()} object}
 
-\item{timepts}{numeric vector of timepoints to show estimates at}
+\item{timepts}{= a numeric vector of time points of the estimates to display.
+E.g. c(0,1,2,3,4,5) or seq(0,12,by=2)}
 
-\item{lg}{x}
+\item{lg}{= legend label for each cumulative incidence curve to be displayed.
+E.g. c("Male", "Female")}
 
-\item{numgrps}{x}
+\item{numgrps}{= the number of groups of the stratification variable: 1 is
+no stratification, 2 is stratified by a binary variable}
 
-\item{line}{x}
+\item{line}{= to adjust position of risk table. A lower value will shift
+table up, a larger value will shift table down; default is 4}
 
-\item{at}{x}
+\item{at}{= to adjust position of left margin. Default is -1.}
 
-\item{col.list}{x}
+\item{col.list}{= list of colors for legend text Should match the colors
+of plot legend. Default is 1 (black).}
 }
 \description{
 Plot \code{cuminc()} Estimates
