@@ -36,11 +36,13 @@ reference:
       - theme_gtsummary_msk
       - style_tbl_compact
       - as_ggplot
+      - as_forest_plot
 
   - title: "Project Start-up Functions"
     contents:
       - create_bst_project
       - use_bst_file
+      - use_bst_rstudio_prefs
 
   - title: "Utility Functions"
     contents:
@@ -52,6 +54,10 @@ reference:
   - title: "High Performance Computing Cluster"
     contents:
       - starts_with("hpcc_")
+
+  - title: "Other Functions"
+    contents:
+      - add_cuminc_risktable
 
   - title: "Data Objects"
     contents:

@@ -1,0 +1,105 @@
+---
+title: "{{folder_name}}"
+subtitle: "Analysis report"
+author: "Jasme Lee and "
+date: "`r format(Sys.Date(), format = '%B %d, %Y')`"
+output:
+  html_document: 
+    fig_caption: yes
+    toc: true
+    toc_float: true
+    toc_collapsed: false
+    number_sections: true
+    toc_depth: 3
+    theme: flatly
+knit: (function(input, ...) {
+    rmarkdown::render(
+      input,
+      output_file = here::here(glue::glue('reports/{{folder_name}}_04_report_v01_{Sys.Date()}.html')),
+      envir = globalenv()
+    )
+  })
+---
+```{r setup, include=FALSE}
+final_report = FALSE
+
+knitr::opts_chunk$set(echo = FALSE, warning = !final_report, message = !final_report, fig.height = 6, fig.width = 8, fig.align = 'center')
+
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+```
+
+```{r import, results = "hide"}
+## Set up
+library(biostatR)
+library(bstfun)
+library(tidyverse)
+library(gt)
+library(gtsummary)
+library(magrittr)
+library(captioner)
+library(lubridate)
+library(glue)
+library(survival)
+library(survminer)
+library(cmprsk)
+
+# setting MSK ggplot theme, and color palette
+plot_font_size = 13
+
+mskRvis::set_msk_palette()
+
+theme_set(theme_set(mskRvis::theme_biostat()) + 
+            theme_bw() + 
+               theme(text = element_text(size = plot_font_size), 
+                     axis.text = element_text(color = "black"), 
+                     legend.position = 'bottom') )
+
+# Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
+bstfun::theme_gtsummary_msk('leej22')
+
+```
+
+```{r data_import}
+## Data import
+
+# Location of data
+options(path_data = "")
+
+# importing master analytic data set
+dat <- readRDS(file = bstfun::path_data("dat.Rds", data_folder_name = "data"))
+```
+
+```{r cap_setup, echo=F, message=FALSE, results = FALSE}
+
+## Setting up Table and Fig numberings ------------------
+  tbl_cap = captioner(prefix = "Table")
+  fig_cap = captioner(prefix = "Figure")
+
+## table captions --------------
+  tbl_cap("tab1", "Descriptive summaries of baseline characteristics.")
+  
+  
+## figure captions --------------
+  fig_cap("fig1", "Example figure.")
+```
+
+The following report is generated using the following files:  
+
++ **Data**: _<data-file>_  received on `r readr::read_lines(here::here("data_date.txt"))`
+
+# Summary {-}
+
+**v01 (`r Sys.Date()`)**
+
+# Questions {-}
+
+# Data
+```{r}
+
+```
+
+# Outcomes
+```{r}
+
+```
+

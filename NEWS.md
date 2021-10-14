@@ -1,5 +1,15 @@
 # bstfun (development version)
 
+* Added new function `as_forest_plot()` that converts a gtsummary table into a forest plot using `forestplot::forestplot()`.
+
+* Added new function `add_cuminc_risktable()` to plot cumulative incidence estimates with both the at-risk table and the estimates printed below the table.
+
+* Updated Rmd files in project template to use user's custom `gtsummary` theme if it exists within `bstfun::theme_gtsummary_msk()`, matching the system login name to the `name` in `bstfun::theme_gtsummary_msk()`
+
+* Adding new function `use_bst_rstudio_prefs()`
+
+* Added new functions `tbl_likert()` and `add_n.tbl_likert()` for summarizing likert-scale data. (#53) 
+
 # bstfun 0.2.4
 
 * Updated the references file in the {bstfun} project template.
