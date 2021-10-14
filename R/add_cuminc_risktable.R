@@ -1,4 +1,4 @@
-#' Plot `cuminc()` Estimates
+#' Add risk table to `cuminc()` plot
 #'
 #' Plot cumulative incidence estimates with a risk table and estimates below
 #' the figure.

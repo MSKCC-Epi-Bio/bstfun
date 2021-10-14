@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_cuminc_risktable.R
 \name{add_cuminc_risktable}
 \alias{add_cuminc_risktable}
-\title{Plot \code{cuminc()} Estimates}
+\title{Add risk table to \code{cuminc()} plot}
 \usage{
 add_cuminc_risktable(
   cuminc,
