@@ -75,7 +75,7 @@
 add_cuminc_risktable <- function(cuminc, survfit, timepts, lg, numgrps,
                                  line = 4, at = -1,
                                  col.list = 1) {
-  assert_package("cmprsk", "plot_cuminc()")
+  assert_package("cmprsk", "add_cuminc_risktable()")
 
   # CIR estimates
   CIR <- cmprsk::timepoints(cuminc, timepts)
