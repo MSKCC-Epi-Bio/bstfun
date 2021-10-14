@@ -2,19 +2,14 @@
 % Please edit documentation in R/tbl_split.R
 \name{tbl_split}
 \alias{tbl_split}
-\alias{print.tbl_split}
 \title{Split gtsummary Table}
 \usage{
 tbl_split(x, variables)
-
-\method{print}{tbl_split}(x, ...)
 }
 \arguments{
 \item{x}{gtsummary table}
 
 \item{variables}{variables to split gtsummary table at}
-
-\item{...}{not used}
 }
 \value{
 tbl_split object
@@ -22,21 +17,12 @@ tbl_split object
 \description{
 \lifecycle{deprecated}
 }
-\section{Possible Changes}{
-
-\itemize{
-\item Function may be migrated to the gtsummary package
-\item May update print method within R markdown to add a page break between tables
-}
-}
-
 \examples{
-# library(gtsummary)
+library(gtsummary)
 
-# tbl <-
-  # tbl_summary(trial) \%>\%
-  # tbl_split(variables = c(marker, grade))
-
+tbl <-
+  tbl_summary(trial) \%>\%
+  tbl_split(variables = c(marker, grade))
 }
 \seealso{
 Other gtsummary-related functions: 
