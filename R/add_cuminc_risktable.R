@@ -43,10 +43,10 @@
 #'      xlim = c(0, 12), xaxt = "n")
 #' axis(1, at = seq(0, 12, 3))
 #'
-#' plot_cuminc(cif1, km1,
-#'             timepts = seq(0, 12, 3),
-#'             lg = "",
-#'             numgrps = 1)
+#' add_cuminc_risktable(cif1, km1,
+#'                      timepts = seq(0, 12, 3),
+#'                      lg = "",
+#'                      numgrps = 1)
 #'
 #' # Example 2 -------------------------------------
 #' cif2 <- cuminc(ftime = pbc$time.y,
@@ -67,14 +67,14 @@
 #'      xaxt = "n", col = c(1, 3, 0, 0))
 #' axis(1, at = seq(0, 12, 3))
 #'
-#' plot_cuminc(cif2, km2,
-#'             timepts = seq(0, 12, 3),
-#'             lg = c("male", "female"),
-#'             numgrps = 2)
+#' add_cuminc_risktable(cif2, km2,
+#'                      timepts = seq(0, 12, 3),
+#'                      lg = c("male", "female"),
+#'                      numgrps = 2)
 
-plot_cuminc <- function(cuminc, survfit, timepts, lg, numgrps,
-                        line = 4, at = -1,
-                        col.list = 1) {
+add_cuminc_risktable <- function(cuminc, survfit, timepts, lg, numgrps,
+                                 line = 4, at = -1,
+                                 col.list = 1) {
   assert_package("cmprsk", "plot_cuminc()")
 
   # CIR estimates
