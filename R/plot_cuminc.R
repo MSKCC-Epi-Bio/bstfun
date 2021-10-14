@@ -1,5 +1,8 @@
 #' Plot `cuminc()` Estimates
 #'
+#' Plot cumulative incidence estimates with a risk table and estimates below
+#' the figure.
+#'
 #' @param cuminc `cmprsk::cuminc()` object
 #' @param survfit `survival::survfit()` object
 #' @param timepts a numeric vector of time points of the estimates to display.

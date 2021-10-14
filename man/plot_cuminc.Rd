@@ -38,7 +38,8 @@ table up, a larger value will shift table down; default is 4}
 of plot legend. Default is 1 (black).}
 }
 \description{
-Plot \code{cuminc()} Estimates
+Plot cumulative incidence estimates with a risk table and estimates below
+the figure.
 }
 \examples{
 \dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
