@@ -13,6 +13,7 @@ gtsummary_butcher(x)
 a gtsummary object
 }
 \description{
+\lifecycle{deprecated}
 Some gtsummary objects can become large and the size becomes cumbersome
 when working with the object.
 The function removes all elements from a gtsummary object, except those

@@ -85,3 +85,8 @@ add_inline_forest_plot <- function(x, header = "**Forest Plot**",
   x$call_list <- updated_call_list
   x
 }
+
+assert_package <- function(pkg, fn = NULL, boolean = FALSE) {
+  gtsummary::assert_package(pkg = pkg, fn = fn,
+                            pkg_search = "bstfun", boolean = boolean)
+}

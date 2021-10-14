@@ -14,7 +14,7 @@ gts_add_p_footnotes(x, printer = NULL, index_start = NULL)
 \item{index_start}{DEPRECATED}
 }
 \description{
-Moves p-value footnotes to individual p-values
+\lifecycle{deprecated}
 }
 \section{Example Output}{
 

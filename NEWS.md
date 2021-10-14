@@ -1,5 +1,9 @@
 # bstfun (development version)
 
+* Deprecated `bstfun::tbl_split()`, `bstfun::gts_add_p_footnote()`, and `bstfun::gtsummary_butcher()` in lieu of `gtsummary::tbl_split()`, `gtsummary::separate_p_footnote()`, and `gtsummary::tbl_butcher()`.
+
+* Removed {tidyselect} dependency.
+
 * Added new function `as_forest_plot()` that converts a gtsummary table into a forest plot using `forestplot::forestplot()`.
 
 * Added new function `add_cuminc_risktable()` to plot cumulative incidence estimates with both the at-risk table and the estimates printed below the table.

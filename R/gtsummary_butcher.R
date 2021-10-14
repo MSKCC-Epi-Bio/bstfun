@@ -1,5 +1,6 @@
 #' Reduce size of gtsummary objects
 #'
+#' \lifecycle{deprecated}
 #' Some gtsummary objects can become large and the size becomes cumbersome
 #' when working with the object.
 #' The function removes all elements from a gtsummary object, except those
@@ -34,16 +35,9 @@
 #'  object.size(tbl_large) %>% format(units = "Mb")
 #'  object.size(tbl_butchered) %>% format(units = "Mb")
 gtsummary_butcher <- function(x) {
-  if (!inherits(x, "gtsummary") || is.null(x$table_styling)) {
-    stop("`x=` must be a gtsummary object created with v1.4.0 or later.")
-  }
+  lifecycle::deprecate_warn(
+    when = "0.2.5", what = "bstfun::gtsummary_butcher()",
+    with = "gtsummary::tbl_butcher()")
 
-  # elements to be removed from `x=` -------------------------------------------
-  element_names <- names(x) %>% setdiff(c("table_body", "table_styling"))
-  lst_nulls <-
-    rep_len(list(NULL), length(element_names)) %>%
-    rlang::set_names(element_names)
-
-  # remove elements and returned reduced object --------------------------------
-  purrr::list_modify(x, !!!lst_nulls)
+  gtsummary::tbl_butcher(x)
 }
