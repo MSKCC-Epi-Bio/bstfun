@@ -53,6 +53,7 @@ Imports:
     tidyr (>= 1.1.1),
     usethis (>= 1.6.1)
 Suggests: 
+    cmprsk (>= 2.2.10),
     covr (>= 3.5.0),
     flextable (>= 0.5.10),
     ggtext (>= 0.1.1),
