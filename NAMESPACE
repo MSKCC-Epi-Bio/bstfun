@@ -3,6 +3,7 @@
 S3method(add_n,tbl_likert)
 S3method(print,tbl_split)
 export("%>%")
+export(add_cuminc_risktable)
 export(add_inline_forest_plot)
 export(add_n)
 export(all_of)

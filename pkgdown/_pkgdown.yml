@@ -57,6 +57,10 @@ reference:
     contents:
       - starts_with("hpcc_")
 
+  - title: "Other Functions"
+    contents:
+      - add_cuminc_risktable
+
   - title: "Data Objects"
     contents:
       - trial

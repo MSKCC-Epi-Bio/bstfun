@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Misc functions for the dept
-Version: 0.2.4.9003
+Version: 0.2.4.9004
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",
@@ -53,6 +53,7 @@ Imports:
     tidyr (>= 1.1.1),
     usethis (>= 1.6.1)
 Suggests: 
+    cmprsk (>= 2.2.10),
     covr (>= 3.5.0),
     flextable (>= 0.5.10),
     forestplot (>= 2.0.1),
