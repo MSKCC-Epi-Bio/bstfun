@@ -57,7 +57,7 @@ reference:
     contents:
       - starts_with("hpcc_")
 
-- title: "Other Functions"
+  - title: "Other Functions"
     contents:
       - plot_cuminc
 
