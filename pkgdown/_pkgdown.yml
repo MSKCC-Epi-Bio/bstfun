@@ -38,6 +38,7 @@ reference:
       - theme_gtsummary_msk
       - style_tbl_compact
       - as_ggplot
+      - as_forest_plot
 
   - title: "Project Start-up Functions"
     contents:
