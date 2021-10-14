@@ -2,10 +2,9 @@
 #'
 #' @param cuminc `cmprsk::cuminc()` object
 #' @param survfit `survival::survfit()` object
-#' @param timepts x
+#' @param timepts numeric vector of timepoints to show estimates at
 #' @param lg x
 #' @param numgrps x
-#' @param lgd.at x
 #' @param line x
 #' @param at x
 #' @param col.list x
@@ -27,7 +26,7 @@
 #' km1 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ 1)
 #'
 #' # Plot and add risk table for no strata (numgrps=1)
-#' windows(5, 5)
+#' grDevices::windows(5, 5)
 #' par(mfrow = c(1, 1),
 #'     mar = c(12.5, 5.7, 2, 2),
 #'     mgp = c(2, 0.65, 0))
@@ -48,7 +47,7 @@
 #' km2 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ pbc$sex)
 #'
 #' # Plot and add risk table for 2 groups (numgrps=2)
-#' windows(5, 5)
+#' grDevices::windows(5, 5)
 #' par(mfrow = c(1, 1),
 #'     mar = c(12.5, 5.7, 2, 2),
 #'     mgp = c(2, 0.65, 0))
@@ -66,7 +65,7 @@
 #'             numgrps = 2)
 
 plot_cuminc <- function(cuminc, survfit, timepts, lg, numgrps,
-                        lgd.at = "topleft", line = 4, at = -1,
+                        line = 4, at = -1,
                         col.list = 1) {
   assert_package("cmprsk", "plot_cuminc()")
 
@@ -131,7 +130,7 @@ plot_cuminc <- function(cuminc, survfit, timepts, lg, numgrps,
     # replace NA with 0, if needed
     nriskmat[is.na(nriskmat)] <- 0
     # make long dataset stacking by group
-    nrisklong <- tidyr::gather(nriskmat, value = .data$nrisk, key = .data$group, "1":"2")
+    nrisklong <- tidyr::gather(nriskmat, value = "nrisk", key = "group", "1":"2")
 
 
     # Estimates for 2 group
@@ -139,13 +138,15 @@ plot_cuminc <- function(cuminc, survfit, timepts, lg, numgrps,
     CIR2 <- round((CIR$est[2, ]) * 100)
 
     # confidence interval for 2 groups
-    confint1 <- c("(-,-)", paste0(
-      "(",
-      round(CIR$est[1, -1]^exp(-z * sqrt(CIR$var[1, -1]) / (CIR$est[1, -1] * log(CIR$est[1, -1]))), 2) * 100,
-      ",",
-      round(CIR$est[1, -1]^exp(z * sqrt(CIR$var[1, -1]) / (CIR$est[1, -1] * log(CIR$est[1, -1]))), 2) * 100,
-      ")"
-    ))
+    confint1 <-
+      c("(-,-)",
+        paste0(
+          "(",
+          round(CIR$est[1, -1]^exp(-z * sqrt(CIR$var[1, -1]) / (CIR$est[1, -1] * log(CIR$est[1, -1]))), 2) * 100,
+          ",",
+          round(CIR$est[1, -1]^exp(z * sqrt(CIR$var[1, -1]) / (CIR$est[1, -1] * log(CIR$est[1, -1]))), 2) * 100,
+          ")"
+        ))
     confint2 <- c("(-,-)", paste0(
       "(",
       round(CIR$est[2, -1]^exp(-z * sqrt(CIR$var[2, -1]) / (CIR$est[2, -1] * log(CIR$est[2, -1]))), 2) * 100,

@@ -10,7 +10,6 @@ plot_cuminc(
   timepts,
   lg,
   numgrps,
-  lgd.at = "topleft",
   line = 4,
   at = -1,
   col.list = 1
@@ -21,13 +20,11 @@ plot_cuminc(
 
 \item{survfit}{\code{survival::survfit()} object}
 
-\item{timepts}{x}
+\item{timepts}{numeric vector of timepoints to show estimates at}
 
 \item{lg}{x}
 
 \item{numgrps}{x}
-
-\item{lgd.at}{x}
 
 \item{line}{x}
 
@@ -53,7 +50,7 @@ cif1 <- cuminc(ftime = pbc$time.y, fstatus = pbc$status2)
 km1 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ 1)
 
 # Plot and add risk table for no strata (numgrps=1)
-windows(5, 5)
+grDevices::windows(5, 5)
 par(mfrow = c(1, 1),
     mar = c(12.5, 5.7, 2, 2),
     mgp = c(2, 0.65, 0))
@@ -74,7 +71,7 @@ cif2 <- cuminc(ftime = pbc$time.y,
 km2 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ pbc$sex)
 
 # Plot and add risk table for 2 groups (numgrps=2)
-windows(5, 5)
+grDevices::windows(5, 5)
 par(mfrow = c(1, 1),
     mar = c(12.5, 5.7, 2, 2),
     mgp = c(2, 0.65, 0))
