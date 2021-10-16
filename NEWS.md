@@ -2,6 +2,10 @@
 
 * Deprecated `tbl_2way_summary()` in favor of `gtsummary::tbl_continous()`.
 
+* Cleaning up functions that have been deprecated.
+
+* Removing old {gtsummary} "core" code that had been copied into the package.
+
 # bstfun 0.2.5
 
 * Deprecated `bstfun::tbl_split()`, `bstfun::gts_add_p_footnote()`, and `bstfun::gtsummary_butcher()` in lieu of `gtsummary::tbl_split()`, `gtsummary::separate_p_footnote()`, and `gtsummary::tbl_butcher()`.
