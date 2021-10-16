@@ -19,7 +19,13 @@
     <loc>http://www.danieldsjoberg.com/bstfun/news/index.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/add_cuminc_risktable.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/add_inline_forest_plot.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/as_forest_plot.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/as_ggplot.html</loc>
@@ -34,13 +40,10 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/create_bst_project.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/deprecated.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/fix_database_error.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/gts_add_p_footnotes.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/gtsummary_butcher.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/here_data.html</loc>
@@ -61,13 +64,7 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/style_tbl_compact.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/tbl_2way_summary.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/tbl_ancova.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/tbl_split.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/tbl_likert.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/theme_gtsummary_msk.html</loc>
@@ -77,6 +74,9 @@
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_file.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_rstudio_prefs.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/use_varnames_as_labels.html</loc>
