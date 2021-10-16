@@ -1,4 +1,4 @@
-# bstfun (development version)
+# bstfun 0.2.6
 
 * Deprecated `tbl_2way_summary()` in favor of `gtsummary::tbl_continous()`.
 
