@@ -1,78 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//index.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/add_cuminc_risktable.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/LICENSE.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/add_inline_forest_plot.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/authors.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/as_forest_plot.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/index.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/as_ggplot.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/news/index.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/bstfun-package.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/add_cuminc_risktable.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/cite_r.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/add_inline_forest_plot.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/create_bst_project.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/as_forest_plot.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/fix_database_error.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/as_ggplot.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/gtsummary_butcher.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/bstfun-package.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/gts_add_p_footnotes.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/cite_r.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/here_data.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/create_bst_project.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/hpcc.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/deprecated.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/project_templates.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/fix_database_error.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/reexports.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/here_data.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/style_tbl_compact.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/hpcc.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/tbl_2way_summary.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/index.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/tbl_ancova.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/project_templates.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/tbl_likert.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/reexports.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/tbl_split.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/style_tbl_compact.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/theme_gtsummary_msk.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/tbl_likert.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/trial.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/theme_gtsummary_msk.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/use_bst_file.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/trial.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/use_bst_rstudio_prefs.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_file.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun//reference/use_varnames_as_labels.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_rstudio_prefs.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_varnames_as_labels.html</loc>
   </url>
 </urlset>
