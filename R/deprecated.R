@@ -1,24 +1,61 @@
-#' Table difference between two groups
+#' Deprecated functions
 #'
 #' \lifecycle{deprecated}
-#' Returns an ANCOVA table showing the means of two groups and the
-#' difference in means
+#' Some functions have been deprecated and are no longer being actively
+#' supported.
 #'
-#' @param data frame to be used in ANCOVA models
-#' @param y vector of continuous outcome variables. One-way ANOVA/ANCOVA models
-#' will be computed for each outcome.
-#' @param x string indicating the binary comparison variable
-#' @inheritParams gtsummary::tbl_uvregression
-#' @inheritParams gtsummary::tbl_summary
-#' @author Daniel D. Sjoberg
-#' @export
-#' @examples
-#' tbl_ancova_ex1 <-
-#'   trial %>%
-#'   tbl_ancova(y = c("age", "marker"), x = "trt")
-#' @section Example Output:
-#' \if{html}{\figure{tbl_ancova_ex1.png}{options: width=80\%}}
+#' @name deprecated
+#' @keywords internal
+NULL
 
+# v0.2.5 (2020-10-16) ----------------------------------------------------------
+#' @rdname deprecated
+#' @export
+tbl_2way_summary <- function(data, row, col, con, label = NULL,
+                             statistic = "{median} ({p25}, {p75})") {
+  lifecycle::deprecate_warn("0.2.5", "bstfun::tbl_2way_summary()",
+                            "gtsummary::tbl_continuous()")
+
+  gtsummary::tbl_continuous(
+    data = data,
+    variable = {{ con }},
+    by = {{ col }},
+    include = {{ row }},
+    statistic = everything() ~ statistic,
+    label = everything() ~ label
+  )
+}
+
+#' @rdname deprecated
+#' @export
+tbl_split <- function(x, variables) {
+  lifecycle::deprecate_warn(when = "0.2.5", what = "bstfun::tbl_split()",
+                            with = "gtsummary::tbl_split()")
+
+  gtsummary::tbl_split(x, variables)
+}
+
+#' @rdname deprecated
+#' @export
+gtsummary_butcher <- function(x) {
+  lifecycle::deprecate_warn(
+    when = "0.2.5", what = "bstfun::gtsummary_butcher()",
+    with = "gtsummary::tbl_butcher()")
+
+  gtsummary::tbl_butcher(x)
+}
+
+#' @rdname deprecated
+#' @export
+gts_add_p_footnotes <- function(x, printer = NULL, index_start = NULL) {
+  lifecycle::deprecate_warn(when = "0.2.5", what = "bstfun::gts_add_p_footnotes()",
+                            with = "gtsummary::separate_p_footnotes()")
+
+  gtsummary::separate_p_footnotes(x)
+}
+
+
+# v0.1.5 (2020-04-16) ----------------------------------------------------------
 tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
                        method.args = NULL, conf.level = 0.95,
                        estimate_fun = NULL, pvalue_fun = NULL,
@@ -28,8 +65,18 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
   # converting inputs to strings/lists
   y <- dplyr::select(data[0, , drop = FALSE], {{ y }}) %>% names()
   x <- dplyr::select(data[0, , drop = FALSE], {{ x }}) %>% names()
-  label <- tidyselect_to_list(data, label)
-  digits <- tidyselect_to_list(data, digits)
+  label <-
+    broom.helpers::.formula_list_to_named_list(
+      {{ label }},
+      data = data,
+      arg_name = "label"
+    )
+  digits <-
+    broom.helpers::.formula_list_to_named_list(
+      {{ digits }},
+      data = data,
+      arg_name = "digits"
+    )
 
   # will return call, and all object passed to in tbl_regression call
   # the object func_inputs is a list of every object passed to the function
@@ -73,7 +120,7 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
   # appending all tbl_regressions together
   gts_ancova <-
     gtsummary::tbl_stack(df_ancova$tbl_regression) %>%
-      gtsummary::modify_header(estimate = "**Difference**")
+    gtsummary::modify_header(estimate = "**Difference**")
 
 
   # building summary statistics ------------------------------------------------
@@ -105,7 +152,7 @@ tbl_ancova <- function(data, y, x, formula = "{y} ~ {x}", label = NULL,
             statistic = everything() ~ "{mean} ({sd})",
             digits = digits
           ) %>%
-          gtsummary::modify_header(stat_by = "**{level}**") %>%
+          gtsummary::modify_header(gtsummary::all_stat_cols() ~ "**{level}**") %>%
           gtsummary::add_n()
       )
     )

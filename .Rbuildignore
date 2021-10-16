@@ -12,3 +12,4 @@
 ^pkgdown$
 ^\.github$
 ^docs$
+^\.covrignore$
