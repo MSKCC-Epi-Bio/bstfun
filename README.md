@@ -18,7 +18,11 @@ the department.
 
 ## Installation
 
-You can install the most recent version of {bstfun} with:
+Employees of MSKCC should install {bstfun} by installing the internal
+{biostatR} package. Details at
+[biostatR.mskcc.org](https://github.mskcc.org/pages/datadojo/biostatR/index.html).
+
+You can install the development version of {bstfun} with:
 
 ``` r
 devtools::install_github("ddsjoberg/bstfun")

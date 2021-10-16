@@ -20,6 +20,8 @@ navbar:
     href: index.html
   - text: Reference
     href: reference/index.html
+  - text: News
+    href: news/index.html
 
   right:
   - icon: fa-github fa-lg
@@ -31,7 +33,7 @@ reference:
     desc: >
       Functions to use in specific table settings
     contents:
-      - starts_with("tbl_")
+      - tbl_likert
       - add_inline_forest_plot
       - theme_gtsummary_msk
       - style_tbl_compact

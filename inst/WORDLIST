@@ -1,4 +1,3 @@
-ANCOVA
 Biostatistics
 Codecov
 HPCC
@@ -9,13 +8,10 @@ MSKCC
 ORCID
 RStudio
 Rmd
-Zhou
 bibtex
 biostatR
-coxph
 flextable
 ggplot
-glm
 gtsummary
 https
 huxtable
@@ -23,11 +19,10 @@ initialise
 invisibles
 kableExtra
 likert
-lm
 mL
 magick
+mskcc
 ng
-pvalue
 ragg
 renv
 repo
@@ -35,3 +30,4 @@ rmd
 ropensci
 stlying
 tbl
+tidyselect

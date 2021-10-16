@@ -26,10 +26,6 @@ theme_gtsummary_msk("hot")
 Other gtsummary-related functions: 
 \code{\link{add_inline_forest_plot}()},
 \code{\link{as_ggplot}()},
-\code{\link{gts_add_p_footnotes}()},
-\code{\link{gtsummary_butcher}()},
-\code{\link{style_tbl_compact}()},
-\code{\link{tbl_2way_summary}()},
-\code{\link{tbl_split}()}
+\code{\link{style_tbl_compact}()}
 }
 \concept{gtsummary-related functions}
