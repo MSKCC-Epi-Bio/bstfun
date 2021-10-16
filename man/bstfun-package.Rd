@@ -21,15 +21,18 @@ Useful links:
 
 Authors:
 \itemize{
-  \item Margie Hannum (\href{https://orcid.org/0000-0002-2953-0449}{ORCID})
+  \item Jessica A. Lavery
   \item Karissa Whiting (\href{https://orcid.org/0000-0002-4683-1868}{ORCID})
 }
 
 Other contributors:
 \itemize{
+  \item Margie Hannum (\href{https://orcid.org/0000-0002-2953-0449}{ORCID}) [contributor]
+  \item Meier Hsu [contributor]
   \item Caroline Kostrzewa [contributor]
   \item Jasme Lee [contributor]
   \item Emily Vertosick [contributor]
+  \item Christine Zhou [contributor]
 }
 
 }
