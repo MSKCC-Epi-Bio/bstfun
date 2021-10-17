@@ -150,6 +150,7 @@ add_n.tbl_likert <- function(x,
                              footnote = FALSE,
                              last = FALSE,
                              ...) {
+  updated_call_list <- c(x$call_list, list(add_n = match.call()))
   # check inputs ---------------------------------------------------------------
   if (!inherits(x, "tbl_likert"))
     stop("`x=` must be class 'tbl_likert'", call. = FALSE)
@@ -211,8 +212,8 @@ add_n.tbl_likert <- function(x,
     x <- gtsummary::modify_footnote(x, "n" ~ footnote_content)
   }
 
+  x$call_list <- updated_call_list
   x
-
 }
 
 #' @export
@@ -250,6 +251,7 @@ add_continuous_stat.tbl_likert <- function(x,
                                            score_values = NULL,
                                            stat_col_name = NULL,
                                            ...) {
+  updated_call_list <- c(x$call_list, list(add_continuous_stat = match.call()))
   # check inputs ---------------------------------------------------------------
   if (!inherits(x, "tbl_likert"))
     stop("`x=` must be class 'tbl_likert'", call. = FALSE)
@@ -333,5 +335,6 @@ add_continuous_stat.tbl_likert <- function(x,
     x <- gtsummary::modify_footnote(x, stat_col_name ~ footnote_content)
   }
 
+  x$call_list <- updated_call_list
   x
 }
