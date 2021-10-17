@@ -80,6 +80,8 @@ tbl_likert <- function(data,
     forcats::fct_unify() %>%
     dplyr::bind_cols()
 
+  func_inputs$data <- data # save unified version of data
+
   # create summary table, then stack -------------------------------------------
   result <-
     names(data) %>%
