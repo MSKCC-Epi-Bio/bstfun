@@ -9,7 +9,6 @@
 #' computed statistics, see [gtsummary::tbl_summary()] help page
 #' @param sort Sort table based on mean scores? Must be one of
 #' `c("default", "ascending", "descending")`
-#' @param ... not used
 #' @export
 #' @name tbl_likert
 #' @examples
@@ -47,7 +46,7 @@ tbl_likert <- function(data,
     )
 
   if (is.character(statistic))
-    statistic <- paste0("~\"", statistic, "\"") %>% as.formula()
+    statistic <- paste0("~\"", statistic, "\"") %>% stats::as.formula()
   statistic <-
     broom.helpers::.formula_list_to_named_list(
       statistic,
@@ -217,6 +216,10 @@ add_n.tbl_likert <- function(x,
   x
 }
 
+#' Add continuous statistic to gtsummary table
+#' @param x Object created from a gtsummary function
+#' @param ... Additional arguments passed to other methods
+#' @seealso [add_continuous_stat.tbl_likert()]
 #' @export
 add_continuous_stat <- function(x, ...) {
   UseMethod("add_continuous_stat")
@@ -243,6 +246,7 @@ add_continuous_stat <- function(x, ...) {
 #' Default is `1:n` where `n` indicates the number of levels.
 #' @param stat_col_name Optional string indicating the name of the new column
 #' added to `x$table_body`
+#' @param ... not used
 add_continuous_stat.tbl_likert <- function(x,
                                            statistic = "{mean}",
                                            digits = NULL,
@@ -258,7 +262,7 @@ add_continuous_stat.tbl_likert <- function(x,
     stop("`x=` must be class 'tbl_likert'", call. = FALSE)
 
   if (is.character(statistic))
-    statistic <- paste0("~\"", statistic, "\"") %>% as.formula()
+    statistic <- paste0("~\"", statistic, "\"") %>% stats::as.formula()
 
   data <- x$inputs$data
   include <- x$inputs$include

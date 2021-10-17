@@ -33,8 +33,6 @@ computed statistics, see \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summa
 
 \item{sort}{Sort table based on mean scores? Must be one of
 \code{c("default", "ascending", "descending")}}
-
-\item{...}{not used}
 }
 \description{
 \lifecycle{experimental}

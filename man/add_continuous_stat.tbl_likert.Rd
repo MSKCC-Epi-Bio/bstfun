@@ -40,6 +40,8 @@ Default is \code{1:n} where \code{n} indicates the number of levels.}
 
 \item{stat_col_name}{Optional string indicating the name of the new column
 added to \code{x$table_body}}
+
+\item{...}{not used}
 }
 \description{
 This function converts Likert-scales into a numeric score and computes
