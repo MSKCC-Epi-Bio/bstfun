@@ -2,7 +2,6 @@
 % Please edit documentation in R/tbl_likert.R
 \name{tbl_likert}
 \alias{tbl_likert}
-\alias{add_n.tbl_likert}
 \title{Likert Summary}
 \usage{
 tbl_likert(
@@ -13,8 +12,6 @@ tbl_likert(
   include = everything(),
   sort = c("default", "ascending", "descending")
 )
-
-\method{add_n}{tbl_likert}(x, ...)
 }
 \arguments{
 \item{data}{A data frame}
