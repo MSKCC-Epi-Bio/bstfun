@@ -17,7 +17,7 @@
 )
 }
 \arguments{
-\item{x}{Object with class \code{tbl_likert} from the \link{tbl_likert} function}
+\item{x}{Object with class \code{tbl_likert} from the \code{\link[=tbl_likert]{tbl_likert()}} function}
 
 \item{statistic}{String or formula indicating the statistic to be reported.
 Default is the mean score. Other possible continuous statistics are described

@@ -2,9 +2,13 @@
 #'
 #' \lifecycle{experimental}
 #' @inheritParams gtsummary::tbl_summary
+#' @param statistic Formula or list of formulas specifying types of categorical
+#' statistics to display, see [gtsummary::tbl_summary()] help page,
+#' section *statistic argument*
+#' @param digits Formula or list of formulas indicating how to display the
+#' computed statistics, see [gtsummary::tbl_summary()] help page
 #' @param sort Sort table based on mean scores? Must be one of
 #' `c("default", "ascending", "descending")`
-#' @param x Table of class 'tbl_likert'
 #' @param ... not used
 #' @export
 #' @name tbl_likert
@@ -41,12 +45,16 @@ tbl_likert <- function(data,
       data = data,
       arg_name = "label"
     )
+
+  if (is.character(statistic))
+    statistic <- paste0("~\"", statistic, "\"") %>% as.formula()
   statistic <-
     broom.helpers::.formula_list_to_named_list(
       statistic,
       data = data,
       arg_name = "statistic"
     )
+
   digits <-
     broom.helpers::.formula_list_to_named_list(
       digits,
@@ -130,9 +138,10 @@ tbl_likert <- function(data,
   result
 }
 
-#' Add column with N
+#' Add column with N to a Likert table
 #' @export
 #' @inheritParams gtsummary::add_n.tbl_summary
+#' @param x Object with class `tbl_likert` from the [tbl_likert()] function
 add_n.tbl_likert <- function(x,
                              statistic = "{n}",
                              col_label = "**N**",
@@ -145,6 +154,9 @@ add_n.tbl_likert <- function(x,
 
   data <- x$inputs$data
   include <- x$inputs$include
+
+  if ("n" %in% names(x$table_body))
+    stop("`add_n()` has already been applied", call. = FALSE)
 
   # compute stat ---------------------------------------------------------------
   data <-
@@ -194,7 +206,7 @@ add_n.tbl_likert <- function(x,
 
   # Adding footnote if requested -----------------------------------------------
   if (footnote == TRUE) {
-    x <- modify_footnote(x, "n" ~ footnote_content)
+    x <- gtsummary::modify_footnote(x, "n" ~ footnote_content)
   }
 
   x
@@ -211,7 +223,7 @@ add_continuous_stat <- function(x, ...) {
 #' This function converts Likert-scales into a numeric score and computes
 #' continuous statistics based on this score.
 #' @export
-#' @param x Object with class `tbl_likert` from the [tbl_likert] function
+#' @param x Object with class `tbl_likert` from the [tbl_likert()] function
 #' @param statistic String or formula indicating the statistic to be reported.
 #' Default is the mean score. Other possible continuous statistics are described
 #' in [gtsummary::tbl_summary()] help page, section *statistic argument*.
@@ -316,7 +328,7 @@ add_continuous_stat.tbl_likert <- function(x,
 
   # Adding footnote if requested -----------------------------------------------
   if (footnote == TRUE) {
-    x <- modify_footnote(x, stat_col_name ~ footnote_content)
+    x <- gtsummary::modify_footnote(x, stat_col_name ~ footnote_content)
   }
 
   x

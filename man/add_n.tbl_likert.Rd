@@ -2,7 +2,7 @@
 % Please edit documentation in R/tbl_likert.R
 \name{add_n.tbl_likert}
 \alias{add_n.tbl_likert}
-\title{Add column with N}
+\title{Add column with N to a Likert table}
 \usage{
 \method{add_n}{tbl_likert}(
   x,
@@ -14,8 +14,7 @@
 )
 }
 \arguments{
-\item{x}{Object with class \code{tbl_summary} from the \link[gtsummary]{tbl_summary} function or
-with class \code{tbl_svysummary} from the \link[gtsummary]{tbl_svysummary} function}
+\item{x}{Object with class \code{tbl_likert} from the \code{\link[=tbl_likert]{tbl_likert()}} function}
 
 \item{statistic}{String indicating the statistic to report. Default is the
 number of non-missing observation for each variable, \code{statistic = "{n}"}.
@@ -41,5 +40,5 @@ Default is \code{FALSE}, which will display N column first.}
 \item{...}{Not used}
 }
 \description{
-Add column with N
+Add column with N to a Likert table
 }
