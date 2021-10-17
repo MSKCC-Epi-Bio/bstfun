@@ -137,6 +137,7 @@ tbl_likert <- function(data,
 
   # return tbl -----------------------------------------------------------------
   class(result) <- c("tbl_likert", "gtsummary")
+  result[["call_list"]] <- list(tbl_likert = match.call())
   result
 }
 
