@@ -6,6 +6,7 @@
 #' `c("default", "ascending", "descending")`
 #' @param x Table of class 'tbl_likert'
 #' @param ... not used
+#' @family gtsummary-related functions
 #' @export
 #' @name tbl_likert
 #' @examples
