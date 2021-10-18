@@ -1,4 +1,8 @@
-# bstfun (development version)
+# bstfun 0.2.7
+
+* Added new function `add_sparkline()`--a wrapper for `gtExtras::gt_sparkline()` that adds distributional figures in a new column of a 'tbl_summary' table.
+
+* Updated default argument value: `as_forest_plot(xlog = x$inputs$exponentiate)`.
 
 # bstfun 0.2.6
 

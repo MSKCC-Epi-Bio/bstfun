@@ -8,8 +8,11 @@ MSKCC
 ORCID
 RStudio
 Rmd
+Sparkline
 bibtex
+binwidth
 biostatR
+eg
 flextable
 ggplot
 gtsummary
@@ -28,6 +31,7 @@ renv
 repo
 rmd
 ropensci
+sparkline
 stlying
 tbl
 tidyselect

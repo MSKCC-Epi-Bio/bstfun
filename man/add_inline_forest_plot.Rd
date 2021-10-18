@@ -49,8 +49,10 @@ add_inline_forest_plot_ex1 <-
 }
 \seealso{
 Other gtsummary-related functions: 
+\code{\link{add_sparkline}()},
 \code{\link{as_ggplot}()},
 \code{\link{style_tbl_compact}()},
+\code{\link{tbl_likert}()},
 \code{\link{theme_gtsummary_msk}()}
 }
 \concept{gtsummary-related functions}
