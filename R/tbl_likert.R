@@ -1,6 +1,8 @@
-#' Likert Summary
+#' Likert Summary Table
 #'
 #' \lifecycle{experimental}
+#' Creates a summary of Likert scales following the gtsummary structure
+#'
 #' @inheritParams gtsummary::tbl_summary
 #' @param sort Sort table based on mean scores? Must be one of
 #' `c("default", "ascending", "descending")`
@@ -8,7 +10,6 @@
 #' @param ... not used
 #' @family gtsummary-related functions
 #' @export
-#' @name tbl_likert
 #' @examples
 #' df <-
 #'   tibble::tibble(
@@ -20,9 +21,15 @@
 #'       factor(levels = 1:3, labels = c("bad", "meh", "good")),
 #'   )
 #'
-#' tbl_likert(df) %>%
-#'   add_n() %>%
-#'   gtsummary::as_kable()
+#' tbl_likert_ex1 <-
+#'   tbl_likert(df) %>%
+#'   add_n()
+#' @export
+#' @name tbl_likert
+#' @section Example Output:
+#' \if{html}{Example 1}
+#'
+#' \if{html}{\figure{tbl_likert_ex1.png}{options: width=50\%}}
 NULL
 
 #' @export

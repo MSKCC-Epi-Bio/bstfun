@@ -41,10 +41,17 @@ This function wraps \code{gtExtras::gt_sparkline()} and adds a new column
 illustrating the distribution of a continuous variable. This function converts
 the gtsummary table into a gt table.
 }
+\section{Example Output}{
+
+\if{html}{Example 1}
+
+\if{html}{\figure{add_sparkline_ex1.png}{options: width=50\%}}
+}
+
 \examples{
 library(gtsummary)
 
-gts_sparkline_ex1 <-
+add_sparkline_ex1 <-
   trial \%>\%
   select(age, marker) \%>\%
   tbl_summary(missing = "no") \%>\%

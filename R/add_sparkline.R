@@ -16,12 +16,15 @@
 #' @examples
 #' library(gtsummary)
 #'
-#' gts_sparkline_ex1 <-
+#' add_sparkline_ex1 <-
 #'   trial %>%
 #'   select(age, marker) %>%
 #'   tbl_summary(missing = "no") %>%
 #'   add_sparkline()
-
+#' @section Example Output:
+#' \if{html}{Example 1}
+#'
+#' \if{html}{\figure{add_sparkline_ex1.png}{options: width=50\%}}
 add_sparkline <- function(x,
                           type = c("histogram", "sparkline"),
                           column_header = NULL,
