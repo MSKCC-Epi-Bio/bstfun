@@ -79,7 +79,7 @@ path_data(): Returns fs::path(path, "secure_data", data_date, ...)
 <span class="fu">get_data_date</span><span class="op">(</span>path_to_data_date <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 
     <div id="arguments">
-    <h2>Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
+    <h2>Arguments</h2>
     <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>...</th>
       <td><p>Path components to be appended to the end of the returned path string.</p></td>
     </tr><tr><th>data_folder_name</th>
@@ -96,18 +96,18 @@ at the top of the script with <code>options(path_data = "H:/.../data")</code></p
     </tr></table></div>
 
     <div id="value">
-    <h2>Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <h2>Value</h2>
     <p>path to data folder</p>
     </div>
     <div id="details">
-    <h2>Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    <h2>Details</h2>
     <p>The function expects the user to version their data using a text file indicating
 the date the data was last received, and the data to be stored in a corresponding
 folder name, e.g. <code>~/Project Folder/secure_data/2020-01-01</code>.</p>
     </div>
 
     <div id="examples">
-    <h2>Examples<a class="anchor" aria-label="anchor" href="#examples"></a></h2>
+    <h2>Examples</h2>
     <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in"><span class="fu">here_data</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in"><span class="co">#&gt; "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01"</span></span>
