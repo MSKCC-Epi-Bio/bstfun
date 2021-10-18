@@ -3,7 +3,7 @@
 \name{tbl_likert}
 \alias{tbl_likert}
 \alias{add_n.tbl_likert}
-\title{Likert Summary}
+\title{Likert Summary Table}
 \usage{
 tbl_likert(
   data,
@@ -50,7 +50,15 @@ may also pass a styling function: \code{digits = age ~ style_sigfig}}
 }
 \description{
 \lifecycle{experimental}
+Creates a summary of Likert scales following the gtsummary structure
 }
+\section{Example Output}{
+
+\if{html}{Example 1}
+
+\if{html}{\figure{tbl_likert_ex1.png}{options: width=50\%}}
+}
+
 \examples{
 df <-
   tibble::tibble(
@@ -62,7 +70,16 @@ df <-
       factor(levels = 1:3, labels = c("bad", "meh", "good")),
   )
 
-tbl_likert(df) \%>\%
-  add_n() \%>\%
-  gtsummary::as_kable()
+tbl_likert_ex1 <-
+  tbl_likert(df) \%>\%
+  add_n()
 }
+\seealso{
+Other gtsummary-related functions: 
+\code{\link{add_inline_forest_plot}()},
+\code{\link{add_sparkline}()},
+\code{\link{as_ggplot}()},
+\code{\link{style_tbl_compact}()},
+\code{\link{theme_gtsummary_msk}()}
+}
+\concept{gtsummary-related functions}
