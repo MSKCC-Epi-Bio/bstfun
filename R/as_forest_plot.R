@@ -53,6 +53,7 @@ as_forest_plot <- function(x,
                            graph.pos = 2,
                            boxsize = 0.3,
                            title_line_color = "darkblue",
+                           xlog = x$inputs$exponentiate,
                            ...) {
   assert_package("forestplot", "as_forest_plot()")
   if (!inherits(x, c("tbl_regression", "tbl_uvregression"))) {
@@ -119,6 +120,7 @@ as_forest_plot <- function(x,
       graphwidth = grid::unit(9, "cm"),
       is.summary = "..summary_row..",
       hrzl_lines = list("2" = grid::gpar(lwd = 2, col = title_line_color)),
+      xlog = xlog,
       ...
     )
 

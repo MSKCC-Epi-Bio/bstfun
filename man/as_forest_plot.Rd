@@ -10,6 +10,7 @@ as_forest_plot(
   graph.pos = 2,
   boxsize = 0.3,
   title_line_color = "darkblue",
+  xlog = x$inputs$exponentiate,
   ...
 )
 }
@@ -27,6 +28,13 @@ to \code{"left"} or \code{"right"}.}
 
 \item{title_line_color}{color of line that appears above forest plot.
 Default is \code{"darkblue"}}
+
+\item{xlog}{If TRUE, x-axis tick marks are to follow a logarithmic scale, e.g. for
+logistic regressoin (OR), survival estimates (HR), Poisson regression etc.
+\emph{Note:} This is an intentional break with the original \code{forestplot}
+function as I've found that exponentiated ticks/clips/zero effect are more
+difficult to for non-statisticians and there are sometimes issues with rounding
+the tick marks properly.}
 
 \item{...}{arguments passed to \code{forestplot::forestplot()}}
 }
