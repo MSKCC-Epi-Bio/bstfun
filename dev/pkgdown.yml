@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 1.9000.9000.9000
 pkgdown_sha: 215f440342e2b34ab92776f9b01d25d3cbf728aa
 articles: {}
-last_built: 2021-10-18T23:36Z
+last_built: 2021-10-19T00:22Z
 urls:
   reference: http://www.danieldsjoberg.com/bstfun/reference
   article: http://www.danieldsjoberg.com/bstfun/articles
