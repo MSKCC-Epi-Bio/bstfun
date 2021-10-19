@@ -1,3 +1,5 @@
+# bstfun (development version)
+
 # bstfun 0.2.7
 
 * Added new function `add_sparkline()`--a wrapper for `gtExtras::gt_sparkline()` that adds distributional figures in a new column of a 'tbl_summary' table.
