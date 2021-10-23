@@ -17,6 +17,7 @@ bold_group_labels <- function(x, print_engine = c("gt", "flextable", "huxtable")
       "flextable" = gtsummary::as_flex_table(x),
       "huxtable" = gtsummary::as_hux_table(x),
     )
+  cli::cli_alert_info("{.field gtsummary} table has been converted class {.val {print_engine}}")
 
   # apply bold code to table ---------------------------------------------------
   # THE GROUP COLUMNS WILL ALWAYS BEGIN WITH 'groupname_col*'
