@@ -1,4 +1,6 @@
-# bstfun (development version)
+# bstfun 0.2.8
+
+* Updated how references are added in `cite_r()`.
 
 # bstfun 0.2.7
 
