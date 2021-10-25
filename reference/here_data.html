@@ -21,7 +21,7 @@ path_data(): Returns fs::path(path, "secure_data", data_date, ...)
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@ path_data(): Returns fs::path(path, "secure_data", data_date, ...)
   <a href="../news/index.html">News</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/ddsjoberg/bstfun">
+  <a href="https://github.com/ddsjoberg/bstfun" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -54,7 +54,7 @@ path_data(): Returns fs::path(path, "secure_data", data_date, ...)
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Find your data folder</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/here_data.R"><code>R/here_data.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/here_data.R" class="external-link"><code>R/here_data.R</code></a></small>
     <div class="hidden name"><code>here_data.Rd</code></div>
     </div>
 
@@ -66,35 +66,33 @@ path_data(): Returns fs::path(path, "secure_data", data_date, ...)
     <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">here_data</span><span class="op">(</span>
   <span class="va">...</span>,
   data_folder_name <span class="op">=</span> <span class="st">"secure_data"</span>,
-  path_to_data_date <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="op">)</span>
+  path_to_data_date <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="fu">path_data</span><span class="op">(</span>
   <span class="va">...</span>,
-  path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"path_data"</span><span class="op">)</span>,
+  path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"path_data"</span><span class="op">)</span>,
   data_folder_name <span class="op">=</span> <span class="st">"secure_data"</span>,
-  path_to_data_date <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="op">)</span>
+  path_to_data_date <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span>
 
-<span class="fu">get_data_date</span><span class="op">(</span>path_to_data_date <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu">get_data_date</span><span class="op">(</span>path_to_data_date <span class="op">=</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 
+    <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>...</th>
-      <td><p>Path components to be appended to the end of the returned path string.</p></td>
-    </tr><tr><th>data_folder_name</th>
-      <td><p>name of data folder. Default is <code>"secure_data"</code></p></td>
-    </tr><tr><th>path_to_data_date</th>
-      <td><p>path to data date folder or file. If folder is passed,
+    
+
+<dl><dt>...</dt><dd><p>Path components to be appended to the end of the returned path string.</p></dd>
+</dl><dl><dt>data_folder_name</dt><dd><p>name of data folder. Default is <code>"secure_data"</code></p></dd>
+</dl><dl><dt>path_to_data_date</dt><dd><p>path to data date folder or file. If folder is passed,
 expecting the data date file to be named one of
 <code>c("data_date.txt", "data_date", "dataDate.txt", "dataDate")</code>.
-Default value is <code><a href="https://here.r-lib.org//reference/here.html">here::here()</a></code></p></td>
-    </tr><tr><th>path</th>
-      <td><p>path to folder where data is saved, e.g. <code>fs::path(path, )</code>
+Default value is <code><a href="https://here.r-lib.org//reference/here.html" class="external-link">here::here()</a></code></p></dd>
+</dl><dl><dt>path</dt><dd><p>path to folder where data is saved, e.g. <code>fs::path(path, )</code>
 Default value is <code>getOption("path_data")</code> where <code>path_data</code> can be initialized
-at the top of the script with <code>options(path_data = "H:/.../data")</code></p></td>
-    </tr></table></div>
-
+at the top of the script with <code>options(path_data = "H:/.../data")</code></p></dd>
+</dl></div>
     <div id="value">
     <h2>Value</h2>
     <p>path to data folder</p>
@@ -104,6 +102,7 @@ at the top of the script with <code>options(path_data = "H:/.../data")</code></p
     <p>The function expects the user to version their data using a text file indicating
 the date the data was last received, and the data to be stored in a corresponding
 folder name, e.g. <code>~/Project Folder/secure_data/2020-01-01</code>.</p>
+    </div>
     </div>
 
     <div id="examples">

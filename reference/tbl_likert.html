@@ -19,7 +19,7 @@ Creates a summary of Likert scales following the gtsummary structure"><!-- mathj
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8</span>
       </span>
     </div>
 
@@ -37,7 +37,7 @@ Creates a summary of Likert scales following the gtsummary structure"><!-- mathj
   <a href="../news/index.html">News</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/ddsjoberg/bstfun">
+  <a href="https://github.com/ddsjoberg/bstfun" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -52,12 +52,12 @@ Creates a summary of Likert scales following the gtsummary structure"><!-- mathj
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Likert Summary Table</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/tbl_likert.R"><code>R/tbl_likert.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/tbl_likert.R" class="external-link"><code>R/tbl_likert.R</code></a></small>
     <div class="hidden name"><code>tbl_likert.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="figures/lifecycle-experimental.svg" alt="[Experimental]"></a>
+    <p><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="figures/lifecycle-experimental.svg" alt="[Experimental]"></a>
 
 Creates a summary of Likert scales following the gtsummary structure</p>
     </div>
@@ -67,48 +67,42 @@ Creates a summary of Likert scales following the gtsummary structure</p>
   label <span class="op">=</span> <span class="cn">NULL</span>,
   statistic <span class="op">=</span> <span class="cn">NULL</span>,
   digits <span class="op">=</span> <span class="cn">NULL</span>,
-  include <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">everything</a></span><span class="op">(</span><span class="op">)</span>,
-  sort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"default"</span>, <span class="st">"ascending"</span>, <span class="st">"descending"</span><span class="op">)</span>
+  include <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span>,
+  sort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"default"</span>, <span class="st">"ascending"</span>, <span class="st">"descending"</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="co"># S3 method for tbl_likert</span>
-<span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_n.html">add_n</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
 
+    <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>data</th>
-      <td><p>A data frame</p></td>
-    </tr><tr><th>label</th>
-      <td><p>List of formulas specifying variables labels,
+    
+
+<dl><dt>data</dt><dd><p>A data frame</p></dd>
+</dl><dl><dt>label</dt><dd><p>List of formulas specifying variables labels,
 e.g. <code>list(age ~ "Age", stage ~ "Path T Stage")</code>.  If a
 variable's label is not specified here, the label attribute
 (<code>attr(data$age, "label")</code>) is used.  If
-attribute label is <code>NULL</code>, the variable name will be used.</p></td>
-    </tr><tr><th>statistic</th>
-      <td><p>List of formulas specifying types of summary statistics to
+attribute label is <code>NULL</code>, the variable name will be used.</p></dd>
+</dl><dl><dt>statistic</dt><dd><p>List of formulas specifying types of summary statistics to
 display for each variable.  The default is
 <code>list(all_continuous() ~ "{median} ({p25}, {p75})", all_categorical() ~ "{n} ({p}%)")</code>.
-See below for details.</p></td>
-    </tr><tr><th>digits</th>
-      <td><p>List of formulas specifying the number of decimal
+See below for details.</p></dd>
+</dl><dl><dt>digits</dt><dd><p>List of formulas specifying the number of decimal
 places to round continuous summary statistics. If not specified,
 <code>tbl_summary</code> guesses an appropriate number of decimals to round statistics.
 When multiple statistics are displayed for a single variable, supply a vector
 rather than an integer.  For example, if the
 statistic being calculated is <code>"{mean} ({sd})"</code> and you want the mean rounded
 to 1 decimal place, and the SD to 2 use <code>digits = list(age ~ c(1, 2))</code>. User
-may also pass a styling function: <code>digits = age ~ style_sigfig</code></p></td>
-    </tr><tr><th>include</th>
-      <td><p>variables to include in the summary table. Default is <code><a href="https://tidyselect.r-lib.org/reference/everything.html">everything()</a></code></p></td>
-    </tr><tr><th>sort</th>
-      <td><p>Sort table based on mean scores? Must be one of
-<code>c("default", "ascending", "descending")</code></p></td>
-    </tr><tr><th>x</th>
-      <td><p>Table of class 'tbl_likert'</p></td>
-    </tr><tr><th>...</th>
-      <td><p>not used</p></td>
-    </tr></table></div>
-
+may also pass a styling function: <code>digits = age ~ style_sigfig</code></p></dd>
+</dl><dl><dt>include</dt><dd><p>variables to include in the summary table. Default is <code><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything()</a></code></p></dd>
+</dl><dl><dt>sort</dt><dd><p>Sort table based on mean scores? Must be one of
+<code>c("default", "ascending", "descending")</code></p></dd>
+</dl><dl><dt>x</dt><dd><p>Table of class 'tbl_likert'</p></dd>
+</dl><dl><dt>...</dt><dd><p>not used</p></dd>
+</dl></div>
     <div id="example-output">
     <h2>Example Output</h2>
     
@@ -125,22 +119,23 @@ may also pass a styling function: <code>digits = age ~ style_sigfig</code></p></
 <code><a href="style_tbl_compact.html">style_tbl_compact</a>()</code>,
 <code><a href="theme_gtsummary_msk.html">theme_gtsummary_msk</a>()</code></p></div>
     </div>
+    </div>
 
     <div id="examples">
     <h2>Examples</h2>
     <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">df</span> <span class="op">&lt;-</span></span>
-<span class="r-in">  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
+<span class="r-in">  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
 <span class="r-in">    f1 <span class="op">=</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fl">100</span>, n <span class="op">=</span> <span class="fl">3</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span>levels <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"bad"</span>, <span class="st">"meh"</span>, <span class="st">"good"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample.int</a></span><span class="op">(</span><span class="fl">100</span>, n <span class="op">=</span> <span class="fl">3</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span>levels <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"bad"</span>, <span class="st">"meh"</span>, <span class="st">"good"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span class="r-in">    f2 <span class="op">=</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fl">100</span>, n <span class="op">=</span> <span class="fl">3</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span>levels <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"bad"</span>, <span class="st">"meh"</span>, <span class="st">"good"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample.int</a></span><span class="op">(</span><span class="fl">100</span>, n <span class="op">=</span> <span class="fl">3</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span>levels <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"bad"</span>, <span class="st">"meh"</span>, <span class="st">"good"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span class="r-in">  <span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="va">tbl_likert_ex1</span> <span class="op">&lt;-</span></span>
-<span class="r-in">  <span class="fu">tbl_likert</span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_n.html">add_n</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in">  <span class="fu">tbl_likert</span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span class="r-in">  <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>`gtsummary_butcher()` was deprecated in bstfun 0.2.5.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> Please use `gtsummary::tbl_butcher()` instead.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span>

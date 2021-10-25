@@ -18,7 +18,7 @@ the figure."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8</span>
       </span>
     </div>
 
@@ -36,7 +36,7 @@ the figure."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
   <a href="../news/index.html">News</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/ddsjoberg/bstfun">
+  <a href="https://github.com/ddsjoberg/bstfun" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -51,7 +51,7 @@ the figure."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Add risk table to <code>cuminc()</code> plot</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/add_cuminc_risktable.R"><code>R/add_cuminc_risktable.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/add_cuminc_risktable.R" class="external-link"><code>R/add_cuminc_risktable.R</code></a></small>
     <div class="hidden name"><code>add_cuminc_risktable.Rd</code></div>
     </div>
 
@@ -71,89 +71,84 @@ the figure.</p>
   col.list <span class="op">=</span> <span class="fl">1</span>
 <span class="op">)</span></code></pre></div>
 
+    <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>cuminc</th>
-      <td><p><code><a href="https://rdrr.io/pkg/cmprsk/man/cuminc.html">cmprsk::cuminc()</a></code> object</p></td>
-    </tr><tr><th>survfit</th>
-      <td><p><code><a href="https://rdrr.io/pkg/survival/man/survfit.html">survival::survfit()</a></code> object</p></td>
-    </tr><tr><th>timepts</th>
-      <td><p>a numeric vector of time points of the estimates to display.
-E.g. c(0,1,2,3,4,5) or seq(0,12,by=2)</p></td>
-    </tr><tr><th>lg</th>
-      <td><p>legend label for each cumulative incidence curve to be displayed.
-E.g. c("Male", "Female")</p></td>
-    </tr><tr><th>numgrps</th>
-      <td><p>the number of groups of the stratification variable: 1 is
-no stratification, 2 is stratified by a binary variable</p></td>
-    </tr><tr><th>line</th>
-      <td><p>to adjust position of risk table. A lower value will shift
-table up, a larger value will shift table down; default is 4</p></td>
-    </tr><tr><th>at</th>
-      <td><p>to adjust position of left margin. Default is -1.</p></td>
-    </tr><tr><th>col.list</th>
-      <td><p>list of colors for legend text Should match the colors
-of plot legend. Default is 1 (black).</p></td>
-    </tr></table></div>
+    
 
+<dl><dt>cuminc</dt><dd><p><code><a href="https://rdrr.io/pkg/cmprsk/man/cuminc.html" class="external-link">cmprsk::cuminc()</a></code> object</p></dd>
+</dl><dl><dt>survfit</dt><dd><p><code><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survival::survfit()</a></code> object</p></dd>
+</dl><dl><dt>timepts</dt><dd><p>a numeric vector of time points of the estimates to display.
+E.g. c(0,1,2,3,4,5) or seq(0,12,by=2)</p></dd>
+</dl><dl><dt>lg</dt><dd><p>legend label for each cumulative incidence curve to be displayed.
+E.g. c("Male", "Female")</p></dd>
+</dl><dl><dt>numgrps</dt><dd><p>the number of groups of the stratification variable: 1 is
+no stratification, 2 is stratified by a binary variable</p></dd>
+</dl><dl><dt>line</dt><dd><p>to adjust position of risk table. A lower value will shift
+table up, a larger value will shift table down; default is 4</p></dd>
+</dl><dl><dt>at</dt><dd><p>to adjust position of left margin. Default is -1.</p></dd>
+</dl><dl><dt>col.list</dt><dd><p>list of colors for legend text Should match the colors
+of plot legend. Default is 1 (black).</p></dd>
+</dl></div>
     <div id="author">
     <h2>Author</h2>
     <p>Meier Hsu</p>
+    </div>
     </div>
 
     <div id="examples">
     <h2>Examples</h2>
     <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># interactive()</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.R-project.org">cmprsk</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival">survival</a></span><span class="op">)</span></span>
+<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://www.R-project.org" class="external-link">cmprsk</a></span><span class="op">)</span></span>
+<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
 <span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">)</span></span>
 <span class="r-in"><span class="co"># recode time and status</span></span>
 <span class="r-in"><span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span> <span class="op">&lt;-</span> <span class="va">pbc</span><span class="op">$</span><span class="va">time</span> <span class="op">/</span> <span class="fl">365.25</span></span>
-<span class="r-in"><span class="va">pbc</span><span class="op">$</span><span class="va">status2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">$</span><span class="va">status</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">$</span><span class="va">status</span> <span class="op">==</span> <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">pbc</span><span class="op">$</span><span class="va">status2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">$</span><span class="va">status</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">$</span><span class="va">status</span> <span class="op">==</span> <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span>, <span class="fl">0</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Example 1 -------------------------------------</span></span>
 <span class="r-in"><span class="co"># CIR and KM for no strata</span></span>
-<span class="r-in"><span class="va">cif1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/cmprsk/man/cuminc.html">cuminc</a></span><span class="op">(</span>ftime <span class="op">=</span> <span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span>, fstatus <span class="op">=</span> <span class="va">pbc</span><span class="op">$</span><span class="va">status2</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">km1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html">survfit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html">Surv</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span>, <span class="va">pbc</span><span class="op">$</span><span class="va">status</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">cif1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/cmprsk/man/cuminc.html" class="external-link">cuminc</a></span><span class="op">(</span>ftime <span class="op">=</span> <span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span>, fstatus <span class="op">=</span> <span class="va">pbc</span><span class="op">$</span><span class="va">status2</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">km1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span>, <span class="va">pbc</span><span class="op">$</span><span class="va">status</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Plot and add risk table for no strata (numgrps=1)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/grDevices/windows.html">windows</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span>
-<span class="r-in">    mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12.5</span>, <span class="fl">5.7</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>,</span>
-<span class="r-in">    mgp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0.65</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">cif1</span>,</span>
-<span class="r-in">     curvlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"recurred"</span>, <span class="st">"died"</span><span class="op">)</span>,</span>
-<span class="r-in">     xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span><span class="op">)</span>, xaxt <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/axis.html">axis</a></span><span class="op">(</span><span class="fl">1</span>, at <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/grDevices/windows.html" class="external-link">windows</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span class="r-in">    mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">12.5</span>, <span class="fl">5.7</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>,</span>
+<span class="r-in">    mgp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0.65</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">cif1</span>,</span>
+<span class="r-in">     curvlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"recurred"</span>, <span class="st">"died"</span><span class="op">)</span>,</span>
+<span class="r-in">     xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span><span class="op">)</span>, xaxt <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/axis.html" class="external-link">axis</a></span><span class="op">(</span><span class="fl">1</span>, at <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">add_cuminc_risktable</span><span class="op">(</span><span class="va">cif1</span>, <span class="va">km1</span>,</span>
-<span class="r-in">                     timepts <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span>, <span class="fl">3</span><span class="op">)</span>,</span>
+<span class="r-in">                     timepts <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span>, <span class="fl">3</span><span class="op">)</span>,</span>
 <span class="r-in">                     lg <span class="op">=</span> <span class="st">""</span>,</span>
 <span class="r-in">                     numgrps <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Example 2 -------------------------------------</span></span>
-<span class="r-in"><span class="va">cif2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/cmprsk/man/cuminc.html">cuminc</a></span><span class="op">(</span>ftime <span class="op">=</span> <span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span>,</span>
+<span class="r-in"><span class="va">cif2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/cmprsk/man/cuminc.html" class="external-link">cuminc</a></span><span class="op">(</span>ftime <span class="op">=</span> <span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span>,</span>
 <span class="r-in">               fstatus <span class="op">=</span> <span class="va">pbc</span><span class="op">$</span><span class="va">status2</span>,</span>
 <span class="r-in">               group <span class="op">=</span> <span class="va">pbc</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">km2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html">survfit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html">Surv</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span>, <span class="va">pbc</span><span class="op">$</span><span class="va">status</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">~</span> <span class="va">pbc</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">km2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">pbc</span><span class="op">$</span><span class="va">time.y</span>, <span class="va">pbc</span><span class="op">$</span><span class="va">status</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">~</span> <span class="va">pbc</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Plot and add risk table for 2 groups (numgrps=2)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/grDevices/windows.html">windows</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span>
-<span class="r-in">    mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12.5</span>, <span class="fl">5.7</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>,</span>
-<span class="r-in">    mgp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0.65</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/grDevices/windows.html" class="external-link">windows</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span class="r-in">    mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">12.5</span>, <span class="fl">5.7</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>,</span>
+<span class="r-in">    mgp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0.65</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">cif2</span>,</span>
-<span class="r-in">     curvlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">""</span>, <span class="st">""</span><span class="op">)</span>,</span>
-<span class="r-in">     lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>,</span>
-<span class="r-in">     xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span><span class="op">)</span>,</span>
-<span class="r-in">     xaxt <span class="op">=</span> <span class="st">"n"</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/axis.html">axis</a></span><span class="op">(</span><span class="fl">1</span>, at <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">cif2</span>,</span>
+<span class="r-in">     curvlab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">""</span>, <span class="st">""</span><span class="op">)</span>,</span>
+<span class="r-in">     lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>,</span>
+<span class="r-in">     xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span><span class="op">)</span>,</span>
+<span class="r-in">     xaxt <span class="op">=</span> <span class="st">"n"</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/axis.html" class="external-link">axis</a></span><span class="op">(</span><span class="fl">1</span>, at <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">add_cuminc_risktable</span><span class="op">(</span><span class="va">cif2</span>, <span class="va">km2</span>,</span>
-<span class="r-in">                     timepts <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span>, <span class="fl">3</span><span class="op">)</span>,</span>
-<span class="r-in">                     lg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"male"</span>, <span class="st">"female"</span><span class="op">)</span>,</span>
+<span class="r-in">                     timepts <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">12</span>, <span class="fl">3</span><span class="op">)</span>,</span>
+<span class="r-in">                     lg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"male"</span>, <span class="st">"female"</span><span class="op">)</span>,</span>
 <span class="r-in">                     numgrps <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">}</span></span>
 </code></pre></div>
