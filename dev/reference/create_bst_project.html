@@ -20,7 +20,7 @@ sets the default template to template = hotfun::project_template"><meta name="ro
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.7.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.8.9000</span>
       </span>
     </div>
 
@@ -38,7 +38,7 @@ sets the default template to template = hotfun::project_template"><meta name="ro
   <a href="../news/index.html">News</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/ddsjoberg/bstfun">
+  <a href="https://github.com/ddsjoberg/bstfun" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -53,14 +53,14 @@ sets the default template to template = hotfun::project_template"><meta name="ro
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Start a New Biostatistics project</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/create_biostat_project.R"><code>R/create_biostat_project.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/HEAD/R/create_biostat_project.R" class="external-link"><code>R/create_biostat_project.R</code></a></small>
     <div class="hidden name"><code>create_bst_project.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>Creates a directory with the essential files for a new project.
 The function can be used on existing project directories as well.
-This is a thin wrapper for <code><a href="https://rdrr.io/pkg/starter/man/create_project.html">starter::create_project()</a></code> that
+This is a thin wrapper for <code><a href="https://rdrr.io/pkg/starter/man/create_project.html" class="external-link">starter::create_project()</a></code> that
 sets the default template to <code>template = hotfun::project_template</code></p>
     </div>
 
@@ -71,37 +71,38 @@ sets the default template to <code>template = hotfun::project_template</code></p
   git <span class="op">=</span> <span class="cn">NA</span>,
   renv <span class="op">=</span> <span class="cn">TRUE</span>,
   overwrite <span class="op">=</span> <span class="cn">NA</span>,
-  open <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span><span class="op">(</span><span class="op">)</span>
+  open <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 
+    <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>path</th>
-      <td><p>A path. If it exists, it is used. If it does not exist, it is
-created.</p></td>
-    </tr><tr><th>path_data</th>
-      <td><p>A path. The directory where the secure data exist. Default is
-<code>NULL</code>.  When supplied, a symbolic link to data folder will be created.</p></td>
-    </tr><tr><th>template</th>
-      <td><p>Specifies template for <code>starter::create_project(template=)</code>.
+    <dl><dt>path</dt>
+<dd><p>A path. If it exists, it is used. If it does not exist, it is
+created.</p></dd>
+<dt>path_data</dt>
+<dd><p>A path. The directory where the secure data exist. Default is
+<code>NULL</code>.  When supplied, a symbolic link to data folder will be created.</p></dd>
+<dt>template</dt>
+<dd><p>Specifies template for <code>starter::create_project(template=)</code>.
 Default is the template in <code><a href="project_templates.html">bstfun::project_templates</a></code> whose name matches
 the lowercase system username (<code>Sys.info()[["user"]]</code>), if it exists;
-otherwise, <code>bstfun::project_templates[["default"]]</code></p></td>
-    </tr><tr><th>git</th>
-      <td><p>Logical indicating whether to create Git repository.  Default is <code>TRUE</code>
-When <code>NA</code>, user will be prompted whether to initialise Git repo.</p></td>
-    </tr><tr><th>renv</th>
-      <td><p>Logical indicating whether to add renv to a project.
-Default is <code>TRUE</code>. When <code>NA</code> user is asked interactively for preference.</p></td>
-    </tr><tr><th>overwrite</th>
-      <td><p>Logical indicating whether to overwrite existing files
+otherwise, <code>bstfun::project_templates[["default"]]</code></p></dd>
+<dt>git</dt>
+<dd><p>Logical indicating whether to create Git repository.  Default is <code>TRUE</code>
+When <code>NA</code>, user will be prompted whether to initialise Git repo.</p></dd>
+<dt>renv</dt>
+<dd><p>Logical indicating whether to add renv to a project.
+Default is <code>TRUE</code>. When <code>NA</code> user is asked interactively for preference.</p></dd>
+<dt>overwrite</dt>
+<dd><p>Logical indicating whether to overwrite existing files
 if they exist.  Options are
-<code>TRUE</code>, <code>FALSE</code>, and <code>NA</code> (aka ask interactively).  Default is <code>NA</code></p></td>
-    </tr><tr><th>open</th>
-      <td><p>Logical indicating whether to open new project in fresh RStudio
-session</p></td>
-    </tr></table></div>
-
+<code>TRUE</code>, <code>FALSE</code>, and <code>NA</code> (aka ask interactively).  Default is <code>NA</code></p></dd>
+<dt>open</dt>
+<dd><p>Logical indicating whether to open new project in fresh RStudio
+session</p></dd>
+</dl></div>
+    </div>
 
     <div id="examples">
     <h2>Examples</h2>

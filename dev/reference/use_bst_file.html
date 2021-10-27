@@ -20,7 +20,7 @@ use_bst_file("gitignore") and use_bst_file("readme").'><meta name="robots" conte
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.7.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.8.9000</span>
       </span>
     </div>
 
@@ -38,7 +38,7 @@ use_bst_file("gitignore") and use_bst_file("readme").'><meta name="robots" conte
   <a href="../news/index.html">News</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/ddsjoberg/bstfun">
+  <a href="https://github.com/ddsjoberg/bstfun" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -53,7 +53,7 @@ use_bst_file("gitignore") and use_bst_file("readme").'><meta name="robots" conte
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Write a template file</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/use_bst_file.R"><code>R/use_bst_file.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/HEAD/R/use_bst_file.R" class="external-link"><code>R/use_bst_file.R</code></a></small>
     <div class="hidden name"><code>use_bst_file.Rd</code></div>
     </div>
 
@@ -68,33 +68,34 @@ The functions <code>use_bst_gitignore()</code> and <code>use_bst_readme()</code>
   name <span class="op">=</span> <span class="cn">NULL</span>,
   filename <span class="op">=</span> <span class="cn">NULL</span>,
   template <span class="op">=</span> <span class="cn">NULL</span>,
-  open <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span><span class="op">(</span><span class="op">)</span>
+  open <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="fu">use_bst_gitignore</span><span class="op">(</span>filename <span class="op">=</span> <span class="cn">NULL</span>, template <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
 
 <span class="fu">use_bst_readme</span><span class="op">(</span>filename <span class="op">=</span> <span class="cn">NULL</span>, template <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
 
+    <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>name</th>
-      <td><p>Name of file to write.  Not sure of the files available to you?
+    <dl><dt>name</dt>
+<dd><p>Name of file to write.  Not sure of the files available to you?
 Run the function without specifying a name, and all files available within the
-template will print.</p></td>
-    </tr><tr><th>filename</th>
-      <td><p>Optional argument to specify the name of the file to be written.
-Paths/filename is relative to project base (e.g. <code><a href="https://here.r-lib.org//reference/here.html">here::here()</a></code>)</p></td>
-    </tr><tr><th>template</th>
-      <td><p>A project template. See
-<a href="https://www.danieldsjoberg.com/starter/articles/create_project.html">vignette</a>
-for details.</p></td>
-    </tr><tr><th>open</th>
-      <td><p>If <code>TRUE</code>, opens the new file.</p></td>
-    </tr></table></div>
-
+template will print.</p></dd>
+<dt>filename</dt>
+<dd><p>Optional argument to specify the name of the file to be written.
+Paths/filename is relative to project base (e.g. <code><a href="https://here.r-lib.org//reference/here.html" class="external-link">here::here()</a></code>)</p></dd>
+<dt>template</dt>
+<dd><p>A project template. See
+<a href="https://www.danieldsjoberg.com/starter/articles/create_project.html" class="external-link">vignette</a>
+for details.</p></dd>
+<dt>open</dt>
+<dd><p>If <code>TRUE</code>, opens the new file.</p></dd>
+</dl></div>
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p><code><a href="create_bst_project.html">create_bst_project()</a></code></p></div>
+    </div>
     </div>
 
     <div id="examples">
