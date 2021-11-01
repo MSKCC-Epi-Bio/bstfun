@@ -18,7 +18,7 @@
 #' @family gtsummary-related functions
 #' @export
 #'
-#' @examples
+#' @examplesIf interactive()
 #' library(gtsummary)
 #'
 #' # Example 1 ----------------------------------
