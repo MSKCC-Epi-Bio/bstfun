@@ -28,6 +28,7 @@
 #'   pattern = "{median} days",
 #'   style_fun = ~gtsummary::style_sigfig(., digits = 4)
 #' )
+
 followup_time <- function(Surv, data = NULL,
                           pattern = "{median} (IQR {p25}, {p75})",
                           style_fun = gtsummary::style_sigfig) {
@@ -45,7 +46,7 @@ followup_time <- function(Surv, data = NULL,
   }
 
   # extract followup time among censored patients ------------------------------
-  censored_follow_up <- Surv[Surv[, 2] == 0L, 1]
+  censored_follow_up <- Surv[Surv[, 2] %in% 0L, 1]
 
   # save summary stats in list -------------------------------------------------
   follow_up_stats <-
