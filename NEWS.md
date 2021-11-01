@@ -2,6 +2,8 @@
 
 * Removed use of deprecated function in `tbl_likert()`.
 
+* Added new function `followup_time()` that reports the amount of follow-up among censored patients.
+
 # bstfun 0.2.8
 
 * Updated how references are added in `cite_r()`.
