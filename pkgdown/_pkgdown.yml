@@ -61,6 +61,7 @@ reference:
   - title: "Other Functions"
     contents:
       - add_cuminc_risktable
+      - followup_time
 
   - title: "Data Objects"
     contents:
