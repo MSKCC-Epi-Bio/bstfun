@@ -2,7 +2,7 @@
 % Please edit documentation in R/followup_time.R
 \name{followup_time}
 \alias{followup_time}
-\title{Report Follow-up Time Among Censored Obs}
+\title{Report Follow-up Among Censored Obs}
 \usage{
 followup_time(
   Surv,
@@ -12,7 +12,7 @@ followup_time(
 )
 }
 \arguments{
-\item{Surv}{An object of class \code{"Surv"} crated with \code{survival::Surv()}}
+\item{Surv}{An object of class \code{"Surv"} created with \code{survival::Surv()}}
 
 \item{data}{A data frame}
 

@@ -1,11 +1,11 @@
-#' Report Follow-up Time Among Censored Obs
+#' Report Follow-up Among Censored Obs
 #'
 #' Function accepts `survival::Surv()` object, extracts the follow-up
 #' times among the censored observations, and returns the requested
 #' summary statistics. Use this function to report follow-up in-line in
 #' R Markdown reports.
 #'
-#' @param Surv An object of class `"Surv"` crated with `survival::Surv()`
+#' @param Surv An object of class `"Surv"` created with `survival::Surv()`
 #' @param data A data frame
 #' @param pattern Statistics pattern to return. Default is
 #' `"{median} (IQR {p25}, {p75})"`. User may select the following summary
