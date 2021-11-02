@@ -47,6 +47,7 @@ assign_timepoint <- function(data, id, ref_date, measure_date, timepoints, windo
   stopifnot(is.numeric(timepoints))
   stopifnot(rlang::is_scalar_logical(keep_all_obs))
   stopifnot(rlang::is_scalar_logical(keep_all_vars))
+  stopifnot(rlang::is_string(new_var))
   time_units <- match.arg(time_units)
 
   purrr::walk(
@@ -72,8 +73,8 @@ assign_timepoint <- function(data, id, ref_date, measure_date, timepoints, windo
   )
 
   id <- broom.helpers::.select_to_varnames({{ id }}, data)
-  ref_date <- broom.helpers::.select_to_varnames({{ ref_date }}, data)
-  measure_date <- broom.helpers::.select_to_varnames({{ measure_date }}, data)
+  ref_date <- broom.helpers::.select_to_varnames({{ ref_date }}, data, select_single = TRUE)
+  measure_date <- broom.helpers::.select_to_varnames({{ measure_date }}, data, select_single = TRUE)
 
   stopifnot(lubridate::is.Date(data[[ref_date]]))
   stopifnot(lubridate::is.Date(data[[measure_date]]))
@@ -102,7 +103,7 @@ assign_timepoint <- function(data, id, ref_date, measure_date, timepoints, windo
   for (i in seq_len(length(timepoints))) {
     data <-
       data %>%
-      dplyr::group_by(.data[[id]]) %>%
+      dplyr::group_by(!!!rlang::syms(id)) %>%
       dplyr::arrange(abs(.data$..time_diff.. - .env$timepoints[i])) %>%
       dplyr::mutate(
         "{new_var}" :=
@@ -121,7 +122,7 @@ assign_timepoint <- function(data, id, ref_date, measure_date, timepoints, windo
   data <-
     data %>%
     dplyr::ungroup() %>%
-    dplyr::arrange(.data[[id]], .data[["..time_diff.."]]) %>%
+    dplyr::arrange(!!!rlang::syms(id), .data[["..time_diff.."]]) %>%
     dplyr::select(-.data[["..time_diff.."]])
 
   # deleting obs that were not a selected timepoint
