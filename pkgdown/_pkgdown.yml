@@ -62,6 +62,9 @@ reference:
     contents:
       - add_cuminc_risktable
       - followup_time
+      - count_map
+      - assign_timepoint
+      - clean_mrn
 
   - title: "Data Objects"
     contents:

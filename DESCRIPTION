@@ -41,6 +41,7 @@ Depends:
     R (>= 3.3)
 Imports: 
     broom.helpers (>= 1.4.0),
+    cli (>= 3.0.1),
     dplyr (>= 1.0.1),
     forcats (>= 0.5.0),
     fs (>= 1.4.2),
