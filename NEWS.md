@@ -2,7 +2,15 @@
 
 * Added new function `clean_mrn()` to clean and check consistency of MRN columns.
 
+* Added new function `set_derived_variables()` that imports variable labels from an excel file and applies the labels to the data frame.
+
 * Added new function `count_map()` to aid in checking variable derivations.
+
+* Added new function `count_na()` to assess variable missing patterns.
+
+* Added new function `get_mode()` to obtain the mode of a variable.
+
+* Added new function `list_labels()` to obtain a named list of column names and their labels.
 
 * Added new function `assign_timepoint()` to aid in selecting observations at various follow-up times, e.g. selecting the 6 and 12 month lab result from a long data set of all labs.
 

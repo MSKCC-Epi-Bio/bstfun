@@ -65,6 +65,11 @@ reference:
       - count_map
       - assign_timepoint
       - clean_mrn
+      - count_map
+      - count_na
+      - get_mode
+      - list_labels
+      - set_derived_variables
 
   - title: "Data Objects"
     contents:
