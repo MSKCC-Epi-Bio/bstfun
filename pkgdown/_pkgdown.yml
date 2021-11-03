@@ -58,6 +58,7 @@ reference:
   - title: "High Performance Computing Cluster"
     contents:
       - starts_with("hpcc_")
+      - rm_logs
 
   - title: "Data Manipulation"
     contents:
