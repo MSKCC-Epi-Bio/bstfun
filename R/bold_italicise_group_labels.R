@@ -5,6 +5,7 @@ bold_italicise_group_labels <-
            bold = FALSE,
            italics = FALSE,
            print_engine = c("gt", "flextable", "huxtable")) {
+
     # input checks ---------------------------------------------------------------
     if (!inherits(x, "gtsummary")) {
       stop("Class of 'x' must be 'gtsummary'", call. = FALSE)
@@ -24,15 +25,16 @@ bold_italicise_group_labels <-
             gt::tab_options(row_group.font.weight = "bold")
         },
         "flextable" = {
-          gtsummary::as_flex_table(x)
-          result <-
+          x <- gtsummary::as_flex_table(x)
+          x <-
             x %>%
-            flextable::style(x = x,
-                             j = "groupname_col",
-                             pr_t = fp_text(bold = TRUE))
+            flextable::bold(j="groupname_col")
         },
         "huxtable" =  {
-          "huxtable" = gtsummary::as_hux_table(x)
+          x = gtsummary::as_hux_table(x)
+          x <-
+            x %>%
+            huxtable::set_bold(row = 3:nrow(.)-1, col = 1)
         }
       )
       cli::cli_alert_info("{.field gtsummary} table has been converted class {.val {print_engine}}")
@@ -53,15 +55,20 @@ bold_italicise_group_labels <-
                           locations = cells_row_groups())
         },
         "flextable" = {
-          result <-
+          if (!("flextable" %in% class(x))) {
             x <- gtsummary::as_flex_table(x)
-          x %>%
-            flextable::style(x = x,
-                             j = "groupname_col",
-                             pr_t = fp_text(italic = TRUE))
+          }
+
+          x <- x %>%
+            flextable::italic(j = "groupname_col")
         },
         "huxtable" =  {
-          x <- gtsummary::as_hux_table(x)
+          if (!("huxtable" %in% class(x))) {
+            x <- gtsummary::as_hux_table(x)
+          }
+          x <-
+            x %>%
+            huxtable::set_italic(row = 3:nrow(.)-1, col = 1)
         }
       )
       cli::cli_alert_info("{.field gtsummary} table has been converted class {.val {print_engine}}")
