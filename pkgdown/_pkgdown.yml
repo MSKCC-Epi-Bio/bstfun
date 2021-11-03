@@ -43,8 +43,8 @@ reference:
 
   - title: "Project Start-up Functions"
     contents:
-      - create_bst_project
-      - use_bst_file
+      - create_project
+      - use_file
       - use_bst_rstudio_prefs
       - set_derived_variables
 
@@ -76,7 +76,7 @@ reference:
     contents:
       - add_cuminc_risktable
       - followup_time
-
+      - auc
 
   - title: "Data Objects"
     contents:

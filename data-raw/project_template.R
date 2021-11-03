@@ -62,8 +62,87 @@ project_template_default <-
   ))
 attr(project_template_default, "label") <- "Default Biostistics Project Template"
 
-# whitingk template ------------------------------------------------------------
+# hot template -----------------------------------------------------------------
+hot_project_template <-
+  list(
+    readme = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_readme.md", package = 'hotfun'),
+      filename = "README.md",
+      copy = FALSE
+    )),
+    gitignore = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_gitignore.txt", package = 'hotfun'),
+      filename = ".gitignore",
+      copy = TRUE
+    )),
+    data_date = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_data_date.txt", package = 'hotfun'),
+      filename = "data_date.txt",
+      copy = FALSE
+    )),
+    setup = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.Rmd", package = 'hotfun'),
+      filename = glue::glue("scripts/setup1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
+      copy = FALSE
+    )),
+    analysis = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_analysis.Rmd", package = 'hotfun'),
+      filename = glue::glue("scripts/analysis1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
+      copy = FALSE
+    )),
+    report = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_report.Rmd", package = 'hotfun'),
+      filename = glue::glue("scripts/report1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
+      copy = FALSE
+    )),
+    sap = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_sap.docx", package = 'hotfun'),
+      filename = glue::glue("SAP - {folder_name}.docx"),
+      copy = TRUE
+    )),
+    doc_template = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/doc_template.docx", package = 'hotfun'),
+      filename = "scripts/templates/doc_template.docx",
+      copy = TRUE
+    )),
+    derived_vars = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_derived_variables.xlsx", package = 'hotfun'),
+      filename = glue::glue("scripts/derived_variables_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.xlsx"),
+      copy = TRUE
+    )),
+    rproj = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/default_rproj.Rproj", package = 'hotfun'),
+      filename = glue::glue("_rstudio_project.Rproj"),
+      copy = TRUE
+    )),
+    bib = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_references.bib", package = 'hotfun'),
+      filename = "scripts/templates/references.bib",
+      copy = TRUE
+    )),
+    csl = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/hot_template_files/european-urology.csl", package = 'hotfun'),
+      filename = "scripts/templates/european-urology.csl",
+      copy = TRUE
+    )),
+    # only add Rprofile if renv was used
+    rprofile =
+      rlang::expr(switch(
+        renv,
+        list(
+          template_filename =
+            fs::path_package("project_templates/default_rprofile.R", package = "starter"),
+          filename = stringr::str_glue(".Rprofile"),
+          glue = TRUE
+        )
+      ))
+  )
 
+attr(hot_project_template, "script_path") <-
+  rlang::expr(fs::path_package("project_templates/hot_script.R", package = 'hotfun'))
+attr(project_template, "label") <- "H.O.T. Project Template"
+
+# whitingk template ------------------------------------------------------------
 whitingk_project_template <-
   quote(list(
     readme = list(
@@ -178,6 +257,7 @@ attr(leej22_project_template, "label") <- "Jasme Lee Project Template"
 
 project_templates <- list()
 project_templates[["default"]] <- project_template_default
+project_templates[["hot"]] <- hot_project_template
 project_templates[["whitingk"]] <- whitingk_project_template
 project_templates[["leej22"]] <- leej22_project_template
 
