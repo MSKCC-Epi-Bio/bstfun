@@ -10,13 +10,9 @@
 #' @inheritParams readxl::read_excel
 #' @author Daniel D. Sjoberg
 #' @export
-#' @examples
-#' \dontrun{
-#' \donttest{
+#' @examplesIf FALSE
 #' trial %>%
 #'   set_derived_variables("derived_variables_sjoberg.xlsx")
-#' }
-#' }
 
 set_derived_variables <- function(data, path, sheet = NULL, drop = TRUE) {
   # import ---------------------------------------------------------------------

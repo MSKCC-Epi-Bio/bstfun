@@ -13,8 +13,7 @@
 #'
 #' @export
 #'
-#' @examples
-#' \dontrun{\donttest{
+#' @examplesIf FALSE
 #' # specifying project folder location (folder does not yet exist)
 #' project_path <- fs::path(tempdir(), "My Project Folder")
 #'
@@ -24,7 +23,7 @@
 #'
 #' # creating new project folder
 #' create_bst_project(project_path, path_data = secure_data_path)
-#' }}
+
 create_bst_project <- function(path,
                                    path_data = NULL,
                                    template = NULL,

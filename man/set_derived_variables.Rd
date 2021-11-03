@@ -24,12 +24,10 @@ passed data frame.
 The excel sheet must have columns \code{"varname"} and \code{"label"}.
 }
 \examples{
-\dontrun{
-\donttest{
+\dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 trial \%>\%
   set_derived_variables("derived_variables_sjoberg.xlsx")
-}
-}
+\dontshow{\}) # examplesIf}
 }
 \author{
 Daniel D. Sjoberg

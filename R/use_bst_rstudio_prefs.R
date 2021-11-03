@@ -15,10 +15,9 @@
 #'
 #' @export
 #'
-#' @examples
-#' \dontrun{\donttest{
+#' @examplesIf FALSE
 #' use_bst_rstudio_prefs()
-#' }}
+
 use_bst_rstudio_prefs <- function() {
   # apply preferences ----------------------------------------------------------
   rstudio.prefs::use_rstudio_prefs(!!!bst_prefs)
