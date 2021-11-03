@@ -45,11 +45,11 @@ reference:
     contents:
       - create_project
       - use_file
-      - use_bst_rstudio_prefs
       - set_derived_variables
 
   - title: "Utility Functions"
     contents:
+      - use_bst_rstudio_prefs
       - here_data
       - cite_r
       - fix_database_error
