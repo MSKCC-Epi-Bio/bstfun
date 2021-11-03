@@ -53,7 +53,6 @@ reference:
       - here_data
       - cite_r
       - fix_database_error
-      - use_varnames_as_labels
 
   - title: "High Performance Computing Cluster"
     contents:
@@ -70,6 +69,8 @@ reference:
       - get_mode
       - list_labels
       - add_splines
+      - egfr
+      - use_varnames_as_labels
 
   - title: "Other Functions"
     contents:

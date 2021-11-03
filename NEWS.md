@@ -16,6 +16,8 @@
 
 * Added new function `add_splines()`.
 
+* Added new functions for calculating eGFR: `egfr_mdrd()` and `egfr_ckdepi()`.
+
 * Removed use of deprecated function in `tbl_likert()`.
 
 * Added new function `followup_time()` that reports the amount of follow-up among censored patients.

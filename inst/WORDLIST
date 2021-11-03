@@ -1,5 +1,6 @@
 Biostatistics
 Codecov
+Devlin
 HPCC
 Likert
 MRN
@@ -9,7 +10,9 @@ MSKCC
 ORCID
 RStudio
 Rmd
+Rscript
 Sparkline
+beon
 bibtex
 binwidth
 biostatR
@@ -28,6 +31,7 @@ magick
 mskcc
 ng
 ragg
+regressoin
 renv
 repo
 rmd
@@ -35,6 +39,7 @@ ropensci
 sparkline
 stlying
 tbl
+th
 tidyselect
 unlabelled
 xls
