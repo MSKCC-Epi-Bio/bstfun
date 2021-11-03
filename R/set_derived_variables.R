@@ -19,6 +19,7 @@
 #' }
 
 set_derived_variables <- function(data, path, sheet = NULL, drop = TRUE) {
+  assert_package("readxl", "set_derived_variables()")
   # import ---------------------------------------------------------------------
   # reading in excel file of Derived Variables
   df_derived_variables <- readxl::read_excel(path = path, sheet = sheet)

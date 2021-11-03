@@ -46,6 +46,7 @@ reference:
       - create_bst_project
       - use_bst_file
       - use_bst_rstudio_prefs
+      - set_derived_variables
 
   - title: "Utility Functions"
     contents:
@@ -58,10 +59,8 @@ reference:
     contents:
       - starts_with("hpcc_")
 
-  - title: "Other Functions"
+  - title: "Data Manipulation"
     contents:
-      - add_cuminc_risktable
-      - followup_time
       - count_map
       - assign_timepoint
       - clean_mrn
@@ -69,7 +68,13 @@ reference:
       - count_na
       - get_mode
       - list_labels
-      - set_derived_variables
+      - add_splines
+
+  - title: "Other Functions"
+    contents:
+      - add_cuminc_risktable
+      - followup_time
+
 
   - title: "Data Objects"
     contents:

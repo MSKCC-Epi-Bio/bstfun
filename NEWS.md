@@ -14,6 +14,8 @@
 
 * Added new function `assign_timepoint()` to aid in selecting observations at various follow-up times, e.g. selecting the 6 and 12 month lab result from a long data set of all labs.
 
+* Added new function `add_splines()`.
+
 * Removed use of deprecated function in `tbl_likert()`.
 
 * Added new function `followup_time()` that reports the amount of follow-up among censored patients.
