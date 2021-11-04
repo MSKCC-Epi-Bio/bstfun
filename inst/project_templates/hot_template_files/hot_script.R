@@ -21,8 +21,8 @@ tryCatch(
         fs::path_file() |>
         fs::path_ext_remove()
 
-      hotverse::use_github_msk_private_repo(repo = repo_name, org = "Analytic-Projects")
-      hotverse::use_github_msk_phi_repo(repo = repo_name, org = "Analytic-Projects")
+      print(hotverse::use_github_msk_private_repo(repo = repo_name, org = "Analytic-Projects"))
+      print(hotverse::use_github_msk_phi_repo(repo = repo_name, org = "Analytic-Projects"))
     }
   },
   error = function(e) {

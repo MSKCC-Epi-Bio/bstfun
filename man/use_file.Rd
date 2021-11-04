@@ -27,7 +27,7 @@ use_bst_readme(filename = NULL, template = NULL)
 use_hot_file(
   name = NULL,
   filename = NULL,
-  template = hotfun::project_template,
+  template = bstfun::project_templates[["hot"]],
   open = interactive()
 )
 

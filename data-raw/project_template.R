@@ -66,62 +66,62 @@ attr(project_template_default, "label") <- "Default Biostistics Project Template
 hot_project_template <-
   list(
     readme = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_readme.md", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_readme.md", package = 'bstfun'),
       filename = "README.md",
       copy = FALSE
     )),
     gitignore = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_gitignore.txt", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_gitignore.txt", package = 'bstfun'),
       filename = ".gitignore",
       copy = TRUE
     )),
     data_date = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_data_date.txt", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_data_date.txt", package = 'bstfun'),
       filename = "data_date.txt",
       copy = FALSE
     )),
     setup = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.Rmd", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.Rmd", package = 'bstfun'),
       filename = glue::glue("scripts/setup1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
       copy = FALSE
     )),
     analysis = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_analysis.Rmd", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_analysis.Rmd", package = 'bstfun'),
       filename = glue::glue("scripts/analysis1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
       copy = FALSE
     )),
     report = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_report.Rmd", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_report.Rmd", package = 'bstfun'),
       filename = glue::glue("scripts/report1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
       copy = FALSE
     )),
     sap = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_sap.docx", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_sap.docx", package = 'bstfun'),
       filename = glue::glue("SAP - {folder_name}.docx"),
       copy = TRUE
     )),
     doc_template = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/doc_template.docx", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/doc_template.docx", package = 'bstfun'),
       filename = "scripts/templates/doc_template.docx",
       copy = TRUE
     )),
     derived_vars = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_derived_variables.xlsx", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_derived_variables.xlsx", package = 'bstfun'),
       filename = glue::glue("scripts/derived_variables_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.xlsx"),
       copy = TRUE
     )),
     rproj = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/default_rproj.Rproj", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/default_rproj.Rproj", package = 'bstfun'),
       filename = glue::glue("_rstudio_project.Rproj"),
       copy = TRUE
     )),
     bib = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_references.bib", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_references.bib", package = 'bstfun'),
       filename = "scripts/templates/references.bib",
       copy = TRUE
     )),
     csl = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/european-urology.csl", package = 'hotfun'),
+      template_filename = fs::path_package("project_templates/hot_template_files/european-urology.csl", package = 'bstfun'),
       filename = "scripts/templates/european-urology.csl",
       copy = TRUE
     )),
@@ -139,7 +139,7 @@ hot_project_template <-
   )
 
 attr(hot_project_template, "script_path") <-
-  rlang::expr(fs::path_package("project_templates/hot_script.R", package = 'hotfun'))
+  rlang::expr(fs::path_package("project_templates/hot_template_files/hot_script.R", package = 'bstfun'))
 attr(project_template, "label") <- "H.O.T. Project Template"
 
 # whitingk template ------------------------------------------------------------

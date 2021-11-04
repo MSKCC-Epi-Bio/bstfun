@@ -19,7 +19,7 @@ create_bst_project(
 create_hot_project(
   path,
   path_data = NULL,
-  template = hotfun::project_template,
+  template = bstfun::project_templates[["hot"]],
   ...
 )
 }

@@ -54,7 +54,8 @@ use_bst_readme <- function(filename = NULL, template = NULL) {
 #' @rdname use_file
 #' @export
 use_hot_file <- function(name = NULL, filename = NULL,
-                         template = hotfun::project_template, open = interactive()) {
+                         template = bstfun::project_templates[["hot"]],
+                         open = interactive()) {
   starter::use_project_file(name = name, filename = filename,
                             template = template, open = open)
 }

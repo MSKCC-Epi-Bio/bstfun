@@ -65,7 +65,7 @@ create_bst_project <- function(path,
 #' @export
 #' @rdname create_project
 create_hot_project <- function(path, path_data = NULL,
-                               template = hotfun::project_template, ...) {
+                               template = bstfun::project_templates[["hot"]], ...) {
 
   starter::create_project(
     path = path,
