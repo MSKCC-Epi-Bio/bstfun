@@ -8,22 +8,68 @@ use_bst_rstudio_prefs()
 }
 \description{
 The function wraps \code{rstudio.prefs::use_rstudio_prefs()} and sets the following
-preferences in RStudio.\tabular{ll}{
-   \strong{Preference} \tab \strong{Value} \cr
-   always_save_history \tab FALSE \cr
-   graphics_backend \tab ragg \cr
-   load_workspace \tab FALSE \cr
-   margin_column \tab 80 \cr
-   rainbow_parentheses \tab TRUE \cr
-   restore_last_project \tab FALSE \cr
-   rmd_chunk_output_inline \tab FALSE \cr
-   show_hidden_files \tab TRUE \cr
-   show_invisibles \tab TRUE \cr
-   show_last_dot_value \tab TRUE \cr
-   show_line_numbers \tab TRUE \cr
-   show_margin \tab TRUE \cr
-   save_workspace \tab never \cr
-}
+preferences in RStudio.<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> **Preference** </th>
+   <th style="text-align:left;"> **Value** </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> always_save_history </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> graphics_backend </td>
+   <td style="text-align:left;"> ragg </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> load_workspace </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> margin_column </td>
+   <td style="text-align:left;"> 80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rainbow_parentheses </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> restore_last_project </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> rmd_chunk_output_inline </td>
+   <td style="text-align:left;"> FALSE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> show_hidden_files </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> show_invisibles </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> show_last_dot_value </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> show_line_numbers </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> show_margin </td>
+   <td style="text-align:left;"> TRUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> save_workspace </td>
+   <td style="text-align:left;"> never </td>
+  </tr>
+</tbody>
+</table>
 }
 \examples{
 \dontrun{\donttest{
