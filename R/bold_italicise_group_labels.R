@@ -1,4 +1,10 @@
-
+#' Set bold and/or italic style for groups labels in stacked tables
+#'
+#' @param x a gtsummary stacked table
+#' @param bold
+#' @param italics
+#' @param print_engine
+#' @export
 
 bold_italicise_group_labels <-
   function(x,
