@@ -18,9 +18,17 @@
 
 * Added new functions for calculating eGFR: `egfr_mdrd()` and `egfr_ckdepi()`.
 
+* Migrated H.O.T. project creation functions from the hotfun package.
+
+* Added two functions for calculating AUC based on the distribution of a variable.
+
 * Removed use of deprecated function in `tbl_likert()`.
 
 * Added new function `followup_time()` that reports the amount of follow-up among censored patients.
+
+* Added new function `list_labels()` to extract the variable labels from a data frame.
+
+* Added new function `rm_logs()` to delete logs created from submitting jobs to the HPCC.
 
 # bstfun 0.2.8
 
