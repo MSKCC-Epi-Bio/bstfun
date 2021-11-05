@@ -98,7 +98,7 @@ tbl_likert <- function(data,
           label = list(...all_true... = (label[[.x]] %||% data_lbls[[.x]] %||% .x))
         ) %>%
         gtsummary::modify_header(gtsummary::all_stat_cols() ~ "**{level}**") %>%
-        gtsummary_butcher() %>%
+        gtsummary::tbl_butcher() %>%
         gtsummary::modify_table_body(
           function(table_body) {
             table_body %>% dplyr::mutate(variable = .x)

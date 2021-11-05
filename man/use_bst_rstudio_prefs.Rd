@@ -72,7 +72,7 @@ preferences in RStudio.<table>
 </table>
 }
 \examples{
-\dontrun{\donttest{
+\dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 use_bst_rstudio_prefs()
-}}
+\dontshow{\}) # examplesIf}
 }

@@ -1,3 +1,35 @@
+# bstfun (development version)
+
+* Added new function `clean_mrn()` to clean and check consistency of MRN columns.
+
+* Added new function `set_derived_variables()` that imports variable labels from an excel file and applies the labels to the data frame.
+
+* Added new function `count_map()` to aid in checking variable derivations.
+
+* Added new function `count_na()` to assess variable missing patterns.
+
+* Added new function `get_mode()` to obtain the mode of a variable.
+
+* Added new function `list_labels()` to obtain a named list of column names and their labels.
+
+* Added new function `assign_timepoint()` to aid in selecting observations at various follow-up times, e.g. selecting the 6 and 12 month lab result from a long data set of all labs.
+
+* Added new function `add_splines()`.
+
+* Added new functions for calculating eGFR: `egfr_mdrd()` and `egfr_ckdepi()`.
+
+* Migrated H.O.T. project creation functions from the hotfun package.
+
+* Added two functions for calculating AUC based on the distribution of a variable.
+
+* Removed use of deprecated function in `tbl_likert()`.
+
+* Added new function `followup_time()` that reports the amount of follow-up among censored patients.
+
+* Added new function `list_labels()` to extract the variable labels from a data frame.
+
+* Added new function `rm_logs()` to delete logs created from submitting jobs to the HPCC.
+
 # bstfun 0.2.8
 
 * Updated how references are added in `cite_r()`.

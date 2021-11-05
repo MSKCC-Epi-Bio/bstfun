@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Misc functions for the dept
-Version: 0.2.8
+Version: 0.2.8.9001
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",
@@ -68,12 +68,14 @@ Suggests:
     forestplot (>= 2.0.1),
     ggtext (>= 0.1.1),
     gtExtras (>= 0.2.2.3),
+    Hmisc,
     huxtable (>= 5.4.0),
     kableExtra (>= 1.3.4),
     knitr (>= 1.33),
     labelled (>= 2.8.0),
     magick (>= 2.7.2),
     patchwork (>= 1.1.1),
+    readxl (>= 1.3.1),
     spelling (>= 2.1),
     survey (>= 4.1.1),
     survival,
