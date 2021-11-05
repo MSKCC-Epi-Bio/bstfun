@@ -1,10 +1,42 @@
 #' Set bold and/or italic style for groups labels in stacked tables
 #'
 #' @param x a gtsummary stacked table
-#' @param bold
-#' @param italics
-#' @param print_engine
+#' @param bold TRUE|FALSE
+#' @param italics TRUE|FALSE
+#' @param print_engine Choose a print engine to render the table, one of
+#' "gt", "flextable", "huxtable"
 #' @export
+#' @examplesIf interactive()
+#' library(gtsummary)
+#' library(dplyr)
+#' library(gt)
+#' library(flextable)
+#' library(huxtable)
+#' tbl_ex_stack <-
+#'   tbl_stack(
+#'
+#'     list(trial %>%
+#'            filter(grade == "I") %>%
+#'            select(trt, age) %>%
+#'            tbl_summary(by = trt),
+#'
+#'          trial %>%
+#'            filter(grade == "II") %>%
+#'            select(trt, age) %>%
+#'            tbl_summary(by = trt),
+#'
+#'          trial %>%
+#'            filter(grade == "III") %>%
+#'            select(trt, age) %>%
+#'            tbl_summary(by = trt)),
+#'
+#'     group_header = levels(trial$grade)
+#'
+#'   )
+#'
+#'tbl_ex_stack %>% modify_spanning_header(all_stat_cols() ~ "**Treatment Received**") %>%
+#'  bstfun::bold_italicise_group_labels(bold = TRUE, print_engine = "flextable")
+
 
 bold_italicise_group_labels <-
   function(x,
@@ -34,7 +66,8 @@ bold_italicise_group_labels <-
           x <- gtsummary::as_flex_table(x)
           x <-
             x %>%
-            flextable::bold(j="groupname_col")
+            flextable::bold(j=stringr::str_starts(string = .$col_keys, pattern = "groupname_col"))
+
         },
         "huxtable" =  {
           x = gtsummary::as_hux_table(x)
@@ -67,7 +100,7 @@ bold_italicise_group_labels <-
           }
 
           x <- x %>%
-            flextable::italic(j = "groupname_col")
+            flextable::bold(j=stringr::str_starts(string = .$col_keys, pattern = "groupname_col"))
         },
         "huxtable" =  {
           if (!("huxtable" %in% class(x))) {
