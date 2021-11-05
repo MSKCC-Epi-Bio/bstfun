@@ -5,8 +5,6 @@
 #' @param italics
 #' @param print_engine
 #' @export
-
-
 bold_italicise_group_labels <-
   function(x,
            bold = FALSE,
@@ -69,7 +67,7 @@ bold_italicise_group_labels <-
           }
 
           x <- x %>%
-            flextable::bold(j=stringr::str_starts(string = .$col_keys, pattern = "groupname_col"))
+            flextable::italic(j=stringr::str_starts(string = .$col_keys, pattern = "groupname_col"))
         },
         "huxtable" =  {
           if (!("huxtable" %in% class(x))) {
