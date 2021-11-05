@@ -89,22 +89,26 @@
           <p class="section-desc"></p>
         </th>
       </tr></tbody><tbody><tr><td>
-          <p><code><a href="create_bst_project.html">create_bst_project()</a></code> </p>
+          <p><code><a href="create_project.html">create_bst_project()</a></code> <code><a href="create_project.html">create_hot_project()</a></code> </p>
         </td>
         <td><p>Start a New Biostatistics project</p></td>
       </tr><tr><td>
-          <p><code><a href="use_bst_file.html">use_bst_file()</a></code> <code><a href="use_bst_file.html">use_bst_gitignore()</a></code> <code><a href="use_bst_file.html">use_bst_readme()</a></code> </p>
+          <p><code><a href="use_file.html">use_bst_file()</a></code> <code><a href="use_file.html">use_bst_gitignore()</a></code> <code><a href="use_file.html">use_bst_readme()</a></code> <code><a href="use_file.html">use_hot_file()</a></code> <code><a href="use_file.html">use_hot_gitignore()</a></code> <code><a href="use_file.html">use_hot_readme()</a></code> <code><a href="use_file.html">use_hot_setup()</a></code> <code><a href="use_file.html">use_hot_analysis()</a></code> <code><a href="use_file.html">use_hot_report()</a></code> </p>
         </td>
         <td><p>Write a template file</p></td>
       </tr><tr><td>
-          <p><code><a href="use_bst_rstudio_prefs.html">use_bst_rstudio_prefs()</a></code> </p>
+          <p><code><a href="set_derived_variables.html">set_derived_variables()</a></code> </p>
         </td>
-        <td><p>Use Biostatistics RStudio Preferences</p></td>
+        <td><p>Apply variable labels to data frame</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="utility-functions">Utility Functions <a href="#utility-functions" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p>
         </th>
       </tr></tbody><tbody><tr><td>
+          <p><code><a href="use_bst_rstudio_prefs.html">use_bst_rstudio_prefs()</a></code> </p>
+        </td>
+        <td><p>Use Biostatistics RStudio Preferences</p></td>
+      </tr><tr><td>
           <p><code><a href="here_data.html">here_data()</a></code> <code><a href="here_data.html">path_data()</a></code> <code><a href="here_data.html">get_data_date()</a></code> </p>
         </td>
         <td><p>Find your data folder</p></td>
@@ -116,10 +120,6 @@
           <p><code><a href="fix_database_error.html">fix_database_error()</a></code> </p>
         </td>
         <td><p>Function to make database fixes after import</p></td>
-      </tr><tr><td>
-          <p><code><a href="use_varnames_as_labels.html">use_varnames_as_labels()</a></code> </p>
-        </td>
-        <td><p>Use Variable Names as Labels</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="high-performance-computing-cluster">High Performance Computing Cluster <a href="#high-performance-computing-cluster" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p>
@@ -128,6 +128,54 @@
           <p><code><a href="hpcc.html">hpcc_get_arg()</a></code> <code><a href="hpcc.html">hpcc_get_seq_number()</a></code> </p>
         </td>
         <td><p>HPCC Functions</p></td>
+      </tr><tr><td>
+          <p><code><a href="rm_logs.html">rm_logs()</a></code> </p>
+        </td>
+        <td><p>Deletes log files created by Rscript on the Linux cluster</p></td>
+      </tr></tbody><tbody><tr><th colspan="2">
+          <h2 id="data-manipulation">Data Manipulation <a href="#data-manipulation" class="anchor" aria-hidden="true"></a></h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr></tbody><tbody><tr><td>
+          <p><code><a href="count_map.html">count_map()</a></code> </p>
+        </td>
+        <td><p>Check variable derivations</p></td>
+      </tr><tr><td>
+          <p><code><a href="assign_timepoint.html">assign_timepoint()</a></code> </p>
+        </td>
+        <td><p>Assign a time point to a long data set with multiple measures</p></td>
+      </tr><tr><td>
+          <p><code><a href="clean_mrn.html">clean_mrn()</a></code> </p>
+        </td>
+        <td><p>Check and Format MRNs</p></td>
+      </tr><tr><td>
+          <p><code><a href="count_map.html">count_map()</a></code> </p>
+        </td>
+        <td><p>Check variable derivations</p></td>
+      </tr><tr><td>
+          <p><code><a href="count_na.html">count_na()</a></code> </p>
+        </td>
+        <td><p>Assess pattern of missing data</p></td>
+      </tr><tr><td>
+          <p><code><a href="get_mode.html">get_mode()</a></code> </p>
+        </td>
+        <td><p>Calculates the mode(s) of a set of values</p></td>
+      </tr><tr><td>
+          <p><code><a href="list_labels.html">list_labels()</a></code> </p>
+        </td>
+        <td><p>Get variable labels and store in named list</p></td>
+      </tr><tr><td>
+          <p><code><a href="add_splines.html">add_splines()</a></code> </p>
+        </td>
+        <td><p>Add spline terms to a data frame</p></td>
+      </tr><tr><td>
+          <p><code><a href="egfr.html">egfr_ckdepi()</a></code> <code><a href="egfr.html">egfr_mdrd()</a></code> </p>
+        </td>
+        <td><p>Calculate eGFR</p></td>
+      </tr><tr><td>
+          <p><code><a href="use_varnames_as_labels.html">use_varnames_as_labels()</a></code> </p>
+        </td>
+        <td><p>Use Variable Names as Labels</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="other-functions">Other Functions <a href="#other-functions" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p>
@@ -140,6 +188,10 @@
           <p><code><a href="followup_time.html">followup_time()</a></code> </p>
         </td>
         <td><p>Report Follow-up Among Censored Obs</p></td>
+      </tr><tr><td>
+          <p><code><a href="auc.html">auc_density()</a></code> <code><a href="auc.html">auc_histogram()</a></code> </p>
+        </td>
+        <td><p>Calculate exact AUCs based on the distribution of risk in a population</p></td>
       </tr></tbody><tbody><tr><th colspan="2">
           <h2 id="data-objects">Data Objects <a href="#data-objects" class="anchor" aria-hidden="true"></a></h2>
           <p class="section-desc"></p>

@@ -55,8 +55,21 @@
 
     <div class="section level2">
 <h2 class="page-header" data-toc-text="development version" id="bstfun-development-version">bstfun (development version)<a class="anchor" aria-label="anchor" href="#bstfun-development-version"></a></h2>
-<ul><li><p>Removed use of deprecated function in <code><a href="../reference/tbl_likert.html">tbl_likert()</a></code>.</p></li>
+<ul><li><p>Added new function <code><a href="../reference/clean_mrn.html">clean_mrn()</a></code> to clean and check consistency of MRN columns.</p></li>
+<li><p>Added new function <code><a href="../reference/set_derived_variables.html">set_derived_variables()</a></code> that imports variable labels from an excel file and applies the labels to the data frame.</p></li>
+<li><p>Added new function <code><a href="../reference/count_map.html">count_map()</a></code> to aid in checking variable derivations.</p></li>
+<li><p>Added new function <code><a href="../reference/count_na.html">count_na()</a></code> to assess variable missing patterns.</p></li>
+<li><p>Added new function <code><a href="../reference/get_mode.html">get_mode()</a></code> to obtain the mode of a variable.</p></li>
+<li><p>Added new function <code><a href="../reference/list_labels.html">list_labels()</a></code> to obtain a named list of column names and their labels.</p></li>
+<li><p>Added new function <code><a href="../reference/assign_timepoint.html">assign_timepoint()</a></code> to aid in selecting observations at various follow-up times, e.g. selecting the 6 and 12 month lab result from a long data set of all labs.</p></li>
+<li><p>Added new function <code><a href="../reference/add_splines.html">add_splines()</a></code>.</p></li>
+<li><p>Added new functions for calculating eGFR: <code><a href="../reference/egfr.html">egfr_mdrd()</a></code> and <code><a href="../reference/egfr.html">egfr_ckdepi()</a></code>.</p></li>
+<li><p>Migrated H.O.T. project creation functions from the hotfun package.</p></li>
+<li><p>Added two functions for calculating AUC based on the distribution of a variable.</p></li>
+<li><p>Removed use of deprecated function in <code><a href="../reference/tbl_likert.html">tbl_likert()</a></code>.</p></li>
 <li><p>Added new function <code><a href="../reference/followup_time.html">followup_time()</a></code> that reports the amount of follow-up among censored patients.</p></li>
+<li><p>Added new function <code><a href="../reference/list_labels.html">list_labels()</a></code> to extract the variable labels from a data frame.</p></li>
+<li><p>Added new function <code><a href="../reference/rm_logs.html">rm_logs()</a></code> to delete logs created from submitting jobs to the HPCC.</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.8" id="bstfun-028">bstfun 0.2.8<a class="anchor" aria-label="anchor" href="#bstfun-028"></a></h2>
@@ -108,8 +121,8 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.0" id="bstfun-020">bstfun 0.2.0<a class="anchor" aria-label="anchor" href="#bstfun-020"></a></h2>
-<ul><li><p>Added new function <code><a href="../reference/create_bst_project.html">create_bst_project()</a></code>, a wrapper for <code><a href="https://rdrr.io/pkg/starter/man/create_project.html" class="external-link">starter::create_project()</a></code> that drops a copy of the Biostatistics project template into a new or existing folder. The function defaults to the Biostatistics template, but any template may be passed.</p></li>
-<li><p>Added new functions <code><a href="../reference/use_bst_file.html">use_bst_file()</a></code>, <code><a href="../reference/use_bst_file.html">use_bst_gitignore()</a></code>, and <code><a href="../reference/use_bst_file.html">use_bst_readme()</a></code> to drop files from the HOT template into the active project.</p></li>
+<ul><li><p>Added new function <code><a href="../reference/create_project.html">create_bst_project()</a></code>, a wrapper for <code><a href="https://rdrr.io/pkg/starter/man/create_project.html" class="external-link">starter::create_project()</a></code> that drops a copy of the Biostatistics project template into a new or existing folder. The function defaults to the Biostatistics template, but any template may be passed.</p></li>
+<li><p>Added new functions <code><a href="../reference/use_file.html">use_bst_file()</a></code>, <code><a href="../reference/use_file.html">use_bst_gitignore()</a></code>, and <code><a href="../reference/use_file.html">use_bst_readme()</a></code> to drop files from the HOT template into the active project.</p></li>
 <li><p>Migrated the Biostatistics template from the biostatR package (behind a firewall) to the bstfun package.</p></li>
 <li><p>Added function <code><a href="../reference/deprecated.html">gtsummary_butcher()</a></code> to reduce the size of a gtsummary table. After an object has been butchered, other gtsummary functions may not be able to execute on the object.</p></li>
 </ul></div>
