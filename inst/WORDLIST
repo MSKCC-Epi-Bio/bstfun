@@ -16,6 +16,7 @@ beon
 bibtex
 binwidth
 biostatR
+centiles
 creatinine
 dL
 dbeta
@@ -45,6 +46,7 @@ sparkline
 stlying
 tbl
 th
+tibble
 tidyselect
 unlabelled
 xls

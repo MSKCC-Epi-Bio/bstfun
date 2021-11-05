@@ -38,6 +38,7 @@ reference:
       - add_inline_forest_plot
       - theme_gtsummary_msk
       - style_tbl_compact
+      - logistic_reg_adj_diff
       - as_ggplot
       - as_forest_plot
 
