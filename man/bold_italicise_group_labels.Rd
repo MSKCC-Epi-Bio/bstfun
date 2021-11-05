@@ -13,7 +13,42 @@ bold_italicise_group_labels(
 }
 \arguments{
 \item{x}{a gtsummary stacked table}
+
+\item{bold}{TRUE|FALSE}
+
+\item{italics}{TRUE|FALSE}
+
+\item{print_engine}{Choose a print engine to render the table, one of
+"gt", "flextable", "huxtable"}
 }
 \description{
 Set bold and/or italic style for groups labels in stacked tables
+}
+\examples{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+tbl_ex_stack <-
+  tbl_stack(
+
+    list(trial \%>\%
+           filter(grade == "I") \%>\%
+           select(trt, age) \%>\%
+           tbl_summary(by = trt),
+
+         trial \%>\%
+           filter(grade == "II") \%>\%
+           select(trt, age) \%>\%
+           tbl_summary(by = trt),
+
+         trial \%>\%
+           filter(grade == "III") \%>\%
+           select(trt, age) \%>\%
+           tbl_summary(by = trt)),
+
+    group_header = levels(trial$grade)
+
+  )
+
+tbl_ex_stack \%>\% modify_spanning_header(all_stat_cols() ~ "**Treatment Received**") \%>\%
+ bstfun::bold_italicise_group_labels(bold = TRUE, print_engine = "flextable")
+\dontshow{\}) # examplesIf}
 }
