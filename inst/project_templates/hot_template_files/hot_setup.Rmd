@@ -1,0 +1,64 @@
+---
+title: "{{stringr::str_replace_all(folder_name, stringr::fixed('-'), stringr::fixed(' '))}}"
+subtitle: "Initial Setup"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+renv::settings$snapshot.type("all")
+```
+
+# Raw Data Import
+
+```{r import}
+library(hotverse); library(tidyverse)
+# library(tidylog)
+
+# setting MSK ggplot theme, gtsummary theme, and color palette
+theme_set(mskRvis::theme_biostat()); theme_gtsummary_msk("hot"); mskRvis::set_msk_palette()
+
+# example code for importing excel file
+df_raw_data <-
+  readxl::read_excel(
+    path = here_data("Raw Data from PI.xlsx")
+  ) %>%
+  janitor::clean_names(case = "all_caps") %>% # uppercase col names
+  mutate_if(lubridate::is.POSIXt, lubridate::as_date) # use lubridates
+```
+
+# Create Master Analytic Data Set
+
+```{r cleaning}
+
+```
+
+
+# Check Variable Derivations
+
+```{r checking}
+
+```
+
+# Save Analytic Data
+
+```{r save}
+# applying variable labels, and dropping raw variables
+df_main <- df_main %>%
+  set_derived_variables(path = here::here("scripts/derived_variables_{{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}}.xlsx"))
+
+# overview of master analytic dataset
+skimr::skim(df_main)
+
+#saving master analytic data set
+saveRDS(
+  object = df_main,
+  file = here_data("df_main.Rds")
+)
+```
