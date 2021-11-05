@@ -9,7 +9,7 @@ gt_functions <-
   stringr::str_remove(".Rd")
 
 # create temp gtsummary directory (example scripts will be saved here)
-path_gtsummary <- file.path(tempdir(), "gtsummary")
+path_gtsummary <- file.path(tempdir(), "bstfun")
 fs::dir_create(path_gtsummary)
 unlink(path_gtsummary) # just in case it already existed with files in folder
 

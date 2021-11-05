@@ -14,43 +14,45 @@ bold_italicise_group_labels(
 \arguments{
 \item{x}{a gtsummary stacked table}
 
-\item{bold}{TRUE|FALSE}
+\item{bold}{logical indicting whether to bold the group header rows}
 
-\item{italics}{TRUE|FALSE}
+\item{italics}{logical indicting whether to italicize the group header rows}
 
-\item{print_engine}{Choose a print engine to render the table, one of
-"gt", "flextable", "huxtable"}
+\item{print_engine}{Choose a print engine to render the table, must be one of
+\code{c("gt", "flextable", "huxtable")}}
 }
 \description{
 Set bold and/or italic style for groups labels in stacked tables
 }
-\examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-tbl_ex_stack <-
-  tbl_stack(
+\section{Example Output}{
 
-    list(trial \%>\%
-           filter(grade == "I") \%>\%
-           select(trt, age) \%>\%
-           tbl_summary(by = trt),
+\if{html}{Example 1}
 
-         trial \%>\%
-           filter(grade == "II") \%>\%
-           select(trt, age) \%>\%
-           tbl_summary(by = trt),
-
-         trial \%>\%
-           filter(grade == "III") \%>\%
-           select(trt, age) \%>\%
-           tbl_summary(by = trt)),
-
-    group_header = levels(trial$grade)
-
-  )
-
-tbl_ex_stack \%>\%
-  modify_spanning_header(all_stat_cols() ~ "**Treatment Received**") \%>\%
-  bold_italicise_group_labels(bold = TRUE,
-                             print_engine = "flextable")
-\dontshow{\}) # examplesIf}
+\if{html}{\figure{bold_italicise_group_labels_ex1.png}{options: width=50\%}}
 }
+
+\examples{
+library(gtsummary)
+
+bold_italicise_group_labels_ex1 <-
+  trial \%>\%
+  select(age, trt, grade) \%>\%
+  tbl_strata(
+    strata = grade,
+    ~ .x \%>\%
+      select(trt, age) \%>\%
+      tbl_summary(by = trt, missing = "no"),
+    .combine_with = "tbl_stack"
+  ) \%>\%
+  bold_italicise_group_labels(bold = TRUE)
+}
+\seealso{
+Other gtsummary-related functions: 
+\code{\link{add_inline_forest_plot}()},
+\code{\link{add_sparkline}()},
+\code{\link{as_ggplot}()},
+\code{\link{style_tbl_compact}()},
+\code{\link{tbl_likert}()},
+\code{\link{theme_gtsummary_msk}()}
+}
+\concept{gtsummary-related functions}
