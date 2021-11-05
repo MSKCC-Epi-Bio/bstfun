@@ -37,7 +37,7 @@
 #'
 #'tbl_ex_stack %>%
 #'   modify_spanning_header(all_stat_cols() ~ "**Treatment Received**") %>%
-#'   old_italicise_group_labels(bold = TRUE,
+#'   bold_italicise_group_labels(bold = TRUE,
 #'                              print_engine = "flextable")
 #'
 bold_italicise_group_labels <-
