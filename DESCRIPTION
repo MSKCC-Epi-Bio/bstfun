@@ -62,10 +62,8 @@ Imports:
     tidyr (>= 1.1.1),
     usethis (>= 1.6.1)
 Suggests: 
-    boot,
     cmprsk (>= 2.2.10),
     covr (>= 3.5.0),
-    effectsize (>= 0.5),
     flextable (>= 0.5.10),
     forestplot (>= 2.0.1),
     ggtext (>= 0.1.1),
@@ -75,7 +73,6 @@ Suggests:
     kableExtra (>= 1.3.4),
     knitr (>= 1.33),
     labelled (>= 2.8.0),
-    lme4,
     magick (>= 2.7.2),
     patchwork (>= 1.1.1),
     readxl (>= 1.3.1),
