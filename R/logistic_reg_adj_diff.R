@@ -33,7 +33,7 @@
 #'   tbl %>%
 #'   add_difference(
 #'     test = everything() ~ logistic_reg_adj_diff,
-#'     adj.vars = c("stage")
+#'     adj.vars = "stage"
 #'   )
 #'
 #' # Example 2 -----------------------------------------------------------------
@@ -44,7 +44,7 @@
 #'   add_difference(
 #'     test = everything() ~
 #'       purrr::partial(logistic_reg_adj_diff, ci_type = "centile", boot_n = 100),
-#'     adj.vars = c("stage")
+#'     adj.vars = "stage"
 #'   )
 #' @section Example Output:
 #' \if{html}{Example 1}

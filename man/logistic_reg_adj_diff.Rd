@@ -71,7 +71,7 @@ logistic_reg_adj_diff_ex1 <-
   tbl \%>\%
   add_difference(
     test = everything() ~ logistic_reg_adj_diff,
-    adj.vars = c("stage")
+    adj.vars = "stage"
   )
 
 # Example 2 -----------------------------------------------------------------
@@ -82,7 +82,7 @@ logistic_reg_adj_diff_ex2 <-
   add_difference(
     test = everything() ~
       purrr::partial(logistic_reg_adj_diff, ci_type = "centile", boot_n = 100),
-    adj.vars = c("stage")
+    adj.vars = "stage"
   )
 \dontshow{\}) # examplesIf}
 }
