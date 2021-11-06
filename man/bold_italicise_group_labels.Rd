@@ -14,12 +14,16 @@ bold_italicise_group_labels(
 \arguments{
 \item{x}{a gtsummary stacked table}
 
-\item{bold}{logical indicting whether to bold the group header rows}
+\item{bold}{logical indicating whether to bold the group header rows}
 
-\item{italics}{logical indicting whether to italicize the group header rows}
+\item{italics}{logical indicating whether to italicize the group header rows}
 
 \item{print_engine}{Choose a print engine to render the table, must be one of
 \code{c("gt", "flextable", "huxtable")}}
+}
+\value{
+A table of class selected in print_engine. Of note, the output will no longer
+be a gtsummary table.
 }
 \description{
 Set bold and/or italic style for groups labels in stacked tables
