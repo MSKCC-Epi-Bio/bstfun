@@ -26,6 +26,7 @@
 #' @export
 #'
 #' @examplesIf FALSE
+#' library(gtsummary)
 #' tbl <- tbl_summary(trial, by = trt, include  = response, missing = "no")
 #'
 #' # Example 1 -----------------------------------------------------------------

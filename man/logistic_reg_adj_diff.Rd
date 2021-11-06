@@ -64,6 +64,7 @@ of the bootstrapped differences as the confidence limits
 
 \examples{
 \dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+library(gtsummary)
 tbl <- tbl_summary(trial, by = trt, include  = response, missing = "no")
 
 # Example 1 -----------------------------------------------------------------
