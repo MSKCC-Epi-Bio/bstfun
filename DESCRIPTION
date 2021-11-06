@@ -62,8 +62,10 @@ Imports:
     tidyr (>= 1.1.1),
     usethis (>= 1.6.1)
 Suggests: 
+    boot (>= 1.3.28),
     cmprsk (>= 2.2.10),
     covr (>= 3.5.0),
+    effectsize (>= 0.5),
     flextable (>= 0.5.10),
     forestplot (>= 2.0.1),
     ggtext (>= 0.1.1),
