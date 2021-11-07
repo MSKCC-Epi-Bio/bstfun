@@ -49,7 +49,11 @@ lst_theme_hot <- list(
   # default chi-square test does not include continuity correction
   "add_p.tbl_summary-attr:test.categorical" = "chisq.test.no.correct",
   # display a greek beta as header in tbl_regression
-  "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
+  "tbl_regression-str:coef_header" =
+    rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
+  # a better autofit than the default
+  "as_flex_table-lst:addl_cmds" =
+    list(autofit = list(rlang::expr(flextable::set_table_properties(layout = "autofit"))))
 )
 
 # Karissa Whiting --------------------------------------------------------------
