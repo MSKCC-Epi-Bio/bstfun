@@ -1,17 +1,61 @@
+% method articles/books references ---------------------------------------------
+@article{fine1999proportional,
+  title={A proportional hazards model for the subdistribution of a competing risk},
+  author={Fine, Jason P and Gray, Robert J},
+  journal={Journal of the American statistical association},
+  volume={94},
+  number={446},
+  pages={496--509},
+  year={1999},
+  doi = {10.1002/sim.7501},
+  publisher={Taylor \& Francis}
+}
+
 @Book{hastie1986gam,
   title = {Generalized additive models},
   author = {Hastie, T.J., Tibshirani, R.J.},
   publisher = {Stat. Sci. 1},
   year = {1986},
   pages = {297,318}
-  }
+}
 
 @Book{rubin1987mi,
   title = {Multiple Imputation for Nonresponse in Surveys},
   author = {Rubin, D.B.},
   publisher = {John Wiley & Sons, Inc},
   year = {1987}
-  }
+}
+
+
+@Article{vickers2006dca,
+  title = {Decision curve analysis: a novel method for evaluating prediction models.},
+  author = {Vickers, A.J., Elkin E.B.},
+  journal = {Medical Decision Making},
+  year = {2006},
+  volume = {26},
+  pages = {565-74},
+  DOI = {10.1177/0272989X06295361}
+}
+
+@Article{vickers2008dca_extension,
+  title = {Extensions to decision curve analysis, a novel method for evaluating diagnostic tests, prediction models and molecular markers.},
+  author = {Vickers, A.J., Cronin A.M, Elkin E.B., Gonen M.},
+  journal = {BMC Medical Informatics and Decision Making},
+  year = {2008},
+  volume = {8},
+  DOI = {10.1186/1472-6947-8-53}
+}
+
+@article{vickers2010you,
+  title={How do you tell whether a change in surgical technique leads to a change in outcome?},
+  author={Vickers, Andrew J and Cronin, Angel M and Masterson, Timothy A and Eastham, James A},
+  journal={The Journal of urology},
+  volume={183},
+  number={4},
+  pages={1510--1514},
+  year={2010},
+  publisher={Wolters Kluwer Philadelphia, PA}
+}
 
 @article{wood2011fast,
   title={Fast stable restricted maximum likelihood and marginal likelihood estimation of semiparametric generalized linear models},
@@ -24,6 +68,8 @@
   publisher={Wiley Online Library}
 }
 
+
+% R and R Package references ---------------------------------------------------
 @Manual{r,
   title = {R: A Language and Environment for Statistical Computing},
   author = {{R Core Team}},
@@ -33,9 +79,41 @@
   url = {https://www.R-project.org/},
 }
 
+@Manual{cmprsk,
+  title = {cmprsk: Subdistribution Analysis of Competing Risks},
+  author = {Bob Gray},
+  year = {2020},
+  url = {https://CRAN.R-project.org/package=cmprsk},
+}
+
+@Manual{gee,
+  title = {gee: Generalized Estimation Equation Solver},
+  author = {Vincent J Carey. Ported to R by Thomas Lumley and Brian Ripley. Files src/dgedi.f and src/dgefa.f are for LINPACK authored by Cleve Moler. Note that maintainers are not available to give advice on using a package they did not author.},
+  year = {2019},
+  note = {R package version 4.13-20},
+  url = {https://CRAN.R-project.org/package=gee},
+}
+
+@Article{geepack,
+  title = {The R Package geepack for Generalized Estimating Equations},
+  author = {Ulrich Halekoh and Søren Højsgaard and Jun Yan},
+  year = {2006},
+  journal = {Journal of Statistical Software},
+  volume = {15/2},
+  pages = {1--11},
+}
+
+@Manual{glmnet,
+  title = {glmnet: Lasso and Elastic-Net Regularized Generalized Linear Models},
+  author = {Jerome Friedman and Trevor Hastie and Rob Tibshirani and Balasubramanian Narasimhan and Kenneth Tay and Noah Simon},
+  year = {2021},
+  note = {R package version 4.1-2},
+  url = {https://CRAN.R-project.org/package=glmnet},
+}
+
 @Article{gtsummary,
   author = {Daniel D. Sjoberg and Karissa Whiting and Michael Curry and Jessica A. Lavery and Joseph Larmarange},
-  title = {Reproducible Summary Tables with the gtsummary Package},
+  title = {{Reproducible Summary Tables with the gtsummary Package}},
   journal = {{The R Journal}},
   year = {2021},
   url = {https://doi.org/10.32614/RJ-2021-053},
@@ -43,52 +121,6 @@
   volume = {13},
   issue = {1},
   pages = {570-580},
-}
-
-@Article{tidyverse,
-  title = {Welcome to the {tidyverse}},
-  author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
-  year = {2019},
-  journal = {Journal of Open Source Software},
-  volume = {4},
-  number = {43},
-  pages = {1686},
-  doi = {10.21105/joss.01686},
-}
-
-@Manual{mgcv,
-  title = {mgcv: Mixed GAM Computation Vehicle with Automatic Smoothness
-Estimation},
-  author = {Simon Wood},
-  year = {2021},
-  note = {R package version 1.8-36},
-  url = {https://CRAN.R-project.org/package=mgcv},
-}
-
-@Manual{survival,
-  title = {A Package for Survival Analysis in R},
-  author = {Terry M Therneau},
-  year = {2021},
-  note = {R package version 3.2-11},
-  url = {https://CRAN.R-project.org/package=survival},
-}
-
-@Article{mice,
-  title = {{mice}: Multivariate Imputation by Chained Equations in R},
-  author = {Stef {van Buuren} and Karin Groothuis-Oudshoorn},
-  journal = {Journal of Statistical Software},
-  year = {2011},
-  volume = {45},
-  number = {3},
-  pages = {1-67},
-  url = {https://www.jstatsoft.org/v45/i03/},
-}
-
-@Manual{tidymodels,
-  title = {Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles.},
-  author = {Max Kuhn and Hadley Wickham},
-  url = {https://www.tidymodels.org},
-  year = {2020},
 }
 
 @Article{lme4,
@@ -102,11 +134,51 @@ Estimation},
   doi = {10.18637/jss.v067.i01},
 }
 
+@Manual{mgcv,
+  title = {mgcv: Mixed GAM Computation Vehicle with Automatic Smoothness Estimation},
+  author = {Simon Wood},
+  year = {2021},
+  note = {R package version 1.8-36},
+  url = {https://CRAN.R-project.org/package=mgcv},
+}
+
+@Article{mice,
+  title = {{mice}: Multivariate Imputation by Chained Equations in R},
+  author = {Stef {van Buuren} and Karin Groothuis-Oudshoorn},
+  journal = {Journal of Statistical Software},
+  year = {2011},
+  volume = {45},
+  number = {3},
+  pages = {1-67},
+  url = {https://www.jstatsoft.org/v45/i03/},
+}
+
+@article{smcure,
+  doi = {10.1016/j.cmpb.2012.08.013},
+  url = {https://doi.org/10.1016/j.cmpb.2012.08.013},
+  year = {2012},
+  month = dec,
+  publisher = {Elsevier {BV}},
+  volume = {108},
+  number = {3},
+  pages = {1255--1260},
+  author = {Chao Cai and Yubo Zou and Yingwei Peng and Jiajia Zhang},
+  title = {smcure: An R-package for estimating semiparametric mixture cure models}
+}
+
 @Book{survey,
   year = {2010},
   author = {Thomas Lumley},
   title = {Complex Surveys: A Guide to Analysis Using R: A Guide to Analysis Using R},
   publisher = {John Wiley and Sons},
+}
+
+@Manual{survival,
+  title = {{A Package for Survival Analysis in R}},
+  author = {Terry M Therneau},
+  year = {2021},
+  note = {R package version 3.2-11},
+  url = {https://CRAN.R-project.org/package=survival},
 }
 
 @Manual{survminer,
@@ -116,9 +188,22 @@ Estimation},
   url = {https://CRAN.R-project.org/package=survminer},
 }
 
-@Manual{cmprsk,
-  title = {cmprsk: Subdistribution Analysis of Competing Risks},
-  author = {Bob Gray},
+@Manual{tidymodels,
+  title = {Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles.},
+  author = {Max Kuhn and Hadley Wickham},
+  url = {https://www.tidymodels.org},
   year = {2020},
-  url = {https://CRAN.R-project.org/package=cmprsk},
 }
+
+@Article{tidyverse,
+  title = {Welcome to the {tidyverse}},
+  author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
+  year = {2019},
+  journal = {Journal of Open Source Software},
+  volume = {4},
+  number = {43},
+  pages = {1686},
+  doi = {10.21105/joss.01686},
+}
+
+

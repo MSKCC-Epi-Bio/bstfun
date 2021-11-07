@@ -71,12 +71,12 @@ hot_project_template <-
       copy = FALSE
     )),
     gitignore = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_gitignore.txt", package = 'bstfun'),
+      template_filename = fs::path_package("project_templates/gitignore.txt", package = 'bstfun'),
       filename = ".gitignore",
       copy = TRUE
     )),
     data_date = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_data_date.txt", package = 'bstfun'),
+      template_filename = fs::path_package("project_templates/data_date.txt", package = 'bstfun'),
       filename = "data_date.txt",
       copy = FALSE
     )),
@@ -106,17 +106,17 @@ hot_project_template <-
       copy = TRUE
     )),
     derived_vars = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_derived_variables.xlsx", package = 'bstfun'),
+      template_filename = fs::path_package("project_templates/derived_variables.xlsx", package = 'bstfun'),
       filename = glue::glue("scripts/derived_variables_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.xlsx"),
       copy = TRUE
     )),
     rproj = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/default_rproj.Rproj", package = 'bstfun'),
+      template_filename = fs::path_package("project_templates/default_rproj.Rproj", package = 'bstfun'),
       filename = glue::glue("_rstudio_project.Rproj"),
       copy = TRUE
     )),
     bib = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_references.bib", package = 'bstfun'),
+      template_filename = fs::path_package("project_templates/references.bib", package = 'bstfun'),
       filename = "scripts/templates/references.bib",
       copy = TRUE
     )),
