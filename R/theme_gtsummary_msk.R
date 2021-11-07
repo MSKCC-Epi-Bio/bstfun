@@ -53,7 +53,7 @@ lst_theme_hot <- list(
     rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
   # a better autofit than the default
   "as_flex_table-lst:addl_cmds" =
-    list(autofit = list(rlang::expr(flextable::set_table_properties(layout = "autofit"))))
+    list(valign = list(rlang::expr(flextable::set_table_properties(layout = "autofit"))))
 )
 
 # Karissa Whiting --------------------------------------------------------------
