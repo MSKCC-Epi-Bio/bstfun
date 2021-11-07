@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Migrated the H.O.T. project templates from hotfun to bstfun.
+
 * Added new function `clean_mrn()` to clean and check consistency of MRN columns.
 
 * Added new function `set_derived_variables()` that imports variable labels from an excel file and applies the labels to the data frame.
