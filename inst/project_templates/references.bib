@@ -1,4 +1,7 @@
+% ------------------------------------------------------------------------------
 % method articles/books references ---------------------------------------------
+% List references alphabetically by first author
+% ------------------------------------------------------------------------------
 @article{fine1999proportional,
   title={A proportional hazards model for the subdistribution of a competing risk},
   author={Fine, Jason P and Gray, Robert J},
@@ -69,7 +72,10 @@
 }
 
 
+% ------------------------------------------------------------------------------
 % R and R Package references ---------------------------------------------------
+% List R packages in alphabetical order
+% ------------------------------------------------------------------------------
 @Manual{r,
   title = {R: A Language and Environment for Statistical Computing},
   author = {{R Core Team}},
@@ -79,11 +85,59 @@
   url = {https://www.R-project.org/},
 }
 
+@article{bayestestr,
+  title = {{bayestestR}: {Describing} {Effects} and their {Uncertainty}, {Existence} and {Significance} within the {Bayesian} {Framework}},
+  volume = {4},
+  issn = {2475-9066},
+  shorttitle = {{bayestestR}},
+  url = {https://joss.theoj.org/papers/10.21105/joss.01541},
+  doi = {10.21105/joss.01541},
+  number = {40},
+  urldate = {2019-08-13},
+  journal = {Journal of Open Source Software},
+  author = {Makowski, Dominique and Ben-Shachar, Mattan S. and Lüdecke, Daniel},
+  month = aug,
+  year = {2019},
+  pages = {1541}
+}
+
+@article{correlation,
+  doi={10.21105/joss.02306},
+  title={Methods and Algorithms for Correlation Analysis in R},
+  author={Makowski, Dominique and Ben-Shachar, Mattan S. and Patil, Indrajeet and L{\"u}decke, Daniel},
+  journal={Journal of Open Source Software},
+  volume={5},
+  number={51},
+  pages={2306},
+  year={2020}
+}
+
 @Manual{cmprsk,
   title = {cmprsk: Subdistribution Analysis of Competing Risks},
   author = {Bob Gray},
   year = {2020},
   url = {https://CRAN.R-project.org/package=cmprsk},
+}
+
+@Manual{data.table,
+  title = {data.table: Extension of `data.frame`},
+  author = {Matt Dowle and Arun Srinivasan},
+  year = {2021},
+  note = {R package version 1.14.2},
+  url = {https://CRAN.R-project.org/package=data.table},
+}
+
+@article{effectsize,
+  title = {{e}ffectsize: Estimation of Effect Size Indices and Standardized Parameters},
+  author = {Mattan S. Ben-Shachar and Daniel Lüdecke and Dominique Makowski},
+  year = {2020},
+  journal = {Journal of Open Source Software},
+  volume = {5},
+  number = {56},
+  pages = {2815},
+  publisher = {The Open Journal},
+  doi = {10.21105/joss.02815},
+  url = {https://doi.org/10.21105/joss.02815},
 }
 
 @Manual{gee,
@@ -123,6 +177,23 @@
   pages = {570-580},
 }
 
+@article{insight,
+  journal = {Journal of Open Source Software},
+  doi = {10.21105/joss.01412},
+  issn = {2475-9066},
+  number = {38},
+  publisher = {The Open Journal},
+  title = {insight: A Unified Interface to Access Information from Model Objects in R},
+  url = {http://dx.doi.org/10.21105/joss.01412},
+  volume = {4},
+  author = {Lüdecke, Daniel and Waggoner, Philip and Makowski, Dominique},
+  pages = {1412},
+  date = {2019-06-25},
+  year = {2019},
+  month = {6},
+  day = {25}
+}
+
 @Article{lme4,
   title = {Fitting Linear Mixed-Effects Models Using {lme4}},
   author = {Douglas Bates and Martin M{\"a}chler and Ben Bolker and Steve Walker},
@@ -151,6 +222,39 @@
   number = {3},
   pages = {1-67},
   url = {https://www.jstatsoft.org/v45/i03/},
+}
+
+@article{parameters,
+  title = {parameters: Extracting, Computing and Exploring the Parameters of Statistical Models using {R}.},
+  volume = {5},
+  doi = {10.21105/joss.02445},
+  number = {53},
+  journal = {Journal of Open Source Software},
+  author = {Daniel Lüdecke and Mattan S. Ben-Shachar and Indrajeet Patil and Dominique Makowski},
+  year = {2020},
+  pages = {2445},
+}
+
+@Article{performance,
+  title = {{performance}: An {R} Package for Assessment, Comparison and Testing of Statistical Models},
+  author = {Daniel Lüdecke and Mattan S. Ben-Shachar and Indrajeet Patil and Philip Waggoner and Dominique Makowski},
+  year = {2021},
+  journal = {Journal of Open Source Software},
+  volume = {6},
+  number = {60},
+  pages = {3139},
+  doi = {10.21105/joss.03139},
+}
+
+@Article{see,
+  title = {{see}: An {R} Package for Visualizing Statistical Models},
+  author = {Daniel Lüdecke and Indrajeet Patil and Mattan S. Ben-Shachar and Brenton M. Wiernik and Philip Waggoner and Dominique Makowski},
+  journal = {Journal of Open Source Software},
+  year = {2021},
+  volume = {6},
+  number = {64},
+  pages = {3393},
+  doi = {10.21105/joss.03393},
 }
 
 @article{smcure,
