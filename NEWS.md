@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* function `add_cuminc_risktables()` now allows for 3 groups. Makes colors consistent between labels and estimates.  Removed "Number at risk" label and places a label ", n:" next to each strata name. 
+
 * Migrated the H.O.T. project templates from hotfun to bstfun.
 
 * Added new function `clean_mrn()` to clean and check consistency of MRN columns.
