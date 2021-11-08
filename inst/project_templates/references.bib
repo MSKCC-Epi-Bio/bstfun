@@ -75,6 +75,8 @@
 % ------------------------------------------------------------------------------
 % R and R Package references ---------------------------------------------------
 % List R packages in alphabetical order
+% If there is an article associated with the package, use that citation;
+% if not, then use `citation("pkg", auto=TRUE) |> toBibtex()`
 % ------------------------------------------------------------------------------
 @Manual{r,
   title = {R: A Language and Environment for Statistical Computing},
@@ -99,6 +101,14 @@
   month = aug,
   year = {2019},
   pages = {1541}
+}
+
+@Manual{caret,
+  title = {caret: Classification and Regression Training},
+  author = {Max Kuhn},
+  year = {2021},
+  note = {R package version 6.0-90},
+  url = {https://CRAN.R-project.org/package=caret},
 }
 
 @article{correlation,
@@ -224,6 +234,14 @@
   url = {https://www.jstatsoft.org/v45/i03/},
 }
 
+@Manual{mlr3,
+  title = {mlr3: Machine Learning in R - Next Generation},
+  author = {Michel Lang and Bernd Bischl and Jakob Richter and Patrick Schratz and Martin Binder},
+  year = {2021},
+  note = {R package version 0.12.0},
+  url = {https://CRAN.R-project.org/package=mlr3},
+}
+
 @article{parameters,
   title = {parameters: Extracting, Computing and Exploring the Parameters of Statistical Models using {R}.},
   volume = {5},
@@ -246,6 +264,14 @@
   doi = {10.21105/joss.03139},
 }
 
+@Manual{plotly,
+  title = {plotly: Create Interactive Web Graphics via 'plotly.js'},
+  author = {Carson Sievert and Chris Parmer and Toby Hocking and Scott Chamberlain and Karthik Ram and Marianne Corvellec and Pedro Despouy},
+  year = {2021},
+  note = {R package version 4.10.0},
+  url = {https://CRAN.R-project.org/package=plotly},
+}
+
 @Article{see,
   title = {{see}: An {R} Package for Visualizing Statistical Models},
   author = {Daniel Lüdecke and Indrajeet Patil and Mattan S. Ben-Shachar and Brenton M. Wiernik and Philip Waggoner and Dominique Makowski},
@@ -255,6 +281,14 @@
   number = {64},
   pages = {3393},
   doi = {10.21105/joss.03393},
+}
+
+@Manual{shiny,
+  title = {shiny: Web Application Framework for R},
+  author = {Winston Chang and Joe Cheng and JJ Allaire and Carson Sievert and Barret Schloerke and Yihui Xie and Jeff Allen and Jonathan McPherson and Alan Dipert and Barbara Borges},
+  year = {2021},
+  note = {R package version 1.7.1},
+  url = {https://CRAN.R-project.org/package=shiny},
 }
 
 @article{smcure,
@@ -310,4 +344,10 @@
   doi = {10.21105/joss.01686},
 }
 
-
+@Manual{xgboost,
+  title = {xgboost: Extreme Gradient Boosting},
+  author = {Tianqi Chen and Tong He and Michael Benesty and Vadim Khotilovich and Yuan Tang and Hyunsu Cho and Kailong Chen and Rory Mitchell and Ignacio Cano and Tianyi Zhou and Mu Li and Junyuan Xie and Min Lin and Yifeng Geng and Yutian Li},
+  year = {2021},
+  note = {R package version 1.4.1.1},
+  url = {https://CRAN.R-project.org/package=xgboost},
+}
