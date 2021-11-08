@@ -28,10 +28,19 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/add_sparkline.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/add_splines.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/as_forest_plot.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/as_ggplot.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/assign_timepoint.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/auc.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/bstfun-package.html</loc>
@@ -40,13 +49,31 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/cite_r.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/create_bst_project.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/clean_mrn.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/count_map.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/count_na.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/create_project.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/deprecated.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/egfr.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/fix_database_error.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/followup_time.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/get_mode.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/here_data.html</loc>
@@ -58,10 +85,19 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/index.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/list_labels.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/project_templates.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/rm_logs.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/set_derived_variables.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/style_tbl_compact.html</loc>
@@ -76,10 +112,10 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/trial.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_file.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_rstudio_prefs.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_bst_rstudio_prefs.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/use_file.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/use_varnames_as_labels.html</loc>

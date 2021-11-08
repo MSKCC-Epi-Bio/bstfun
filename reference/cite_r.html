@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -50,7 +50,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Cite R and R Packages</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/cite_r.R" class="external-link"><code>R/cite_r.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/HEAD/R/cite_r.R" class="external-link"><code>R/cite_r.R</code></a></small>
     <div class="hidden name"><code>cite_r.Rd</code></div>
     </div>
 
@@ -63,11 +63,11 @@
     <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    
-
-<dl><dt>pkgs</dt><dd><p>character vector of package names to cite. Default is
+    <dl><dt>pkgs</dt>
+<dd><p>character vector of package names to cite. Default is
 <code>c("tidyverse", "gtsummary")</code>. <code>NULL</code> is acceptable.</p></dd>
-</dl><dl><dt>add_citations</dt><dd><p>logical indicating whether to include the bibtex citations
+<dt>add_citations</dt>
+<dd><p>logical indicating whether to include the bibtex citations
 of R and the packages. Default is <code>TRUE</code>. When TRUE, we expect the R markdown
 file to reference a bib file including the references for each package
 listed in the <code>pkgs=</code> argument. The cite key for each of these entries
@@ -117,15 +117,15 @@ contain the following entries.</p><pre><code>  @Manual{r,
     <h2>Examples</h2>
     <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># cite R and the tidyverse</span></span>
 <span class="r-in"><span class="fu">cite_r</span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"tidyverse"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "R version 4.1.1 with the tidyverse (v1.3.1) package [@r; @tidyverse]"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "R version 4.1.2 with the tidyverse (v1.3.1) package [@r; @tidyverse]"</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># cite R and the tidyverse, but text only</span></span>
 <span class="r-in"><span class="fu">cite_r</span><span class="op">(</span>pkgs <span class="op">=</span> <span class="st">"tidyverse"</span>, add_citations <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> R version 4.1.1 with the tidyverse (v1.3.1) package</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> R version 4.1.2 with the tidyverse (v1.3.1) package</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># only cite R</span></span>
 <span class="r-in"><span class="fu">cite_r</span><span class="op">(</span>pkgs <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "R version 4.1.1 [@r]"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "R version 4.1.2 [@r]"</span>
 </code></pre></div>
     </div>
   </div>

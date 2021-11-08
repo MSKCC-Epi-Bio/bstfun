@@ -19,7 +19,7 @@ the gtsummary table into a gt table."><!-- mathjax --><script src="https://cdnjs
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -52,7 +52,7 @@ the gtsummary table into a gt table."><!-- mathjax --><script src="https://cdnjs
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Add Sparkline Figure</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/add_sparkline.R" class="external-link"><code>R/add_sparkline.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/HEAD/R/add_sparkline.R" class="external-link"><code>R/add_sparkline.R</code></a></small>
     <div class="hidden name"><code>add_sparkline.Rd</code></div>
     </div>
 
@@ -73,20 +73,38 @@ the gtsummary table into a gt table.</p>
     <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    
+    <dl><dt>x</dt>
+<dd><p>'tbl_summary' object</p></dd>
+<dt>type</dt>
+<dd><p>sparkline type. Must be one of <code>c("histogram", "sparkline")</code></p></dd>
+<dt>column_header</dt>
+<dd><p>string indicating column header</p></dd>
+<dt>same_limit</dt>
+<dd><p>A logical indicating that the plots will use the same axis range (<code>TRUE</code>) or have individual axis ranges (<code>FALSE</code>).</p></dd>
+<dt>...</dt>
+<dd><p>Arguments passed on to <code><a href="https://rdrr.io/pkg/gtExtras/man/gt_sparkline.html" class="external-link">gtExtras::gt_sparkline</a></code></p><dl><dt><code>width</code></dt>
+<dd><p>A number indicating the width of the plot in mm at a DPI of 25.4, defaults to 30</p></dd>
 
-<dl><dt>x</dt><dd><p>'tbl_summary' object</p></dd>
-</dl><dl><dt>type</dt><dd><p>sparkline type. Must be one of <code>c("histogram", "sparkline")</code></p></dd>
-</dl><dl><dt>column_header</dt><dd><p>string indicating column header</p></dd>
-</dl><dl><dt>same_limit</dt><dd><p>A logical indicating that the plots will use the same axis range (<code>TRUE</code>) or have individual axis ranges (<code>FALSE</code>).</p></dd>
-</dl><dl><dt>...</dt><dd><p>Arguments passed on to <code><a href="https://rdrr.io/pkg/gtExtras/man/gt_sparkline.html" class="external-link">gtExtras::gt_sparkline</a></code>
-  </p><dl><dt><code>width</code></dt><dd><p>A number indicating the width of the plot in mm at a DPI of 25.4, defaults to 30</p></dd>
-    <dt><code>line_color</code></dt><dd><p>Color for the line, defaults to <code>"black"</code>. Accepts a named color (eg 'blue') or a hex color.</p></dd>
-    <dt><code>range_colors</code></dt><dd><p>A vector of two valid color names or hex codes, the first color represents the min values and the second color represents the highest point per plot. Defaults to <code>c("blue", "blue")</code>. Accepts a named color (eg <code>'blue'</code>) or a hex color like <code>"#fafafa"</code>.</p></dd>
-    <dt><code>fill_color</code></dt><dd><p>Color for the fill of histograms/density plots, defaults to <code>"grey"</code>. Accepts a named color (eg <code>'blue'</code>) or a hex color.</p></dd>
-    <dt><code>bw</code></dt><dd><p>The bandwidth or binwidth, passed to <code><a href="https://rdrr.io/r/stats/density.html" class="external-link">density()</a></code> or <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">ggplot2::geom_histogram()</a></code>. If <code>type = "density"</code>, then <code>bw</code> is passed to the <code>bw</code> argument, if <code>type = "histogram"</code>, then <code>bw</code> is passed to the <code>binwidth</code> argument.</p></dd>
-    <dt><code>trim</code></dt><dd><p>A logical indicating whether to trim the values in <code>type = "density"</code> to a slight expansion beyond the observable range. Can help with long tails in <code>density</code> plots.</p></dd>
-    <dt><code>label</code></dt><dd><p>A logical indicating whether the sparkline will have a numeric label at the end of the plot.</p></dd></dl></dd>
+    <dt><code>line_color</code></dt>
+<dd><p>Color for the line, defaults to <code>"black"</code>. Accepts a named color (eg 'blue') or a hex color.</p></dd>
+
+    <dt><code>range_colors</code></dt>
+<dd><p>A vector of two valid color names or hex codes, the first color represents the min values and the second color represents the highest point per plot. Defaults to <code>c("blue", "blue")</code>. Accepts a named color (eg <code>'blue'</code>) or a hex color like <code>"#fafafa"</code>.</p></dd>
+
+    <dt><code>fill_color</code></dt>
+<dd><p>Color for the fill of histograms/density plots, defaults to <code>"grey"</code>. Accepts a named color (eg <code>'blue'</code>) or a hex color.</p></dd>
+
+    <dt><code>bw</code></dt>
+<dd><p>The bandwidth or binwidth, passed to <code><a href="https://rdrr.io/r/stats/density.html" class="external-link">density()</a></code> or <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">ggplot2::geom_histogram()</a></code>. If <code>type = "density"</code>, then <code>bw</code> is passed to the <code>bw</code> argument, if <code>type = "histogram"</code>, then <code>bw</code> is passed to the <code>binwidth</code> argument.</p></dd>
+
+    <dt><code>trim</code></dt>
+<dd><p>A logical indicating whether to trim the values in <code>type = "density"</code> to a slight expansion beyond the observable range. Can help with long tails in <code>density</code> plots.</p></dd>
+
+    <dt><code>label</code></dt>
+<dd><p>A logical indicating whether the sparkline will have a numeric label at the end of the plot.</p></dd>
+
+  
+</dl></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -113,6 +131,11 @@ the gtsummary table into a gt table.</p>
     <div id="examples">
     <h2>Examples</h2>
     <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: ‘gtsummary’</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from ‘package:bstfun’:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     tbl_split, trial</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="va">add_sparkline_ex1</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="va">trial</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>

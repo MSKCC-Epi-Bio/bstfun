@@ -19,7 +19,7 @@ Creates a summary of Likert scales following the gtsummary structure"><!-- mathj
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -52,7 +52,7 @@ Creates a summary of Likert scales following the gtsummary structure"><!-- mathj
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Likert Summary Table</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/tbl_likert.R" class="external-link"><code>R/tbl_likert.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/HEAD/R/tbl_likert.R" class="external-link"><code>R/tbl_likert.R</code></a></small>
     <div class="hidden name"><code>tbl_likert.Rd</code></div>
     </div>
 
@@ -77,19 +77,21 @@ Creates a summary of Likert scales following the gtsummary structure</p>
     <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    
-
-<dl><dt>data</dt><dd><p>A data frame</p></dd>
-</dl><dl><dt>label</dt><dd><p>List of formulas specifying variables labels,
+    <dl><dt>data</dt>
+<dd><p>A data frame</p></dd>
+<dt>label</dt>
+<dd><p>List of formulas specifying variables labels,
 e.g. <code>list(age ~ "Age", stage ~ "Path T Stage")</code>.  If a
 variable's label is not specified here, the label attribute
 (<code>attr(data$age, "label")</code>) is used.  If
 attribute label is <code>NULL</code>, the variable name will be used.</p></dd>
-</dl><dl><dt>statistic</dt><dd><p>List of formulas specifying types of summary statistics to
+<dt>statistic</dt>
+<dd><p>List of formulas specifying types of summary statistics to
 display for each variable.  The default is
 <code>list(all_continuous() ~ "{median} ({p25}, {p75})", all_categorical() ~ "{n} ({p}%)")</code>.
 See below for details.</p></dd>
-</dl><dl><dt>digits</dt><dd><p>List of formulas specifying the number of decimal
+<dt>digits</dt>
+<dd><p>List of formulas specifying the number of decimal
 places to round continuous summary statistics. If not specified,
 <code>tbl_summary</code> guesses an appropriate number of decimals to round statistics.
 When multiple statistics are displayed for a single variable, supply a vector
@@ -97,11 +99,15 @@ rather than an integer.  For example, if the
 statistic being calculated is <code>"{mean} ({sd})"</code> and you want the mean rounded
 to 1 decimal place, and the SD to 2 use <code>digits = list(age ~ c(1, 2))</code>. User
 may also pass a styling function: <code>digits = age ~ style_sigfig</code></p></dd>
-</dl><dl><dt>include</dt><dd><p>variables to include in the summary table. Default is <code><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything()</a></code></p></dd>
-</dl><dl><dt>sort</dt><dd><p>Sort table based on mean scores? Must be one of
+<dt>include</dt>
+<dd><p>variables to include in the summary table. Default is <code><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything()</a></code></p></dd>
+<dt>sort</dt>
+<dd><p>Sort table based on mean scores? Must be one of
 <code>c("default", "ascending", "descending")</code></p></dd>
-</dl><dl><dt>x</dt><dd><p>Table of class 'tbl_likert'</p></dd>
-</dl><dl><dt>...</dt><dd><p>not used</p></dd>
+<dt>x</dt>
+<dd><p>Table of class 'tbl_likert'</p></dd>
+<dt>...</dt>
+<dd><p>not used</p></dd>
 </dl></div>
     <div id="example-output">
     <h2>Example Output</h2>
@@ -136,10 +142,6 @@ may also pass a styling function: <code>digits = age ~ style_sigfig</code></p></
 <span class="r-in"><span class="va">tbl_likert_ex1</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="fu">tbl_likert</span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span class="r-in">  <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>`gtsummary_butcher()` was deprecated in bstfun 0.2.5.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Please use `gtsummary::tbl_butcher()` instead.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</span></span>
 </code></pre></div>
     </div>
   </div>

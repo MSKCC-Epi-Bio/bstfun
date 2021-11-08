@@ -20,7 +20,7 @@ forest plot using forestplot::forestplot()."><!-- mathjax --><script src="https:
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -53,7 +53,7 @@ forest plot using forestplot::forestplot()."><!-- mathjax --><script src="https:
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create Forest Plot</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/master/R/as_forest_plot.R" class="external-link"><code>R/as_forest_plot.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/HEAD/R/as_forest_plot.R" class="external-link"><code>R/as_forest_plot.R</code></a></small>
     <div class="hidden name"><code>as_forest_plot.Rd</code></div>
     </div>
 
@@ -77,24 +77,29 @@ forest plot using <code><a href="https://rdrr.io/pkg/forestplot/man/forestplot.h
     <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    
-
-<dl><dt>x</dt><dd><p>a gtsummary object of class <code>"tbl_regression"</code> or <code>"tbl_uvregression"</code></p></dd>
-</dl><dl><dt>col_names</dt><dd><p>names of columns in <code>x$table_body</code> to print on the RHS of the
+    <dl><dt>x</dt>
+<dd><p>a gtsummary object of class <code>"tbl_regression"</code> or <code>"tbl_uvregression"</code></p></dd>
+<dt>col_names</dt>
+<dd><p>names of columns in <code>x$table_body</code> to print on the RHS of the
 forest plot. Default is <code>c("estimate", "ci", "p.value")</code></p></dd>
-</dl><dl><dt>graph.pos</dt><dd><p>The position of the graph element within the table of text. The
+<dt>graph.pos</dt>
+<dd><p>The position of the graph element within the table of text. The
 position can be <code>1-(ncol(labeltext) + 1)</code>. You can also choose set the position
 to <code>"left"</code> or <code>"right"</code>.</p></dd>
-</dl><dl><dt>boxsize</dt><dd><p>Override the default box size based on precision</p></dd>
-</dl><dl><dt>title_line_color</dt><dd><p>color of line that appears above forest plot.
+<dt>boxsize</dt>
+<dd><p>Override the default box size based on precision</p></dd>
+<dt>title_line_color</dt>
+<dd><p>color of line that appears above forest plot.
 Default is <code>"darkblue"</code></p></dd>
-</dl><dl><dt>xlog</dt><dd><p>If TRUE, x-axis tick marks are to follow a logarithmic scale, e.g. for
+<dt>xlog</dt>
+<dd><p>If TRUE, x-axis tick marks are to follow a logarithmic scale, e.g. for
 logistic regressoin (OR), survival estimates (HR), Poisson regression etc.
 <em>Note:</em> This is an intentional break with the original <code>forestplot</code>
 function as I've found that exponentiated ticks/clips/zero effect are more
 difficult to for non-statisticians and there are sometimes issues with rounding
 the tick marks properly.</p></dd>
-</dl><dl><dt>...</dt><dd><p>arguments passed to <code><a href="https://rdrr.io/pkg/forestplot/man/forestplot.html" class="external-link">forestplot::forestplot()</a></code></p></dd>
+<dt>...</dt>
+<dd><p>arguments passed to <code><a href="https://rdrr.io/pkg/forestplot/man/forestplot.html" class="external-link">forestplot::forestplot()</a></code></p></dd>
 </dl></div>
     <div id="author">
     <h2>Author</h2>
@@ -116,7 +121,7 @@ the tick marks properly.</p></dd>
 <span class="r-in">  exponentiate <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span class="r-in"><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span class="r-in"><span class="fu">as_forest_plot</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-plt"><img src="as_forest_plot-1.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="as_forest_plot-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Example 2 ------------------------------------</span></span>
 <span class="r-in"><span class="va">tbl</span> <span class="op">&lt;-</span></span>
@@ -125,7 +130,7 @@ the tick marks properly.</p></dd>
 <span class="r-in"> <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">as_forest_plot</span><span class="op">(</span><span class="va">tbl</span>, col_names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"stat_n"</span>, <span class="st">"estimate"</span>, <span class="st">"ci"</span>, <span class="st">"p.value"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-plt"><img src="as_forest_plot-2.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="as_forest_plot-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Example 3 ----------------------------------</span></span>
 <span class="r-in"><span class="va">tbl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -139,7 +144,7 @@ the tick marks properly.</p></dd>
 <span class="r-in">  boxsize <span class="op">=</span> <span class="fl">0.2</span>,</span>
 <span class="r-in">  col <span class="op">=</span> <span class="fu">forestplot</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/forestplot/man/fpColors.html" class="external-link">fpColors</a></span><span class="op">(</span>box <span class="op">=</span> <span class="st">"darkred"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span></span>
-<span class="r-plt"><img src="as_forest_plot-3.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="as_forest_plot-3.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>
