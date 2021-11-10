@@ -23,6 +23,7 @@
 # ignore data folder/symbolic link/sensitive file
 data
 secure_data
+secure_data.lnk
 ext_data
 tmp
 env.json
