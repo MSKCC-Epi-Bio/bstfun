@@ -1,3 +1,7 @@
+# bstfun (development version)
+
+* Updated custom template definitions to utilize parts from the default template, reducing the amount of code needed to create a custom template.
+
 # bstfun 0.3.0
 
 * Function `add_cuminc_risktables()` now allows for 3 groups. Makes colors consistent between labels and estimates.  Removed "Number at risk" label and places a label ", n:" next to each strata name. 
