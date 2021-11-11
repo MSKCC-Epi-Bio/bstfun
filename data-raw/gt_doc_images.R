@@ -3,18 +3,18 @@ library(bstfun)
 rm(list = ls())
 
 # list of all help files
-gt_functions <-
+bstfun_functions <-
   list.files(here::here("man")) %>%
   purrr::keep(~stringr::str_ends(., stringr::fixed(".Rd"))) %>%
   stringr::str_remove(".Rd")
 
-# create temp gtsummary directory (example scripts will be saved here)
-path_gtsummary <- file.path(tempdir(), "bstfun")
-fs::dir_create(path_gtsummary)
-unlink(path_gtsummary) # just in case it already existed with files in folder
+# create temp bstfun directory (example scripts will be saved here)
+path_bstfun <- file.path(tempdir(), "bstfun")
+fs::dir_create(path_bstfun)
+unlink(path_bstfun) # just in case it already existed with files in folder
 
 # cycling over each help file, and saving gt images
-for (f in gt_functions) {
+for (f in bstfun_functions) {
   cli::cli_alert_success("Working on {f}")
 
   # run code from example
@@ -56,6 +56,6 @@ for (f in gt_functions) {
     }
   )
 
-  # removing all objects except `gt_functions`, `path_gtsummary`
-  rm(list = ls()[!ls() %in% c("gt_functions", "path_gtsummary")])
+  # removing all objects except `bstfun_functions`, `path_bstfun`
+  rm(list = ls()[!ls() %in% c("bstfun_functions", "path_bstfun")])
 }
