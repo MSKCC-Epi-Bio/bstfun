@@ -79,8 +79,8 @@ bold_italicise_group_labels <- function(x,
         }
         x <-
           x %>%
-          gt::tab_style(style = cell_text(style = "italic"),
-                        locations = cells_row_groups())
+          gt::tab_style(style = gt::cell_text(style = "italic"),
+                        locations = gt::cells_row_groups())
       },
       "flextable" = {
         if (!("flextable" %in% class(x))) {
