@@ -1,17 +1,111 @@
+% ------------------------------------------------------------------------------
+% method articles/books references ---------------------------------------------
+% List references alphabetically by first author
+% ------------------------------------------------------------------------------
+@article{benjamini1995fdr,
+  ISSN = {00359246},
+  URL = {http://www.jstor.org/stable/2346101},
+  author = {Yoav Benjamini and Yosef Hochberg},
+  journal = {Journal of the Royal Statistical Society. Series B (Methodological)},
+  number = {1},
+  pages = {289--300},
+  publisher = {[Royal Statistical Society, Wiley]},
+  title = {Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing},
+  volume = {57},
+  year = {1995}
+}
+
+
+@book{breiman2017classification,
+  title={Classification and regression trees},
+  author={Breiman, Leo and Friedman, Jerome H and Olshen, Richard A and Stone, Charles J},
+  year={2017},
+  publisher={Routledge}
+}
+
+@article{cheng2015impact,
+  title = {Memorial Sloan Kettering-Integrated Mutation Profiling of Actionable Cancer Targets (MSK-IMPACT): A Hybridization   Capture-Based Next-Generation Sequencing Clinical Assay for Solid Tumor Molecular Oncology},
+  journal = {The Journal of Molecular Diagnostics},
+  volume = {17},
+  number = {3},
+  pages = {251-264},
+  year = {2015},
+  issn = {1525-1578},
+  doi = {https://doi.org/10.1016/j.jmoldx.2014.12.006},
+  url = {https://www.sciencedirect.com/science/article/pii/S1525157815000458},
+  author = {Donavan T. Cheng and Talia N. Mitchell and Ahmet Zehir and Ronak H. Shah and Ryma Benayed and Aijazuddin Syed   and Raghu Chandramohan and Zhen Yu Liu and Helen H. Won and Sasinya N. Scott and A. Rose Brannon and Catherine O'Reilly   and Justyna Sadowska and Jacklyn Casanova and Angela Yannes and Jaclyn F. Hechtman and Jinjuan Yao and Wei Song and Dara S  . Ross and Alifya Oultache and Snjezana Dogan and Laetitia Borsu and Meera Hameed and Khedoudja Nafa and Maria E. Arcila   and Marc Ladanyi and Michael F. Berger},
+}
+
+@article{fine1999proportional,
+  title={A proportional hazards model for the subdistribution of a competing risk},
+  author={Fine, Jason P and Gray, Robert J},
+  journal={Journal of the American statistical association},
+  volume={94},
+  number={446},
+  pages={496--509},
+  year={1999},
+  doi = {10.1002/sim.7501},
+  publisher={Taylor \& Francis}
+}
+
+@article{gao2013cbio,
+  author = {Jianjiong Gao  and Bülent Arman Aksoy  and Ugur Dogrusoz  and Gideon Dresdner  and Benjamin Gross  and S. Onur Sumer    and Yichao Sun  and Anders Jacobsen  and Rileen Sinha  and Erik Larsson  and Ethan Cerami  and Chris Sander  and Nikolaus Schultz   },
+  title = {Integrative Analysis of Complex Cancer Genomics and Clinical Profiles Using the cBioPortal},
+  journal = {Science Signaling},
+  volume = {6},
+  number = {269},
+  pages = {pl1-pl1},
+  year = {2013},
+  doi = {10.1126/scisignal.2004088}
+  URL = {https://www.science.org/doi/abs/10.1126/scisignal.2004088},
+  eprint = {https://www.science.org/doi/pdf/10.1126/scisignal.2004088}
+}
+
 @Book{hastie1986gam,
   title = {Generalized additive models},
   author = {Hastie, T.J., Tibshirani, R.J.},
   publisher = {Stat. Sci. 1},
   year = {1986},
   pages = {297,318}
-  }
+}
 
 @Book{rubin1987mi,
   title = {Multiple Imputation for Nonresponse in Surveys},
   author = {Rubin, D.B.},
   publisher = {John Wiley & Sons, Inc},
   year = {1987}
-  }
+}
+
+
+@Article{vickers2006dca,
+  title = {Decision curve analysis: a novel method for evaluating prediction models.},
+  author = {Vickers, A.J., Elkin E.B.},
+  journal = {Medical Decision Making},
+  year = {2006},
+  volume = {26},
+  pages = {565-74},
+  DOI = {10.1177/0272989X06295361}
+}
+
+@Article{vickers2008dca_extension,
+  title = {Extensions to decision curve analysis, a novel method for evaluating diagnostic tests, prediction models and molecular markers.},
+  author = {Vickers, A.J., Cronin A.M, Elkin E.B., Gonen M.},
+  journal = {BMC Medical Informatics and Decision Making},
+  year = {2008},
+  volume = {8},
+  DOI = {10.1186/1472-6947-8-53}
+}
+
+@article{vickers2010you,
+  title={How do you tell whether a change in surgical technique leads to a change in outcome?},
+  author={Vickers, Andrew J and Cronin, Angel M and Masterson, Timothy A and Eastham, James A},
+  journal={The Journal of urology},
+  volume={183},
+  number={4},
+  pages={1510--1514},
+  year={2010},
+  publisher={Wolters Kluwer Philadelphia, PA}
+}
 
 @article{wood2011fast,
   title={Fast stable restricted maximum likelihood and marginal likelihood estimation of semiparametric generalized linear models},
@@ -24,6 +118,13 @@
   publisher={Wiley Online Library}
 }
 
+
+% ------------------------------------------------------------------------------
+% R and R Package references ---------------------------------------------------
+% List R packages in alphabetical order
+% If there is an article associated with the package, use that citation;
+% if not, then use `citation("pkg", auto=TRUE) |> toBibtex()`
+% ------------------------------------------------------------------------------
 @Manual{r,
   title = {R: A Language and Environment for Statistical Computing},
   author = {{R Core Team}},
@@ -33,9 +134,113 @@
   url = {https://www.R-project.org/},
 }
 
+@article{bayestestr,
+  title = {{bayestestR}: {Describing} {Effects} and their {Uncertainty}, {Existence} and {Significance} within the {Bayesian} {Framework}},
+  volume = {4},
+  issn = {2475-9066},
+  shorttitle = {{bayestestR}},
+  url = {https://joss.theoj.org/papers/10.21105/joss.01541},
+  doi = {10.21105/joss.01541},
+  number = {40},
+  urldate = {2019-08-13},
+  journal = {Journal of Open Source Software},
+  author = {Makowski, Dominique and Ben-Shachar, Mattan S. and Lüdecke, Daniel},
+  month = aug,
+  year = {2019},
+  pages = {1541}
+}
+
+@Manual{caret,
+  title = {caret: Classification and Regression Training},
+  author = {Max Kuhn},
+  year = {2021},
+  note = {R package version 6.0-90},
+  url = {https://CRAN.R-project.org/package=caret},
+}
+
+@article{correlation,
+  doi={10.21105/joss.02306},
+  title={Methods and Algorithms for Correlation Analysis in R},
+  author={Makowski, Dominique and Ben-Shachar, Mattan S. and Patil, Indrajeet and L{\"u}decke, Daniel},
+  journal={Journal of Open Source Software},
+  volume={5},
+  number={51},
+  pages={2306},
+  year={2020}
+}
+
+@Manual{cmprsk,
+  title = {cmprsk: Subdistribution Analysis of Competing Risks},
+  author = {Bob Gray},
+  year = {2020},
+  url = {https://CRAN.R-project.org/package=cmprsk},
+}
+
+@Manual{data.table,
+  title = {data.table: Extension of `data.frame`},
+  author = {Matt Dowle and Arun Srinivasan},
+  year = {2021},
+  note = {R package version 1.14.2},
+  url = {https://CRAN.R-project.org/package=data.table},
+}
+
+@Manual{DescTools,
+  title = {DescTools: Tools for Descriptive Statistics},
+  author = {Andri Signorell},
+  year = {2021},
+  note = {R package version 0.99.43},
+  url = {https://CRAN.R-project.org/package=DescTools},
+}
+
+@article{effectsize,
+  title = {{e}ffectsize: Estimation of Effect Size Indices and Standardized Parameters},
+  author = {Mattan S. Ben-Shachar and Daniel Lüdecke and Dominique Makowski},
+  year = {2020},
+  journal = {Journal of Open Source Software},
+  volume = {5},
+  number = {56},
+  pages = {2815},
+  publisher = {The Open Journal},
+  doi = {10.21105/joss.02815},
+  url = {https://doi.org/10.21105/joss.02815},
+}
+
+@Manual{forestplot,
+  title = {forestplot: Advanced Forest Plot Using 'grid' Graphics},
+  author = {Max Gordon and Thomas Lumley},
+  year = {2021},
+  note = {R package version 2.0.1},
+  url = {https://CRAN.R-project.org/package=forestplot},
+}
+
+@Manual{gee,
+  title = {gee: Generalized Estimation Equation Solver},
+  author = {Vincent J Carey. Ported to R by Thomas Lumley and Brian Ripley. Files src/dgedi.f and src/dgefa.f are for LINPACK authored by Cleve Moler. Note that maintainers are not available to give advice on using a package they did not author.},
+  year = {2019},
+  note = {R package version 4.13-20},
+  url = {https://CRAN.R-project.org/package=gee},
+}
+
+@Article{geepack,
+  title = {The R Package geepack for Generalized Estimating Equations},
+  author = {Ulrich Halekoh and Søren Højsgaard and Jun Yan},
+  year = {2006},
+  journal = {Journal of Statistical Software},
+  volume = {15/2},
+  pages = {1--11},
+}
+
+@Manual{glmnet,
+  title = {glmnet: Lasso and Elastic-Net Regularized Generalized Linear Models},
+  author = {Jerome Friedman and Trevor Hastie and Rob Tibshirani and Balasubramanian Narasimhan and Kenneth Tay and Noah Simon},
+  year = {2021},
+  note = {R package version 4.1-2},
+  url = {https://CRAN.R-project.org/package=glmnet},
+}
+
 @Article{gtsummary,
   author = {Daniel D. Sjoberg and Karissa Whiting and Michael Curry and Jessica A. Lavery and Joseph Larmarange},
-  title = {Reproducible Summary Tables with the gtsummary Package},
+  title = {{Reproducible Summary Tables with the gtsummary Package}},
   journal = {{The R Journal}},
   year = {2021},
   url = {https://doi.org/10.32614/RJ-2021-053},
@@ -45,50 +250,21 @@
   pages = {570-580},
 }
 
-@Article{tidyverse,
-  title = {Welcome to the {tidyverse}},
-  author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
-  year = {2019},
+@article{insight,
   journal = {Journal of Open Source Software},
+  doi = {10.21105/joss.01412},
+  issn = {2475-9066},
+  number = {38},
+  publisher = {The Open Journal},
+  title = {insight: A Unified Interface to Access Information from Model Objects in R},
+  url = {http://dx.doi.org/10.21105/joss.01412},
   volume = {4},
-  number = {43},
-  pages = {1686},
-  doi = {10.21105/joss.01686},
-}
-
-@Manual{mgcv,
-  title = {mgcv: Mixed GAM Computation Vehicle with Automatic Smoothness
-Estimation},
-  author = {Simon Wood},
-  year = {2021},
-  note = {R package version 1.8-36},
-  url = {https://CRAN.R-project.org/package=mgcv},
-}
-
-@Manual{survival,
-  title = {A Package for Survival Analysis in R},
-  author = {Terry M Therneau},
-  year = {2021},
-  note = {R package version 3.2-11},
-  url = {https://CRAN.R-project.org/package=survival},
-}
-
-@Article{mice,
-  title = {{mice}: Multivariate Imputation by Chained Equations in R},
-  author = {Stef {van Buuren} and Karin Groothuis-Oudshoorn},
-  journal = {Journal of Statistical Software},
-  year = {2011},
-  volume = {45},
-  number = {3},
-  pages = {1-67},
-  url = {https://www.jstatsoft.org/v45/i03/},
-}
-
-@Manual{tidymodels,
-  title = {Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles.},
-  author = {Max Kuhn and Hadley Wickham},
-  url = {https://www.tidymodels.org},
-  year = {2020},
+  author = {Lüdecke, Daniel and Waggoner, Philip and Makowski, Dominique},
+  pages = {1412},
+  date = {2019-06-25},
+  year = {2019},
+  month = {6},
+  day = {25}
 }
 
 @Article{lme4,
@@ -102,11 +278,141 @@ Estimation},
   doi = {10.18637/jss.v067.i01},
 }
 
+@Manual{Matching,
+  title = {Matching: Multivariate and Propensity Score Matching with Balance
+Optimization},
+  author = {Jasjeet Singh Sekhon},
+  year = {2021},
+  note = {R package version 4.9-11},
+  url = {https://CRAN.R-project.org/package=Matching},
+}
+
+@Manual{meta,
+  title = {meta: General Package for Meta-Analysis},
+  author = {Guido Schwarzer},
+  year = {2021},
+  note = {R package version 5.0-1},
+  url = {https://CRAN.R-project.org/package=meta},
+}
+
+@Manual{mgcv,
+  title = {mgcv: Mixed GAM Computation Vehicle with Automatic Smoothness Estimation},
+  author = {Simon Wood},
+  year = {2021},
+  note = {R package version 1.8-36},
+  url = {https://CRAN.R-project.org/package=mgcv},
+}
+
+@Article{mice,
+  title = {{mice}: Multivariate Imputation by Chained Equations in R},
+  author = {Stef {van Buuren} and Karin Groothuis-Oudshoorn},
+  journal = {Journal of Statistical Software},
+  year = {2011},
+  volume = {45},
+  number = {3},
+  pages = {1-67},
+  url = {https://www.jstatsoft.org/v45/i03/},
+}
+
+@Manual{mlr3,
+  title = {mlr3: Machine Learning in R - Next Generation},
+  author = {Michel Lang and Bernd Bischl and Jakob Richter and Patrick Schratz and Martin Binder},
+  year = {2021},
+  note = {R package version 0.12.0},
+  url = {https://CRAN.R-project.org/package=mlr3},
+}
+
+@article{parameters,
+  title = {parameters: Extracting, Computing and Exploring the Parameters of Statistical Models using {R}.},
+  volume = {5},
+  doi = {10.21105/joss.02445},
+  number = {53},
+  journal = {Journal of Open Source Software},
+  author = {Daniel Lüdecke and Mattan S. Ben-Shachar and Indrajeet Patil and Dominique Makowski},
+  year = {2020},
+  pages = {2445},
+}
+
+@Article{performance,
+  title = {{performance}: An {R} Package for Assessment, Comparison and Testing of Statistical Models},
+  author = {Daniel Lüdecke and Mattan S. Ben-Shachar and Indrajeet Patil and Philip Waggoner and Dominique Makowski},
+  year = {2021},
+  journal = {Journal of Open Source Software},
+  volume = {6},
+  number = {60},
+  pages = {3139},
+  doi = {10.21105/joss.03139},
+}
+
+@Manual{,
+  title = {pheatmap: Pretty Heatmaps},
+  author = {Raivo Kolde},
+  year = {2019},
+  note = {R package version 1.0.12},
+  url = {https://CRAN.R-project.org/package=pheatmap},
+}
+
+@Manual{plotly,
+  title = {plotly: Create Interactive Web Graphics via 'plotly.js'},
+  author = {Carson Sievert and Chris Parmer and Toby Hocking and Scott Chamberlain and Karthik Ram and Marianne Corvellec and Pedro Despouy},
+  year = {2021},
+  note = {R package version 4.10.0},
+  url = {https://CRAN.R-project.org/package=plotly},
+}
+
+@Manual{rpart,
+  title = {rpart: Recursive Partitioning and Regression Trees},
+  author = {Terry Therneau and Beth Atkinson},
+  year = {2019},
+  note = {R package version 4.1-15},
+  url = {https://CRAN.R-project.org/package=rpart},
+}
+
+@Article{see,
+  title = {{see}: An {R} Package for Visualizing Statistical Models},
+  author = {Daniel Lüdecke and Indrajeet Patil and Mattan S. Ben-Shachar and Brenton M. Wiernik and Philip Waggoner and Dominique Makowski},
+  journal = {Journal of Open Source Software},
+  year = {2021},
+  volume = {6},
+  number = {64},
+  pages = {3393},
+  doi = {10.21105/joss.03393},
+}
+
+@Manual{shiny,
+  title = {shiny: Web Application Framework for R},
+  author = {Winston Chang and Joe Cheng and JJ Allaire and Carson Sievert and Barret Schloerke and Yihui Xie and Jeff Allen and Jonathan McPherson and Alan Dipert and Barbara Borges},
+  year = {2021},
+  note = {R package version 1.7.1},
+  url = {https://CRAN.R-project.org/package=shiny},
+}
+
+@article{smcure,
+  doi = {10.1016/j.cmpb.2012.08.013},
+  url = {https://doi.org/10.1016/j.cmpb.2012.08.013},
+  year = {2012},
+  month = dec,
+  publisher = {Elsevier {BV}},
+  volume = {108},
+  number = {3},
+  pages = {1255--1260},
+  author = {Chao Cai and Yubo Zou and Yingwei Peng and Jiajia Zhang},
+  title = {smcure: An R-package for estimating semiparametric mixture cure models}
+}
+
 @Book{survey,
   year = {2010},
   author = {Thomas Lumley},
   title = {Complex Surveys: A Guide to Analysis Using R: A Guide to Analysis Using R},
   publisher = {John Wiley and Sons},
+}
+
+@Manual{survival,
+  title = {{A Package for Survival Analysis in R}},
+  author = {Terry M Therneau},
+  year = {2021},
+  note = {R package version 3.2-11},
+  url = {https://CRAN.R-project.org/package=survival},
 }
 
 @Manual{survminer,
@@ -116,9 +422,36 @@ Estimation},
   url = {https://CRAN.R-project.org/package=survminer},
 }
 
-@Manual{cmprsk,
-  title = {cmprsk: Subdistribution Analysis of Competing Risks},
-  author = {Bob Gray},
+@Manual{tableone,
+  title = {tableone: Create 'Table 1' to Describe Baseline Characteristics with or without Propensity Score Weights},
+  author = {Kazuki Yoshida and Alexander Bartel},
+  year = {2021},
+  note = {R package version 0.13.0},
+  url = {https://CRAN.R-project.org/package=tableone},
+}
+
+@Manual{tidymodels,
+  title = {Tidymodels: a collection of packages for modeling and machine learning using tidyverse principles.},
+  author = {Max Kuhn and Hadley Wickham},
+  url = {https://www.tidymodels.org},
   year = {2020},
-  url = {https://CRAN.R-project.org/package=cmprsk},
+}
+
+@Article{tidyverse,
+  title = {Welcome to the {tidyverse}},
+  author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},
+  year = {2019},
+  journal = {Journal of Open Source Software},
+  volume = {4},
+  number = {43},
+  pages = {1686},
+  doi = {10.21105/joss.01686},
+}
+
+@Manual{xgboost,
+  title = {xgboost: Extreme Gradient Boosting},
+  author = {Tianqi Chen and Tong He and Michael Benesty and Vadim Khotilovich and Yuan Tang and Hyunsu Cho and Kailong Chen and Rory Mitchell and Ignacio Cano and Tianyi Zhou and Mu Li and Junyuan Xie and Min Lin and Yifeng Geng and Yutian Li},
+  year = {2021},
+  note = {R package version 1.4.1.1},
+  url = {https://CRAN.R-project.org/package=xgboost},
 }
