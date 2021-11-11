@@ -39,84 +39,64 @@ bold_italicise_group_labels <- function(x,
   }
   print_engine <- match.arg(print_engine)
 
+  # convert output to print_engine type ----------------------------------------
+  x <-
+    switch(
+      print_engine,
+      "gt" = gtsummary::as_gt(x),
+      "flextable" = gtsummary::as_flex_table(x),
+      "huxtable" = gtsummary::as_hux_table(x)
+    )
+  cli::cli_alert_info("{.field gtsummary} table has been converted class {.val {print_engine}}")
+
+  # huxtable rows to format ----------------------------------------------------
+  # huxtables contains a dataframe with named rows,
+  # each row starting with a dot is header or footer
+  # with the following regex in argument "row" we
+  # unselect such a rows (headers or footers)
+  if (identical(print_engine, "huxtable")) {
+    rows_to_format <-
+      stringr::str_detect(pattern = "\\.",
+                          string = rownames(x),
+                          negate = TRUE)
+    rows_to_format[1] <- FALSE
+  }
+
   # apply bold code to table ---------------------------------------------------
   # THE GROUP COLUMNS WILL ALWAYS BEGIN WITH 'groupname_col*'
   # APPLY THE FORMATTING TO THOSE COLUMNS
   if (bold == TRUE) {
-    switch(
-      print_engine,
-      "gt" = {
-        x <- gtsummary::as_gt(x)
-        x <-
-          x %>%
-          gt::tab_options(row_group.font.weight = "bold")
-      },
-      "flextable" = {
-        x <- gtsummary::as_flex_table(x)
-        x <-
-          x %>%
-          flextable::bold(j = stringr::str_starts(string = .$col_keys, pattern = "groupname_col"))
-
-      },
-      "huxtable" =  {
-        x = gtsummary::as_hux_table(x)
-        x <-
-          x %>%
-          huxtable::set_bold(
-            row = stringr::str_detect(
-              pattern = "\\.",
-              string = rownames(.),
-              negate = TRUE
-            ),
-            col = dplyr::starts_with("groupname_col")
-          )
-      }
-    )
-    cli::cli_alert_info("{.field gtsummary} table has been converted class {.val {print_engine}}")
+    x <-
+      switch(
+        print_engine,
+        "gt" =
+          x %>% gt::tab_options(row_group.font.weight = "bold"),
+        "flextable" =
+          x %>% flextable::bold(j = stringr::str_starts(string = .$col_keys,
+                                                        pattern = "groupname_col")),
+        "huxtable" =
+          x %>% huxtable::set_bold(row = rows_to_format,
+                                   col = dplyr::starts_with("groupname_col"))
+      )
   }
 
   # apply italics code to table ---------------------------------------------------
-
   if (italics == TRUE) {
-    switch(
-      print_engine,
-      "gt" = {
-        if (!("gt_tbl" %in% class(x))) {
-          x <- gtsummary::as_gt(x)
-        }
-        x <-
-          x %>%
-          gt::tab_style(style = gt::cell_text(style = "italic"),
-                        locations = gt::cells_row_groups())
-      },
-      "flextable" = {
-        if (!("flextable" %in% class(x))) {
-          x <- gtsummary::as_flex_table(x)
-        }
-
-        x <- x %>%
-          flextable::italic(j = stringr::str_starts(string = .$col_keys, pattern = "groupname_col"))
-      },
-      "huxtable" =  {
-        if (!("huxtable" %in% class(x))) {
-          x <- gtsummary::as_hux_table(x)
-        }
-        rowsToItalic <-
-          stringr::str_detect(pattern = "\\.",
-                              string = rownames(x),
-                              negate = TRUE)
-        rowsToItalic[1] <- FALSE
-        x <-
-          x %>%
-          # huxtables contains a dataframe with named rows,
-          # each row starting with a dot is header or footer
-          # with the following regex in argument "row" we
-          # unselect such a rows (headers or footers)
-          huxtable::set_italic(row = rowsToItalic,
-                               col = dplyr::starts_with("groupname_col"))
-      }
-    )
-    cli::cli_alert_info("{.field gtsummary} table has been converted class {.val {print_engine}}")
+    x <-
+      switch(
+        print_engine,
+        "gt" =
+          x %>% gt::tab_style(style = gt::cell_text(style = "italic"),
+                              locations = gt::cells_row_groups()),
+        "flextable" =
+          x %>% flextable::italic(j = stringr::str_starts(string = .$col_keys,
+                                                          pattern = "groupname_col")),
+        "huxtable" =
+          x %>% huxtable::set_italic(row = rows_to_format,
+                                     col = dplyr::starts_with("groupname_col"))
+      )
   }
+
+  # return formatted table ----------------------------------------------------
   x
 }
