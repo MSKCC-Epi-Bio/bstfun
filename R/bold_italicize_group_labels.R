@@ -13,23 +13,22 @@
 #' @examples
 #' library(gtsummary)
 #'
-#' bold_italicise_group_labels_ex1 <-
+#' bold_italicize_group_labels_ex1 <-
 #'   trial %>%
 #'   select(age, trt, grade) %>%
 #'   tbl_strata(
 #'     strata = grade,
 #'     ~ .x %>%
-#'       select(trt, age) %>%
 #'       tbl_summary(by = trt, missing = "no"),
 #'     .combine_with = "tbl_stack"
 #'   ) %>%
-#'   bold_italicise_group_labels(bold = TRUE)
+#'   bold_italicize_group_labels(bold = TRUE)
 #' @section Example Output:
 #' \if{html}{Example 1}
 #'
-#' \if{html}{\figure{bold_italicise_group_labels_ex1.png}{options: width=50\%}}
+#' \if{html}{\figure{bold_italicize_group_labels_ex1.png}{options: width=50\%}}
 
-bold_italicise_group_labels <- function(x,
+bold_italicize_group_labels <- function(x,
                                         bold = FALSE,
                                         italics = FALSE,
                                         print_engine = c("gt", "flextable", "huxtable")) {

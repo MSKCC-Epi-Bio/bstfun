@@ -32,6 +32,7 @@ Other contributors:
   \item Jasme Lee [contributor]
   \item Emily Vertosick [contributor]
   \item Christine Zhou [contributor]
+  \item Gustavo Zapata Wainberg (\href{https://orcid.org/0000-0002-2524-3637}{ORCID}) [contributor]
 }
 
 }

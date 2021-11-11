@@ -1,9 +1,9 @@
 library(gtsummary)
 library(dplyr)
 
-test_that("bold_italicise_group_labels_gt_works", {
+test_that("bold_italicize_group_labels_gt_works", {
   expect_error(
-    bold_italicise_group_labels_ex1 <-
+    bold_italicize_group_labels_ex1 <-
       trial %>%
       select(age, trt, grade) %>%
       tbl_strata(
@@ -13,14 +13,14 @@ test_that("bold_italicise_group_labels_gt_works", {
           tbl_summary(by = trt, missing = "no"),
         .combine_with = "tbl_stack"
       ) %>%
-      bold_italicise_group_labels(bold = TRUE, "gt"),
+      bold_italicize_group_labels(bold = TRUE, "gt"),
     NA
   )
 })
 
-test_that("bold_italicise_group_labels_flextable_works", {
+test_that("bold_italicize_group_labels_flextable_works", {
   expect_error(
-    bold_italicise_group_labels_ex1 <-
+    bold_italicize_group_labels_ex1 <-
       trial %>%
       select(age, trt, grade) %>%
       tbl_strata(
@@ -30,14 +30,14 @@ test_that("bold_italicise_group_labels_flextable_works", {
           tbl_summary(by = trt, missing = "no"),
         .combine_with = "tbl_stack"
       ) %>%
-      bold_italicise_group_labels(bold = TRUE, "flextable"),
+      bold_italicize_group_labels(bold = TRUE, "flextable"),
     NA
   )
 })
 
-test_that("bold_italicise_group_labels_huxtable_works", {
+test_that("bold_italicize_group_labels_huxtable_works", {
   expect_error(
-    bold_italicise_group_labels_ex1 <-
+    bold_italicize_group_labels_ex1 <-
       trial %>%
       select(age, trt, grade) %>%
       tbl_strata(
@@ -47,7 +47,7 @@ test_that("bold_italicise_group_labels_huxtable_works", {
           tbl_summary(by = trt, missing = "no"),
         .combine_with = "tbl_stack"
       ) %>%
-      bold_italicise_group_labels(bold = TRUE, "huxtable"),
+      bold_italicize_group_labels(bold = TRUE, "huxtable"),
     NA
   )
 })
