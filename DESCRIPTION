@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Misc functions for the dept
-Version: 0.3.0
+Version: 0.3.0.9000
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",
@@ -32,7 +32,11 @@ Authors@R:
              role = "ctb"),
       person(given = "Christine",
              family = "Zhou",
-             role = "ctb"))
+             role = "ctb"),
+      person(given = "Gustavo",
+             family = "Zapata Wainberg",
+             role = "ctb",
+             comment = c(ORCID = "0000-0002-2524-3637")))
 Description: A miscellaneous collection of functions to used by members of
     the Biostatistics Department at MSKCC.
 License: MIT + file LICENSE
