@@ -1,6 +1,10 @@
 # bstfun (development version)
 
+
 * Updated custom template definitions to utilize parts from the default template, reducing the amount of code needed to create a custom template.
+
+* Added new function `bold_italicize_group_labels()` to bold and italicize group header labels in gtsummary tables. (#65)
+
 
 # bstfun 0.3.0
 
