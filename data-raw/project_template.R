@@ -120,13 +120,9 @@ whitingk_project_template <-
       template_filename = fs::path_package("project_templates/whitingk_template_files/02_analysis.Rmd", package = 'bstfun'),
       filename = glue::glue("scripts/02_analysis.Rmd"),
       copy = FALSE
-    )),
-    report = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/whitingk_template_files/03_report.Rmd", package = 'bstfun'),
-      filename = glue::glue("scripts/03_report.Rmd"),
-      copy = FALSE
     ))
   )
+
 attr(whitingk_project_template, "script_path") <-
   expression(fs::path_package("project_templates/whitingk_template_files/write_directories.R", package = 'bstfun'))
 attr(whitingk_project_template, "label") <- "Karissa's Project Template"
