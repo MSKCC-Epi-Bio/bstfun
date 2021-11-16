@@ -24,37 +24,37 @@ knitr::opts_chunk$set(
 	warning = FALSE
 )
 
-set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
-```
-
-# Analytic Data Import
-
-```{r import}
 library(biostatR)
 library(tidyverse)
+library(labelled)
 
-# setting MSK ggplot theme and color palette
+
 theme_set(mskRvis::theme_biostat())
 mskRvis::set_msk_palette()
+gtsummary::theme_gtsummary_compact()
+
+```
+
+# Data Notes
+
+```{r import, include=FALSE}
 
 # importing master analytic data set
 df_main <- readRDS(file = here_data("df_main.Rds"))
 ```
 
+# Methods
 
-# Analysis
+## Cohort Characteristics
+
+```{r}
+
+```
+
+# Results
 
 ```{r analysis1}
 
 ```
 
-# Save Results
-
-```{r save}
-# list result objects here. save only those needed for the final report
-save(
-  df_results, gts_table1,
-  file = here_data("results.Rdata")
-)
-```
 
