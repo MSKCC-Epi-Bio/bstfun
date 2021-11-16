@@ -1,4 +1,4 @@
-library(gtsummary)
+library(biostatR)
 library(tidyverse)
 library(labelled)
 
@@ -20,7 +20,7 @@ df_raw_data <-
 
 # label data
 df_main <- df_main %>%
-  set_variable_labels(.labels = kwiktools::names_to_labels(.))
+  use_varnames_as_labels(.labels = kwiktools::names_to_labels(.))
 
 # Save Data -----------------------------------------------------
 # saving master analytic data set

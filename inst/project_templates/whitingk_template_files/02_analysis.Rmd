@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 	warning = FALSE
 )
 
-library(gtsummary)
+library(biostatR)
 library(tidyverse)
 library(labelled)
 
