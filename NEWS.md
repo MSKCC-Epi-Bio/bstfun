@@ -1,3 +1,5 @@
+# bstfun (development version)
+
 # bstfun 0.3.1
 
 * Updates to the templating files.
