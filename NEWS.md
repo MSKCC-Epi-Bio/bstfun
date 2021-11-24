@@ -1,3 +1,5 @@
+# bstfun (development version)
+
 # bstfun 0.3.2
 
 * Fix to the H.O.T. `use_hot_file()` default template specification.
