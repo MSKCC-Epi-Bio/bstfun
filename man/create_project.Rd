@@ -51,7 +51,9 @@ session}
 \item{...}{
   Arguments passed on to \code{\link[starter:create_project]{starter::create_project}}
   \describe{
-    \item{\code{}}{}
+    \item{\code{symlink}}{Logical indicating whether to place a symbolic link
+to the location in \verb{path_data=}. Default is to place the symbolic link
+if the project is a git repository.}
   }}
 }
 \description{

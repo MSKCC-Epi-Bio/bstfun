@@ -1,5 +1,26 @@
 # bstfun (development version)
 
+# bstfun 0.3.2
+
+* Fix to the H.O.T. `use_hot_file()` default template specification.
+
+* Increased minimum R version and minimum version of {starter} package (after bug fix).
+
+# bstfun 0.3.1
+
+* Updates to the templating files.
+
+* Updated custom template definitions to utilize parts from the default template, reducing the amount of code needed to create a custom template.
+
+* Added new function `bold_italicize_group_labels()` to bold and italicize group header labels in gtsummary tables. (#65)
+
+
+# bstfun 0.3.0
+
+* Function `add_cuminc_risktables()` now allows for 3 groups. Makes colors consistent between labels and estimates.  Removed "Number at risk" label and places a label ", n:" next to each strata name. 
+
+* Migrated the H.O.T. project templates from {hotfun} to {bstfun}.
+
 * Added new function `clean_mrn()` to clean and check consistency of MRN columns.
 
 * Added new function `set_derived_variables()` that imports variable labels from an excel file and applies the labels to the data frame.

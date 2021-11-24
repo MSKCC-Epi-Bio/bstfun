@@ -41,6 +41,7 @@ reference:
       - logistic_reg_adj_diff
       - as_ggplot
       - as_forest_plot
+      - bold_italicize_group_labels
 
   - title: "Project Start-up Functions"
     contents:

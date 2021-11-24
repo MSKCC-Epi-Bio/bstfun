@@ -53,46 +53,40 @@ use_bst_readme <- function(filename = NULL, template = NULL) {
 
 #' @rdname use_file
 #' @export
-use_hot_file <- function(name = NULL, filename = NULL,
-                         template = bstfun::project_templates[["hot"]],
-                         open = interactive()) {
+use_hot_file <- function(name = NULL, filename = NULL, open = interactive()) {
   starter::use_project_file(name = name, filename = filename,
-                            template = template, open = open)
+                            template = bstfun::project_templates[["hot"]],
+                            open = open)
 }
 
 #' @rdname use_file
 #' @export
-use_hot_gitignore <- function(filename = NULL, template = NULL) {
-  use_hot_file(name = "gitignore", filename = filename,
-               template = template)
+use_hot_gitignore <- function(filename = NULL) {
+  use_hot_file(name = "gitignore", filename = filename)
 }
 
 #' @rdname use_file
 #' @export
-use_hot_readme <- function(filename = NULL, template = NULL) {
-  use_hot_file(name = "readme", filename = filename,
-               template = template)
+use_hot_readme <- function(filename = NULL) {
+  use_hot_file(name = "readme", filename = filename)
 }
 
 #' @rdname use_file
 #' @export
-use_hot_setup <- function(filename = NULL, template = NULL) {
-  use_hot_file(name = "setup", filename = filename,
-               template = template)
+use_hot_setup <- function(filename = NULL) {
+  use_hot_file(name = "setup", filename = filename)
 }
 
 #' @rdname use_file
 #' @export
-use_hot_analysis <- function(filename = NULL, template = NULL) {
-  use_hot_file(name = "analysis", filename = filename,
-               template = template)
+use_hot_analysis <- function(filename = NULL) {
+  use_hot_file(name = "analysis", filename = filename)
 }
 
 #' @rdname use_file
 #' @export
-use_hot_report <- function(filename = NULL, template = NULL) {
-  use_hot_file(name = "report", filename = filename,
-               template = template)
+use_hot_report <- function(filename = NULL) {
+  use_hot_file(name = "report", filename = filename)
 }
 
 

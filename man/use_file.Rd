@@ -24,22 +24,17 @@ use_bst_gitignore(filename = NULL, template = NULL)
 
 use_bst_readme(filename = NULL, template = NULL)
 
-use_hot_file(
-  name = NULL,
-  filename = NULL,
-  template = bstfun::project_templates[["hot"]],
-  open = interactive()
-)
+use_hot_file(name = NULL, filename = NULL, open = interactive())
 
-use_hot_gitignore(filename = NULL, template = NULL)
+use_hot_gitignore(filename = NULL)
 
-use_hot_readme(filename = NULL, template = NULL)
+use_hot_readme(filename = NULL)
 
-use_hot_setup(filename = NULL, template = NULL)
+use_hot_setup(filename = NULL)
 
-use_hot_analysis(filename = NULL, template = NULL)
+use_hot_analysis(filename = NULL)
 
-use_hot_report(filename = NULL, template = NULL)
+use_hot_report(filename = NULL)
 }
 \arguments{
 \item{name}{Name of file to write.  Not sure of the files available to you?
