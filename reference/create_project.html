@@ -20,7 +20,7 @@ sets the default template to template = hotfun::project_template"><!-- mathjax -
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
       </span>
     </div>
 
@@ -109,8 +109,10 @@ if they exist.  Options are
 <dd><p>Logical indicating whether to open new project in fresh RStudio
 session</p></dd>
 <dt>...</dt>
-<dd><p>Arguments passed on to <code><a href="https://rdrr.io/pkg/starter/man/create_project.html" class="external-link">starter::create_project</a></code></p><dl><dt><code></code></dt>
-<dd></dd>
+<dd><p>Arguments passed on to <code><a href="https://rdrr.io/pkg/starter/man/create_project.html" class="external-link">starter::create_project</a></code></p><dl><dt><code>symlink</code></dt>
+<dd><p>Logical indicating whether to place a symbolic link
+to the location in <code>path_data=</code>. Default is to place the symbolic link
+if the project is a git repository.</p></dd>
 
   
 </dl></dd>
