@@ -12,6 +12,7 @@ RStudio
 Rmd
 Rscript
 Sparkline
+Wainberg
 beon
 bibtex
 binwidth
@@ -44,6 +45,7 @@ ropensci
 sparkline
 stlying
 tbl
+templating
 th
 tidyselect
 unlabelled

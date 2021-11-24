@@ -1,5 +1,9 @@
 # bstfun (development version)
 
+* Fix to the H.O.T. `use_hot_file()` default template specification.
+
+* Increased minimum R version and minimum version of {starter} package (after bug fix).
+
 # bstfun 0.3.1
 
 * Updates to the templating files.
