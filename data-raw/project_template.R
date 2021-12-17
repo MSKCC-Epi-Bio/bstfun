@@ -64,7 +64,7 @@ attr(project_template_default, "label") <- "Default Biostistics Project Template
 
 # hot template -----------------------------------------------------------------
 hot_project_template <-
-  project_template_default[c("readme", "gitignore", "data_date", "references", "doc_template", "rproj", "rprofile")] |>
+  project_template_default[c("readme", "gitignore", "data_date", "doc_template", "rproj", "rprofile")] |>
   purrr::list_modify(
     setup = rlang::expr(list(
       template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.Rmd", package = 'bstfun'),
@@ -94,6 +94,11 @@ hot_project_template <-
     derived_vars = rlang::expr(list(
       template_filename = fs::path_package("project_templates/derived_variables.xlsx", package = 'bstfun'),
       filename = glue::glue("scripts/derived_variables_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.xlsx"),
+      copy = TRUE
+    )),
+    references = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/references.bib", package = 'bstfun'),
+      filename = glue::glue("scripts/templates/references.bib"),
       copy = TRUE
     )),
     csl = rlang::expr(list(
