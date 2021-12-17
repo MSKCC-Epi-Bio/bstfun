@@ -41,6 +41,14 @@ set_derived_variables <- function(data, path, sheet = NULL, drop = TRUE) {
     data <- dplyr::select(data, dplyr::all_of(names(lst_variable_labels)))
   }
 
+  # moving ID variables to the front -------------------------------------------
+  data <-
+    data %>%
+    dplyr::select(
+      dplyr::any_of("mrn", "patient_id", "id"),
+      dplyr::everything()
+    )
+
   # return ---------------------------------------------------------------------
   # returning labelled data frame
   data
