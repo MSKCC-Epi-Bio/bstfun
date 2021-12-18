@@ -1,3 +1,5 @@
+# bstfun (development version)
+
 # bstfun 0.3.3
 
 * Bug fix in HOT project template where the `reference.bib` file was being placed in the incorrect folder.
