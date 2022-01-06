@@ -1,0 +1,197 @@
+---
+title: "Trying out compact + autofit + linespacing"
+date: "`r format(Sys.Date(), format='%B %d, %Y')`"
+output:
+  html_document:
+    df_print: paged
+  word_document:
+    reference_docx: templates/doc_template.docx
+bibliography: templates/references.bib
+csl: templates/european-urology.csl
+---
+
+```{r setup, include=FALSE}
+# set chunk defaults, code chunks are NOT printed in output for report
+knitr::opts_chunk$set(echo = FALSE)
+set.seed(20210629)
+```
+
+```{r import, include=FALSE}
+library(hotverse); library(tidyverse)
+
+# setting MSK ggplot theme, gtsummary theme, and color palette
+theme_set(mskRvis::theme_biostat()); theme_gtsummary_msk("hot"); mskRvis::set_msk_palette()
+
+```
+
+```{r results, include=FALSE}
+library(hotverse); library(tidyverse)
+
+tbla <- trial %>%
+  select(trt, age, stage, grade) %>%
+  tbl_summary(by = trt) %>%
+  add_overall()
+
+tblb <- glm(
+  response ~ age + stage, trial, family = binomial
+  ) %>%
+  tbl_regression(exponentiate = TRUE)
+
+tbl1 <- tbla %>%
+  # add_p() %>%
+  modify_header(label ~ "") %>%
+  modify_footnote(everything() ~ NA) %>%
+  as_flex_table()
+
+#tbl_regression example
+tblmodel <- tbl_merge(tbls = list(tbla, tblb)) %>%
+  modify_header(label ~ "") %>%
+  modify_footnote(everything() ~ NA) %>%
+  as_flex_table()
+
+```
+
+#####
+HOT 
+
+```{r tblmodel1a, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tbl1 
+```
+ 
+```{r tblmodel1b, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tblmodel
+```
+
+#####
+**Should be the same:
+HOT + autofit
+
+```{r tblmodel2a, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tbl1 %>%
+  flextable::set_table_properties(layout = "autofit")
+```
+ 
+```{r tblmodel2b, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tblmodel %>%
+  flextable::set_table_properties(layout = "autofit")
+```
+
+#####
+
+ORIGINAL (non-HOT)
+
+```{r tblmodel3a, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+
+tbl1
+```
+
+```{r tblmodel3b, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+
+tblmodel
+```
+
+**Compact + HOT
+```{r tblmodel4a, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tbl1 %>%
+  flextable::fontsize(size = 8, part = "all") %>%
+  flextable::padding(padding.top = 0, part = "all") %>%
+  flextable::padding(padding.bottom = 0, part = "all")
+
+```
+```{r tblmode4b, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tblmodel %>%
+  flextable::fontsize(size = 8, part = "all") %>%
+  flextable::padding(padding.top = 0, part = "all") %>%
+  flextable::padding(padding.bottom = 0, part = "all")
+```
+
+#####
+
+**Compact + HOT + autofit
+```{r tblmode5a, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tbl1 %>%
+  flextable::fontsize(size = 8, part = "all") %>%
+  flextable::padding(padding.top = 0, part = "all") %>%
+  flextable::padding(padding.bottom = 0, part = "all") %>%
+  flextable::set_table_properties(layout = "autofit")
+```
+```{r tblmode5b, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tblmodel %>%
+  flextable::fontsize(size = 8, part = "all") %>%
+  flextable::padding(padding.top = 0, part = "all") %>%
+  flextable::padding(padding.bottom = 0, part = "all") %>%
+  flextable::set_table_properties(layout = "autofit")
+```
+
+#####
+
+**HOT + autofit + linespacing
+```{r tbl6a, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tbl1 %>%
+  flextable::set_table_properties(layout = "autofit") %>%
+  flextable::line_spacing(space = 0.7, part = "all")
+```
+```{r tbl6b, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tblmodel %>%
+  flextable::set_table_properties(layout = "autofit") %>%
+  flextable::line_spacing(space = 0.7, part = "all")
+```
+
+#####
+
+**Compact + HOT + autofit + linespacing
+```{r tblmode7a, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tbl1 %>%
+  flextable::fontsize(size = 8, part = "all") %>%
+  flextable::padding(padding.top = 0, part = "all") %>%
+  flextable::padding(padding.bottom = 0, part = "all") %>%
+  flextable::set_table_properties(layout = "autofit") %>%
+  flextable::line_spacing(space = 0.7, part = "all")
+```
+```{r tblmode7b, echo = FALSE, results = "asis", warning = FALSE, message = FALSE}
+reset_gtsummary_theme()
+theme_gtsummary_msk("hot")
+
+tblmodel %>%
+  flextable::fontsize(size = 8, part = "all") %>%
+  flextable::padding(padding.top = 0, part = "all") %>%
+  flextable::padding(padding.bottom = 0, part = "all") %>%
+  flextable::set_table_properties(layout = "autofit") %>%
+  flextable::line_spacing(space = 0.7, part = "all")
+```
+
