@@ -1,3 +1,8 @@
+
+# bstfun 0.3.4.9001
+
+* H.O.T theme was updated so that tables printed as flextable will be formatted to fit better on the page. In particular, white vertical space between column will be minimized.
+
 # bstfun 0.3.4
 
 * No changes. Making release for RSPM.
