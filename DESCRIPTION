@@ -36,7 +36,12 @@ Authors@R:
       person(given = "Gustavo",
              family = "Zapata Wainberg",
              role = "ctb",
-             comment = c(ORCID = "0000-0002-2524-3637")))
+             comment = c(ORCID = "0000-0002-2524-3637")),
+      person(given = "Amy",
+             family = "Tin",
+             role = "ctb",
+             comment = c(ORCID = "0000-0002-8005-0694"))
+             )
 Description: A miscellaneous collection of functions to used by members of
     the Biostatistics Department at MSKCC.
 License: MIT + file LICENSE
