@@ -27,20 +27,20 @@ Authors@R:
       person(given = "Jasme",
              family = "Lee",
              role = "ctb"),
+      person(given = "Amy",
+             family = "Tin",
+             role = "ctb",
+             comment = c(ORCID = "0000-0002-8005-0694")),
       person(given = "Emily",
              family = "Vertosick",
-             role = "ctb"),
-      person(given = "Christine",
-             family = "Zhou",
              role = "ctb"),
       person(given = "Gustavo",
              family = "Zapata Wainberg",
              role = "ctb",
              comment = c(ORCID = "0000-0002-2524-3637")),
-      person(given = "Amy",
-             family = "Tin",
-             role = "ctb",
-             comment = c(ORCID = "0000-0002-8005-0694"))
+      person(given = "Christine",
+             family = "Zhou",
+             role = "ctb")
              )
 Description: A miscellaneous collection of functions to used by members of
     the Biostatistics Department at MSKCC.
