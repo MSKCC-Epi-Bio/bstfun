@@ -1,4 +1,12 @@
-# bstfun (development version)
+# bstfun 0.3.4
+
+* No changes. Making release for RSPM.
+
+# bstfun 0.3.3
+
+* Bug fix in HOT project template where the `reference.bib` file was being placed in the incorrect folder.
+
+* Columns `"mrn"`, `"id"`, or `"patient_id"` will now be moved to the front of the data frame after labels have been applied using `set_derived_variables()`.
 
 # bstfun 0.3.2
 

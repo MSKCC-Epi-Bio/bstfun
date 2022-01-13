@@ -87,6 +87,6 @@ add_inline_forest_plot <- function(x, header = "**Forest Plot**",
 }
 
 assert_package <- function(pkg, fn = NULL, boolean = FALSE) {
-  gtsummary::assert_package(pkg = pkg, fn = fn,
-                            pkg_search = "bstfun", boolean = boolean)
+  broom.helpers::.assert_package(pkg = pkg, fn = fn,
+                                 pkg_search = "bstfun", boolean = boolean)
 }
