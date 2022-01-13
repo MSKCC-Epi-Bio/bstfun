@@ -45,11 +45,15 @@ tibble with difference estimate
 \description{
 This function works with \code{gtsummary::add_difference()} to calculate
 adjusted differences and confidence intervals based on results from a
-logistic regression model. The function uses bootstrap methods to build
-regression model and estimate the adjusted difference between two groups.
+logistic regression model. Adjustment covariates are set to the mean to
+estimate the adjusted difference. The function uses bootstrap methods to
+estimate the adjusted difference between two groups.
 The CI is estimate by either using the SD from the bootstrap difference
 estimates and calculating the CI assuming normality or using the centiles
 of the bootstrapped differences as the confidence limits
+
+The function can also be used in \code{add_p()}, and if you do, be sure to
+set \code{boot_n = 1} to avoid long, unused computation.
 }
 \section{Example Output}{
 

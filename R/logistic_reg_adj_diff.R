@@ -1,12 +1,16 @@
 #' Logistic regression adjusted differences
 #'
-#' This function works with `gtsummary::add_difference()` to calculate
+#' @description This function works with `gtsummary::add_difference()` to calculate
 #' adjusted differences and confidence intervals based on results from a
-#' logistic regression model. The function uses bootstrap methods to build
-#' regression model and estimate the adjusted difference between two groups.
+#' logistic regression model. Adjustment covariates are set to the mean to
+#' estimate the adjusted difference. The function uses bootstrap methods to
+#' estimate the adjusted difference between two groups.
 #' The CI is estimate by either using the SD from the bootstrap difference
 #' estimates and calculating the CI assuming normality or using the centiles
 #' of the bootstrapped differences as the confidence limits
+#'
+#' The function can also be used in `add_p()`, and if you do, be sure to
+#' set `boot_n = 1` to avoid long, unused computation.
 #'
 #' @param data a data frame
 #' @param variable string of binary variable in `data=`
@@ -65,14 +69,15 @@ logistic_reg_adj_diff <- function(data, variable, by, adj.vars, conf.level, type
     stop("`by=` must have exactly 2 levels", call. = FALSE)
   }
 
-  # remove missing values
+  # remove missing values, only keep vars in model
   data <- data[c(variable, by, adj.vars)] %>% dplyr::filter(stats::complete.cases(.))
 
   # calculate central difference estimate --------------------------------------
   central_estimate <-
-    glm_diff(data = data, variable = variable, by = by, adj.vars = adj.vars)
+    glm_diff(data = data, variable = variable, by = by, adj.vars = adj.vars,
+             return_pvalue_attr = TRUE)
 
-  # calculate vector of bootstrp difference estimates --------------------------
+  # calculate vector of bootstrap difference estimates -------------------------
   bootstrapped_estimates <-
     seq_len(boot_n) %>%
     purrr::map_dbl(
@@ -106,11 +111,14 @@ logistic_reg_adj_diff <- function(data, variable, by, adj.vars, conf.level, type
 
   # return results -------------------------------------------------------------
   df_result %>%
-    dplyr::mutate(method = "Logistic regression adjusted bootstrapped difference")
+    dplyr::mutate(
+      p.value = attr(central_estimate, "p.value"),
+      method = "Logistic regression adjusted difference, CI estimated with bootstrap"
+    )
 }
 
 # function to build logistic regression model, and return difference between groups
-glm_diff <- function(data, variable, by, adj.vars) {
+glm_diff <- function(data, variable, by, adj.vars, return_pvalue_attr = FALSE) {
   model.matrix <-
     model.matrix(
       stringr::str_glue("{variable} ~  .") %>% stats::as.formula(),
@@ -122,7 +130,16 @@ glm_diff <- function(data, variable, by, adj.vars) {
   newdata <- prep_new_data(model.matrix)
   preds <- (newdata %*% stats::coef(mod)[-1] + stats::coef(mod)[1]) %>% inverse_logit()
 
-  c(preds) %>% purrr::reduce(`-`)
+  diff <- c(preds) %>% purrr::reduce(`-`)
+
+  if (isTRUE(return_pvalue_attr)) {
+    attr(diff, "p.value") <-
+      broom::tidy(mod) %>%
+      dplyr::filter(!.data$term %in% "(Intercept)") %>%
+      purrr::pluck("p.value", 1)
+  }
+
+  return(diff)
 }
 
 inverse_logit <- function(x) {
