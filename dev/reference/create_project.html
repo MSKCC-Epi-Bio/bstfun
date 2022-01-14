@@ -20,7 +20,7 @@ sets the default template to template = hotfun::project_template"><meta name="ro
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.3.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.4.9000</span>
       </span>
     </div>
 
@@ -122,6 +122,7 @@ if the project is a git repository.</p></dd>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
+<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in"><span class="co"># specifying project folder location (folder does not yet exist)</span></span>
 <span class="r-in"><span class="va">project_path</span> <span class="op">&lt;-</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path.html" class="external-link">path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"My Project Folder"</span><span class="op">)</span></span>
 <span class="r-in"></span>
@@ -131,6 +132,7 @@ if the project is a git repository.</p></dd>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># creating new project folder</span></span>
 <span class="r-in"><span class="fu">create_bst_project</span><span class="op">(</span><span class="va">project_path</span>, path_data <span class="op">=</span> <span class="va">secure_data_path</span><span class="op">)</span></span>
+<span class="r-in"><span class="op">}</span></span>
 <span class="r-in"><span class="op">}</span></span>
 </code></pre></div>
     </div>
