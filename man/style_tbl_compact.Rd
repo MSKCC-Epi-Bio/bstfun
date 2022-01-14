@@ -15,11 +15,19 @@ Apply the same compact styling available from
 {gt}, {flextable}, {huxtable}, or \code{knitr::kable()} table.
 \code{knitr::kable()} stlying uses the {kableExtra} package
 }
+\section{Example Output}{
+
+\if{html}{Example 1}
+
+\if{html}{\figure{style_tbl_compact_ex1.png}{options: width=50\%}}
+}
+
 \examples{
 style_tbl_compact_ex1 <-
   head(trial) \%>\%
   gt::gt() \%>\%
   style_tbl_compact()
+
 }
 \seealso{
 Other gtsummary-related functions: 
@@ -27,6 +35,7 @@ Other gtsummary-related functions:
 \code{\link{add_sparkline}()},
 \code{\link{as_ggplot}()},
 \code{\link{bold_italicize_group_labels}()},
+\code{\link{logistic_reg_adj_diff}()},
 \code{\link{tbl_likert}()},
 \code{\link{theme_gtsummary_msk}()}
 }

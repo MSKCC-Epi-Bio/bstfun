@@ -1,3 +1,7 @@
+# bstfun (development version)
+
+* Added a method to calculated adjusted differences for binary endpoints using logistic regression `logistic_reg_adj_diff()`. (#20)
+
 # bstfun 0.3.4
 
 * No changes. Making release for RSPM.
