@@ -8,6 +8,7 @@ MRNs
 MSK
 MSKCC
 ORCID
+RSPM
 RStudio
 Rmd
 Rscript
@@ -17,6 +18,7 @@ beon
 bibtex
 binwidth
 biostatR
+centiles
 creatinine
 dL
 dbeta
@@ -47,6 +49,7 @@ stlying
 tbl
 templating
 th
+tibble
 tidyselect
 unlabelled
 xls

@@ -48,12 +48,14 @@ bold_italicize_group_labels_ex1 <-
     .combine_with = "tbl_stack"
   ) \%>\%
   bold_italicize_group_labels(bold = TRUE)
+
 }
 \seealso{
 Other gtsummary-related functions: 
 \code{\link{add_inline_forest_plot}()},
 \code{\link{add_sparkline}()},
 \code{\link{as_ggplot}()},
+\code{\link{logistic_reg_adj_diff}()},
 \code{\link{style_tbl_compact}()},
 \code{\link{tbl_likert}()},
 \code{\link{theme_gtsummary_msk}()}

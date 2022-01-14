@@ -23,6 +23,7 @@
 #'     .combine_with = "tbl_stack"
 #'   ) %>%
 #'   bold_italicize_group_labels(bold = TRUE)
+#'
 #' @section Example Output:
 #' \if{html}{Example 1}
 #'

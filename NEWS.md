@@ -1,7 +1,8 @@
-
-# bstfun 0.3.4.9001
+# bstfun (development version)
 
 * Default chi-dquare test without continuity correction removed from H.O.T theme since that is the current default for tbl_summary. 
+
+* Added a method to calculated adjusted differences for binary endpoints using logistic regression `logistic_reg_adj_diff()`. (#20)
 
 # bstfun 0.3.4
 
