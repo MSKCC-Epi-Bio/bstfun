@@ -1,8 +1,6 @@
 
 # bstfun 0.3.4.9001
 
-* H.O.T theme was updated so that tables printed as flextable will be formatted to fit better on the page. In particular, white vertical space between column will be minimized.
-
 * Default chi-dquare test without continuity correction removed from H.O.T theme since that is the current default for tbl_summary. 
 
 # bstfun 0.3.4

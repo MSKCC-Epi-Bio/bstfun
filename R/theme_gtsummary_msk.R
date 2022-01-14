@@ -46,9 +46,6 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
 # Health Outcome Teams ---------------------------------------------------------
 lst_theme_hot <- list(
   "pkgwide-str:theme_name" = "H.O.T.",
-  # adding flextable formatting to autofit
-  "as_flex_table-lst:addl_cmds" = list(autofit = list(
-    rlang::expr(flextable::set_table_properties(layout = "autofit")))),
   # display a greek beta as header in tbl_regression
   "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
 )
