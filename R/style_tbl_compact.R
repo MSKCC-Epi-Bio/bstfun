@@ -13,6 +13,12 @@
 #'   head(trial) %>%
 #'   gt::gt() %>%
 #'   style_tbl_compact()
+#'
+#' @section Example Output:
+#' \if{html}{Example 1}
+#'
+#' \if{html}{\figure{style_tbl_compact_ex1.png}{options: width=50\%}}
+
 style_tbl_compact <- function(data) {
   # first extract the theme element names of the commands that make tables compact
   # from the `gtsummary::theme_gtsummary_compact()` theme function

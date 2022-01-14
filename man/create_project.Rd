@@ -64,6 +64,7 @@ sets the default template to \code{template = hotfun::project_template}
 }
 \examples{
 \dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+if (FALSE) {
 # specifying project folder location (folder does not yet exist)
 project_path <- fs::path(tempdir(), "My Project Folder")
 
@@ -73,5 +74,6 @@ dir.create(secure_data_path)
 
 # creating new project folder
 create_bst_project(project_path, path_data = secure_data_path)
+}
 \dontshow{\}) # examplesIf}
 }

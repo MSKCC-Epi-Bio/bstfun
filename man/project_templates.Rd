@@ -15,12 +15,12 @@ The \code{project_templates} object defines the contents of the Biostatistics pr
 templates used in \code{create_bst_project()} and \code{use_bst_file()}.
 }
 \examples{
-\donttest{\dontrun{
+if (FALSE) {
 create_hot_project(
   path = file.path(tempdir(), "Sjoberg New Project"),
   template = bstfun::project_templates[["default"]]
 )
-}}
+}
 }
 \seealso{
 \code{\link[=create_bst_project]{create_bst_project()}}

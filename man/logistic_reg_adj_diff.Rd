@@ -67,7 +67,6 @@ set \code{boot_n = 1} to avoid long, unused computation.
 }
 
 \examples{
-\dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 library(gtsummary)
 tbl <- tbl_summary(trial, by = trt, include  = response, missing = "no")
 
@@ -89,7 +88,6 @@ logistic_reg_adj_diff_ex2 <-
       purrr::partial(logistic_reg_adj_diff, ci_type = "centile", boot_n = 100),
     adj.vars = "stage"
   )
-\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other gtsummary-related functions: 

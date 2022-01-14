@@ -10,15 +10,15 @@
 #' @name use_file
 #' @seealso [`create_bst_project()`]
 #' @examples
-#' \donttest{\dontrun{
+#' if (FALSE) {
 #' # create gitignore file
-#' use_project_file("gitignore")
-#' use_project_gitignore()
+#' use_bst_file("gitignore")
+#' use_bst_gitignore()
 #'
 #' # create README.md file
-#' use_project_file("readme")
-#' use_project_readme()
-#' }}
+#' use_bst_file("readme")
+#' use_bst_readme()
+#' }
 NULL
 
 #' @rdname use_file

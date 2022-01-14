@@ -38,7 +38,6 @@ been exponentiated are shown on the log scale.}
 }
 
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 library(gtsummary)
 
 # Example 1 ----------------------------------
@@ -46,7 +45,7 @@ add_inline_forest_plot_ex1 <-
   lm(mpg ~ cyl + am + drat, mtcars) \%>\%
   tbl_regression() \%>\%
   add_inline_forest_plot()
-\dontshow{\}) # examplesIf}
+
 }
 \seealso{
 Other gtsummary-related functions: 

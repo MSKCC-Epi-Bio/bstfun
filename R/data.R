@@ -24,12 +24,12 @@
 #'
 #' @format A named list containing the Biostatistics project template.
 #' @examples
-#' \donttest{\dontrun{
+#' if (FALSE) {
 #' create_hot_project(
 #'   path = file.path(tempdir(), "Sjoberg New Project"),
 #'   template = bstfun::project_templates[["default"]]
 #' )
-#' }}
+#' }
 #' @seealso [create_bst_project()]
 #' @seealso [use_bst_file()]
 "project_templates"

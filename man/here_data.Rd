@@ -51,7 +51,7 @@ the date the data was last received, and the data to be stored in a correspondin
 folder name, e.g. \verb{~/Project Folder/secure_data/2020-01-01}.
 }
 \examples{
-\dontrun{
+if (FALSE) {
 here_data()
 #> "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01"
 

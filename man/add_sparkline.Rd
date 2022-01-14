@@ -56,6 +56,7 @@ add_sparkline_ex1 <-
   select(age, marker) \%>\%
   tbl_summary(missing = "no") \%>\%
   add_sparkline()
+
 }
 \seealso{
 Other gtsummary-related functions: 

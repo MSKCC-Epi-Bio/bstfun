@@ -29,7 +29,7 @@
 #' @family gtsummary-related functions
 #' @export
 #'
-#' @examplesIf FALSE
+#' @examples
 #' library(gtsummary)
 #' tbl <- tbl_summary(trial, by = trt, include  = response, missing = "no")
 #'

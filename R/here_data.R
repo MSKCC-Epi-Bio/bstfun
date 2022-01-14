@@ -23,7 +23,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' if (FALSE) {
 #' here_data()
 #' #> "C:/Users/SjobergD/GitHub/My Project/secure_data/2020-01-01"
 #'

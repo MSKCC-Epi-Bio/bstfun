@@ -48,6 +48,7 @@ bold_italicize_group_labels_ex1 <-
     .combine_with = "tbl_stack"
   ) \%>\%
   bold_italicize_group_labels(bold = TRUE)
+
 }
 \seealso{
 Other gtsummary-related functions: 
