@@ -58,7 +58,7 @@ Imports:
     ggplot2 (>= 3.3.5),
     glue (>= 1.4.1),
     gt (>= 0.2.2),
-    gtsummary (>= 1.5.0),
+    gtsummary (>= 1.5.0.9032),
     here (>= 0.1),
     lifecycle (>= 0.2.0),
     lubridate (>= 1.7.9),
@@ -94,7 +94,8 @@ Suggests:
 RdMacros: 
     lifecycle
 Remotes:
-    jthomasmock/gtExtras
+    jthomasmock/gtExtras,
+    ddsjoberg/gtsummary
 Encoding: UTF-8
 Language: en-US
 LazyData: true
