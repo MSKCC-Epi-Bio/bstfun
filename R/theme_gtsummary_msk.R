@@ -48,7 +48,10 @@ lst_theme_hot <- list(
   "pkgwide-str:theme_name" = "H.O.T.",
   # display a greek beta as header in tbl_regression
   "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
-)
+) %>%
+  # adding compact theme (removing name, however)
+  c(gtsummary::theme_gtsummary_compact(set_theme = FALSE)[-1])
+
 
 # Karissa Whiting --------------------------------------------------------------
 lst_theme_karissa <- list(
