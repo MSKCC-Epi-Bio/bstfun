@@ -13,7 +13,8 @@ theme_gtsummary_msk(
 \arguments{
 \item{name}{string indicating the custom theme to set.}
 
-\item{font_size}{font size passed to compact them}
+\item{font_size}{Numeric font size for compact theme.
+Default is 13 for gt tables, and 8 for all other output types}
 }
 \description{
 This is a place for any member of the MSK community to add a personal gtsummary theme.

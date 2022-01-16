@@ -6,7 +6,7 @@
 #' Visit the [gtsummary themes vignette](http://www.danieldsjoberg.com/gtsummary/articles/themes.html#writing-themes-1) for a full list of preferences that can be set.
 #'
 #' @param name string indicating the custom theme to set.
-#' @param font_size font size passed to compact them
+#' @inheritParams gtsummary::theme_gtsummary_compact
 #'
 #' @family gtsummary-related functions
 #' @export
