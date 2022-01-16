@@ -6,11 +6,15 @@
 \usage{
 theme_gtsummary_msk(
   name = c("hot", "karissa", "ally", "mauguen", "esther", "curry", "lavery", "meier",
-    "leej", "whitingk", "mauguena", "drille", "currym1", "laveryj", "hsum1", "leej22")
+    "leej", "whitingk", "mauguena", "drille", "currym1", "laveryj", "hsum1", "leej22"),
+  font_size = NULL
 )
 }
 \arguments{
 \item{name}{string indicating the custom theme to set.}
+
+\item{font_size}{Numeric font size for compact theme.
+Default is 13 for gt tables, and 8 for all other output types}
 }
 \description{
 This is a place for any member of the MSK community to add a personal gtsummary theme.

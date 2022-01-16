@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Misc functions for the dept
-Version: 0.3.4.9000
+Version: 0.3.4.9002
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",
@@ -27,16 +27,21 @@ Authors@R:
       person(given = "Jasme",
              family = "Lee",
              role = "ctb"),
+      person(given = "Amy",
+             family = "Tin",
+             role = "ctb",
+             comment = c(ORCID = "0000-0002-8005-0694")),
       person(given = "Emily",
              family = "Vertosick",
-             role = "ctb"),
-      person(given = "Christine",
-             family = "Zhou",
              role = "ctb"),
       person(given = "Gustavo",
              family = "Zapata Wainberg",
              role = "ctb",
-             comment = c(ORCID = "0000-0002-2524-3637")))
+             comment = c(ORCID = "0000-0002-2524-3637")),
+      person(given = "Christine",
+             family = "Zhou",
+             role = "ctb")
+             )
 Description: A miscellaneous collection of functions to used by members of
     the Biostatistics Department at MSKCC.
 License: MIT + file LICENSE
@@ -53,7 +58,7 @@ Imports:
     ggplot2 (>= 3.3.5),
     glue (>= 1.4.1),
     gt (>= 0.2.2),
-    gtsummary (>= 1.5.0),
+    gtsummary (>= 1.5.0.9032),
     here (>= 0.1),
     lifecycle (>= 0.2.0),
     lubridate (>= 1.7.9),
@@ -89,7 +94,8 @@ Suggests:
 RdMacros: 
     lifecycle
 Remotes:
-    jthomasmock/gtExtras
+    jthomasmock/gtExtras,
+    ddsjoberg/gtsummary
 Encoding: UTF-8
 Language: en-US
 LazyData: true

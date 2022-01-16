@@ -6,6 +6,7 @@
 #' Visit the [gtsummary themes vignette](http://www.danieldsjoberg.com/gtsummary/articles/themes.html#writing-themes-1) for a full list of preferences that can be set.
 #'
 #' @param name string indicating the custom theme to set.
+#' @inheritParams gtsummary::theme_gtsummary_compact
 #'
 #' @family gtsummary-related functions
 #' @export
@@ -14,9 +15,27 @@
 theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
                                          "esther", "curry", "lavery", "meier", "leej",
                                          "whitingk", "mauguena",
-                                         "drille", "currym1", "laveryj", "hsum1", "leej22")) {
+                                         "drille", "currym1", "laveryj", "hsum1", "leej22"),
+                                font_size = NULL) {
   # picking theme name
   name <- match.arg(name)
+
+  .return_user_theme_as_list(name = name, font_size = font_size) %>%
+    # setting theme
+    gtsummary::set_gtsummary_theme()
+}
+
+.return_user_theme_as_list <- function(name, font_size) {
+
+  # Health Outcome Teams -------------------------------------------------------
+  # this theme needs to go in the function to accept the font_size argument
+  lst_theme_hot <- list(
+    "pkgwide-str:theme_name" = "H.O.T.",
+    # display a greek beta as header in tbl_regression
+    "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
+  ) %>%
+    # adding compact theme (removing name, however)
+    c(gtsummary::theme_gtsummary_compact(set_theme = FALSE, font_size = font_size)[-1])
 
   # selecting theme list
   switch(
@@ -38,19 +57,9 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
     "laveryj" = lst_theme_lavery,
     "hsum1" = lst_theme_meier,
     "leej22" = lst_theme_leej
-  ) %>%
-    # setting theme
-    gtsummary::set_gtsummary_theme()
+  )
 }
 
-# Health Outcome Teams ---------------------------------------------------------
-lst_theme_hot <- list(
-  "pkgwide-str:theme_name" = "H.O.T.",
-  # default chi-square test does not include continuity correction
-  "add_p.tbl_summary-attr:test.categorical" = "chisq.test.no.correct",
-  # display a greek beta as header in tbl_regression
-  "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
-)
 
 # Karissa Whiting --------------------------------------------------------------
 lst_theme_karissa <- list(
@@ -145,7 +154,7 @@ lst_theme_leej <-
     # Remove comma for thousands place and beyond
     "style_number-arg:big.mark" = "",
     # Would like rounding for estimates to be 2 decimal places
-    "tbl_regression-arg:estimate_fun" = function(x) style_number(x, digits = 2),
+    "tbl_regression-arg:estimate_fun" = function(x) gtsummary::style_number(x, digits = 2),
     # tbl summary default to show range rather than IQR
     "tbl_summary-str:continuous_stat" = "{median} [{min}, {max}]",
     # display a greek beta as header in tbl_regression
