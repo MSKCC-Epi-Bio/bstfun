@@ -1,4 +1,4 @@
-# bstfun (development version)
+# bstfun 0.3.5
 
 * Updates the the `theme_gtsummary_msk("hot")` theme.
     - Default chi-square test without continuity correction removed since it is the current default for tbl_summary. 
