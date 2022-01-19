@@ -18,7 +18,7 @@ Adds an in-line forest plot to a summary table."><!-- mathjax --><script src="ht
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
       </span>
     </div>
 
@@ -102,6 +102,7 @@ been exponentiated are shown on the log scale.</em></p>
 <code><a href="add_sparkline.html">add_sparkline</a>()</code>,
 <code><a href="as_ggplot.html">as_ggplot</a>()</code>,
 <code><a href="bold_italicize_group_labels.html">bold_italicize_group_labels</a>()</code>,
+<code><a href="logistic_reg_adj_diff.html">logistic_reg_adj_diff</a>()</code>,
 <code><a href="style_tbl_compact.html">style_tbl_compact</a>()</code>,
 <code><a href="tbl_likert.html">tbl_likert</a>()</code>,
 <code><a href="theme_gtsummary_msk.html">theme_gtsummary_msk</a>()</code></p></div>
@@ -109,15 +110,19 @@ been exponentiated are shown on the log scale.</em></p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># interactive()</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: ‘gtsummary’</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from ‘package:bstfun’:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     tbl_split, trial</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Example 1 ----------------------------------</span></span>
 <span class="r-in"><span class="va">add_inline_forest_plot_ex1</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">am</span> <span class="op">+</span> <span class="va">drat</span>, <span class="va">mtcars</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span class="r-in">  <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/tbl_regression.html" class="external-link">tbl_regression</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span class="r-in">  <span class="fu">add_inline_forest_plot</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+<span class="r-in"></span>
 </code></pre></div>
     </div>
   </div>
@@ -132,7 +137,7 @@ been exponentiated are shown on the log scale.</em></p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer></div>
