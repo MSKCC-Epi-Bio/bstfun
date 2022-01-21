@@ -15,14 +15,13 @@ the location cannot be inferred, user must provide the path.}
 \code{NULL}
 }
 \description{
-When install a new version of R, your package library is empty and
-packages you use need to be re-installed. This function will help you
-install all the packages you had previously installed in the new R package
-library.
+When you install a new version of R, your package library is empty.
+Use this function to install all the packages you had installed
+with your previous R installation into the new R package library.
 \itemize{
 \item \emph{Function installs the current release of a pkg from CRAN or a secondary repository you may have set.} Packages installed from other locations, such as GitHub, will need to be re-installed manually.
-\item The pkgs are installed using \code{renv::install()} adding each package to your renv cache
-\item Function should be run in a fresh R Session outside of an RStudio project
-\item Any packages already installed will be skipped
+\item The pkgs are installed using \code{renv::install()} adding each package to your renv cache.
+\item Function should be run in a fresh R Session outside of an RStudio project.
+\item Any packages already installed will be skipped.
 }
 }

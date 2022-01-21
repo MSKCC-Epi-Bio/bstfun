@@ -1,13 +1,12 @@
 #' Re-install pkgs from a prior installation of R
 #'
-#' When install a new version of R, your package library is empty and
-#' packages you use need to be re-installed. This function will help you
-#' install all the packages you had previously installed in the new R package
-#' library.
+#' When you install a new version of R, your package library is empty.
+#' Use this function to install all the packages you had installed
+#' with your previous R installation into the new R package library.
 #'  - *Function installs the current release of a pkg from CRAN or a secondary repository you may have set.* Packages installed from other locations, such as GitHub, will need to be re-installed manually.
-#'  - The pkgs are installed using `renv::install()` adding each package to your renv cache
-#'  - Function should be run in a fresh R Session outside of an RStudio project
-#'  - Any packages already installed will be skipped
+#'  - The pkgs are installed using `renv::install()` adding each package to your renv cache.
+#'  - Function should be run in a fresh R Session outside of an RStudio project.
+#'  - Any packages already installed will be skipped.
 #'
 #' @param path Path to the package library from the previous installation of R.
 #' Default is `NULL`. When `NULL`, the location of the library is inferred. If
