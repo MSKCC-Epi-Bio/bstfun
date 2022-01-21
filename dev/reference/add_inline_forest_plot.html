@@ -18,7 +18,7 @@ Adds an in-line forest plot to a summary table."><meta name="robots" content="no
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.4.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.5.9000</span>
       </span>
     </div>
 
@@ -87,7 +87,7 @@ Default is <code>list(width = 250, cex = .75, col = "black", pch = 16)</code></p
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p><em>Estimates from <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/tbl_regression.html" class="external-link">tbl_regression()</a></code> and <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/tbl_uvregression.html" class="external-link">tbl_uvregression()</a></code> that have
+    <p><em>Estimates from <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_regression.html" class="external-link">tbl_regression()</a></code> and <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_uvregression.html" class="external-link">tbl_uvregression()</a></code> that have
 been exponentiated are shown on the log scale.</em></p>
     </div>
     <div id="example-output">
@@ -111,6 +111,7 @@ been exponentiated are shown on the log scale.</em></p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> #Uighur</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: ‘gtsummary’</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from ‘package:bstfun’:</span>
@@ -120,7 +121,7 @@ been exponentiated are shown on the log scale.</em></p>
 <span class="r-in"><span class="co"># Example 1 ----------------------------------</span></span>
 <span class="r-in"><span class="va">add_inline_forest_plot_ex1</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">am</span> <span class="op">+</span> <span class="va">drat</span>, <span class="va">mtcars</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/tbl_regression.html" class="external-link">tbl_regression</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_regression.html" class="external-link">tbl_regression</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span class="r-in">  <span class="fu">add_inline_forest_plot</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in"></span>
 </code></pre></div>

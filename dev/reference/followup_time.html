@@ -20,7 +20,7 @@ R Markdown reports."><meta name="robots" content="noindex"><!-- mathjax --><scri
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.4.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.5.9000</span>
       </span>
     </div>
 
@@ -69,7 +69,7 @@ R Markdown reports.</p>
   <span class="va">Surv</span>,
   data <span class="op">=</span> <span class="cn">NULL</span>,
   pattern <span class="op">=</span> <span class="st">"{median} (IQR {p25}, {p75})"</span>,
-  style_fun <span class="op">=</span> <span class="fu">gtsummary</span><span class="fu">::</span><span class="va"><a href="http://www.danieldsjoberg.com/gtsummary//reference/style_sigfig.html" class="external-link">style_sigfig</a></span>
+  style_fun <span class="op">=</span> <span class="fu">gtsummary</span><span class="fu">::</span><span class="va"><a href="https://www.danieldsjoberg.com/gtsummary/reference/style_sigfig.html" class="external-link">style_sigfig</a></span>
 <span class="op">)</span></code></pre></div>
     </div>
 
@@ -86,7 +86,7 @@ statistics to report, <code>"{median}"</code>, <code>"{mean}"</code>, <code>"{p2
 <code>"{sd}"</code>, <code>"{var}"</code>, <code>"{min}"</code>, and <code>"{max}"</code>.</p></dd>
 <dt>style_fun</dt>
 <dd><p>Function used to style/format the summary statistics.
-Default is <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/style_sigfig.html" class="external-link">gtsummary::style_sigfig</a></code>. Argument accepts anonymous function
+Default is <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/style_sigfig.html" class="external-link">gtsummary::style_sigfig</a></code>. Argument accepts anonymous function
 notation, e.g. <code>~gtsummary::style_sigfig(., digits = 3)</code></p></dd>
 </dl></div>
     <div id="value">
@@ -104,7 +104,7 @@ notation, e.g. <code>~gtsummary::style_sigfig(., digits = 3)</code></p></dd>
 <span class="r-in"><span class="fu">followup_time</span><span class="op">(</span></span>
 <span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">lung</span>,</span>
 <span class="r-in">  pattern <span class="op">=</span> <span class="st">"{median} days"</span>,</span>
-<span class="r-in">  style_fun <span class="op">=</span> <span class="op">~</span><span class="fu">gtsummary</span><span class="fu">::</span><span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/style_sigfig.html" class="external-link">style_sigfig</a></span><span class="op">(</span><span class="va">.</span>, digits <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
+<span class="r-in">  style_fun <span class="op">=</span> <span class="op">~</span><span class="fu">gtsummary</span><span class="fu">::</span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/style_sigfig.html" class="external-link">style_sigfig</a></span><span class="op">(</span><span class="va">.</span>, digits <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 284.0 days</span>
 </code></pre></div>
