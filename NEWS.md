@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Added `tbl_checkbox()` function that can group dichotomous variable summaries together under a single header. (#79)
+
 * Adding new function `reinstall_prior_pkgs()` to assist in re-populating an R package library after a fresh install.
 
 # bstfun 0.3.5
