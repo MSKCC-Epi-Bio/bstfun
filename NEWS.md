@@ -1,10 +1,14 @@
 # bstfun (development version)
 
+* Adding new function `reinstall_prior_pkgs()` to assist in re-populating an R package library after a fresh install.
+
+# bstfun 0.3.5
+
 * Updates the the `theme_gtsummary_msk("hot")` theme.
     - Default chi-square test without continuity correction removed since it is the current default for tbl_summary. 
     - Added the compact theme to the the HOT theme.
 
-* Added a method to calculated adjusted differences for binary endpoints using logistic regression `logistic_reg_adj_diff()`. (#20)
+* Added a method to calculate adjusted differences for binary endpoints using logistic regression `logistic_reg_adj_diff()`. (#20)
 
 # bstfun 0.3.4
 
