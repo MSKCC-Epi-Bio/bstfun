@@ -1,3 +1,7 @@
+# bstfun (development version)
+
+* Adding new function `reinstall_prior_pkgs()` to assist in re-populating an R package library after a fresh install.
+
 # bstfun 0.3.5
 
 * Updates the the `theme_gtsummary_msk("hot")` theme.

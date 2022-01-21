@@ -52,6 +52,7 @@ reference:
   - title: "Utility Functions"
     contents:
       - use_bst_rstudio_prefs
+      - reinstall_prior_pkgs
       - here_data
       - cite_r
       - fix_database_error
