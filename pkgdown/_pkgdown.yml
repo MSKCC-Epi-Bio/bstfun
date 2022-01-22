@@ -34,7 +34,7 @@ reference:
       Functions to use in specific table settings
     contents:
       - tbl_likert
-      - tbl_checkbox
+      - add_variable_grouping
       - add_sparkline
       - add_inline_forest_plot
       - theme_gtsummary_msk
