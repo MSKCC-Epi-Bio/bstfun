@@ -79,14 +79,23 @@ reinstall_prior_pkgs <- function(path = NULL) {
 }
 
 .infer_previous_install_path <- function() {
+  cli::cli_h1("Locating Prior R Installation")
   # current installation folder
   dir_current_installation <-
     R.home() %>% normalizePath() %>% fs::path_norm() %>% as.character()
+  cli::cli_li("Current R Locaton {.path {dir_current_installation}}")
 
   # current system library
   stub_current_system_library <-
     .libPaths()[startsWith(.libPaths(), dir_current_installation)][1] %>%
     stringr::str_remove(pattern = paste0("^", dir_current_installation))
+  if (rlang::is_empty(stub_current_system_library)) {
+    paste("Hmmm, can't locate the R system library.",
+          "Consider using the {.code path=} argument.") %>%
+    cli::cli_alert_warning()
+    stop("Cannot locate R system library.", call. = FALSE)
+  }
+  cli::cli_li("Current R System Library {.path {fs::path(dir_current_installation, stub_current_system_library)}}")
 
   current_r_version_folder <- basename(dir_current_installation)
 
@@ -99,6 +108,8 @@ reinstall_prior_pkgs <- function(path = NULL) {
     purrr::discard(~ .x %in% current_r_version_folder) %>%
     # keep last element, assuming this is the previous release folder
     utils::tail(n = 1)
+
+  cli::cli_li("Prior R Version {.path {prior_r_version_folder}}\n")
 
   # construct hypothesized path
   path <- fs::path(dirname(dir_current_installation),
