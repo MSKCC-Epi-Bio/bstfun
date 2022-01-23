@@ -21,7 +21,7 @@ gt.doc.images::save_help_file_images(pkg = "bstfun",
 
 gt.doc.images::save_help_file_images(pkg = "bstfun",
                                      delete_existing_pngs = TRUE,
-                                     rd_files = "logistic_reg_adj_diff.Rd")
+                                     rd_files = "add_variable_grouping.Rd")
 
 
 # 5. Shrink png files
