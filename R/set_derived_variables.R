@@ -45,7 +45,7 @@ set_derived_variables <- function(data, path, sheet = NULL, drop = TRUE) {
   data <-
     data %>%
     dplyr::select(
-      dplyr::any_of("mrn", "patient_id", "id"),
+      dplyr::any_of(c("mrn", "patient_id", "id", "subject", "subject_id")),
       dplyr::everything()
     )
 
