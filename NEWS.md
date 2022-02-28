@@ -1,4 +1,4 @@
-# bstfun (development version)
+# bstfun 0.3.6
 
 * Bug fix in `set_derived_variables()` moving ID variables to the front of the data frame.
 
