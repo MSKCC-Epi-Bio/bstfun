@@ -31,6 +31,9 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/add_splines.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/add_variable_grouping.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/as_forest_plot.html</loc>
   </url>
   <url>
@@ -98,6 +101,9 @@
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/reinstall_prior_pkgs.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/rm_logs.html</loc>

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.6</span>
       </span>
     </div>
 
@@ -110,15 +110,15 @@ be a gtsummary table.</p>
 <span class="r-in"><span class="va">bold_italicize_group_labels_ex1</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="va">trial</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span class="r-in">  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">age</span>, <span class="va">trt</span>, <span class="va">grade</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/tbl_strata.html" class="external-link">tbl_strata</a></span><span class="op">(</span></span>
+<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_strata.html" class="external-link">tbl_strata</a></span><span class="op">(</span></span>
 <span class="r-in">    strata <span class="op">=</span> <span class="va">grade</span>,</span>
 <span class="r-in">    <span class="op">~</span> <span class="va">.x</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">      <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/tbl_summary.html" class="external-link">tbl_summary</a></span><span class="op">(</span>by <span class="op">=</span> <span class="va">trt</span>, missing <span class="op">=</span> <span class="st">"no"</span><span class="op">)</span>,</span>
+<span class="r-in">      <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">tbl_summary</a></span><span class="op">(</span>by <span class="op">=</span> <span class="va">trt</span>, missing <span class="op">=</span> <span class="st">"no"</span><span class="op">)</span>,</span>
 <span class="r-in">    .combine_with <span class="op">=</span> <span class="st">"tbl_stack"</span></span>
 <span class="r-in">  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span class="r-in">  <span class="fu">bold_italicize_group_labels</span><span class="op">(</span>bold <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Column headers among stacked tables differ. Headers from the first table are</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> used. Use <span style="color: #262626; background-color: #DADADA;">`quiet = TRUE`</span> to supress this message.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> used. Use `quiet = TRUE` to supress this message.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #00BB00;">gtsummary</span> table has been converted class <span style="color: #0000BB;">"gt"</span></span>
 <span class="r-in"></span>
 </code></pre></div>

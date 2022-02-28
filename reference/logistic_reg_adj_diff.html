@@ -26,7 +26,7 @@ set boot_n = 1 to avoid long, unused computation."><!-- mathjax --><script src="
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.6</span>
       </span>
     </div>
 
@@ -64,7 +64,7 @@ set boot_n = 1 to avoid long, unused computation."><!-- mathjax --><script src="
     </div>
 
     <div class="ref-description">
-    <p>This function works with <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_difference.html" class="external-link">gtsummary::add_difference()</a></code> to calculate
+    <p>This function works with <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_difference.html" class="external-link">gtsummary::add_difference()</a></code> to calculate
 adjusted differences and confidence intervals based on results from a
 logistic regression model. Adjustment covariates are set to the mean to
 estimate the adjusted difference. The function uses bootstrap methods to
@@ -72,7 +72,7 @@ estimate the adjusted difference between two groups.
 The CI is estimate by either using the SD from the bootstrap difference
 estimates and calculating the CI assuming normality or using the centiles
 of the bootstrapped differences as the confidence limits</p>
-<p>The function can also be used in <code><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_p.html" class="external-link">add_p()</a></code>, and if you do, be sure to
+<p>The function can also be used in <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_p.html" class="external-link">add_p()</a></code>, and if you do, be sure to
 set <code>boot_n = 1</code> to avoid long, unused computation.</p>
     </div>
 
@@ -143,12 +143,12 @@ method.</p></dd>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="va">tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/tbl_summary.html" class="external-link">tbl_summary</a></span><span class="op">(</span><span class="va">trial</span>, by <span class="op">=</span> <span class="va">trt</span>, include  <span class="op">=</span> <span class="va">response</span>, missing <span class="op">=</span> <span class="st">"no"</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">tbl_summary</a></span><span class="op">(</span><span class="va">trial</span>, by <span class="op">=</span> <span class="va">trt</span>, include  <span class="op">=</span> <span class="va">response</span>, missing <span class="op">=</span> <span class="st">"no"</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Example 1 -----------------------------------------------------------------</span></span>
 <span class="r-in"><span class="va">logistic_reg_adj_diff_ex1</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="va">tbl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_difference.html" class="external-link">add_difference</a></span><span class="op">(</span></span>
+<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_difference.html" class="external-link">add_difference</a></span><span class="op">(</span></span>
 <span class="r-in">    test <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="va">logistic_reg_adj_diff</span>,</span>
 <span class="r-in">    adj.vars <span class="op">=</span> <span class="st">"stage"</span></span>
 <span class="r-in">  <span class="op">)</span></span>
@@ -158,7 +158,7 @@ method.</p></dd>
 <span class="r-in"><span class="co"># change the number of bootstrap resamples to perform</span></span>
 <span class="r-in"><span class="va">logistic_reg_adj_diff_ex2</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="va">tbl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="http://www.danieldsjoberg.com/gtsummary//reference/add_difference.html" class="external-link">add_difference</a></span><span class="op">(</span></span>
+<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_difference.html" class="external-link">add_difference</a></span><span class="op">(</span></span>
 <span class="r-in">    test <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span></span>
 <span class="r-in">      <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/partial.html" class="external-link">partial</a></span><span class="op">(</span><span class="va">logistic_reg_adj_diff</span>, ci_type <span class="op">=</span> <span class="st">"centile"</span>, boot_n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>,</span>
 <span class="r-in">    adj.vars <span class="op">=</span> <span class="st">"stage"</span></span>
