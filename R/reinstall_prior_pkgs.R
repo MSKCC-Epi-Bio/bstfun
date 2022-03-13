@@ -30,7 +30,7 @@ reinstall_prior_pkgs <- function(path = NULL) {
     paste("Could not infer path to previous R installation package library",
           "or user-specifed path does not exist.",
           "Specify the path using the `path=` argument.\n\n",
-          "Please consider filing an Issue at <https://github.com/ddsjoberg/bstfun/pulls>,",
+          "Please consider filing an Issue at <https://github.com/ddsjoberg/bstfun>,",
           "so we may improve the search algorithm.") %>%
       stop(call. = FALSE)
   }
@@ -79,6 +79,9 @@ reinstall_prior_pkgs <- function(path = NULL) {
 }
 
 .infer_previous_install_path <- function() {
+  cli::cli_alert_info("Path to previous R installation library not provided in {.code path=}.")
+  cli::cli_alert_info("Searching for path now...")
+  Sys.sleep(1.5)
   cli::cli_h1("Locating Prior R Installation")
   # current installation folder
   dir_current_installation <-

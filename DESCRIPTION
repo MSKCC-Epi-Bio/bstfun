@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Misc functions for the dept
-Version: 0.3.6
+Version: 0.3.7
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",
@@ -58,7 +58,7 @@ Imports:
     ggplot2 (>= 3.3.5),
     glue (>= 1.4.1),
     gt (>= 0.2.2),
-    gtsummary (>= 1.5.0.9032),
+    gtsummary (>= 1.5.2),
     here (>= 0.1),
     lifecycle (>= 0.2.0),
     lubridate (>= 1.7.9),
@@ -95,8 +95,7 @@ Suggests:
 RdMacros: 
     lifecycle
 Remotes:
-    jthomasmock/gtExtras,
-    ddsjoberg/gtsummary
+    jthomasmock/gtExtras
 Encoding: UTF-8
 Language: en-US
 LazyData: true

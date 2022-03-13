@@ -1,3 +1,9 @@
+# bstfun 0.3.7
+
+* No longer depending on the development version of {gtsummary}.
+
+* Improved messaging in `reinstall_prior_pkgs()`.
+
 # bstfun 0.3.6
 
 * Bug fix in `set_derived_variables()` moving ID variables to the front of the data frame.
