@@ -2,18 +2,69 @@
 % Please edit documentation in R/tbl_likert.R
 \name{add_continuous_stat}
 \alias{add_continuous_stat}
-\title{Add continuous statistic to gtsummary table}
+\alias{add_continuous_stat.tbl_likert}
+\title{Add continuous statistics to a Likert table}
 \usage{
 add_continuous_stat(x, ...)
+
+\method{add_continuous_stat}{tbl_likert}(
+  x,
+  statistic = "{mean}",
+  digits = NULL,
+  col_label = NULL,
+  footnote = FALSE,
+  last = TRUE,
+  score_values = NULL,
+  stat_col_name = NULL,
+  ...
+)
 }
 \arguments{
-\item{x}{Object created from a gtsummary function}
+\item{x}{Object with class \code{tbl_likert} from the \code{\link[=tbl_likert]{tbl_likert()}} function}
 
-\item{...}{Additional arguments passed to other methods}
+\item{...}{not used}
+
+\item{statistic}{String or formula indicating the statistic to be reported.
+Default is the mean score. Other possible continuous statistics are described
+in \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summary()}} help page, section \emph{statistic argument}.}
+
+\item{digits}{Formula or list of formulas indicating how to display the
+computed statistics, see \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summary()}} help page}
+
+\item{col_label}{String indicating the column label. Default is generated
+from \code{statistic}.}
+
+\item{footnote}{Logical argument indicating whether to print a footnote
+clarifying the statistics presented. Default is \code{FALSE}}
+
+\item{last}{Logical indicator to include the new column last in table.
+Default is \code{TRUE}}
+
+\item{score_values}{Vector indicating the numeric value of each factor level.
+Default is \code{1:n} where \code{n} indicates the number of levels.}
+
+\item{stat_col_name}{Optional string indicating the name of the new column
+added to \code{x$table_body}}
 }
 \description{
-Add continuous statistic to gtsummary table
+This function converts Likert-scales into a numeric score and computes
+continuous statistics based on this score.
 }
 \seealso{
-\code{\link[=add_continuous_stat.tbl_likert]{add_continuous_stat.tbl_likert()}}
+Other gtsummary-related functions: 
+\code{\link{add_inline_forest_plot}()},
+\code{\link{add_n.tbl_likert}()},
+\code{\link{add_sparkline}()},
+\code{\link{as_ggplot}()},
+\code{\link{bold_italicize_group_labels}()},
+\code{\link{logistic_reg_adj_diff}()},
+\code{\link{style_tbl_compact}()},
+\code{\link{tbl_likert}()},
+\code{\link{theme_gtsummary_msk}()}
+
+Other tbl_likert tools: 
+\code{\link{add_n.tbl_likert}()},
+\code{\link{tbl_likert}()}
 }
+\concept{gtsummary-related functions}
+\concept{tbl_likert tools}

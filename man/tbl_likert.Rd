@@ -2,7 +2,6 @@
 % Please edit documentation in R/tbl_likert.R
 \name{tbl_likert}
 \alias{tbl_likert}
-\alias{add_n.tbl_likert}
 \title{Likert Summary Table}
 \usage{
 tbl_likert(
@@ -13,8 +12,6 @@ tbl_likert(
   include = everything(),
   sort = c("default", "ascending", "descending")
 )
-
-\method{add_n}{tbl_likert}(x, ...)
 }
 \arguments{
 \item{data}{A data frame}
@@ -25,28 +22,17 @@ variable's label is not specified here, the label attribute
 (\code{attr(data$age, "label")}) is used.  If
 attribute label is \code{NULL}, the variable name will be used.}
 
-\item{statistic}{List of formulas specifying types of summary statistics to
-display for each variable.  The default is
-\code{list(all_continuous() ~ "{median} ({p25}, {p75})", all_categorical() ~ "{n} ({p}\%)")}.
-See below for details.}
+\item{statistic}{Formula or list of formulas specifying types of categorical
+statistics to display, see \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summary()}} help page,
+section \emph{statistic argument}}
 
-\item{digits}{List of formulas specifying the number of decimal
-places to round summary statistics. If not specified,
-\code{tbl_summary} guesses an appropriate number of decimals to round statistics.
-When multiple statistics are displayed for a single variable, supply a vector
-rather than an integer.  For example, if the
-statistic being calculated is \code{"{mean} ({sd})"} and you want the mean rounded
-to 1 decimal place, and the SD to 2 use \code{digits = list(age ~ c(1, 2))}. User
-may also pass a styling function: \code{digits = age ~ style_sigfig}}
+\item{digits}{Formula or list of formulas indicating how to display the
+computed statistics, see \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summary()}} help page}
 
 \item{include}{variables to include in the summary table. Default is \code{everything()}}
 
 \item{sort}{Sort table based on mean scores? Must be one of
 \code{c("default", "ascending", "descending")}}
-
-\item{x}{Table of class 'tbl_likert'}
-
-\item{...}{not used}
 }
 \description{
 \lifecycle{experimental}
@@ -76,12 +62,19 @@ tbl_likert_ex1 <-
 }
 \seealso{
 Other gtsummary-related functions: 
+\code{\link{add_continuous_stat}()},
 \code{\link{add_inline_forest_plot}()},
+\code{\link{add_n.tbl_likert}()},
 \code{\link{add_sparkline}()},
 \code{\link{as_ggplot}()},
 \code{\link{bold_italicize_group_labels}()},
 \code{\link{logistic_reg_adj_diff}()},
 \code{\link{style_tbl_compact}()},
 \code{\link{theme_gtsummary_msk}()}
+
+Other tbl_likert tools: 
+\code{\link{add_continuous_stat}()},
+\code{\link{add_n.tbl_likert}()}
 }
 \concept{gtsummary-related functions}
+\concept{tbl_likert tools}

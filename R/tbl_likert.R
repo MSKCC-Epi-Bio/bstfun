@@ -11,9 +11,8 @@
 #' computed statistics, see [gtsummary::tbl_summary()] help page
 #' @param sort Sort table based on mean scores? Must be one of
 #' `c("default", "ascending", "descending")`
-#' @param x Table of class 'tbl_likert'
-#' @param ... not used
 #' @family gtsummary-related functions
+#' @family tbl_likert tools
 #' @export
 #' @examples
 #' df <-
@@ -30,15 +29,11 @@
 #'   tbl_likert(df) %>%
 #'   add_n()
 #' @export
-#' @name tbl_likert
 #' @section Example Output:
 #' \if{html}{Example 1}
 #'
 #' \if{html}{\figure{tbl_likert_ex1.png}{options: width=50\%}}
-NULL
 
-#' @export
-#' @rdname tbl_likert
 tbl_likert <- function(data,
                        label = NULL, statistic = NULL, digits = NULL,
                        include = everything(),
@@ -151,9 +146,12 @@ tbl_likert <- function(data,
 }
 
 #' Add column with N to a Likert table
-#' @export
+#'
 #' @inheritParams gtsummary::add_n.tbl_summary
 #' @param x Object with class `tbl_likert` from the [tbl_likert()] function
+#' @export
+#' @family gtsummary-related functions
+#' @family tbl_likert tools
 add_n.tbl_likert <- function(x,
                              statistic = "{n}",
                              col_label = "**N**",
@@ -226,20 +224,10 @@ add_n.tbl_likert <- function(x,
   x
 }
 
-#' Add continuous statistic to gtsummary table
-#' @param x Object created from a gtsummary function
-#' @param ... Additional arguments passed to other methods
-#' @seealso [add_continuous_stat.tbl_likert()]
-#' @export
-add_continuous_stat <- function(x, ...) {
-  UseMethod("add_continuous_stat")
-}
-
 #' Add continuous statistics to a Likert table
 #'
 #' This function converts Likert-scales into a numeric score and computes
 #' continuous statistics based on this score.
-#' @export
 #' @param x Object with class `tbl_likert` from the [tbl_likert()] function
 #' @param statistic String or formula indicating the statistic to be reported.
 #' Default is the mean score. Other possible continuous statistics are described
@@ -257,6 +245,20 @@ add_continuous_stat <- function(x, ...) {
 #' @param stat_col_name Optional string indicating the name of the new column
 #' added to `x$table_body`
 #' @param ... not used
+#' @family gtsummary-related functions
+#' @family tbl_likert tools
+#' @name add_continuous_stat
+NULL
+
+#' @export
+#' @rdname add_continuous_stat
+add_continuous_stat <- function(x, ...) {
+  UseMethod("add_continuous_stat")
+}
+
+
+#' @export
+#' @rdname add_continuous_stat
 add_continuous_stat.tbl_likert <- function(x,
                                            statistic = "{mean}",
                                            digits = NULL,

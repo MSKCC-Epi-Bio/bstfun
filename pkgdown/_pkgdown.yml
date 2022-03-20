@@ -34,6 +34,8 @@ reference:
       Functions to use in specific table settings
     contents:
       - tbl_likert
+      - add_n.tbl_likert
+      - add_continuous_stat
       - add_variable_grouping
       - add_sparkline
       - add_inline_forest_plot
