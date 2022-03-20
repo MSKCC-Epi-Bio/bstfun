@@ -10,7 +10,7 @@ add_cuminc_risktable(
   timepts,
   lg,
   numgrps,
-  line = 4,
+  line = 3,
   at = -1,
   col.list = 1
 )
@@ -27,10 +27,10 @@ E.g. c(0,1,2,3,4,5) or seq(0,12,by=2)}
 E.g. c("Male", "Female")}
 
 \item{numgrps}{the number of groups of the stratification variable: 1 is
-no stratification, 2 is stratified by a binary variable}
+no stratification, can stratify up to 3 groups}
 
 \item{line}{to adjust position of risk table. A lower value will shift
-table up, a larger value will shift table down; default is 4}
+table up, a larger value will shift table down; default is 3}
 
 \item{at}{to adjust position of left margin. Default is -1.}
 
@@ -47,14 +47,18 @@ library(cmprsk)
 library(survival)
 
 data(pbc)
-# recode time and status
+# recode time
 pbc$time.y <- pbc$time / 365.25
+# recode status- switch competing events
 pbc$status2 <- ifelse(pbc$status > 0, ifelse(pbc$status == 1, 2, 1), 0)
+# recode stage for 3 groups
+pbc$stage.3g <- ifelse(pbc$stage \%in\% c(1,2), "1-2", as.character(pbc$stage))
+
 
 # Example 1 -------------------------------------
 # CIR and KM for no strata
 cif1 <- cuminc(ftime = pbc$time.y, fstatus = pbc$status2)
-km1 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ 1)
+km1 <- survfit(Surv(pbc$time.y, pbc$status2 == 1) ~ 1)
 
 # Plot and add risk table for no strata (numgrps=1)
 windows(5, 5)
@@ -75,7 +79,7 @@ add_cuminc_risktable(cif1, km1,
 cif2 <- cuminc(ftime = pbc$time.y,
                fstatus = pbc$status2,
                group = pbc$sex)
-km2 <- survfit(Surv(pbc$time.y, pbc$status == 1) ~ pbc$sex)
+km2 <- survfit(Surv(pbc$time.y, pbc$status2 == 1) ~ pbc$sex)
 
 # Plot and add risk table for 2 groups (numgrps=2)
 windows(5, 5)
@@ -87,13 +91,35 @@ plot(cif2,
      curvlab = c("male", "female", "", ""),
      lty = c(1, 2, 0, 0),
      xlim = c(0, 12),
-     xaxt = "n", col = c(1, 3, 0, 0))
+     xaxt = "n", col = c(1, 2, 0, 0))
 axis(1, at = seq(0, 12, 3))
 
 add_cuminc_risktable(cif2, km2,
                      timepts = seq(0, 12, 3),
                      lg = c("male", "female"),
-                     numgrps = 2)
+                     numgrps = 2, col.list = c(1,2))
+
+# Example 3 -------------------------------------
+cif3 <- cuminc(ftime = pbc$time.y,
+               fstatus = pbc$status2,
+               group = pbc$stage.3g)
+km3 <- survfit(Surv(pbc$time.y, pbc$status2 == 1) ~ pbc$stage.3g)
+windows(6,6)
+par(mfrow = c(1, 1),
+    mar = c(14, 5.7, 2, 2), # change bottom margin
+    mgp = c(2, 0.65, 0))
+
+plot(cif3,
+     curvlab = c("1-2", "3", "4", rep("",3)),
+     lty = c(1, 2, 3, rep(0, 3)),
+     xlim = c(0, 12),
+     xaxt = "n", col = c(1, 2, 4, rep(0, 3)))
+axis(1, at = seq(0, 12, 3))
+
+add_cuminc_risktable(cif3, survfit = km3,
+                     timepts = seq(0, 12, 3),
+                     lg = c("1-2", "3", "4"),
+                     numgrps = 3, col.list = c(1,2,4))
 \dontshow{\}) # examplesIf}
 }
 \author{

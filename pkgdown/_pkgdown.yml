@@ -34,33 +34,53 @@ reference:
       Functions to use in specific table settings
     contents:
       - tbl_likert
+      - add_variable_grouping
       - add_sparkline
       - add_inline_forest_plot
       - theme_gtsummary_msk
       - style_tbl_compact
+      - logistic_reg_adj_diff
       - as_ggplot
       - as_forest_plot
+      - bold_italicize_group_labels
 
   - title: "Project Start-up Functions"
     contents:
-      - create_bst_project
-      - use_bst_file
-      - use_bst_rstudio_prefs
+      - create_project
+      - use_file
+      - set_derived_variables
 
   - title: "Utility Functions"
     contents:
+      - use_bst_rstudio_prefs
+      - reinstall_prior_pkgs
       - here_data
       - cite_r
       - fix_database_error
-      - use_varnames_as_labels
 
   - title: "High Performance Computing Cluster"
     contents:
       - starts_with("hpcc_")
+      - rm_logs
+
+  - title: "Data Manipulation"
+    contents:
+      - count_map
+      - assign_timepoint
+      - clean_mrn
+      - count_map
+      - count_na
+      - get_mode
+      - list_labels
+      - add_splines
+      - egfr
+      - use_varnames_as_labels
 
   - title: "Other Functions"
     contents:
       - add_cuminc_risktable
+      - followup_time
+      - auc
 
   - title: "Data Objects"
     contents:

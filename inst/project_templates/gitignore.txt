@@ -23,6 +23,7 @@
 # ignore data folder/symbolic link/sensitive file
 data
 secure_data
+secure_data.lnk
 ext_data
 tmp
 env.json
@@ -48,5 +49,5 @@ renv/staging/
 
 # dont ignore derived variables xlsx file
 !derived variables*.xlsx
-!derived_variables*.xlsx
+!derived_variables*.xls
 !data_date.txt

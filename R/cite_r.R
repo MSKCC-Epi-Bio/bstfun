@@ -62,23 +62,13 @@
 cite_r <- function(pkgs = c("tidyverse", "gtsummary"),
                    add_citations = TRUE) {
   # citing R language ----------------------------------------------------------
-  r_version <-
-    glue::glue("version {getRversion()}") %>%
-    {ifelse(add_citations, glue::glue("{.} [@r]"), .)}
+  r_version <- glue::glue("version {getRversion()}")
 
   # citing R pkgs --------------------------------------------------------------
   if (!is.null(pkgs)) {
     pkg_versions <-
-      map_chr(
-        pkgs,
-        ~ ifelse(
-          add_citations,
-          glue::glue("{.x} v{packageVersion(.x)} [@{.x}]"),
-          glue::glue("{.x} v{packageVersion(.x)}")
-        )
-      )
-
-    pkg_versions <- glue::glue_collapse(pkg_versions, sep = ", ", last = " and ")
+      map_chr(pkgs, ~glue::glue("{.x} (v{packageVersion(.x)})")) %>%
+      glue::glue_collapse(sep = ", ", last = " and ")
   }
 
   # construct statement --------------------------------------------------------
@@ -88,6 +78,15 @@ cite_r <- function(pkgs = c("tidyverse", "gtsummary"),
     statement <- glue::glue("R {r_version} with the {pkg_versions} package")
   else
     statement <- glue::glue("R {r_version} with the {pkg_versions} packages")
+
+  # add citations --------------------------------------------------------------
+  if (isTRUE(add_citations)) {
+    citations <-
+      map(c("r", pkgs), ~glue::glue("@{.}")) %>%
+      paste(collapse = "; ") %>%
+      {paste0("[", ., "]")}
+    statement <- paste(statement, citations)
+  }
 
   # return statement -----------------------------------------------------------
   statement

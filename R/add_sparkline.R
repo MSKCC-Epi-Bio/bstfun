@@ -21,6 +21,7 @@
 #'   select(age, marker) %>%
 #'   tbl_summary(missing = "no") %>%
 #'   add_sparkline()
+#'
 #' @section Example Output:
 #' \if{html}{Example 1}
 #'

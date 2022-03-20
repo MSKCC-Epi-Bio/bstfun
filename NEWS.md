@@ -1,3 +1,90 @@
+# bstfun 0.3.7
+
+* No longer depending on the development version of {gtsummary}.
+
+* Improved messaging in `reinstall_prior_pkgs()`.
+
+# bstfun 0.3.6
+
+* Bug fix in `set_derived_variables()` moving ID variables to the front of the data frame.
+
+* Added `add_variable_grouping()` function that can group variable summaries together under a single header. (#79)
+
+* Adding new function `reinstall_prior_pkgs()` to assist in re-populating an R package library after a fresh install.
+
+# bstfun 0.3.5
+
+* Updates the the `theme_gtsummary_msk("hot")` theme.
+    - Default chi-square test without continuity correction removed since it is the current default for tbl_summary. 
+    - Added the compact theme to the the HOT theme.
+
+* Added a method to calculate adjusted differences for binary endpoints using logistic regression `logistic_reg_adj_diff()`. (#20)
+
+# bstfun 0.3.4
+
+* No changes. Making release for RSPM.
+
+# bstfun 0.3.3
+
+* Bug fix in HOT project template where the `reference.bib` file was being placed in the incorrect folder.
+
+* Columns `"mrn"`, `"id"`, or `"patient_id"` will now be moved to the front of the data frame after labels have been applied using `set_derived_variables()`.
+
+# bstfun 0.3.2
+
+* Fix to the H.O.T. `use_hot_file()` default template specification.
+
+* Increased minimum R version and minimum version of {starter} package (after bug fix).
+
+# bstfun 0.3.1
+
+* Updates to the templating files.
+
+* Updated custom template definitions to utilize parts from the default template, reducing the amount of code needed to create a custom template.
+
+* Added new function `bold_italicize_group_labels()` to bold and italicize group header labels in gtsummary tables. (#65)
+
+
+# bstfun 0.3.0
+
+* Function `add_cuminc_risktables()` now allows for 3 groups. Makes colors consistent between labels and estimates.  Removed "Number at risk" label and places a label ", n:" next to each strata name. 
+
+* Migrated the H.O.T. project templates from {hotfun} to {bstfun}.
+
+* Added new function `clean_mrn()` to clean and check consistency of MRN columns.
+
+* Added new function `set_derived_variables()` that imports variable labels from an excel file and applies the labels to the data frame.
+
+* Added new function `count_map()` to aid in checking variable derivations.
+
+* Added new function `count_na()` to assess variable missing patterns.
+
+* Added new function `get_mode()` to obtain the mode of a variable.
+
+* Added new function `list_labels()` to obtain a named list of column names and their labels.
+
+* Added new function `assign_timepoint()` to aid in selecting observations at various follow-up times, e.g. selecting the 6 and 12 month lab result from a long data set of all labs.
+
+* Added new function `add_splines()`.
+
+* Added new functions for calculating eGFR: `egfr_mdrd()` and `egfr_ckdepi()`.
+
+* Migrated H.O.T. project creation functions from the hotfun package.
+
+* Added two functions for calculating AUC based on the distribution of a variable.
+
+* Removed use of deprecated function in `tbl_likert()`.
+
+* Added new function `followup_time()` that reports the amount of follow-up among censored patients.
+
+* Added new function `list_labels()` to extract the variable labels from a data frame.
+
+* Added new function `rm_logs()` to delete logs created from submitting jobs to the HPCC.
+
+# bstfun 0.2.8
+
+* Updated how references are added in `cite_r()`.
+
 # bstfun 0.2.7
 
 * Added new function `add_sparkline()`--a wrapper for `gtExtras::gt_sparkline()` that adds distributional figures in a new column of a 'tbl_summary' table.

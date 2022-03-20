@@ -30,7 +30,9 @@ Other contributors:
   \item Meier Hsu [contributor]
   \item Caroline Kostrzewa [contributor]
   \item Jasme Lee [contributor]
+  \item Amy Tin (\href{https://orcid.org/0000-0002-8005-0694}{ORCID}) [contributor]
   \item Emily Vertosick [contributor]
+  \item Gustavo Zapata Wainberg (\href{https://orcid.org/0000-0002-2524-3637}{ORCID}) [contributor]
   \item Christine Zhou [contributor]
 }
 
