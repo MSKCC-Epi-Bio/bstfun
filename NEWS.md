@@ -1,3 +1,7 @@
+# bstfun (development version)
+
+* Added new functions `add_n.tbl_likert()` and `add_continuous_stat().tbl_likert()` (#55)
+
 # bstfun 0.3.7
 
 * No longer depending on the development version of {gtsummary}.
