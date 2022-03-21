@@ -17,17 +17,14 @@
 #' @examples
 #' library(dplyr)
 #' set.seed(1123)
-#' likert_lvls <-
-#'   c("Strongly disagree", "Disagree",
-#'     "Neither agree nor disagree",
-#'     "Agree", "Strongly agree")
+#' likert_lvls <- c("never",	"sometimes",	"often",	"always")
 #'
 #' df <-
 #'   tibble::tibble(
-#'     f1 = sample(likert_lvls, size = 100, replace = TRUE),
-#'     f2 = sample(likert_lvls, size = 100, replace = TRUE)
+#'     Q1 = sample(likert_lvls, size = 100, replace = TRUE),
+#'     Q2 = sample(likert_lvls, size = 100, replace = TRUE)
 #'   ) %>%
-#'   mutate(across(c(f1, f2), ~factor(., levels = likert_lvls)))
+#'   mutate(across(c(Q1, Q2), ~factor(., levels = likert_lvls)))
 #'
 #' tbl_likert_ex1 <-
 #'   tbl_likert(df) %>%
