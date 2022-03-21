@@ -46,19 +46,24 @@ Creates a summary of Likert scales following the gtsummary structure
 }
 
 \examples{
+library(dplyr)
+set.seed(1123)
+likert_lvls <-
+  c("Strongly disagree", "Disagree",
+    "Neither agree nor disagree",
+    "Agree", "Strongly agree")
+
 df <-
   tibble::tibble(
-    f1 =
-      sample.int(100, n = 3, replace = TRUE) \%>\%
-      factor(levels = 1:3, labels = c("bad", "meh", "good")),
-    f2 =
-      sample.int(100, n = 3, replace = TRUE) \%>\%
-      factor(levels = 1:3, labels = c("bad", "meh", "good")),
-  )
+    f1 = sample(likert_lvls, size = 100, replace = TRUE)
+    f2 = sample(likert_lvls, size = 100, replace = TRUE)
+  ) \%>\%
+  mutate(across(c(f1, f2), ~factor(., levels = likert_lvls)))
 
 tbl_likert_ex1 <-
   tbl_likert(df) \%>\%
-  add_n()
+  add_n() \%>\%
+  add_continuous_stat()
 }
 \seealso{
 Other gtsummary-related functions: 
