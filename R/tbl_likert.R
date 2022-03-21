@@ -24,7 +24,7 @@
 #'
 #' df <-
 #'   tibble::tibble(
-#'     f1 = sample(likert_lvls, size = 100, replace = TRUE)
+#'     f1 = sample(likert_lvls, size = 100, replace = TRUE),
 #'     f2 = sample(likert_lvls, size = 100, replace = TRUE)
 #'   ) %>%
 #'   mutate(across(c(f1, f2), ~factor(., levels = likert_lvls)))
