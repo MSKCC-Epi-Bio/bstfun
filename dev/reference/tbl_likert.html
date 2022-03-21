@@ -19,7 +19,7 @@ Creates a summary of Likert scales following the gtsummary structure"><meta name
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.5.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.7.9000</span>
       </span>
     </div>
 
@@ -70,10 +70,7 @@ Creates a summary of Likert scales following the gtsummary structure</p>
   digits <span class="op">=</span> <span class="cn">NULL</span>,
   include <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span>,
   sort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"default"</span>, <span class="st">"ascending"</span>, <span class="st">"descending"</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="co"># S3 method for tbl_likert</span>
-<span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -87,28 +84,17 @@ variable's label is not specified here, the label attribute
 (<code>attr(data$age, "label")</code>) is used.  If
 attribute label is <code>NULL</code>, the variable name will be used.</p></dd>
 <dt>statistic</dt>
-<dd><p>List of formulas specifying types of summary statistics to
-display for each variable.  The default is
-<code>list(all_continuous() ~ "{median} ({p25}, {p75})", all_categorical() ~ "{n} ({p}%)")</code>.
-See below for details.</p></dd>
+<dd><p>Formula or list of formulas specifying types of categorical
+statistics to display, see <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">gtsummary::tbl_summary()</a></code> help page,
+section <em>statistic argument</em></p></dd>
 <dt>digits</dt>
-<dd><p>List of formulas specifying the number of decimal
-places to round summary statistics. If not specified,
-<code>tbl_summary</code> guesses an appropriate number of decimals to round statistics.
-When multiple statistics are displayed for a single variable, supply a vector
-rather than an integer.  For example, if the
-statistic being calculated is <code>"{mean} ({sd})"</code> and you want the mean rounded
-to 1 decimal place, and the SD to 2 use <code>digits = list(age ~ c(1, 2))</code>. User
-may also pass a styling function: <code>digits = age ~ style_sigfig</code></p></dd>
+<dd><p>Formula or list of formulas indicating how to display the
+computed statistics, see <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">gtsummary::tbl_summary()</a></code> help page</p></dd>
 <dt>include</dt>
 <dd><p>variables to include in the summary table. Default is <code><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything()</a></code></p></dd>
 <dt>sort</dt>
 <dd><p>Sort table based on mean scores? Must be one of
 <code>c("default", "ascending", "descending")</code></p></dd>
-<dt>x</dt>
-<dd><p>Table of class 'tbl_likert'</p></dd>
-<dt>...</dt>
-<dd><p>not used</p></dd>
 </dl></div>
     <div id="example-output">
     <h2>Example Output</h2>
@@ -120,30 +106,46 @@ may also pass a styling function: <code>digits = age ~ style_sigfig</code></p></
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p>Other gtsummary-related functions: 
+<code><a href="add_continuous_stat.html">add_continuous_stat</a>()</code>,
 <code><a href="add_inline_forest_plot.html">add_inline_forest_plot</a>()</code>,
+<code><a href="add_n.tbl_likert.html">add_n.tbl_likert</a>()</code>,
 <code><a href="add_sparkline.html">add_sparkline</a>()</code>,
 <code><a href="as_ggplot.html">as_ggplot</a>()</code>,
 <code><a href="bold_italicize_group_labels.html">bold_italicize_group_labels</a>()</code>,
 <code><a href="logistic_reg_adj_diff.html">logistic_reg_adj_diff</a>()</code>,
 <code><a href="style_tbl_compact.html">style_tbl_compact</a>()</code>,
-<code><a href="theme_gtsummary_msk.html">theme_gtsummary_msk</a>()</code></p></div>
+<code><a href="theme_gtsummary_msk.html">theme_gtsummary_msk</a>()</code></p>
+<p>Other tbl_likert tools: 
+<code><a href="add_continuous_stat.html">add_continuous_stat</a>()</code>,
+<code><a href="add_n.tbl_likert.html">add_n.tbl_likert</a>()</code></p></div>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">df</span> <span class="op">&lt;-</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: ‘dplyr’</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from ‘package:stats’:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     filter, lag</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from ‘package:base’:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     intersect, setdiff, setequal, union</span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1123</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">likert_lvls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"never"</span>,  <span class="st">"sometimes"</span>,  <span class="st">"often"</span>,  <span class="st">"always"</span><span class="op">)</span></span>
+<span class="r-in"></span>
+<span class="r-in"><span class="va">df</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
-<span class="r-in">    f1 <span class="op">=</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample.int</a></span><span class="op">(</span><span class="fl">100</span>, n <span class="op">=</span> <span class="fl">3</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span>levels <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"bad"</span>, <span class="st">"meh"</span>, <span class="st">"good"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">    f2 <span class="op">=</span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample.int</a></span><span class="op">(</span><span class="fl">100</span>, n <span class="op">=</span> <span class="fl">3</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">      <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span>levels <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"bad"</span>, <span class="st">"meh"</span>, <span class="st">"good"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="op">)</span></span>
+<span class="r-in">    Q1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">likert_lvls</span>, size <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span class="r-in">    Q2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">likert_lvls</span>, size <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in">  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span class="r-in">  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html" class="external-link">across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">Q1</span>, <span class="va">Q2</span><span class="op">)</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">.</span>, levels <span class="op">=</span> <span class="va">likert_lvls</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="va">tbl_likert_ex1</span> <span class="op">&lt;-</span></span>
 <span class="r-in">  <span class="fu">tbl_likert</span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span class="r-in">  <span class="fu"><a href="add_continuous_stat.html">add_continuous_stat</a></span><span class="op">(</span>statistic <span class="op">=</span> <span class="st">"{mean}"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span class="r-in">  <span class="fu"><a href="add_continuous_stat.html">add_continuous_stat</a></span><span class="op">(</span>statistic <span class="op">=</span> <span class="st">"{sd}"</span><span class="op">)</span></span>
 </code></pre></div>
     </div>
   </div>
