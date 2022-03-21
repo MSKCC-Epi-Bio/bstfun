@@ -32,7 +32,8 @@
 #' tbl_likert_ex1 <-
 #'   tbl_likert(df) %>%
 #'   add_n() %>%
-#'   add_continuous_stat()
+#'   add_continuous_stat(statistic = "{mean}") %>%
+#'   add_continuous_stat(statistic = "{sd}")
 #' @export
 #' @section Example Output:
 #' \if{html}{Example 1}
