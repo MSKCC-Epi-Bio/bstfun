@@ -60,7 +60,9 @@ add_sparkline_ex1 <-
 }
 \seealso{
 Other gtsummary-related functions: 
+\code{\link{add_continuous_stat}()},
 \code{\link{add_inline_forest_plot}()},
+\code{\link{add_n.tbl_likert}()},
 \code{\link{as_ggplot}()},
 \code{\link{bold_italicize_group_labels}()},
 \code{\link{logistic_reg_adj_diff}()},

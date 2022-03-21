@@ -20,9 +20,9 @@ gt.doc.images::save_help_file_images(pkg = "bstfun",
                                      delete_existing_pngs = TRUE)
 
 gt.doc.images::save_help_file_images(pkg = "bstfun",
-                                     delete_existing_pngs = TRUE,
-                                     rd_files = "add_variable_grouping.Rd")
+                                     delete_existing_pngs = FALSE,
+                                     rd_files = "tbl_likert.Rd")
 
 
 # 5. Shrink png files
-gt.doc.images::shrink_help_file_images(pkg = "gtsummary")
+gt.doc.images::shrink_help_file_images(pkg = "bstfun")
