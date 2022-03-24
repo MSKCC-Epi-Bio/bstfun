@@ -96,7 +96,7 @@ RdMacros:
     lifecycle
 Remotes:
     jthomasmock/gtExtras,
-    ddsjoberg/ddsjoberg
+    ddsjoberg/gtsummary
 Encoding: UTF-8
 Language: en-US
 LazyData: true
