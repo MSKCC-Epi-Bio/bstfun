@@ -96,6 +96,7 @@ Other gtsummary-related functions:
 \code{\link{add_n.tbl_likert}()},
 \code{\link{add_sparkline}()},
 \code{\link{as_ggplot}()},
+\code{\link{as_gtsummary}()},
 \code{\link{bold_italicize_group_labels}()},
 \code{\link{style_tbl_compact}()},
 \code{\link{tbl_likert}()},

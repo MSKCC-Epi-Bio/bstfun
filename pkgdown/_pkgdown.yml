@@ -45,6 +45,7 @@ reference:
       - as_ggplot
       - as_forest_plot
       - bold_italicize_group_labels
+      - as_gtsummary
 
   - title: "Project Start-up Functions"
     contents:

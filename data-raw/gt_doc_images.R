@@ -17,11 +17,11 @@ install.packages(
 #    is the object name, i.e.'tbl_ae_count_ex1.png'. No example object
 #    may overlap throughout the entire package.
 gt.doc.images::save_help_file_images(pkg = "bstfun",
-                                     delete_existing_pngs = TRUE)
+                                     delete_existing_pngs = FALSE)
 
 gt.doc.images::save_help_file_images(pkg = "bstfun",
                                      delete_existing_pngs = FALSE,
-                                     rd_files = "tbl_likert.Rd")
+                                     rd_files = "as_gtsummary.Rd")
 
 
 # 5. Shrink png files

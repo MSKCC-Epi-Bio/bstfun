@@ -48,6 +48,7 @@ Other gtsummary-related functions:
 \code{\link{add_inline_forest_plot}()},
 \code{\link{add_sparkline}()},
 \code{\link{as_ggplot}()},
+\code{\link{as_gtsummary}()},
 \code{\link{bold_italicize_group_labels}()},
 \code{\link{logistic_reg_adj_diff}()},
 \code{\link{style_tbl_compact}()},
