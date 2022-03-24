@@ -18,7 +18,7 @@
 #' @section Example Output:
 #' \if{html}{Example 1}
 #'
-#' \if{html}{\figure{as_gtsummary_ex1.png}{options: width=50\%}}
+#' \if{html}{\figure{as_gtsummary_ex1.png}{options: width=75\%}}
 as_gtsummary <- function(data, column_labels = TRUE, bold_headers = TRUE) {
   stopifnot(is.data.frame(data))
 

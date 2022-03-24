@@ -25,7 +25,7 @@ Convert Data Frame to gtsummary tbl
 
 \if{html}{Example 1}
 
-\if{html}{\figure{as_gtsummary_ex1.png}{options: width=50\%}}
+\if{html}{\figure{as_gtsummary_ex1.png}{options: width=75\%}}
 }
 
 \examples{
