@@ -25,6 +25,7 @@ as_gtsummary <- function(data, column_labels = TRUE, bold_headers = TRUE) {
   # convert data frame to gtsummary table
   tbl <- gtsummary::.create_gtsummary_object(table_body = data)
   tbl$table_styling$header$hide <- FALSE # showing all columns by default
+  tbl$table_styling$header$align <- "left" # showing all columns left aligned
 
   # use column labels
   if (isTRUE(column_labels)) {
