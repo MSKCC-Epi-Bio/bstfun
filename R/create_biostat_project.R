@@ -2,15 +2,10 @@
 #'
 #' Creates a directory with the essential files for a new project.
 #' The function can be used on existing project directories as well.
-#' This is a thin wrapper for `starter::create_project()` that
-#' sets the default template to `template = hotfun::project_template`
+#' This is a thin wrapper for `starter::create_project()`.
 #'
-#' @param template Specifies project template to use.
-#' Default is the template in `bstfun::project_templates` whose name matches
-#' the lowercase system username (`Sys.info()[["user"]]`), if it exists;
-#' otherwise, `bstfun::project_templates[["default"]]`
 #' @inheritParams starter::create_project
-#' @inheritDotParams starter::create_project
+#' @inheritDotParams starter::create_project -template
 #'
 #' @name create_project
 #' @examplesIf FALSE
@@ -31,49 +26,59 @@ NULL
 #' @rdname create_project
 create_bst_project <- function(path,
                                path_data = NULL,
-                               template = NULL,
-                               git = NA,
-                               renv = TRUE,
-                               overwrite = NA,
-                               open = interactive()) {
+                               ...) {
   # if template is NULL, use default template ----------------------------------
-  template <-
-    template %||%
-    bstfun::project_templates[[tolower(Sys.info()[["user"]])]] %||%
-    bstfun::project_templates[["default"]]
-
-  # if string, select template among bstfun saved templates --------------------
-  if (rlang::is_string(template)) {
-    if (!template %in% names(bstfun::project_templates)) {
-      paste("Pass one of the following template names or a user-defined template:",
-            paste(names(bstfun::project_templates), collapse = ", ")) %>%
-        stop(call. = FALSE)
-    }
-    template <- bstfun::project_templates[[template]]
-  }
+  template <- .select_template()
 
   # create new project ---------------------------------------------------------
   starter::create_project(
     path = path,
     path_data = path_data,
-    git = git,
-    renv = renv,
-    template = template,
-    overwrite = overwrite,
-    open = open
+    ...
   )
 }
 
 #' @export
 #' @rdname create_project
-create_hot_project <- function(path, path_data = NULL,
-                               template = bstfun::project_templates[["hot"]], ...) {
-
+create_hot_project <- function(path, path_data = NULL, ...) {
   starter::create_project(
     path = path,
     path_data = path_data,
-    template = template,
+    template = bstfun::project_templates[["hot"]],
     ...
   )
+}
+
+.select_template <- function() {
+  # if not interactive, return default template
+  if (!interactive()) {
+    return(bstfun::project_templates[["default"]])
+  }
+
+  # creating list of templates available
+  templates <-
+    list("1. Default Template" = bstfun::project_templates[["default"]],
+         "2. Scripts and Results in Separate Folders" =
+           bstfun::project_templates[["results_folder"]])
+  # adding user-defined template if it exists
+  if (!is.null(bstfun::project_templates[[tolower(Sys.info()[["user"]])]])) {
+    templates <-
+      c(templates,
+        list(bstfun::project_templates[[tolower(Sys.info()[["user"]])]]) %>%
+          rlang::set_names(stringr::str_glue("3. Personal template: {tolower(Sys.info()[['user']])}")))
+  }
+
+  # asking users which template to use
+  options <- seq_len(length(templates))
+  question <-
+    c(stringr::str_glue("Select {glue::glue_collapse(, sep = ', ', last = ' or ')}"),
+      names(templates))
+  answer <- readline(question)
+  if (!answer %in% options) {
+    stop("Invalid template selection.", call. = FALSE)
+  }
+
+  # return selected template
+  return(templates[[answer]])
 }
 

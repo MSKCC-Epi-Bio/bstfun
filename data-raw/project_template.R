@@ -1,7 +1,8 @@
 ## code to prepare project template goes here
 
-# default template -------------------------------------------------------------
-project_template_default <-
+# bstfun project template ------------------------------------------------------
+## base template--this is the same for all bst tempaltes -----------------------
+project_template_base <-
   list(
     readme = rlang::expr(list(
       template_filename = fs::path_package("project_templates/readme.md", package = 'bstfun'),
@@ -17,31 +18,6 @@ project_template_default <-
       template_filename = fs::path_package("project_templates/data_date.txt", package = 'bstfun'),
       filename = "data_date.txt",
       copy = FALSE
-    )),
-    setup = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/setup.Rmd", package = 'bstfun'),
-      filename = glue::glue("setup.Rmd"),
-      copy = FALSE
-    )),
-    analysis = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/analysis.Rmd", package = 'bstfun'),
-      filename = glue::glue("analysis.Rmd"),
-      copy = FALSE
-    )),
-    report = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/report.Rmd", package = 'bstfun'),
-      filename = glue::glue("report.Rmd"),
-      copy = FALSE
-    )),
-    doc_template = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/doc_template.docx", package = 'bstfun'),
-      filename = "templates/doc_template.docx",
-      copy = TRUE
-    )),
-    references = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/references.bib", package = 'bstfun'),
-      filename = glue::glue("templates/references.bib"),
-      copy = TRUE
     )),
     rproj = rlang::expr(list(
       template_filename = fs::path_package("project_templates/default_rproj.Rproj", package = 'bstfun'),
@@ -60,7 +36,65 @@ project_template_default <-
         )
       ))
   )
+
+## default bst template (scripts/results in folder) ----------------------------
+project_template_default <-
+  c(
+    project_template_base,
+    list(
+      setup = rlang::expr(list(
+        template_filename = fs::path_package("project_templates/setup.Rmd", package = 'bstfun'),
+        filename = glue::glue("setup.Rmd"),
+        copy = FALSE
+      )),
+      analysis = rlang::expr(list(
+        template_filename = fs::path_package("project_templates/analysis.Rmd", package = 'bstfun'),
+        filename = glue::glue("analysis.Rmd"),
+        copy = FALSE
+      )),
+      report = rlang::expr(list(
+        template_filename = fs::path_package("project_templates/report.Rmd", package = 'bstfun'),
+        filename = glue::glue("report.Rmd"),
+        copy = FALSE
+      )),
+      doc_template = rlang::expr(list(
+        template_filename = fs::path_package("project_templates/doc_template.docx", package = 'bstfun'),
+        filename = "scripts/templates/doc_template.docx",
+        copy = TRUE
+      )),
+      references = rlang::expr(list(
+        template_filename = fs::path_package("project_templates/references.bib", package = 'bstfun'),
+        filename = glue::glue("scripts/templates/references.bib"),
+        copy = TRUE
+      ))
+    )
+  )
 attr(project_template_default, "label") <- "Default Biostistics Project Template"
+
+## scripts+results in separate folders -----------------------------------------
+project_template_results_folder <- project_template_default
+project_template_results_folder[["setup"]] <-
+  rlang::expr(list(
+    template_filename = fs::path_package("project_templates/setup.Rmd", package = 'bstfun'),
+    filename = glue::glue("setup.Rmd"),
+    copy = FALSE
+  ))
+project_template_results_folder[["analysis"]] <-
+  rlang::expr(list(
+    template_filename = fs::path_package("project_templates/analysis.Rmd", package = 'bstfun'),
+    filename = glue::glue("analysis.Rmd"),
+    copy = FALSE
+  ))
+project_template_results_folder[["report"]] <-
+  rlang::expr(list(
+    template_filename = fs::path_package("project_templates/report.Rmd", package = 'bstfun'),
+    filename = glue::glue("report.Rmd"),
+    copy = FALSE
+  ))
+attr(project_template_results_folder, "script_path") <-
+  rlang::expr(fs::path_package("project_templates/results_scripts_folders/results_scripts_folders.R", package = 'bstfun'))
+attr(project_template_results_folder, "label") <- "Biostistics Project Template"
+
 
 # hot template -----------------------------------------------------------------
 hot_project_template <-
@@ -147,11 +181,11 @@ leej22_project_template <-
       filename = glue::glue("code/{folder_name}_02_data_checks.Rmd"),
       copy = FALSE
     )),
-    analysis = list(
+    analysis = rlang::expr(list(
       template_filename = fs::path_package("project_templates/leej22_template_files/03_analysis.Rmd", package = 'bstfun'),
       filename = glue::glue("code/{folder_name}_03_analysis.Rmd"),
       copy = FALSE
-    ),
+    )),
     report = rlang::expr(list(
       template_filename = fs::path_package("project_templates/leej22_template_files/04_report.Rmd", package = 'bstfun'),
       filename = glue::glue("code/{folder_name}_04_report.Rmd"),
@@ -167,6 +201,7 @@ attr(leej22_project_template, "label") <- "Jasme Lee Project Template"
 
 project_templates <- list()
 project_templates[["default"]] <- project_template_default
+project_templates[["results_folder"]] <- project_template_results_folder
 project_templates[["hot"]] <- hot_project_template
 project_templates[["whitingk"]] <- whitingk_project_template
 project_templates[["leej22"]] <- leej22_project_template
