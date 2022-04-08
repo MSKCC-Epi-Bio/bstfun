@@ -1,5 +1,5 @@
 
-project_template_lobaughs <-
+lobaughs_project_template <-
   project_template_default[c("gitignore", "data_date", "rproj", "rprofile")] |>
   purrr::list_modify(
     readme = rlang::expr(list(
@@ -48,5 +48,5 @@ project_template_lobaughs <-
       copy = FALSE
     )),
   )
-attr(project_template_lobaughs, "label") <- "Stephanie Lobaugh Project Template"
+attr(lobaughs_project_template, "label") <- "Stephanie Lobaugh Project Template"
 
