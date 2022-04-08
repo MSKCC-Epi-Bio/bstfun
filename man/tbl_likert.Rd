@@ -2,6 +2,9 @@
 % Please edit documentation in R/tbl_likert.R
 \name{tbl_likert}
 \alias{tbl_likert}
+\alias{add_n.tbl_likert}
+\alias{add_continuous_stat}
+\alias{add_continuous_stat.tbl_likert}
 \title{Likert Summary Table}
 \usage{
 tbl_likert(
@@ -11,6 +14,29 @@ tbl_likert(
   digits = NULL,
   include = everything(),
   sort = c("default", "ascending", "descending")
+)
+
+\method{add_n}{tbl_likert}(
+  x,
+  statistic = "{n}",
+  col_label = "**N**",
+  footnote = FALSE,
+  last = FALSE,
+  ...
+)
+
+add_continuous_stat(x, ...)
+
+\method{add_continuous_stat}{tbl_likert}(
+  x,
+  statistic = "{mean}",
+  digits = NULL,
+  col_label = NULL,
+  footnote = FALSE,
+  last = TRUE,
+  score_values = NULL,
+  stat_col_name = NULL,
+  ...
 )
 }
 \arguments{
@@ -22,9 +48,9 @@ variable's label is not specified here, the label attribute
 (\code{attr(data$age, "label")}) is used.  If
 attribute label is \code{NULL}, the variable name will be used.}
 
-\item{statistic}{Formula or list of formulas specifying types of categorical
-statistics to display, see \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summary()}} help page,
-section \emph{statistic argument}}
+\item{statistic}{String or formula indicating the statistic to be reported.
+Default is the mean score. Other possible continuous statistics are described
+in \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summary()}} help page, section \emph{statistic argument}.}
 
 \item{digits}{Formula or list of formulas indicating how to display the
 computed statistics, see \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summary()}} help page}
@@ -33,10 +59,35 @@ computed statistics, see \code{\link[gtsummary:tbl_summary]{gtsummary::tbl_summa
 
 \item{sort}{Sort table based on mean scores? Must be one of
 \code{c("default", "ascending", "descending")}}
+
+\item{x}{Object with class \code{tbl_likert} from the \code{\link[=tbl_likert]{tbl_likert()}} function}
+
+\item{col_label}{String indicating the column label. Default is generated
+from \code{statistic}.}
+
+\item{footnote}{Logical argument indicating whether to print a footnote
+clarifying the statistics presented. Default is \code{FALSE}}
+
+\item{last}{Logical indicator to include the new column last in table.
+Default is \code{TRUE}}
+
+\item{...}{not used}
+
+\item{score_values}{Vector indicating the numeric value of each factor level.
+Default is \code{1:n} where \code{n} indicates the number of levels.}
+
+\item{stat_col_name}{Optional string indicating the name of the new column
+added to \code{x$table_body}}
 }
 \description{
 \lifecycle{experimental}
-Creates a summary of Likert scales following the gtsummary structure
+
+\code{tbl_likert()} creates a summary of Likert scales following the gtsummary structure.
+
+\code{add_n()} adds a column to the table with the total number of observations.
+
+\code{add_continuous_stat()} converts Likert scales into a numeric score and computes
+continuous statistics based on this score.
 }
 \section{Example Output}{
 
@@ -48,7 +99,7 @@ Creates a summary of Likert scales following the gtsummary structure
 \examples{
 library(dplyr)
 set.seed(1123)
-likert_lvls <- c("never",	"sometimes",	"often",	"always")
+likert_lvls <- c("Never", "Sometimes",	"Often", "Always")
 
 df <-
   tibble::tibble(
@@ -62,22 +113,26 @@ tbl_likert_ex1 <-
   add_n() \%>\%
   add_continuous_stat(statistic = "{mean}") \%>\%
   add_continuous_stat(statistic = "{sd}")
+
 }
 \seealso{
 Other gtsummary-related functions: 
-\code{\link{add_continuous_stat}()},
 \code{\link{add_inline_forest_plot}()},
-\code{\link{add_n.tbl_likert}()},
 \code{\link{add_sparkline}()},
 \code{\link{as_ggplot}()},
 \code{\link{bold_italicize_group_labels}()},
 \code{\link{logistic_reg_adj_diff}()},
 \code{\link{style_tbl_compact}()},
 \code{\link{theme_gtsummary_msk}()}
-
-Other tbl_likert tools: 
-\code{\link{add_continuous_stat}()},
-\code{\link{add_n.tbl_likert}()}
 }
 \concept{gtsummary-related functions}
 \concept{tbl_likert tools}
+\concept{tbl_likert tools
+
+Add column with N to a Likert table}
+\concept{tbl_likert tools
+
+Add continuous statistics to a Likert table
+
+This function converts Likert-scales into a numeric score and computes
+continuous statistics based on this score.}
