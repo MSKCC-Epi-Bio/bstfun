@@ -105,7 +105,7 @@ attr(project_template_results_folder, "label") <- "Biostistics Project Template"
 
 # hot template -----------------------------------------------------------------
 hot_project_template <-
-  project_template_default[c("readme", "gitignore", "data_date", "doc_template", "rproj", "rprofile")] |>
+  project_template_default[c("readme", "gitignore", "data_date", "doc_template", "rproj", "rprofile")] %>%
   purrr::list_modify(
     setup = rlang::expr(list(
       template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.Rmd", package = 'bstfun'),
@@ -155,7 +155,7 @@ attr(hot_project_template, "label") <- "H.O.T. Project Template"
 
 # whitingk template ------------------------------------------------------------
 whitingk_project_template <-
-  project_template_default[c("readme", "gitignore", "rproj", "rprofile")] |>
+  project_template_default[c("readme", "gitignore", "rproj", "rprofile")] %>%
   purrr::list_modify(
     setup = rlang::expr(list(
       template_filename = fs::path_package("project_templates/whitingk_template_files/01_clean-data.R", package = 'bstfun'),
@@ -176,7 +176,7 @@ attr(whitingk_project_template, "label") <- "Karissa's Project Template"
 
 # leej22 template ------------------------------------------------------------
 leej22_project_template <-
-  project_template_default[c("readme", "gitignore", "data_date", "rproj", "rprofile")] |>
+  project_template_default[c("readme", "gitignore", "data_date", "rproj", "rprofile")] %>%
   purrr::list_modify(
     setup = rlang::expr(list(
       template_filename = fs::path_package("project_templates/leej22_template_files/01_data_setup.Rmd", package = 'bstfun'),

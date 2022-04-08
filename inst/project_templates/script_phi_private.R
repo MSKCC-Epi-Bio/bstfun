@@ -1,4 +1,4 @@
-# if repo is hosted at https://github.mskcc.org/Analytic-Projects do the following:
+# if repo is hosted in an org allowed tohost PHI do the following:
 # 1. Set repo to private
 # 2. Add phi topic hashtag
 
@@ -23,7 +23,7 @@ tryCatch(
   },
   error = function(e) {
     message(paste("Unable to set repository to 'private' and add 'phi' tag.",
-                  "You must set these manually NOW."))
+                  "You must set these manually NOW if the project lives in a GH Org that allows PHI."))
   }
 )
 
