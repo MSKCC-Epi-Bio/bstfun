@@ -4,7 +4,7 @@
 
 tryCatch(
   {
-    if (fs::dir_exists("C:/Users/SjobergD/GitHub/bstfun/.git")) {
+    if (fs::dir_exists(fs::path(path, ".git"))) {
       # get url of origin
       remote_origin_url <-
         gert::git_remote_list(repo = path) %>%

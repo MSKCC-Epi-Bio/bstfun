@@ -76,7 +76,7 @@ project_template_default <-
   )
 attr(project_template_default, "script_path") <-
   expression(fs::path_package("project_templates/script_phi_private.R", package = 'bstfun'))
-attr(project_template_default, "label") <- "Default Biostistics Project Template"
+attr(project_template_default, "label") <- "Default Biostatistics Project Template"
 
 ## scripts+results in separate folders -----------------------------------------
 project_template_results_folder <- project_template_default
