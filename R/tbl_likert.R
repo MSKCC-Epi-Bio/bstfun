@@ -55,7 +55,7 @@
 #' @examples
 #' library(dplyr)
 #' set.seed(1123)
-#' likert_lvls <- c("Never",	"Sometimes",	"Often",	"Always")
+#' likert_lvls <- c("Never", "Sometimes",	"Often", "Always")
 #'
 #' df <-
 #'   tibble::tibble(
