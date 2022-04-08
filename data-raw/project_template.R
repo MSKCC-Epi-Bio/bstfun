@@ -24,6 +24,11 @@ project_template_base <-
       filename = glue::glue("_rstudio_project.Rproj"),
       copy = TRUE
     )),
+    derived_vars = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/derived_variables.xlsx", package = 'bstfun'),
+      filename = glue::glue("scripts/derived_variables.xlsx"),
+      copy = TRUE
+    )),
     # only add Rprofile if renv was used
     rprofile =
       rlang::expr(switch(
@@ -69,6 +74,8 @@ project_template_default <-
       ))
     )
   )
+attr(project_template_default, "script_path") <-
+  expression(fs::path_package("project_templates/script_phi_private.R", package = 'bstfun'))
 attr(project_template_default, "label") <- "Default Biostistics Project Template"
 
 ## scripts+results in separate folders -----------------------------------------
@@ -143,7 +150,7 @@ hot_project_template <-
   )
 
 attr(hot_project_template, "script_path") <-
-  rlang::expr(fs::path_package("project_templates/hot_template_files/hot_script.R", package = 'bstfun'))
+  expression(fs::path_package("project_templates/script_phi_private.R", package = 'bstfun'))
 attr(hot_project_template, "label") <- "H.O.T. Project Template"
 
 # whitingk template ------------------------------------------------------------

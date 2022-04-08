@@ -36,15 +36,15 @@ use_bst_file <- function(name = NULL,
 #' @rdname use_file
 #' @export
 use_bst_gitignore <- function(filename = NULL) {
-  use_bst_file(name = "gitignore", filename = filename,
-               template = bstfun::project_templates[["default"]])
+  starter::use_project_file(name = "gitignore", filename = filename,
+                            template = bstfun::project_templates[["default"]])
 }
 
 #' @rdname use_file
 #' @export
 use_bst_readme <- function(filename = NULL) {
-  use_bst_file(name = "readme", filename = filename,
-               template = bstfun::project_templates[["default"]])
+  starter::use_project_file(name = "readme", filename = filename,
+                            template = bstfun::project_templates[["default"]])
 }
 
 #' @rdname use_file

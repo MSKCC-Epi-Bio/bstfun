@@ -34,6 +34,7 @@ create_bst_project <- function(path,
   starter::create_project(
     path = path,
     path_data = path_data,
+    template = template,
     ...
   )
 }
@@ -57,26 +58,19 @@ create_hot_project <- function(path, path_data = NULL, ...) {
 
   # creating list of templates available
   templates <-
-    list("1. Default Template" = bstfun::project_templates[["default"]],
-         "2. Scripts and Results in Separate Folders" =
+    list("Default Template" = bstfun::project_templates[["default"]],
+         "Scripts and Results in Separate Folders" =
            bstfun::project_templates[["results_folder"]])
   # adding user-defined template if it exists
   if (!is.null(bstfun::project_templates[[tolower(Sys.info()[["user"]])]])) {
     templates <-
       c(templates,
         list(bstfun::project_templates[[tolower(Sys.info()[["user"]])]]) %>%
-          rlang::set_names(stringr::str_glue("3. Personal template: {tolower(Sys.info()[['user']])}")))
+          rlang::set_names(stringr::str_glue("Personal template: {tolower(Sys.info()[['user']])}")))
   }
 
   # asking users which template to use
-  options <- seq_len(length(templates))
-  question <-
-    c(stringr::str_glue("Select {glue::glue_collapse(, sep = ', ', last = ' or ')}"),
-      names(templates))
-  answer <- readline(question)
-  if (!answer %in% options) {
-    stop("Invalid template selection.", call. = FALSE)
-  }
+  answer <- utils::menu(names(templates), title = "Select a template:")
 
   # return selected template
   return(templates[[answer]])

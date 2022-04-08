@@ -53,11 +53,8 @@ df_raw_data <-
 
 ```{r save}
 # applying variable labels, and dropping raw variables
-df_main <- 
-  df_main %>%
-  labelled::set_variable_labels(
-    mrn = "Patient MRN"
-  )
+df_main <- df_main %>%
+  set_derived_variables(path = here::here("scripts/derived_variables.xlsx"))
 
 # overview of master analytic dataset
 skimr::skim(df_main)
