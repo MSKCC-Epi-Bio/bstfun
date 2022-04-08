@@ -1,7 +1,14 @@
 #' Likert Summary Table
 #'
+#' @description
 #' \lifecycle{experimental}
-#' Creates a summary of Likert scales following the gtsummary structure
+#'
+#' `tbl_likert()` creates a summary of Likert scales following the gtsummary structure.
+#'
+#' `add_n()` adds a column to the table with the total number of observations.
+#'
+#' `add_continuous_stat()` converts Likert scales into a numeric score and computes
+#' continuous statistics based on this score.
 #'
 #' @inheritParams gtsummary::tbl_summary
 #' @param statistic Formula or list of formulas specifying types of categorical
@@ -13,11 +20,42 @@
 #' `c("default", "ascending", "descending")`
 #' @family gtsummary-related functions
 #' @family tbl_likert tools
-#' @export
+#'
+#' Add column with N to a Likert table
+#'
+#' @inheritParams gtsummary::add_n.tbl_summary
+#' @param x Object with class `tbl_likert` from the [tbl_likert()] function
+#' @family tbl_likert tools
+#'
+#' Add continuous statistics to a Likert table
+#'
+#' This function converts Likert-scales into a numeric score and computes
+#' continuous statistics based on this score.
+#' @param x Object with class `tbl_likert` from the [tbl_likert()] function
+#' @param statistic String or formula indicating the statistic to be reported.
+#' Default is the mean score. Other possible continuous statistics are described
+#' in [gtsummary::tbl_summary()] help page, section *statistic argument*.
+#' @param digits Formula or list of formulas indicating how to display the
+#' computed statistics, see [gtsummary::tbl_summary()] help page
+#' @param col_label String indicating the column label. Default is generated
+#' from `statistic`.
+#' @param footnote Logical argument indicating whether to print a footnote
+#' clarifying the statistics presented. Default is `FALSE`
+#' @param last Logical indicator to include the new column last in table.
+#' Default is `TRUE`
+#' @param score_values Vector indicating the numeric value of each factor level.
+#' Default is `1:n` where `n` indicates the number of levels.
+#' @param stat_col_name Optional string indicating the name of the new column
+#' added to `x$table_body`
+#' @param ... not used
+#' @family tbl_likert tools
+#'
+#' @name tbl_likert
+#'
 #' @examples
 #' library(dplyr)
 #' set.seed(1123)
-#' likert_lvls <- c("never",	"sometimes",	"often",	"always")
+#' likert_lvls <- c("Never",	"Sometimes",	"Often",	"Always")
 #'
 #' df <-
 #'   tibble::tibble(
@@ -31,11 +69,15 @@
 #'   add_n() %>%
 #'   add_continuous_stat(statistic = "{mean}") %>%
 #'   add_continuous_stat(statistic = "{sd}")
-#' @export
+#'
 #' @section Example Output:
 #' \if{html}{Example 1}
 #'
 #' \if{html}{\figure{tbl_likert_ex1.png}{options: width=50\%}}
+NULL
+
+#' @rdname tbl_likert
+#' @export
 
 tbl_likert <- function(data,
                        label = NULL, statistic = NULL, digits = NULL,
@@ -148,13 +190,9 @@ tbl_likert <- function(data,
   result
 }
 
-#' Add column with N to a Likert table
-#'
-#' @inheritParams gtsummary::add_n.tbl_summary
-#' @param x Object with class `tbl_likert` from the [tbl_likert()] function
+#' @rdname tbl_likert
 #' @export
-#' @family gtsummary-related functions
-#' @family tbl_likert tools
+
 add_n.tbl_likert <- function(x,
                              statistic = "{n}",
                              col_label = "**N**",
@@ -227,41 +265,15 @@ add_n.tbl_likert <- function(x,
   x
 }
 
-#' Add continuous statistics to a Likert table
-#'
-#' This function converts Likert-scales into a numeric score and computes
-#' continuous statistics based on this score.
-#' @param x Object with class `tbl_likert` from the [tbl_likert()] function
-#' @param statistic String or formula indicating the statistic to be reported.
-#' Default is the mean score. Other possible continuous statistics are described
-#' in [gtsummary::tbl_summary()] help page, section *statistic argument*.
-#' @param digits Formula or list of formulas indicating how to display the
-#' computed statistics, see [gtsummary::tbl_summary()] help page
-#' @param col_label String indicating the column label. Default is generated
-#' from `statistic`.
-#' @param footnote Logical argument indicating whether to print a footnote
-#' clarifying the statistics presented. Default is `FALSE`
-#' @param last Logical indicator to include the new column last in table.
-#' Default is `TRUE`
-#' @param score_values Vector indicating the numeric value of each factor level.
-#' Default is `1:n` where `n` indicates the number of levels.
-#' @param stat_col_name Optional string indicating the name of the new column
-#' added to `x$table_body`
-#' @param ... not used
-#' @family gtsummary-related functions
-#' @family tbl_likert tools
-#' @name add_continuous_stat
-NULL
-
+#' @rdname tbl_likert
 #' @export
-#' @rdname add_continuous_stat
+
 add_continuous_stat <- function(x, ...) {
   UseMethod("add_continuous_stat")
 }
 
-
+#' @rdname tbl_likert
 #' @export
-#' @rdname add_continuous_stat
 add_continuous_stat.tbl_likert <- function(x,
                                            statistic = "{mean}",
                                            digits = NULL,
