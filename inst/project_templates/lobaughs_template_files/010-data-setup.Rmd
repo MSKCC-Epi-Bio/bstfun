@@ -1,0 +1,88 @@
+---
+title: "Initial Setup"
+date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+```
+
+# Raw Data Import
+
+```{r import}
+library(biostatR)
+library(tidyverse)
+library(here)
+library(styler)
+library(labelled)
+library(xlsx)
+
+{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("
+# Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
+bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')
+"), ""))}}
+# example code for importing excel file
+df_raw_data <-
+  readxl::read_excel(
+    path = here_data("Raw Data from PI.xlsx")
+  ) %>%
+  janitor::clean_names(case = "all_caps") %>% # uppercase col names
+  mutate(across(where(lubridate::is.POSIXt), lubridate::as_date)) %>% # use lubridates
+  mutate_if(is.logical, as.numeric)
+```
+
+# Create Master Analytic Data Set
+
+```{r cleaning}
+
+```
+
+
+# Check Variables
+
+```{r checking}
+
+```
+
+
+# Label analytic dataset
+
+```{r}
+# Import data dictionary
+df_dict <-
+  readxl::read_excel(
+    path = here::here("secure_data", "_data-dictionary.xlsx")
+  ) 
+
+# Only include variables in the datasets that I want to label
+vars_tolabel <- colnames(df_drvd)
+df_dict_tolabel <- df_dict %>% 
+  filter(variable %in% vars_tolabel)
+
+# Create label lists
+label_list <- as.list(df_dict_tolabel$label)
+names(label_list) <- as.list(df_dict_tolabel$variable)
+
+# Apply labels to analytic datasets
+labelled::var_label(df_drvd) <- label_list
+```
+
+# Save Analytic Data
+
+```{r save}
+# overview of master analytic dataset
+skimr::skim(df_master)
+
+# saving master analytic data set
+saveRDS(
+  object = df_drvd,
+  file = here::here(path_data, "df_master.Rds")
+)
+```

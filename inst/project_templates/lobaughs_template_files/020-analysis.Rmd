@@ -1,0 +1,59 @@
+---
+title: "Analysis"
+date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+```
+
+# Analytic Data Import
+
+```{r import}
+library(biostatR)
+library(tidyverse)
+
+# setting MSK ggplot theme and color palette
+theme_set(mskRvis::theme_biostat())
+mskRvis::set_msk_palette()
+{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("
+# Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
+bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')
+"), ""))}}
+# importing master analytic data set
+df_main <- readRDS(file = here_data("df_main.Rds"))
+```
+
+# gt theme
+```{r gt theme, include=FALSE}
+my_theme <- list(
+  "pkgwide-fn:pvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2),
+  "pkgwide-fn:prependpvalue_fun" = function(x) gtsummary::style_pvalue(x, digits = 2, prepend_p = TRUE),
+  "tbl_summary-fn:percent_fun" = function(x) paste0(round(x*100)),
+  "tbl_summary-str:categorical_stat" = "{n} ({p}%)",
+  "tbl_summary-str:continuous_stat" = "{median} [{min} \U2013 {max}]",
+  "tbl_summary-arg:missing_text" = "Missing"
+)
+set_gtsummary_theme(my_theme)
+```
+
+# Analysis
+
+```{r analysis1}
+
+```
+
+# Save results
+```{r save}
+# list result objects here. save only those needed for the final report
+save(object,
+     file = here::here(path_data,"020-analysis.RData"))
+```
+

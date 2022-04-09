@@ -1,0 +1,101 @@
+---
+title: "Report 1"
+date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+knit: (function(inputFile, encoding) { rmarkdown::render(inputFile, encoding = encoding, output_file = paste0(substr(inputFile,1,nchar(inputFile)-4),"_",gsub("-", "", substring(Sys.Date(), 3)),'.html')) })
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+      collapsed: false
+---
+
+```{r setup, include=FALSE}
+# set chunk defaults
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+
+knitr::opts_chunk$set(fig.width=8, fig.height=10) 
+```
+
+```{r import, include=FALSE}
+library(biostatR)
+library(tidyverse)
+library(captioner)
+
+# setting MSK ggplot theme and color palette
+theme_set(mskRvis::theme_biostat())
+mskRvis::set_msk_palette()
+{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("
+# Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
+bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')
+"), ""))}}
+
+# importing master analytic data set
+df_master <-
+  readRDS(
+    file = here::here(path_data, "df_master.Rds")
+  )
+
+# Import analysis result objects here
+load(here::here(path_data,"020-analysis.RData"))
+```
+
+```{r inline_text, include=FALSE, echo=FALSE}
+# define complex inline-reporting objects here
+```
+
+
+```{r captions, include = FALSE}
+## Setting up Table and Fig numberings ------------------
+tbl_cap = captioner(prefix = "Table")
+fig_cap = captioner(prefix = "Figure")
+
+## table captions --------------
+  tbl_cap("tab_table1", "Patient Characteristics")
+  
+## figure captions ------------------------------------
+  fig_cap("fig_ROCgrade", "Grade ROC")
+  
+## To refer to table/fig in the text ------------------------------------
+  # Function to reference table in text
+  f.ref <- function(x) {
+    stringr::str_extract(tbl_cap(x), "[^:]*")
+  }
+  # example: **`r table_nums("tab_table1", display = "cite")`**
+
+  # Function to reference figure in text
+  f.ref.fig <- function(x) {
+    stringr::str_extract(fig_cap(x), "[^:]*")
+  }
+  # example: **`r f.ref("fig_ROCgrade")`**
+```
+
+*Output generated using the following dataset(s) received `r readr::read_lines(here::here("data_date.txt"), n_max = 1)`: ''*
+ 
+# Methods
+
+We analyzed `r n_distinct(df_master$EPISODE_ID)` prostate RO episodes from the [RO Episode file (2015-2017)](https://innovation.cms.gov/Files/x/rad-onc-data-dictionary.pdf) dataset.
+
+The analysis objectives included: TO BE FILLED IN 
+
+* Bullet 1 
+* Bullet 2 
+    + Bullet 2a 
+    + Bullet 2b 
+    
+A significance level of 0.05 was used throughout.
+
+All analyses were conducted using `r cite_r(pkgs = c("tidyverse", "gtsummary"), add_citation = TRUE)`.
+
+# Results
+
+## **`r tbl_cap('tab_table1')`**
+```{r, table1}
+```
+
+<br>
+<br>
+
+# References
+
