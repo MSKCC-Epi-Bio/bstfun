@@ -108,32 +108,32 @@ project_template_sas <-
   project_template_default[c("gitignore", "data_date", "rproj", "rprofile","setup","analysis","report","doc_template","references")] |>
   purrr::list_modify(
     readme = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/SASgeneral_template_files/readme.md",
+      template_filename = fs::path_package("project_templates/SASgeneral_template_files/readme.md", package = 'bstfun'),
       filename = "README.md",
       copy = FALSE
     )),
     setupSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/SASgeneral_template_files/010-data-setup.sas",
+      template_filename = fs::path_package("project_templates/SASgeneral_template_files/010-data-setup.sas", package = 'bstfun'),
       filename = glue::glue("010-data-setup.sas"),
       copy = FALSE
     )),
     formatsSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/SASgeneral_template_files/_formats.sas",
+      template_filename = fs::path_package("project_templates/SASgeneral_template_files/_formats.sas", package = 'bstfun'),
       filename = glue::glue("_formats.sas"),
       copy = FALSE
     )),
     analysisSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/SASgeneral_template_files/020-analysis.sas",
+      template_filename = fs::path_package("project_templates/SASgeneral_template_files/020-analysis.sas", package = 'bstfun'),
       filename = glue::glue("020-analysis.sas"),
       copy = FALSE
     )),
     reportSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/SASgeneral_template_files/030-report1.sas",
+      template_filename = fs::path_package("project_templates/SASgeneral_template_files/030-report1.sas", package = 'bstfun'),
       filename = glue::glue("030-report1.sas"),
       copy = FALSE
     )),
     prepSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/SASgeneral_template_files/_prep.sas",
+      template_filename = fs::path_package("project_templates/SASgeneral_template_files/_prep.sas", package = 'bstfun'),
       filename = glue::glue("_prep.sas"),
       copy = FALSE
     ))
@@ -241,52 +241,52 @@ attr(leej22_project_template, "script_path") <-
 attr(leej22_project_template, "label") <- "Jasme Lee Project Template"
 
 
-# lobaughs template
+# lobaughs template ------------------------------------------------------------
 lobaughs_project_template <-
   project_template_default[c("gitignore", "data_date", "rproj", "rprofile")] |>
   purrr::list_modify(
     readme = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/readme.md",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/readme.md", package = 'bstfun'),
       filename = "README.md",
       copy = FALSE
     )),
     setupSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/010-data-setup.sas",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/010-data-setup.sas", package = 'bstfun'),
       filename = glue::glue("010-data-setup.sas"),
       copy = FALSE
     )),
     formatsSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/_formats.sas",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/_formats.sas", package = 'bstfun'),
       filename = glue::glue("_formats.sas"),
       copy = FALSE
     )),
     analysisSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/020-analysis.sas",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/020-analysis.sas", package = 'bstfun'),
       filename = glue::glue("020-analysis.sas"),
       copy = FALSE
     )),
     reportSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/030-report1.sas",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/030-report1.sas", package = 'bstfun'),
       filename = glue::glue("030-report1.sas"),
       copy = FALSE
     )),
     prepSAS = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/_prep.sas",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/_prep.sas", package = 'bstfun'),
       filename = glue::glue("_prep.sas"),
       copy = FALSE
     )),
     setup = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/010-data-setup.Rmd",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/010-data-setup.Rmd", package = 'bstfun'),
       filename = glue::glue("010-data-setup.Rmd"),
       copy = FALSE
     )),
     analysis = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/020-analysis.Rmd",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/020-analysis.Rmd", package = 'bstfun'),
       filename = glue::glue("020-analysis.Rmd"),
       copy = FALSE
     )),
     report = rlang::expr(list(
-      template_filename = "C:/Users/lobaughs/GitHub/_repository-shell-folder/repository-shell/SAS/lobaughs_template_files/030-report1.Rmd",
+      template_filename = fs::path_package("project_templates/lobaughs_template_files/030-report1.Rmd", package = 'bstfun'),
       filename = glue::glue("030-report1.Rmd"),
       copy = FALSE
     )),
