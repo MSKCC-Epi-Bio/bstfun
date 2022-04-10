@@ -6,9 +6,9 @@
 \alias{create_hot_project}
 \title{Start a New Biostatistics project}
 \usage{
-create_bst_project(path, path_data = NULL, ...)
+create_bst_project(path, path_data = NULL, git = NA, ...)
 
-create_hot_project(path, path_data = NULL, ...)
+create_hot_project(path, path_data = NULL, git = TRUE, ...)
 }
 \arguments{
 \item{path}{A path. If it exists, it is used. If it does not exist, it is
@@ -17,11 +17,12 @@ created.}
 \item{path_data}{A path. The directory where the secure data exist. Default is
 \code{NULL}.  When supplied, a symbolic link to data folder will be created.}
 
+\item{git}{Logical indicating whether to create Git repository.  Default is \code{TRUE}
+When \code{NA}, user will be prompted whether to initialise Git repo.}
+
 \item{...}{
   Arguments passed on to \code{\link[starter:create_project]{starter::create_project}}
   \describe{
-    \item{\code{git}}{Logical indicating whether to create Git repository.  Default is \code{TRUE}
-When \code{NA}, user will be prompted whether to initialise Git repo.}
     \item{\code{renv}}{Logical indicating whether to add renv to a project.
 Default is \code{TRUE}. When \code{NA} user is asked interactively for preference.}
     \item{\code{symlink}}{Logical indicating whether to place a symbolic link
