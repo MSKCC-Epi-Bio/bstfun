@@ -6,7 +6,6 @@
 #' @importFrom stringr fixed str_replace str_detect
 #' @importFrom rlang := .data .env enquo enexpr set_names
 #' @importFrom glue glue
-#' @importFrom usethis ui_oops ui_code_block ui_value ui_code
 #' @keywords internal
 "_PACKAGE"
 

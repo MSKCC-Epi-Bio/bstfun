@@ -37,7 +37,7 @@ followup_time <- function(Surv, data = NULL,
     tryCatch(
       rlang::eval_tidy(rlang::enquo(Surv), data = data),
       error = function(e) {
-        usethis::ui_oops("There was an error evaluating `Surv=`")
+        cli::cli_alert_danger("There was an error evaluating {.code Surv=}")
         e
       }
     )
