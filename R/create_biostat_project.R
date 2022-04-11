@@ -5,7 +5,7 @@
 #' This is a thin wrapper for `starter::create_project()`.
 #'
 #' @inheritParams starter::create_project
-#' @inheritDotParams starter::create_project -template
+#' @inheritDotParams starter::create_project -template -git
 #'
 #' @name create_project
 #' @examplesIf FALSE
@@ -26,6 +26,7 @@ NULL
 #' @rdname create_project
 create_bst_project <- function(path,
                                path_data = NULL,
+                               git = NA,
                                ...) {
   # if template is NULL, use default template ----------------------------------
   template <- .select_template()
@@ -35,17 +36,19 @@ create_bst_project <- function(path,
     path = path,
     path_data = path_data,
     template = template,
+    git = git,
     ...
   )
 }
 
 #' @export
 #' @rdname create_project
-create_hot_project <- function(path, path_data = NULL, ...) {
+create_hot_project <- function(path, path_data = NULL, git = TRUE, ...) {
   starter::create_project(
     path = path,
     path_data = path_data,
     template = bstfun::project_templates[["hot"]],
+    git = git,
     ...
   )
 }

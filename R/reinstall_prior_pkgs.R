@@ -16,6 +16,7 @@
 #' @export
 
 reinstall_prior_pkgs <- function(path = NULL) {
+  assert_package("renv", "reinstall_prior_pkgs()")
   # these packages are not re-installed
   base_pkgs <- c(
     "base", "compiler", "datasets", "graphics", "grDevices", "grid",

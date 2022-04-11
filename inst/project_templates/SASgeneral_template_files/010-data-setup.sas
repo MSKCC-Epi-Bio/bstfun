@@ -1,23 +1,23 @@
 
 *****************************************************************************************************************
-                                                                                                     
+
 DESCRIPTION: Import raw data and create analysis dataset
 
 TOC (Use Ctr+F to navigate through code):
 -Import
 -Explore raw data
 -Create analysis dataset
--Check analysis dataset 
+-Check analysis dataset
 -Save analysis dataset
 
 ---------------------------------------------------------------------------------------------------------------
-                                      
-LANGUAGE: SAS, VERSION 9.4                                  
-                                                               
-NAME:                              
-DATE: 
-{{Sys.Date()}}: Created                                                                                         
-                                                                   
+
+LANGUAGE: SAS, VERSION 9.4
+
+NAME:
+DATE:
+{{Sys.Date()}}: Created
+
 ****************************************************************************************************************;
 
 * various settings;
@@ -65,7 +65,7 @@ proc contents data = data.raw; run;
 
 
 /**************************************************************************************************************
--Check analysis dataset 
+-Check analysis dataset
 **************************************************************************************************************/
 
 

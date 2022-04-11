@@ -1,16 +1,16 @@
 
 *****************************************************************************************************************
-                                                                                                     
-DESCRIPTION: Create project specific SAS formats catalog 
+
+DESCRIPTION: Create project specific SAS formats catalog
 
 ---------------------------------------------------------------------------------------------------------------
-                                   
-LANGUAGE: SAS, VERSION 9.4                                  
-                                                               
-NAME:                               
-DATE: 
-{{Sys.Date()}}: Created                                                                                        
-                                                                   
+
+LANGUAGE: SAS, VERSION 9.4
+
+NAME:
+DATE:
+{{Sys.Date()}}: Created
+
 ****************************************************************************************************************;
 
 * formats library;
@@ -28,8 +28,8 @@ proc format library = fmt.formats;
 	;
 
 	* example yes/no format for a numeric 0/1 var;
-	value yn 0 = "No     " 
-			 1 = "Yes" 
+	value yn 0 = "No     "
+			 1 = "Yes"
              . = "Missing"
 	;
 
@@ -40,7 +40,7 @@ proc format library = fmt.formats;
 	;
 
 	* example rounding format for presenting p-values to apply to a numeric p-value var;
-	value pval 
+	value pval
 		low-<0.001 = "<0.001"
 		0.001-<0.01 = [5.3]
 	    0.01-<0.04 = [5.2]

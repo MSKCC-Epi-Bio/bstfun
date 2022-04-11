@@ -1,19 +1,19 @@
 
 *****************************************************************************************************************
-                                                                                                     
+
 DESCRIPTION: Generate Report 1 (export to RTF)
 
 TOC (Use Ctr+F to navigate through code):
 -Report
 
 ---------------------------------------------------------------------------------------------------------------
-                                      
-LANGUAGE: SAS, VERSION 9.4                                  
-                                                               
-NAME: Stephanie Lobaugh                            
-DATE: 
-{{Sys.Date()}}: Created                                                                                         
-                                                                   
+
+LANGUAGE: SAS, VERSION 9.4
+
+NAME: Stephanie Lobaugh
+DATE:
+{{Sys.Date()}}: Created
+
 ****************************************************************************************************************;
 
 * various settings;
@@ -39,24 +39,24 @@ This code can be run as is to see what the RTF file looks like
 * Text styles (e.g. &style16) are defined in "{{path}}\_prep.sas";
 
 ods rtf file = "{{path}}\030_report1_&today_yymmdd..rtf"
-	style = styles.msk 
-	bodytitle 
+	style = styles.msk
+	bodytitle
 	startpage = no
-    wordstyle = 
+    wordstyle =
 "\s1 Heading 1
  \s2 Heading 2
  \s3 Heading 3";
 
 proc odstext;
-	p "{Title}" 
+	p "{Title}"
     / style = [&style16];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{Stephanie Lobaugh, MS \par &&today.}" 
+	p "{Stephanie Lobaugh, MS \par &&today.}"
     / style = [&style11 fontstyle = italic];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{Output generated using the following dataset received &date.: [insert raw data file name]}" 
+	p "{Output generated using the following dataset received &date.: [insert raw data file name]}"
     / style = [&style11 fontstyle = italic];
 	p "{}" / style = [fontsize = 11pt];
 run;
@@ -64,25 +64,25 @@ run;
 *** Overview;
 proc odstext;
 	p "{\pard\s1\b\ul Overview \par}" / style = {&style16};
-	p "{Study description}" 
+	p "{Study description}"
     / style = [&style11];
-	p "{Methods}" 
+	p "{Methods}"
     / style = [&style11];
-	p "{Results}" 
+	p "{Results}"
     / style = [&style11];
-		p "{Heading2 A}" 
+		p "{Heading2 A}"
 	    / style = [&style11 leftmargin = 0.35in];
-			p "{Heading3 A}" 
+			p "{Heading3 A}"
 		    / style = [&style11 leftmargin = 0.7in];
-			p "{Heading3 B}" 
+			p "{Heading3 B}"
 		    / style = [&style11 leftmargin = 0.7in];
-		p "{Heading2 B}" 
+		p "{Heading2 B}"
 	    / style = [&style11 leftmargin = 0.35in];
 	p "{}" / style = [fontsize = 11pt];
 
 	p "{To view the navigation pane for this document, please do the following in Word: Under the 'View' tab, check
- the 'Navigation Pane' box in the 'Show' section.}" 
-	/ style = [fontsize = 11pt fontweight = bold];	
+ the 'Navigation Pane' box in the 'Show' section.}"
+	/ style = [fontsize = 11pt fontweight = bold];
 	p "{}" / style = [fontsize = 11pt];
 run;
 
@@ -90,12 +90,13 @@ run;
 proc odstext;
 	p "{\pard\s1\b\ul Study description \par}" / style = {&style16};
 
-	p "{In this report...}" 
-	/ style = [&style11];	
+
+	p "{In this report...}"
+	/ style = [&style11];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{The analysis objectives included: (1) , (2) , and (3).}" 
-	/ style = [&style11];	
+	p "{The analysis objectives included: (1) , (2) , and (3).}"
+	/ style = [&style11];
 	p "{}" / style = [fontsize = 11pt];
 run;
 
@@ -103,30 +104,30 @@ run;
 proc odstext;
 	p "{\pard\s1\b\ul Methods \par}" / style = {&style16};
 
-	p "{Analysis objective (1)}" 
+	p "{Analysis objective (1)}"
 	/ style = [&style11 fontweight = bold];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{INSERT METHODS FOR ANALYSIS OBJECTIVE 1.}" 
-	/ style = [&style11 leftmargin = 0.35in];	
+	p "{INSERT METHODS FOR ANALYSIS OBJECTIVE 1.}"
+	/ style = [&style11 leftmargin = 0.35in];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{Analysis objective (2)}" 
+	p "{Analysis objective (2)}"
 	/ style = [&style11 fontweight = bold];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{INSERT METHODS FOR ANALYSIS OBJECTIVE 2.}" 
-	/ style = [&style11 leftmargin = 0.35in];	
+	p "{INSERT METHODS FOR ANALYSIS OBJECTIVE 2.}"
+	/ style = [&style11 leftmargin = 0.35in];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{Analysis objective (3)}" 
+	p "{Analysis objective (3)}"
 	/ style = [&style11 fontweight = bold];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{METHODS FOR ANALYSIS OBJECTIVE 3.}" 
-	/ style = [&style11 leftmargin = 0.35in];	
+	p "{METHODS FOR ANALYSIS OBJECTIVE 3.}"
+	/ style = [&style11 leftmargin = 0.35in];
 	p "{}" / style = [fontsize = 11pt];
-	
+
 	p "{All statistical computations were performed, and all output was generated using SAS Software Version 9.4
  (The SAS Institute, Cary, NC).}"
     / style = [&style11];

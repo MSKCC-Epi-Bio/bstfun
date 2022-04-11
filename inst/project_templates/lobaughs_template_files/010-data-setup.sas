@@ -1,24 +1,24 @@
 
 *****************************************************************************************************************
-                                                                                                     
+
 DESCRIPTION: Import raw data and create analysis dataset
 
 TOC (Use Ctr+F to navigate through code):
 -Import
 -Explore raw data
 -Create analysis dataset
--Check analysis dataset 
+-Check analysis dataset
 -Save analysis dataset
 -Export data for use in R
 
 ---------------------------------------------------------------------------------------------------------------
-                                      
-LANGUAGE: SAS, VERSION 9.4                                  
-                                                               
-NAME: Stephanie Lobaugh                              
-DATE: 
-{{Sys.Date()}}: Created                                                                                         
-                                                                   
+
+LANGUAGE: SAS, VERSION 9.4
+
+NAME: Stephanie Lobaugh
+DATE:
+{{Sys.Date()}}: Created
+
 ****************************************************************************************************************;
 
 * various settings;
@@ -54,7 +54,7 @@ proc import datafile = "&path_data.\&date.\insert-file-name.xlsx"
 run;
 
 * Import data dictionary to apply labels and formats later;
-proc import 
+proc import
 	datafile = "&path_data.\_data-dictionary.xlsx"
 	dbms = xlsx
 	out = data.dictionary
@@ -82,7 +82,7 @@ proc contents data = data.raw; run;
 
 
 /**************************************************************************************************************
--Check analysis dataset 
+-Check analysis dataset
 **************************************************************************************************************/
 
 
@@ -126,7 +126,7 @@ proc sql;
 	into :rename_old separated by " "
 	from data.dictionary where type_1cont_2cat = 2 and not missing(fmt) and fmt ne "$missing." and
 		 find(lowcase(variable),"delta") = 0;
- 
+
 	select strip(variable) || "=put(" || strip(variable) || "_old," || strip(fmt) || ")" || %str(";")
 	into :label_values separated by " "
 	from data.dictionary where type_1cont_2cat = 2 and not missing(fmt) and fmt ne "$missing." and

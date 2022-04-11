@@ -89,7 +89,7 @@ get_data_date <- function(path_to_data_date = here::here()) {
     tryCatch(
       readr::read_lines(path_to_data_date, skip_empty_rows = TRUE),
       error = function(e) {
-        ui_oops("There was an error importing data date from file '{path_to_data_date}'")
+        cli::cli_alert_danger("There was an error importing data date from file {.path {path_to_data_date}}")
         stop(as.character(e))
       }
     )
