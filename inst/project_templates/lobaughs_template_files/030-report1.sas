@@ -21,7 +21,7 @@ DATE:
 %prep();
 
 * data library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname data "&path_data.\&date";
 
 * formats library;
@@ -64,19 +64,19 @@ run;
 *** Overview;
 proc odstext;
 	p "{\pard\s1\b\ul Overview \par}" / style = {&style16};
-	p "{1.0  Study description}" 
+	p "{Study description}" 
     / style = [&style11];
-	p "{2.0  Methods}" 
+	p "{Methods}" 
     / style = [&style11];
-	p "{3.0  Results}" 
+	p "{Results}" 
     / style = [&style11];
-		p "{3.1  Heading2 A}" 
+		p "{Heading2 A}" 
 	    / style = [&style11 leftmargin = 0.35in];
-			p "{3.1.1  Heading3 A}" 
+			p "{Heading3 A}" 
 		    / style = [&style11 leftmargin = 0.7in];
-			p "{3.1.2  Heading3 B}" 
+			p "{Heading3 B}" 
 		    / style = [&style11 leftmargin = 0.7in];
-		p "{3.2  Heading2 B}" 
+		p "{Heading2 B}" 
 	    / style = [&style11 leftmargin = 0.35in];
 	p "{}" / style = [fontsize = 11pt];
 
@@ -88,7 +88,7 @@ run;
 
 *** Study description;
 proc odstext;
-	p "{\pard\s1\b\ul 1.0 Study description \par}" / style = {&style16};
+	p "{\pard\s1\b\ul Study description \par}" / style = {&style16};
 
 	p "{In this report...}" 
 	/ style = [&style11];	
@@ -101,7 +101,7 @@ run;
 
 *** Methods;
 proc odstext;
-	p "{\pard\s1\b\ul 2.0 Methods \par}" / style = {&style16};
+	p "{\pard\s1\b\ul Methods \par}" / style = {&style16};
 
 	p "{Analysis objective (1)}" 
 	/ style = [&style11 fontweight = bold];
@@ -135,17 +135,17 @@ run;
 
 *** Results;
 proc odstext;
-	p "{\pard\s1\b\ul 3.0 Results \par}" / style = {&style16};
+	p "{\pard\s1\b\ul Results \par}" / style = {&style16};
 run;
 
 * Example header 2;
 proc odstext;
-	p "{\pard\s2\b\ul 3.1 Heading2 A \par}" / style = {&style14};
+	p "{\pard\s2\b\ul Heading2 A \par}" / style = {&style14};
 run;
 
 * Example header 3;
 proc odstext;
-	p "{\pard\s3\b\ul 3.1.1 Heading3 A \par}" / style = {&style12};
+	p "{\pard\s3\b\ul Heading3 A \par}" / style = {&style12};
 run;
 
 ods rtf close;

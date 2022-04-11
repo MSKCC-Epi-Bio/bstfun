@@ -3,7 +3,7 @@
                                                                                                      
 DESCRIPTION: Analysis
 
-TOC (Use Ctr+F "X)" to navigate through code):
+TOC (Use Ctr+F to navigate through code):
 - [Code section label]
 - Save results
 
@@ -22,7 +22,7 @@ DATE:
 %prep();
 
 * data library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname data "&path_data.\&date";
 
 * formats library;

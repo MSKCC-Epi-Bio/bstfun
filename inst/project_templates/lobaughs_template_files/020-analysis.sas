@@ -11,7 +11,7 @@ TOC (Use Ctr+F "X)" to navigate through code):
                                       
 LANGUAGE: SAS, VERSION 9.4                                  
                                                                
-NAME:                               
+NAME: Stephanie Lobaugh                               
 DATE:
 {{Sys.Date()}}: Created                                                                                         
                                                                    
@@ -22,7 +22,7 @@ DATE:
 %prep();
 
 * data library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname data "&path_data.\&date";
 
 * formats library;

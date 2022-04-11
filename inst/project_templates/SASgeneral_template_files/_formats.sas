@@ -14,7 +14,7 @@ DATE:
 ****************************************************************************************************************;
 
 * formats library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname fmt "&path_data";
 
 * escape character;

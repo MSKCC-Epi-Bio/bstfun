@@ -7,18 +7,26 @@ DESCRIPTION: Create project specific SAS formats catalog
                                    
 LANGUAGE: SAS, VERSION 9.4                                  
                                                                
-NAME:                               
+NAME: Stephanie Lobaugh                              
 DATE: 
 {{Sys.Date()}}: Created                                                                                        
                                                                    
 ****************************************************************************************************************;
 
 * formats library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname fmt "&path_data";
 
 * escape character;
 ods escapechar = "^";
+
+* Use if using a data dictionary to define the "$varname." format used for variable labeling in tables;
+proc sql;
+	select "'" || strip(lowcase(variable)) || "'='" || strip(label) || "'"
+		into: varname
+		separated by " "
+	from data.dictionary; 
+quit;
 
 proc format library = fmt.formats;
 
