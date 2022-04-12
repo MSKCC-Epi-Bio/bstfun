@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Updated `auc_density()` to better handle cut points and 0 and 1.
+
 * Added new functions `add_n.tbl_likert()` and `add_continuous_stat().tbl_likert()` (#55)
 
 # bstfun 0.3.7

@@ -33,6 +33,10 @@ NULL
 #' @export
 #' @rdname auc
 auc_density <- function(density, cut.points = seq(from = 0, to = 1, by = 0.001), ...) {
+  # replace one and zero with numbers vv close to them
+  cut.points[cut.points == 0] <- sqrt(.Machine$double.eps)
+  cut.points[cut.points == 1] <- 1 - sqrt(.Machine$double.eps)
+
   # calculating distribution mean
   mu <- integrate(function(x) x * density(x, ...), 0, 1)$value
 
