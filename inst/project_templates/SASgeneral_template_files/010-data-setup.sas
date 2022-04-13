@@ -1,31 +1,28 @@
 
 *****************************************************************************************************************
-                                                                                                     
+
 DESCRIPTION: Import raw data and create analysis dataset
 
 TOC (Use Ctr+F to navigate through code):
 -Import
 -Explore raw data
 -Create analysis dataset
--Check analysis dataset 
+-Check analysis dataset
 -Save analysis dataset
 
 ---------------------------------------------------------------------------------------------------------------
-                                      
-LANGUAGE: SAS, VERSION 9.4                                  
-                                                               
-NAME:                              
-DATE: 
-{{Sys.Date()}}: Created                                                                                         
-                                                                   
+
+NAME:
+DATE:
+{{Sys.Date()}}: Created project folder
+
 ****************************************************************************************************************;
 
-* various settings;
+* run prep program;
 %include "{{path}}\_prep.sas";
-%prep();
 
 * data library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname data "&path_data.\&date";
 
 * formats library;
@@ -65,7 +62,7 @@ proc contents data = data.raw; run;
 
 
 /**************************************************************************************************************
--Check analysis dataset 
+-Check analysis dataset
 **************************************************************************************************************/
 
 

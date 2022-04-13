@@ -1,14 +1,17 @@
 ---
 title: "Report 1"
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
-knit: (function(inputFile, encoding) { rmarkdown::render(inputFile, encoding = encoding, output_file = paste0(substr(inputFile,1,nchar(inputFile)-4),"_",gsub("-", "", substring(Sys.Date(), 3)),'.html')) })
 output:
   html_document:
     toc: true
-    toc_depth: 4
     toc_float: true
-      collapsed: false
+    toc_depth: 2
+  word_document:
+    reference_docx: "`r here::here('templates/doc_template.docx')`"
+bibliography: "`r here::here('templates/references.bib')`"
 ---
+
+<!-- YAML options for both HTML and Word documents are given here. Delete output type not being used. -->
 
 ```{r setup, include=FALSE}
 # set chunk defaults

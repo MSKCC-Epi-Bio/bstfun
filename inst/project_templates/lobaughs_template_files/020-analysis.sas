@@ -1,6 +1,6 @@
 
 *****************************************************************************************************************
-                                                                                                     
+
 DESCRIPTION: Analysis
 
 TOC (Use Ctr+F "X)" to navigate through code):
@@ -8,21 +8,18 @@ TOC (Use Ctr+F "X)" to navigate through code):
 - Save results
 
 ---------------------------------------------------------------------------------------------------------------
-                                      
-LANGUAGE: SAS, VERSION 9.4                                  
-                                                               
-NAME:                               
+
+NAME: Stephanie Lobaugh
 DATE:
-{{Sys.Date()}}: Created                                                                                         
-                                                                   
+{{Sys.Date()}}: Created project folder
+
 ****************************************************************************************************************;
 
-* various settings;
+* run prep program;
 %include "{{path}}\_prep.sas";
-%prep();
 
 * data library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname data "&path_data.\&date";
 
 * formats library;
@@ -37,7 +34,7 @@ options fmtsearch = (fmt.formats);
 
 
 /**************************************************************************************************************
--Save results 
+-Save results
 Save as permanent data sets
 **************************************************************************************************************/
 

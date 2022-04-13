@@ -1,42 +1,35 @@
 
 *****************************************************************************************************************
-                                                                                                     
+
 DESCRIPTION: Import raw data and create analysis dataset
 
 TOC (Use Ctr+F to navigate through code):
 -Import
 -Explore raw data
 -Create analysis dataset
--Check analysis dataset 
+-Check analysis dataset
 -Save analysis dataset
 -Export data for use in R
 
 ---------------------------------------------------------------------------------------------------------------
-                                      
-LANGUAGE: SAS, VERSION 9.4                                  
-                                                               
-NAME:                              
-DATE: 
-{{Sys.Date()}}: Created                                                                                         
-                                                                   
+
+NAME: Stephanie Lobaugh
+DATE:
+{{Sys.Date()}}: Created project folder
+
 ****************************************************************************************************************;
 
-* various settings;
+* run prep program;
 %include "{{path}}\_prep.sas";
-%prep();
 
 * data library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname data "&path_data.\&date";
 
 * formats library;
 options nofmterr;
 libname fmt "&path_data";
 options fmtsearch = (fmt.formats);
-
-* Macro library;
-libname gitmacs "C:\Users\lobaughs\GitHub\macros";
-options mstored sasmstore = gitmacs;
 
 
 
@@ -53,8 +46,8 @@ proc import datafile = "&path_data.\&date.\insert-file-name.xlsx"
 	sheet = "Sheet1";
 run;
 
-* Import data dictionary to apply labels and formats later;
-proc import 
+* Import data dictionary;
+proc import
 	datafile = "&path_data.\_data-dictionary.xlsx"
 	dbms = xlsx
 	out = data.dictionary
@@ -62,9 +55,6 @@ proc import
 	getnames = yes;
 run;
 
-* Run attribute macro to create global macro variable "&attrib" that can be used in the attrib statement
-  in a data step to apply labels/formats;
-%attribute(dictionary_ds = data.dictionary)
 
 
 /**************************************************************************************************************
@@ -82,7 +72,7 @@ proc contents data = data.raw; run;
 
 
 /**************************************************************************************************************
--Check analysis dataset 
+-Check analysis dataset
 **************************************************************************************************************/
 
 
@@ -126,7 +116,7 @@ proc sql;
 	into :rename_old separated by " "
 	from data.dictionary where type_1cont_2cat = 2 and not missing(fmt) and fmt ne "$missing." and
 		 find(lowcase(variable),"delta") = 0;
- 
+
 	select strip(variable) || "=put(" || strip(variable) || "_old," || strip(fmt) || ")" || %str(";")
 	into :label_values separated by " "
 	from data.dictionary where type_1cont_2cat = 2 and not missing(fmt) and fmt ne "$missing." and

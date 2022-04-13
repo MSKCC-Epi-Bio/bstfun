@@ -1,35 +1,42 @@
 
 *****************************************************************************************************************
-                                                                                                     
-DESCRIPTION: Create project specific SAS formats catalog 
+
+DESCRIPTION: Create project specific SAS formats catalog
 
 ---------------------------------------------------------------------------------------------------------------
-                                   
-LANGUAGE: SAS, VERSION 9.4                                  
-                                                               
-NAME:                               
-DATE: 
-{{Sys.Date()}}: Created                                                                                        
-                                                                   
+
+NAME: Stephanie Lobaugh
+DATE:
+{{Sys.Date()}}: Created project folder
+
 ****************************************************************************************************************;
 
 * formats library;
-%Let path_data = {{path_data}};
+%Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
 libname fmt "&path_data";
 
 * escape character;
 ods escapechar = "^";
 
+* Use if using a data dictionary to define the "$varname." format used for variable labeling in tables;
+proc sql;
+	select "'" || strip(lowcase(variable)) || "'='" || strip(label) || "'"
+		into: varname
+		separated by " "
+	from data.dictionary;
+quit;
+
 proc format library = fmt.formats;
 
 	* example variable labels format;
-	value $varlabels "age" = "Age in years"
-					 "sex" = "Sex"
+	value $varlabels &varname
+					 'sample_size' = 'Sample size'
+					 'var' = 'Nice variable label'
 	;
 
 	* example yes/no format for a numeric 0/1 var;
-	value yn 0 = "No     " 
-			 1 = "Yes" 
+	value yn 0 = "No     "
+			 1 = "Yes"
              . = "Missing"
 	;
 
@@ -40,7 +47,7 @@ proc format library = fmt.formats;
 	;
 
 	* example rounding format for presenting p-values to apply to a numeric p-value var;
-	value pval 
+	value pval
 		low-<0.001 = "<0.001"
 		0.001-<0.01 = [5.3]
 	    0.01-<0.04 = [5.2]

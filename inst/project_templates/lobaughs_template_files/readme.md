@@ -3,6 +3,7 @@
 ## Symbolic Link to Secure Data
 Not necessary for SAS, but useful in case you want to use R at any point in this project.
 {{symbolic_link}}
+Depending on various arg definitions when calling bstfun::create_bst_project, the symbolic link might have already been created.
 
 ## Data Version Control
 - Save data in a secure folder on a network drive with a subfolder indicating date data was received.

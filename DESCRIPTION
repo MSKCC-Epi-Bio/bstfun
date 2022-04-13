@@ -40,6 +40,9 @@ Authors@R:
              comment = c(ORCID = "0000-0002-2524-3637")),
       person(given = "Christine",
              family = "Zhou",
+             role = "ctb"),
+      person(given = "Stephanie",
+             family = "Lobaugh",
              role = "ctb")
              )
 Description: A miscellaneous collection of functions to used by members of

@@ -37,12 +37,12 @@ project_template_base <-
     # only add Rprofile if renv was used
     rprofile =
       rlang::expr(switch(renv,
-        list(
-          template_filename =
-            fs::path_package(package = "starter", "project_templates/default_rprofile.R"),
-          filename = stringr::str_glue(".Rprofile"),
-          glue = TRUE
-        )
+                         list(
+                           template_filename =
+                             fs::path_package(package = "starter", "project_templates/default_rprofile.R"),
+                           filename = stringr::str_glue(".Rprofile"),
+                           glue = TRUE
+                         )
       ))
   )
 
@@ -109,7 +109,7 @@ attr(project_template_results_folder, "label") <- "Biostatistics Project Templat
 
 ## SAS project template ---------------------------------------------------------
 project_template_sas <-
-  project_template_default[c("gitignore", "data_date", "rproj", "rprofile", "sap", "setup", "analysis", "report", "doc_template", "references")] |>
+  project_template_default[c("gitignore", "data_date","sap","derived_vars")] |>
   purrr::list_modify(
     readme = rlang::expr(list(
       template_filename = fs::path_package("project_templates/SASgeneral_template_files/readme.md", package = "bstfun"),
@@ -142,7 +142,8 @@ project_template_sas <-
       copy = FALSE
     ))
   )
-attr(project_template_default_SAS, "label") <- "Biostatistics SAS Template"
+attr(project_template_sas, "label") <- "Biostatistics SAS Template"
+attr(project_template_sas, "arg_override") <- list(renv = FALSE)
 
 # hot template -----------------------------------------------------------------
 hot_project_template <-
