@@ -9,17 +9,14 @@ TOC (Use Ctr+F "X)" to navigate through code):
 
 ---------------------------------------------------------------------------------------------------------------
 
-LANGUAGE: SAS, VERSION 9.4
-
 NAME: Stephanie Lobaugh
 DATE:
-{{Sys.Date()}}: Created
+{{Sys.Date()}}: Created project folder
 
 ****************************************************************************************************************;
 
-* various settings;
+* run prep program;
 %include "{{path}}\_prep.sas";
-%prep();
 
 * data library;
 %Let path_data = {{ifelse(is.null(path_data), "", path_data)}};

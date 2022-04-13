@@ -5,11 +5,9 @@ DESCRIPTION: Create project specific SAS formats catalog
 
 ---------------------------------------------------------------------------------------------------------------
 
-LANGUAGE: SAS, VERSION 9.4
-
 NAME: Stephanie Lobaugh
 DATE:
-{{Sys.Date()}}: Created
+{{Sys.Date()}}: Created project folder
 
 ****************************************************************************************************************;
 
@@ -31,8 +29,9 @@ quit;
 proc format library = fmt.formats;
 
 	* example variable labels format;
-	value $varlabels "age" = "Age in years"
-					 "sex" = "Sex"
+	value $varlabels &varname
+					 'sample_size' = 'Sample size'
+					 'var' = 'Nice variable label'
 	;
 
 	* example yes/no format for a numeric 0/1 var;

@@ -13,17 +13,14 @@ TOC (Use Ctr+F to navigate through code):
 
 ---------------------------------------------------------------------------------------------------------------
 
-LANGUAGE: SAS, VERSION 9.4
-
 NAME: Stephanie Lobaugh
 DATE:
-{{Sys.Date()}}: Created
+{{Sys.Date()}}: Created project folder
 
 ****************************************************************************************************************;
 
-* various settings;
+* run prep program;
 %include "{{path}}\_prep.sas";
-%prep();
 
 * data library;
 %Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
@@ -33,10 +30,6 @@ libname data "&path_data.\&date";
 options nofmterr;
 libname fmt "&path_data";
 options fmtsearch = (fmt.formats);
-
-* Macro library;
-libname gitmacs "C:\Users\lobaughs\GitHub\macros";
-options mstored sasmstore = gitmacs;
 
 
 
@@ -53,7 +46,7 @@ proc import datafile = "&path_data.\&date.\insert-file-name.xlsx"
 	sheet = "Sheet1";
 run;
 
-* Import data dictionary to apply labels and formats later;
+* Import data dictionary;
 proc import
 	datafile = "&path_data.\_data-dictionary.xlsx"
 	dbms = xlsx
@@ -62,9 +55,6 @@ proc import
 	getnames = yes;
 run;
 
-* Run attribute macro to create global macro variable "&attrib" that can be used in the attrib statement
-  in a data step to apply labels/formats;
-%attribute(dictionary_ds = data.dictionary)
 
 
 /**************************************************************************************************************

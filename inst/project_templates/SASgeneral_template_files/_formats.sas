@@ -5,11 +5,9 @@ DESCRIPTION: Create project specific SAS formats catalog
 
 ---------------------------------------------------------------------------------------------------------------
 
-LANGUAGE: SAS, VERSION 9.4
-
 NAME:
 DATE:
-{{Sys.Date()}}: Created
+{{Sys.Date()}}: Created project folder
 
 ****************************************************************************************************************;
 

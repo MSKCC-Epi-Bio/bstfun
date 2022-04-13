@@ -8,17 +8,14 @@ TOC (Use Ctr+F to navigate through code):
 
 ---------------------------------------------------------------------------------------------------------------
 
-LANGUAGE: SAS, VERSION 9.4
-
 NAME:
 DATE:
 {{Sys.Date()}}: Created
 
 ****************************************************************************************************************;
 
-* various settings;
+* run prep program;
 %include "{{path}}\_prep.sas";
-%prep();
 
 * data library;
 %Let path_data = {{ifelse(is.null(path_data), "", path_data)}};
@@ -70,10 +67,12 @@ proc odstext;
     / style = [&style11];
 	p "{Results}"
     / style = [&style11];
-		p "{Heading2 A}"
+		p "{Heading2}"
 	    / style = [&style11 leftmargin = 0.35in];
-			p "{Heading3 A}"
+			p "{Heading3}"
 		    / style = [&style11 leftmargin = 0.7in];
+	p "{Heading1}"
+    / style = [&style11];
 	p "{}" / style = [fontsize = 11pt];
 
 	p "{To view the navigation pane for this document, please do the following in Word: Under the 'View' tab, check
@@ -123,7 +122,7 @@ proc odstext;
 	/ style = [&style11 leftmargin = 0.35in];
 	p "{}" / style = [fontsize = 11pt];
 
-	p "{All statistical computations were performed, and all output was generated using SAS Software Version 9.4
+	p "{All statistical computations were performed, and all output was generated using SAS Software Version INSERT-VERSION
  (The SAS Institute, Cary, NC).}"
     / style = [&style11];
 	p "{}" / style = [fontsize = 11pt];
@@ -134,14 +133,19 @@ proc odstext;
 	p "{\pard\s1\b\ul Results \par}" / style = {&style16};
 run;
 
-* Example header 2;
+* Example heading2;
 proc odstext;
-	p "{\pard\s2\b\ul Heading2 A \par}" / style = {&style14};
+	p "{\pard\s2\b\ul Heading2 \par}" / style = {&style14};
 run;
 
-* Example header 3;
+* Example heading3;
 proc odstext;
-	p "{\pard\s3\b\ul Heading3 A \par}" / style = {&style12};
+	p "{\pard\s3\b\ul Heading3 \par}" / style = {&style12};
+run;
+
+* Example heading1;
+proc odstext;
+	p "{\pard\s1\b\ul Heading1 \par}" / style = {&style16};
 run;
 
 ods rtf close;

@@ -3,6 +3,7 @@
 ## Symbolic Link to Secure Data
 Not necessary for SAS, but useful in case you want to use R at any point in this project.
 {{symbolic_link}}
+Depending on various arg definitions when calling bstfun::create_bst_project, the symbolic link might have already been created.
 
 ## Data Version Control
 - Save data in a secure folder on a network drive with a subfolder indicating date data was received.
@@ -12,7 +13,8 @@ Not necessary for SAS, but useful in case you want to use R at any point in this
 - The SAS programs will locate the current data folder based on `data_date.txt`.
 
 ## Getting R Template Files
-If you want to use R for this project, you can write a single file from any [bstfun](https://www.danieldsjoberg.com/bstfun/index.html) project template to your project folder using the [use_bst_file](https://www.danieldsjoberg.com/bstfun/reference/use_file.html) function. Project template files can be viewed [here](https://github.com/ddsjoberg/bstfun/tree/master/inst/project_templates)
+- If you want to use R for this project, you can write a single file from any bstfun project template to your project folder using the bstfun::use_bst_file function. 
+- Project template files can be viewed [here](https://github.com/ddsjoberg/bstfun/tree/master/inst/project_templates)
 
 ## Project Log
 **{{Sys.Date()}}**  

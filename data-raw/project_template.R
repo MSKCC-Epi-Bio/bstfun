@@ -109,7 +109,7 @@ attr(project_template_results_folder, "label") <- "Biostatistics Project Templat
 
 ## SAS project template ---------------------------------------------------------
 project_template_sas <-
-  project_template_default[c("gitignore", "data_date")] |>
+  project_template_default[c("gitignore", "data_date","sap","derived_vars")] |>
   purrr::list_modify(
     readme = rlang::expr(list(
       template_filename = fs::path_package("project_templates/SASgeneral_template_files/readme.md", package = "bstfun"),
@@ -308,6 +308,5 @@ project_templates[["sas"]] <- project_template_sas
 project_templates[["whitingk"]] <- whitingk_project_template
 project_templates[["leej22"]] <- leej22_project_template
 project_templates[["lobaughs"]] <- lobaughs_project_template
-project_templates[["SAS"]] <- project_template_sas
 
 usethis::use_data(project_templates, overwrite = TRUE)
