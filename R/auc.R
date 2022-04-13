@@ -33,6 +33,7 @@ NULL
 #' @export
 #' @rdname auc
 auc_density <- function(density, cut.points = seq(from = 0, to = 1, by = 0.001), ...) {
+  assert_package("pracma")
   # calculating distribution mean
   mu <- integrate(function(x) x * density(x, ...), 0, 1)$value
 
