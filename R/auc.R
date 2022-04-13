@@ -34,9 +34,7 @@ NULL
 #' @rdname auc
 auc_density <- function(density, cut.points = seq(from = 0, to = 1, by = 0.001), ...) {
   assert_package("pracma")
-  if (!inherits(x, "histogram")) {
-    stop("`x=` must be class 'histogram' created with `hist()`", call. = FALSE)
-  }
+
   # calculating distribution mean
   mu <- integrate(function(x) x * density(x, ...), 0, 1)$value
 
@@ -80,6 +78,9 @@ auc_density <- function(density, cut.points = seq(from = 0, to = 1, by = 0.001),
 #' @rdname auc
 auc_histogram <- function(x) {
   assert_package("pracma")
+  if (!inherits(x, "histogram")) {
+    stop("`x=` must be class 'histogram' created with `hist()`", call. = FALSE)
+  }
 
   # calculating mean
   mu <- stats::weighted.mean(x$mids, x$density)
