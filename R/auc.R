@@ -44,9 +44,9 @@ auc_density <- function(density, cut.points = seq(from = 0, to = 1, by = 0.001),
   specificity <- NULL
   for (c in cut.points) {
     # calculating Sens and Spec using Bayes Rule
-    sens0 <- integrate(function(x) x * density(x, ...), c, 1)$value / mu
-    spec0 <- (integrate(function(x) density(x, ...), 0, c)$value -
-                integrate(function(x) x * density(x, ...), 0, c)$value) /
+    sens0 <- integrate(function(x) x * density(x, ...), c, 1 - sqrt(.Machine$double.eps))$value / mu
+    spec0 <- (integrate(function(x) density(x, ...), sqrt(.Machine$double.eps), c)$value -
+                integrate(function(x) x * density(x, ...), sqrt(.Machine$double.eps), c)$value) /
       (1 - mu)
 
     # appending calculated results
