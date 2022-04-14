@@ -33,30 +33,43 @@ NULL
 #' @export
 #' @rdname auc
 auc_density <- function(density, cut.points = seq(from = 0, to = 1, by = 0.001), ...) {
+  assert_package("pracma")
+
   # calculating distribution mean
   mu <- integrate(function(x) x * density(x, ...), 0, 1)$value
 
-  sensitivity <- NULL
-  specificity <- NULL
-  for (c in cut.points) {
+  sensitivity <- rep_len(NA_real_, length.out = length(cut.points))
+  specificity <- rep_len(NA_real_, length.out = length(cut.points))
+  for (i in seq_along(cut.points)) {
+    c <- cut.points[i]
     # calculating Sens and Spec using Bayes Rule
-    sens0 <- integrate(function(x) x * density(x, ...), c, 1)$value / mu
-    spec0 <- (integrate(function(x) density(x, ...), 0, c)$value -
-                integrate(function(x) x * density(x, ...), 0, c)$value) /
-      (1 - mu)
-
-    # appending calculated results
-    sensitivity <- c(sensitivity, sens0)
-    specificity <- c(specificity, spec0)
+    if (c %in% c(0, 1)) {
+      sensitivity[i] <- dplyr::case_when(c %in% 0 ~ 1, c %in% 1 ~ 0)
+      specificity[i] <- dplyr::case_when(c %in% 0 ~ 0, c %in% 1 ~ 1)
+    }
+    else {
+      sensitivity[i] <- integrate(function(x) x * density(x, ...), c, 1)$value / mu
+      specificity[i] <-
+        (integrate(function(x) density(x, ...), 0, c)$value -
+           integrate(function(x) x * density(x, ...), 0, c)$value) / (1 - mu)
+    }
   }
 
   # calculating the AUC (using the trapezoidal rule)
-  idx <- 2:length(cut.points)
-  auc <- as.numeric(-(specificity[idx - 1] - specificity[idx]) %*% (sensitivity[idx] + sensitivity[idx - 1]) / 2)
+  auc <- pracma::trapz(x = specificity, y = sensitivity)
 
-  # retruning results
-  results <- list(cut.points, sensitivity, specificity, mu, auc)
-  names(results) <- c("cut.point", "sensitivity", "specificity", "mu", "auc")
+  # returning results
+  results <-
+    list(
+      details =
+        tibble::tibble(
+          threshold = cut.points,
+          sensitivity = sensitivity,
+          specificity = specificity
+        ),
+      mu = mu,
+      auc = auc
+    )
 
   return(results)
 }
@@ -64,6 +77,10 @@ auc_density <- function(density, cut.points = seq(from = 0, to = 1, by = 0.001),
 #' @export
 #' @rdname auc
 auc_histogram <- function(x) {
+  assert_package("pracma")
+  if (!inherits(x, "histogram")) {
+    stop("`x=` must be class 'histogram' created with `hist()`", call. = FALSE)
+  }
 
   # calculating mean
   mu <- stats::weighted.mean(x$mids, x$density)
@@ -85,11 +102,8 @@ auc_histogram <- function(x) {
     )
 
   # calculating the AUC (using the trapezoidal rule)
-  idx <- 2:x_length
-  auc <- -(sens_spec$specificity[idx - 1] - sens_spec$specificity[idx]) %*%
-    (sens_spec$sensitivity[idx] + sens_spec$sensitivity[idx - 1]) / 2
+  auc <- pracma::trapz(x = sens_spec$specificity, y = sens_spec$sensitivity)
 
-
-  auc %>% as.vector()
+  auc
 }
 

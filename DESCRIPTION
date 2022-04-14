@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Misc functions for the dept
-Version: 0.3.7.9001
+Version: 0.3.7.9002
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",
@@ -87,6 +87,7 @@ Suggests:
     labelled (>= 2.8.0),
     magick (>= 2.7.2),
     patchwork (>= 1.1.1),
+    pracma,
     readxl (>= 1.3.1),
     renv (>= 0.15.1),
     spelling (>= 2.1),
