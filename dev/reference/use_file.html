@@ -20,7 +20,7 @@ use_bst_file("gitignore") and use_bst_file("readme").'><meta name="robots" conte
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.7.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.7.9003</span>
       </span>
     </div>
 
@@ -65,16 +65,11 @@ The functions <code>use_bst_gitignore()</code> and <code>use_bst_readme()</code>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">use_bst_file</span><span class="op">(</span>
-  name <span class="op">=</span> <span class="cn">NULL</span>,
-  filename <span class="op">=</span> <span class="cn">NULL</span>,
-  template <span class="op">=</span> <span class="cn">NULL</span>,
-  open <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">use_bst_file</span><span class="op">(</span>name <span class="op">=</span> <span class="cn">NULL</span>, filename <span class="op">=</span> <span class="cn">NULL</span>, open <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 
-<span class="fu">use_bst_gitignore</span><span class="op">(</span>filename <span class="op">=</span> <span class="cn">NULL</span>, template <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
+<span class="fu">use_bst_gitignore</span><span class="op">(</span>filename <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
 
-<span class="fu">use_bst_readme</span><span class="op">(</span>filename <span class="op">=</span> <span class="cn">NULL</span>, template <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
+<span class="fu">use_bst_readme</span><span class="op">(</span>filename <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
 
 <span class="fu">use_hot_file</span><span class="op">(</span>name <span class="op">=</span> <span class="cn">NULL</span>, filename <span class="op">=</span> <span class="cn">NULL</span>, open <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 
@@ -98,10 +93,6 @@ template will print.</p></dd>
 <dt>filename</dt>
 <dd><p>Optional argument to specify the name of the file to be written.
 Paths/filename is relative to project base (e.g. <code><a href="https://here.r-lib.org//reference/here.html" class="external-link">here::here()</a></code>)</p></dd>
-<dt>template</dt>
-<dd><p>A project template. See
-<a href="https://www.danieldsjoberg.com/starter/articles/create_project.html" class="external-link">vignette</a>
-for details.</p></dd>
 <dt>open</dt>
 <dd><p>If <code>TRUE</code>, opens the new file.</p></dd>
 </dl></div>
