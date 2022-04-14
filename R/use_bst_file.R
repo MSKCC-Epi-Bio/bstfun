@@ -25,13 +25,9 @@ NULL
 #' @export
 use_bst_file <- function(name = NULL,
                          filename = NULL,
-                         template = NULL,
                          open = interactive()) {
   # if template is NULL, use default template ----------------------------------
-  template <-
-    template %||%
-    bstfun::project_templates[[tolower(Sys.info()[["user"]])]] %||%
-    bstfun::project_templates[["default"]]
+  template <- .select_template()
 
   starter::use_project_file(name = name, filename = filename,
                             template = template, open = open)
@@ -39,16 +35,16 @@ use_bst_file <- function(name = NULL,
 
 #' @rdname use_file
 #' @export
-use_bst_gitignore <- function(filename = NULL, template = NULL) {
-  use_bst_file(name = "gitignore", filename = filename,
-               template = template)
+use_bst_gitignore <- function(filename = NULL) {
+  starter::use_project_file(name = "gitignore", filename = filename,
+                            template = bstfun::project_templates[["default"]])
 }
 
 #' @rdname use_file
 #' @export
-use_bst_readme <- function(filename = NULL, template = NULL) {
-  use_bst_file(name = "readme", filename = filename,
-               template = template)
+use_bst_readme <- function(filename = NULL) {
+  starter::use_project_file(name = "readme", filename = filename,
+                            template = bstfun::project_templates[["default"]])
 }
 
 #' @rdname use_file

@@ -6,22 +6,9 @@
 \alias{create_hot_project}
 \title{Start a New Biostatistics project}
 \usage{
-create_bst_project(
-  path,
-  path_data = NULL,
-  template = NULL,
-  git = NA,
-  renv = TRUE,
-  overwrite = NA,
-  open = interactive()
-)
+create_bst_project(path, path_data = NULL, git = NA, ...)
 
-create_hot_project(
-  path,
-  path_data = NULL,
-  template = bstfun::project_templates[["hot"]],
-  ...
-)
+create_hot_project(path, path_data = NULL, git = TRUE, ...)
 }
 \arguments{
 \item{path}{A path. If it exists, it is used. If it does not exist, it is
@@ -30,38 +17,28 @@ created.}
 \item{path_data}{A path. The directory where the secure data exist. Default is
 \code{NULL}.  When supplied, a symbolic link to data folder will be created.}
 
-\item{template}{Specifies project template to use.
-Default is the template in \code{bstfun::project_templates} whose name matches
-the lowercase system username (\code{Sys.info()[["user"]]}), if it exists;
-otherwise, \code{bstfun::project_templates[["default"]]}}
-
 \item{git}{Logical indicating whether to create Git repository.  Default is \code{TRUE}
 When \code{NA}, user will be prompted whether to initialise Git repo.}
-
-\item{renv}{Logical indicating whether to add renv to a project.
-Default is \code{TRUE}. When \code{NA} user is asked interactively for preference.}
-
-\item{overwrite}{Logical indicating whether to overwrite existing files
-if they exist.  Options are
-\code{TRUE}, \code{FALSE}, and \code{NA} (aka ask interactively).  Default is \code{NA}}
-
-\item{open}{Logical indicating whether to open new project in fresh RStudio
-session}
 
 \item{...}{
   Arguments passed on to \code{\link[starter:create_project]{starter::create_project}}
   \describe{
+    \item{\code{renv}}{Logical indicating whether to add renv to a project.
+Default is \code{TRUE}. When \code{NA} user is asked interactively for preference.}
     \item{\code{symlink}}{Logical indicating whether to place a symbolic link
 to the location in \verb{path_data=}. Default is to place the symbolic link
 if the project is a git repository.}
-    \item{\code{renv.settings}}{A list of renv settings passed to \code{renv::scaffold(settings=)}}
+    \item{\code{overwrite}}{Logical indicating whether to overwrite existing files
+if they exist.  Options are
+\code{TRUE}, \code{FALSE}, and \code{NA} (aka ask interactively).  Default is \code{NA}}
+    \item{\code{open}}{Logical indicating whether to open new project in fresh RStudio
+session}
   }}
 }
 \description{
 Creates a directory with the essential files for a new project.
 The function can be used on existing project directories as well.
-This is a thin wrapper for \code{starter::create_project()} that
-sets the default template to \code{template = hotfun::project_template}
+This is a thin wrapper for \code{starter::create_project()}.
 }
 \examples{
 \dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

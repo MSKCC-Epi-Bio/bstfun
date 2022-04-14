@@ -1,6 +1,10 @@
 ---
 title: "Initial Setup"
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile, 
+    output_dir = here::here("results"))
+     })
 output:
   html_document:
     toc: true

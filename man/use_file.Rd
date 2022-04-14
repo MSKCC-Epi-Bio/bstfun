@@ -13,16 +13,11 @@
 \alias{use_hot_report}
 \title{Write a template file}
 \usage{
-use_bst_file(
-  name = NULL,
-  filename = NULL,
-  template = NULL,
-  open = interactive()
-)
+use_bst_file(name = NULL, filename = NULL, open = interactive())
 
-use_bst_gitignore(filename = NULL, template = NULL)
+use_bst_gitignore(filename = NULL)
 
-use_bst_readme(filename = NULL, template = NULL)
+use_bst_readme(filename = NULL)
 
 use_hot_file(name = NULL, filename = NULL, open = interactive())
 
@@ -43,10 +38,6 @@ template will print.}
 
 \item{filename}{Optional argument to specify the name of the file to be written.
 Paths/filename is relative to project base (e.g. \code{here::here()})}
-
-\item{template}{A project template. See
-\href{https://www.danieldsjoberg.com/starter/articles/create_project.html}{vignette}
-for details.}
 
 \item{open}{If \code{TRUE}, opens the new file.}
 }

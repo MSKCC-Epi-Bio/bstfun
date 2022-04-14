@@ -4,6 +4,8 @@
 
 * Added new functions `add_n.tbl_likert()` and `add_continuous_stat().tbl_likert()` (#55)
 
+* Updated templates associated with `create_bst_project()` including adding a SAS template (#84)
+
 # bstfun 0.3.7
 
 * No longer depending on the development version of {gtsummary}.
