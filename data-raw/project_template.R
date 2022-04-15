@@ -31,7 +31,7 @@ project_template_base <-
     )),
     sap = rlang::expr(list(
       template_filename = fs::path_package("project_templates/sap.docx", package = "bstfun"),
-      filename = glue::glue("Statistical Analysis Plan.docx"),
+      filename = glue::glue("SAP - {folder_name}.docx"),
       copy = TRUE
     )),
     # only add Rprofile if renv was used
