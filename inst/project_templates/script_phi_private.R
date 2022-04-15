@@ -7,8 +7,8 @@ tryCatch(
     if (fs::dir_exists(fs::path(path, ".git"))) {
       # get url of origin
       remote_origin_url <-
-        gert::git_remote_list(repo = path) %>%
-        dplyr::filter(.data$name %in% "origin") %>%
+        gert::git_remote_list(repo = path) |>
+        dplyr::filter(.data$name %in% "origin") |>
         dplyr::pull(.data$url)
 
       # if repo is in a PHI org, then make repo private and add PHI tag
@@ -26,4 +26,22 @@ tryCatch(
                   "You must set these manually NOW if the project lives in a GH Org that allows PHI."))
   }
 )
+
+# if project has a GH link, drop URL shortcut into data folder
+if (!is.null(path_data) && fs::dir_exists(fs::path(path, ".git")))
+  tryCatch({
+    remote_origin_url <-
+      gert::git_remote_list(repo = path) |>
+      dplyr::filter(.data$name %in% "origin") |>
+      dplyr::pull(.data$url) |>
+      stringr::str_remove(".git$")
+
+    if (!rlang::is_empty(remote_origin_url)) {
+      c("[InternetShortcut]", paste0("URL=", remote_origin_url)) |>
+        readr::write_lines(file = fs::path(path_data, "GitHub-Repository.url"))
+      cli::cli_alert_success("Link to GitHub repository placed in data folder.")
+    }
+  },
+  cli::cli_alert_danger("Failed to place link to GitHub repository in data folder")
+  )
 
