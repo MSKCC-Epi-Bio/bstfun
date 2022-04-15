@@ -12,6 +12,7 @@ bibliography: "`r here::here('templates/references.bib')`"
 ---
 
 <!-- YAML options for both HTML and Word documents are given here. Delete output type not being used. -->
+<!-- To cite a reference within the document, the ref must be included in the `templates/references.bib` file. Use square brackets and @ with the shorthand term. Ex: The generalized additive model models the relationship between the mean of the response variable and sum of smooth functions of the explanatory variables [@hastie1986gam]. -->
 
 ```{r setup, include=FALSE}
 # set chunk defaults
@@ -20,16 +21,15 @@ set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
 
 ```{r import, include=FALSE}
-library(biostatR)
-library(tidyverse)
+library(biostatR); library(tidyverse)
 
 # setting MSK ggplot theme and color palette
 theme_set(mskRvis::theme_biostat())
 mskRvis::set_msk_palette()
 {{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("
 # Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
-bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')
-"), ""))}}
+theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')
+"), "theme_gtsummary_compact()"))}}
 # Import analysis result objects here
 results <- load(here_data("results.Rdata"))
 ```
