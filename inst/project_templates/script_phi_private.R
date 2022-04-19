@@ -7,9 +7,8 @@ tryCatch(
     if (fs::dir_exists(fs::path(path, ".git"))) {
       # get url of origin
       remote_origin_url <-
-        gert::git_remote_list(repo = path) |>
-        dplyr::filter(.data$name %in% "origin") |>
-        dplyr::pull(.data$url)
+        dplyr::filter(gert::git_remote_list(repo = path),
+                      .data$name %in% "origin")[["url"]]
 
       # if repo is in a PHI org, then make repo private and add PHI tag
       if (rlang::is_string(remote_origin_url) && mskRutils::is_phi_repo(remote_origin_url)) {
