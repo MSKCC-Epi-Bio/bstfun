@@ -143,7 +143,7 @@ project_template_sas <-
     ))
   )
 attr(project_template_sas, "label") <- "Biostatistics SAS Template"
-attr(project_template_sas, "arg_override") <- list(renv = FALSE)
+attr(project_template_sas, "arg_override") <- list(renv = FALSE, open = FALSE)
 
 # hot template -----------------------------------------------------------------
 hot_project_template <-
