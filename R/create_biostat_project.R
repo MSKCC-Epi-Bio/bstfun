@@ -12,7 +12,6 @@
 #' @name create_project
 #' @seealso `starter::create_project()`
 #' @examplesIf FALSE
-#' if (FALSE) {
 #' # specifying project folder location (folder does not yet exist)
 #' project_path <- fs::path(tempdir(), "My Project Folder")
 #'
@@ -22,7 +21,6 @@
 #'
 #' # creating new project folder
 #' create_bst_project(project_path, path_data = secure_data_path)
-#' }
 NULL
 
 #' @export
