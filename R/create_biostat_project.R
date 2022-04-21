@@ -61,9 +61,9 @@ create_hot_project <- function(path, path_data = NULL, git = TRUE, ...) {
 
   # creating list of templates available
   templates <-
-    list("Biostatistics Template" =
+    list("Scripts+Results in Same Folder" =
            bstfun::project_templates[["default"]],
-         "Scripts and Results in Separate Folders" =
+         "Scripts+Results in Separate Folders" =
            bstfun::project_templates[["results_folder"]],
          "SAS Template" = bstfun::project_templates[["sas"]])
   # adding user-defined template if it exists
