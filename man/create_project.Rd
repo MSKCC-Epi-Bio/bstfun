@@ -57,5 +57,5 @@ create_bst_project(project_path, path_data = secure_data_path)
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-\code{starter::create_project()}
+\code{\link[starter:create_project]{starter::create_project()}}
 }
