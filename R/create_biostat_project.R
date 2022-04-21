@@ -1,13 +1,16 @@
 #' Start a New Biostatistics project
 #'
-#' Creates a directory with the essential files for a new project.
+#' @description Creates a directory with the essential files for a new project.
 #' The function can be used on existing project directories as well.
-#' This is a thin wrapper for `starter::create_project()`.
+#'
+#' The folder name should be structured as `"<PI Last Name> <Short Description>"`,
+#' e.g. `"Sjoberg MRI detects Path Stage after Surgery"`.
 #'
 #' @inheritParams starter::create_project
 #' @inheritDotParams starter::create_project -template -git
 #'
 #' @name create_project
+#' @seealso `starter::create_project()`
 #' @examplesIf FALSE
 #' if (FALSE) {
 #' # specifying project folder location (folder does not yet exist)
