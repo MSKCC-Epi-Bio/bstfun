@@ -31,7 +31,7 @@ project_template_base <-
     )),
     sap = rlang::expr(list(
       template_filename = fs::path_package("project_templates/sap.docx", package = "bstfun"),
-      filename = glue::glue("Statistical Analysis Plan.docx"),
+      filename = glue::glue("SAP - {folder_name}.docx"),
       copy = TRUE
     )),
     # only add Rprofile if renv was used
@@ -53,17 +53,17 @@ project_template_default <-
     list(
       setup = rlang::expr(list(
         template_filename = fs::path_package("project_templates/setup.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/setup.Rmd"),
+        filename = glue::glue("scripts/10-setup_{folder_first_word}.Rmd"),
         copy = FALSE
       )),
       analysis = rlang::expr(list(
         template_filename = fs::path_package("project_templates/analysis.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/analysis.Rmd"),
+        filename = glue::glue("scripts/20-analysis_{folder_first_word}.Rmd"),
         copy = FALSE
       )),
       report = rlang::expr(list(
         template_filename = fs::path_package("project_templates/report.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/report.Rmd"),
+        filename = glue::glue("scripts/30-report_{folder_first_word}.Rmd"),
         copy = FALSE
       )),
       doc_template = rlang::expr(list(
@@ -87,19 +87,19 @@ project_template_results_folder <- project_template_default
 project_template_results_folder[["setup"]] <-
   rlang::expr(list(
     template_filename = fs::path_package("project_templates/setup.Rmd", package = "bstfun"),
-    filename = glue::glue("scripts/setup.Rmd"),
+    filename = glue::glue("scripts/10-setup_{folder_first_word}.Rmd"),
     copy = FALSE
   ))
 project_template_results_folder[["analysis"]] <-
   rlang::expr(list(
     template_filename = fs::path_package("project_templates/analysis.Rmd", package = "bstfun"),
-    filename = glue::glue("scripts/analysis.Rmd"),
+    filename = glue::glue("scripts/20-analysis_{folder_first_word}.Rmd"),
     copy = FALSE
   ))
 project_template_results_folder[["report"]] <-
   rlang::expr(list(
     template_filename = fs::path_package("project_templates/report.Rmd", package = "bstfun"),
-    filename = glue::glue("scripts/report.Rmd"),
+    filename = glue::glue("scripts/30-report_{folder_first_word}.Rmd"),
     copy = FALSE
   ))
 attr(project_template_results_folder, "script_path") <-
@@ -143,7 +143,7 @@ project_template_sas <-
     ))
   )
 attr(project_template_sas, "label") <- "Biostatistics SAS Template"
-attr(project_template_sas, "arg_override") <- list(renv = FALSE)
+attr(project_template_sas, "arg_override") <- list(renv = FALSE, open = FALSE)
 
 # hot template -----------------------------------------------------------------
 hot_project_template <-
@@ -151,17 +151,17 @@ hot_project_template <-
   purrr::list_modify(
     setup = rlang::expr(list(
       template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/setup1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
+      filename = glue::glue("scripts/10-setup_{folder_first_word}.Rmd"),
       copy = FALSE
     )),
     analysis = rlang::expr(list(
       template_filename = fs::path_package("project_templates/hot_template_files/hot_analysis.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/analysis1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
+      filename = glue::glue("scripts/20-analysis_{folder_first_word}.Rmd"),
       copy = FALSE
     )),
     report = rlang::expr(list(
       template_filename = fs::path_package("project_templates/hot_template_files/hot_report.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/report1_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.Rmd"),
+      filename = glue::glue("scripts/30-report_{folder_first_word}.Rmd"),
       copy = FALSE
     )),
     sap = rlang::expr(list(
@@ -171,7 +171,7 @@ hot_project_template <-
     )),
     derived_vars = rlang::expr(list(
       template_filename = fs::path_package("project_templates/derived_variables.xlsx", package = "bstfun"),
-      filename = glue::glue("scripts/derived_variables_{stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>% tolower()}.xlsx"),
+      filename = glue::glue("scripts/derived_variables_{folder_first_word}.xlsx"),
       copy = TRUE
     )),
     doc_template = rlang::expr(list(

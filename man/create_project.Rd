@@ -28,6 +28,7 @@ Default is \code{TRUE}. When \code{NA} user is asked interactively for preferenc
     \item{\code{symlink}}{Logical indicating whether to place a symbolic link
 to the location in \verb{path_data=}. Default is to place the symbolic link
 if the project is a git repository.}
+    \item{\code{renv.settings}}{A list of renv settings passed to \code{renv::scaffold(settings=)}}
     \item{\code{overwrite}}{Logical indicating whether to overwrite existing files
 if they exist.  Options are
 \code{TRUE}, \code{FALSE}, and \code{NA} (aka ask interactively).  Default is \code{NA}}
@@ -38,11 +39,12 @@ session}
 \description{
 Creates a directory with the essential files for a new project.
 The function can be used on existing project directories as well.
-This is a thin wrapper for \code{starter::create_project()}.
+
+The folder name should be structured as \code{"<PI Last Name> <Short Description>"},
+e.g. \code{"Sjoberg MRI detects Path Stage after Surgery"}.
 }
 \examples{
 \dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-if (FALSE) {
 # specifying project folder location (folder does not yet exist)
 project_path <- fs::path(tempdir(), "My Project Folder")
 
@@ -52,6 +54,8 @@ dir.create(secure_data_path)
 
 # creating new project folder
 create_bst_project(project_path, path_data = secure_data_path)
-}
 \dontshow{\}) # examplesIf}
+}
+\seealso{
+\code{\link[starter:create_project]{starter::create_project()}}
 }

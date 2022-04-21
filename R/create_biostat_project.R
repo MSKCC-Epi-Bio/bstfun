@@ -1,15 +1,17 @@
 #' Start a New Biostatistics project
 #'
-#' Creates a directory with the essential files for a new project.
+#' @description Creates a directory with the essential files for a new project.
 #' The function can be used on existing project directories as well.
-#' This is a thin wrapper for `starter::create_project()`.
+#'
+#' The folder name should be structured as `"<PI Last Name> <Short Description>"`,
+#' e.g. `"Sjoberg MRI detects Path Stage after Surgery"`.
 #'
 #' @inheritParams starter::create_project
 #' @inheritDotParams starter::create_project -template -git
 #'
 #' @name create_project
+#' @seealso [`starter::create_project()`]
 #' @examplesIf FALSE
-#' if (FALSE) {
 #' # specifying project folder location (folder does not yet exist)
 #' project_path <- fs::path(tempdir(), "My Project Folder")
 #'
@@ -19,7 +21,6 @@
 #'
 #' # creating new project folder
 #' create_bst_project(project_path, path_data = secure_data_path)
-#' }
 NULL
 
 #' @export
@@ -61,9 +62,9 @@ create_hot_project <- function(path, path_data = NULL, git = TRUE, ...) {
 
   # creating list of templates available
   templates <-
-    list("Biostatistics Template" =
+    list("Scripts+Results in Same Folder" =
            bstfun::project_templates[["default"]],
-         "Scripts and Results in Separate Folders" =
+         "Scripts+Results in Separate Folders" =
            bstfun::project_templates[["results_folder"]],
          "SAS Template" = bstfun::project_templates[["sas"]])
   # adding user-defined template if it exists

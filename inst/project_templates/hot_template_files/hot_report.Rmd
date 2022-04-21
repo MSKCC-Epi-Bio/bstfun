@@ -18,13 +18,12 @@ csl: "`r here::here('scripts/templates/european-urology.csl')`"
 
 ```{r setup, include=FALSE}
 # set chunk defaults, code chunks are NOT printed in output for report
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = FALSE)
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
 
-```{r import, include=FALSE}
+```{r import}
 library(hotverse); library(tidyverse)
-
 # setting MSK ggplot theme, gtsummary theme, and color palette
 theme_set(mskRvis::theme_biostat()); theme_gtsummary_msk("hot"); mskRvis::set_msk_palette()
 
@@ -32,7 +31,7 @@ theme_set(mskRvis::theme_biostat()); theme_gtsummary_msk("hot"); mskRvis::set_ms
 results <- load(here_data("results.Rdata"))
 ```
 
-```{r inline_text, include=FALSE, echo=FALSE}
+```{r inline_text}
 # define complex inline-reporting objects here
 ```
 

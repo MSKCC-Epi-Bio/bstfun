@@ -21,16 +21,13 @@ set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 # Analytic Data Import
 
 ```{r import}
-library(biostatR)
-library(tidyverse)
+library(biostatR); library(tidyverse)
 
-# setting MSK ggplot theme and color palette
-theme_set(mskRvis::theme_biostat())
-mskRvis::set_msk_palette()
-{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("
-# Set custom gtsummary theme if exists in the bstfun::theme_gtsummary_msk
-bstfun::theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')
-"), ""))}}
+# setting MSK ggplot theme, color palette, and gtsummary theme
+theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
+{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')"), "theme_gtsummary_compact()"))}}
+here_data() # current path to data
+
 # importing master analytic data set
 df_main <- readRDS(file = here_data("df_main.Rds"))
 ```
