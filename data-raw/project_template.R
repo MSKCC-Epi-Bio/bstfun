@@ -86,19 +86,19 @@ attr(project_template_default, "label") <- "Biostatistics Project Template"
 project_template_results_folder <- project_template_default
 project_template_results_folder[["setup"]] <-
   rlang::expr(list(
-    template_filename = fs::path_package("project_templates/setup.Rmd", package = "bstfun"),
+    template_filename = fs::path_package("project_templates/results_scripts_folders/setup.Rmd", package = "bstfun"),
     filename = glue::glue("scripts/10-setup_{folder_first_word}.Rmd"),
     copy = FALSE
   ))
 project_template_results_folder[["analysis"]] <-
   rlang::expr(list(
-    template_filename = fs::path_package("project_templates/analysis.Rmd", package = "bstfun"),
+    template_filename = fs::path_package("project_templates/results_scripts_folders/analysis.Rmd", package = "bstfun"),
     filename = glue::glue("scripts/20-analysis_{folder_first_word}.Rmd"),
     copy = FALSE
   ))
 project_template_results_folder[["report"]] <-
   rlang::expr(list(
-    template_filename = fs::path_package("project_templates/report.Rmd", package = "bstfun"),
+    template_filename = fs::path_package("project_templates/results_scripts_folders/report.Rmd", package = "bstfun"),
     filename = glue::glue("scripts/30-report_{folder_first_word}.Rmd"),
     copy = FALSE
   ))
