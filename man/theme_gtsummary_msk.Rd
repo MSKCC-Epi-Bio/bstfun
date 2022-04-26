@@ -6,7 +6,8 @@
 \usage{
 theme_gtsummary_msk(
   name = c("hot", "karissa", "ally", "mauguen", "esther", "curry", "lavery", "meier",
-    "leej", "whitingk", "mauguena", "drille", "currym1", "laveryj", "hsum1", "leej22"),
+    "leej", "whitingk", "kwhiting", "mauguena", "drille", "currym1", "laveryj", "hsum1",
+    "leej22"),
   font_size = NULL
 )
 }

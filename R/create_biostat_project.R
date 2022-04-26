@@ -32,6 +32,28 @@ create_bst_project <- function(path,
   # if template is NULL, use default template ----------------------------------
   template <- .select_template()
 
+  # if path is a git project, set `git = TRUE`
+  if (.is_git(path) && is.na(git)) {
+    git <- TRUE
+  }
+
+  # check that `path_data=` looks like a data folder ---------------------------
+  if (interactive() &&
+      !is.null(path_data) &&
+      !tolower(basename(path_data)) %in% c("secure_data", "data")) {
+    path_data_continue <-
+      utils::menu(
+        c("Yes", "No"),
+        title =
+          paste("Expecting `path_data=` path to end in a folder called 'secure_data' or 'data'.",
+                "Do you wish to continue?", sep = "\n")
+      )
+    if (path_data_continue == 2L) {
+      cli::cli_alert_danger("Aborting...")
+      return(invisible())
+    }
+  }
+
   # create new project ---------------------------------------------------------
   starter::create_project(
     path = path,
@@ -54,6 +76,11 @@ create_hot_project <- function(path, path_data = NULL, git = TRUE, ...) {
   )
 }
 
+
+.is_git <- function(path) {
+  isTRUE(fs::dir_exists(fs::path(path, ".git")))
+}
+
 .select_template <- function() {
   # if not interactive, return default template
   if (!interactive()) {
@@ -65,8 +92,7 @@ create_hot_project <- function(path, path_data = NULL, git = TRUE, ...) {
     list("Scripts+Results in Same Folder" =
            bstfun::project_templates[["default"]],
          "Scripts+Results in Separate Folders" =
-           bstfun::project_templates[["results_folder"]],
-         "SAS Template" = bstfun::project_templates[["sas"]])
+           bstfun::project_templates[["results_folder"]])
   # adding user-defined template if it exists
   if (!is.null(bstfun::project_templates[[tolower(Sys.info()[["user"]])]])) {
     templates <-
