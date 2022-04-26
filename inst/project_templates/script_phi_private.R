@@ -28,7 +28,7 @@ tryCatch(
 )
 
 # if project has a GH link, drop URL shortcut into data folder
-if (!is.null(path_data) && fs::dir_exists(fs::path(path, ".git")))
+if (!is.null(path_data) && fs::dir_exists(fs::path(path, ".git"))) {
   tryCatch({
     remote_origin_url <-
       gert::git_remote_list(repo = path) |>
@@ -42,6 +42,8 @@ if (!is.null(path_data) && fs::dir_exists(fs::path(path, ".git")))
       cli::cli_alert_success("Link to GitHub repository placed in data folder.")
     }
   },
-  cli::cli_alert_danger("Failed to place link to GitHub repository in data folder")
+  error = funciton(e) cli::cli_alert_danger("Failed to place link to GitHub repository in data folder")
   )
+}
+
 
