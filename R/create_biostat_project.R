@@ -31,7 +31,7 @@ create_bst_project <- function(path,
                                git = NA,
                                ...) {
   # if template is NULL, use default template ----------------------------------
-  if (is.null(rlang::dots_list(...)[["template"]])) {
+  if (!is.null(rlang::dots_list(...)[["template"]])) {
     cli::cli_alert_info("To pass a custom template, use {.code starter::create_project(template=)}")
   }
   template <- .select_template()
