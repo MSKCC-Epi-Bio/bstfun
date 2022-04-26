@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -54,6 +54,13 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="0.4.0" id="bstfun-040">bstfun 0.4.0<a class="anchor" aria-label="anchor" href="#bstfun-040"></a></h2>
+<ul><li><p>Overhaul to <code><a href="../reference/create_project.html">create_bst_project()</a></code> including updated interface and templates.</p></li>
+<li><p>Updated <code><a href="../reference/auc.html">auc_density()</a></code> to better handle cut points and 0 and 1 and improved output structure by adding sensitivity and specificity estimates to a tibble.</p></li>
+<li><p>Added new functions <code><a href="../reference/tbl_likert.html">add_n.tbl_likert()</a></code> and <code>add_continuous_stat().tbl_likert()</code> (<a href="https://github.com/ddsjoberg/bstfun/issues/55" class="external-link">#55</a>)</p></li>
+<li><p>Updated templates associated with <code><a href="../reference/create_project.html">create_bst_project()</a></code> including adding a SAS template (<a href="https://github.com/ddsjoberg/bstfun/issues/84" class="external-link">#84</a>)</p></li>
+</ul></div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="0.3.7" id="bstfun-037">bstfun 0.3.7<a class="anchor" aria-label="anchor" href="#bstfun-037"></a></h2>
 <ul><li><p>No longer depending on the development version of {gtsummary}.</p></li>
 <li><p>Improved messaging in <code><a href="../reference/reinstall_prior_pkgs.html">reinstall_prior_pkgs()</a></code>.</p></li>
@@ -66,16 +73,14 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.3.5" id="bstfun-035">bstfun 0.3.5<a class="anchor" aria-label="anchor" href="#bstfun-035"></a></h2>
-<ul><li>Updates the the <code>theme_gtsummary_msk("hot")</code> theme.
-<ul><li>Default chi-square test without continuity correction removed since it is the current default for tbl_summary.</li>
+<ul><li>Updates the the <code>theme_gtsummary_msk("hot")</code> theme.<ul><li>Default chi-square test without continuity correction removed since it is the current default for tbl_summary.</li>
 <li>Added the compact theme to the the HOT theme.</li>
 </ul></li>
 <li>Added a method to calculate adjusted differences for binary endpoints using logistic regression <code><a href="../reference/logistic_reg_adj_diff.html">logistic_reg_adj_diff()</a></code>. (<a href="https://github.com/ddsjoberg/bstfun/issues/20" class="external-link">#20</a>)</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.3.4" id="bstfun-034">bstfun 0.3.4<a class="anchor" aria-label="anchor" href="#bstfun-034"></a></h2>
-<ul><li>No changes. Making release for RSPM.</li>
-</ul></div>
+<ul><li>No changes. Making release for RSPM.</li></ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.3.3" id="bstfun-033">bstfun 0.3.3<a class="anchor" aria-label="anchor" href="#bstfun-033"></a></h2>
 <ul><li><p>Bug fix in HOT project template where the <code>reference.bib</code> file was being placed in the incorrect folder.</p></li>
@@ -114,11 +119,10 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.8" id="bstfun-028">bstfun 0.2.8<a class="anchor" aria-label="anchor" href="#bstfun-028"></a></h2>
-<ul><li>Updated how references are added in <code><a href="../reference/cite_r.html">cite_r()</a></code>.</li>
-</ul></div>
+<ul><li>Updated how references are added in <code><a href="../reference/cite_r.html">cite_r()</a></code>.</li></ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.7" id="bstfun-027">bstfun 0.2.7<a class="anchor" aria-label="anchor" href="#bstfun-027"></a></h2>
-<ul><li><p>Added new function <code><a href="../reference/add_sparkline.html">add_sparkline()</a></code>–a wrapper for <code><a href="https://rdrr.io/pkg/gtExtras/man/gt_sparkline.html" class="external-link">gtExtras::gt_sparkline()</a></code> that adds distributional figures in a new column of a ‘tbl_summary’ table.</p></li>
+<ul><li><p>Added new function <code><a href="../reference/add_sparkline.html">add_sparkline()</a></code>–a wrapper for <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_sparkline.html" class="external-link">gtExtras::gt_sparkline()</a></code> that adds distributional figures in a new column of a ‘tbl_summary’ table.</p></li>
 <li><p>Updated default argument value: <code>as_forest_plot(xlog = x$inputs$exponentiate)</code>.</p></li>
 </ul></div>
     <div class="section level2">
@@ -145,8 +149,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.3" id="bstfun-023">bstfun 0.2.3<a class="anchor" aria-label="anchor" href="#bstfun-023"></a></h2>
-<ul><li>Update to <code><a href="../reference/here_data.html">here_data()</a></code> to import the data date properly when the date is not followed by a hard return. (<a href="https://github.com/ddsjoberg/bstfun/issues/42" class="external-link">#42</a>)</li>
-</ul></div>
+<ul><li>Update to <code><a href="../reference/here_data.html">here_data()</a></code> to import the data date properly when the date is not followed by a hard return. (<a href="https://github.com/ddsjoberg/bstfun/issues/42" class="external-link">#42</a>)</li></ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.2" id="bstfun-022">bstfun 0.2.2<a class="anchor" aria-label="anchor" href="#bstfun-022"></a></h2>
 <ul><li><p>Added function <code><a href="../reference/cite_r.html">cite_r()</a></code> to assist in citing R and R packages in R markdown reports.</p></li>
@@ -158,8 +161,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.1" id="bstfun-021">bstfun 0.2.1<a class="anchor" aria-label="anchor" href="#bstfun-021"></a></h2>
-<ul><li>Updates to project templates.</li>
-</ul></div>
+<ul><li>Updates to project templates.</li></ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.0" id="bstfun-020">bstfun 0.2.0<a class="anchor" aria-label="anchor" href="#bstfun-020"></a></h2>
 <ul><li><p>Added new function <code><a href="../reference/create_project.html">create_bst_project()</a></code>, a wrapper for <code><a href="https://rdrr.io/pkg/starter/man/create_project.html" class="external-link">starter::create_project()</a></code> that drops a copy of the Biostatistics project template into a new or existing folder. The function defaults to the Biostatistics template, but any template may be passed.</p></li>
@@ -187,8 +189,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.1.3" id="bstfun-013">bstfun 0.1.3<a class="anchor" aria-label="anchor" href="#bstfun-013"></a></h2>
-<ul><li>Added new function <code><a href="../reference/style_tbl_compact.html">style_tbl_compact()</a></code> that makes the compact styling available in <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/theme_gtsummary.html" class="external-link">gtsummary::theme_gtsummary_compact()</a></code> to any {gt}, {flextable}, {huxtable}, or <code><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">knitr::kable()</a></code> table.</li>
-</ul></div>
+<ul><li>Added new function <code><a href="../reference/style_tbl_compact.html">style_tbl_compact()</a></code> that makes the compact styling available in <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/theme_gtsummary.html" class="external-link">gtsummary::theme_gtsummary_compact()</a></code> to any {gt}, {flextable}, {huxtable}, or <code><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">knitr::kable()</a></code> table.</li></ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.1.2" id="bstfun-012">bstfun 0.1.2<a class="anchor" aria-label="anchor" href="#bstfun-012"></a></h2>
 <ul><li><p>Added new function <code><a href="../reference/deprecated.html">gts_add_p_footnotes()</a></code></p></li>
@@ -201,8 +202,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.1.0" id="bstfun-010">bstfun 0.1.0<a class="anchor" aria-label="anchor" href="#bstfun-010"></a></h2>
-<ul><li>First release</li>
-</ul></div>
+<ul><li>First release</li></ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -217,7 +217,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>
