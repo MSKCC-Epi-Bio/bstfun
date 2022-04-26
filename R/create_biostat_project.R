@@ -4,7 +4,8 @@
 #' The function can be used on existing project directories as well.
 #'
 #' The folder name should be structured as `"<PI Last Name> <Short Description>"`,
-#' e.g. `"Sjoberg MRI detects Path Stage after Surgery"`.
+#' e.g. `"Sjoberg MRI detects Path Stage after Surgery"`. PI last name
+#' is used in file naming.
 #'
 #' @inheritParams starter::create_project
 #' @inheritDotParams starter::create_project -template -git
