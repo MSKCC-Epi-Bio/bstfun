@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Misc functions for the dept
-Version: 0.3.7.9003
+Version: 0.4.0
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",

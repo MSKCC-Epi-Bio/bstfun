@@ -1,4 +1,4 @@
-# bstfun (development version)
+# bstfun 0.4.0
 
 * Overhaul to `create_bst_project()` including updated interface and templates.
 
