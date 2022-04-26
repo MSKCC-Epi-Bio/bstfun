@@ -14,7 +14,7 @@
 #' theme_gtsummary_msk("hot")
 theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
                                          "esther", "curry", "lavery", "meier", "leej",
-                                         "whitingk", "mauguena",
+                                         "whitingk", "kwhiting", "mauguena",
                                          "drille", "currym1", "laveryj", "hsum1", "leej22"),
                                 font_size = NULL) {
   # picking theme name
@@ -53,6 +53,7 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
     "leej" = lst_theme_leej,
     # match previous users to their sys.info login
     "whitingk" = lst_theme_karissa,
+    "kwhiting" = lst_theme_karissa,
     "mauguena" = lst_theme_mauguen,
     "drille" = lst_theme_esther,
     "currym1" = lst_theme_curry,

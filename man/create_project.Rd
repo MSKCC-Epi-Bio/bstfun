@@ -41,7 +41,8 @@ Creates a directory with the essential files for a new project.
 The function can be used on existing project directories as well.
 
 The folder name should be structured as \code{"<PI Last Name> <Short Description>"},
-e.g. \code{"Sjoberg MRI detects Path Stage after Surgery"}.
+e.g. \code{"Sjoberg MRI detects Path Stage after Surgery"}. PI last name
+is used in file naming.
 }
 \examples{
 \dontshow{if (FALSE) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

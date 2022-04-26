@@ -306,6 +306,7 @@ project_templates[["results_folder"]] <- project_template_results_folder
 project_templates[["hot"]] <- hot_project_template
 project_templates[["sas"]] <- project_template_sas
 project_templates[["whitingk"]] <- whitingk_project_template
+project_templates[["kwhiting"]] <- whitingk_project_template
 project_templates[["leej22"]] <- leej22_project_template
 project_templates[["lobaughs"]] <- lobaughs_project_template
 
