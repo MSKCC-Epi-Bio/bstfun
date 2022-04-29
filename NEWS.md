@@ -1,3 +1,9 @@
+# bstfun (development version)
+
+* Re-exporting the `here::here()` function.
+
+* Re-exporting `gtsummary::tbl_split()` function, and no longer warning about the function's use from within {bstfun}.
+
 # bstfun 0.4.0
 
 * Overhaul to `create_bst_project()` including updated interface and templates.

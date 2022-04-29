@@ -28,15 +28,6 @@ tbl_2way_summary <- function(data, row, col, con, label = NULL,
 
 #' @rdname deprecated
 #' @export
-tbl_split <- function(x, variables) {
-  lifecycle::deprecate_warn(when = "0.2.5", what = "bstfun::tbl_split()",
-                            with = "gtsummary::tbl_split()")
-
-  gtsummary::tbl_split(x, variables)
-}
-
-#' @rdname deprecated
-#' @export
 gtsummary_butcher <- function(x) {
   lifecycle::deprecate_warn(
     when = "0.2.5", what = "bstfun::gtsummary_butcher()",

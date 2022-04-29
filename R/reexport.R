@@ -1,3 +1,8 @@
+# here -------------------------------------------------------------------------
+#' @export
+#' @importFrom here here
+here::here
+
 # dplyr ------------------------------------------------------------------------
 #' @export
 #' @importFrom dplyr %>%
@@ -44,6 +49,11 @@ dplyr::last_col
 dplyr::one_of
 
 # gtsummary --------------------------------------------------------------------
+# migrated to gtsummary in October 2021, can eventually be removed? no harm in keeping it?
+#' @export
+#' @importFrom gtsummary tbl_split
+gtsummary::tbl_split
+
 #' @export
 #' @importFrom gtsummary as_gt
 gtsummary::as_gt
