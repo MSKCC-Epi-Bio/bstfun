@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.3.7.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.0.9000</span>
       </span>
     </div>
 
@@ -55,7 +55,13 @@
 
     <div class="section level2">
 <h2 class="page-header" data-toc-text="development version" id="bstfun-development-version">bstfun (development version)<a class="anchor" aria-label="anchor" href="#bstfun-development-version"></a></h2>
-<ul><li><p>Updated <code><a href="../reference/auc.html">auc_density()</a></code> to better handle cut points and 0 and 1 and improved output structure by adding sensitivity and specificity estimates to a tibble.</p></li>
+<ul><li><p>Re-exporting the <code><a href="https://here.r-lib.org//reference/here.html" class="external-link">here::here()</a></code> function.</p></li>
+<li><p>Re-exporting <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_split.html" class="external-link">gtsummary::tbl_split()</a></code> function, and no longer warning about the function’s use from within {bstfun}.</p></li>
+</ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.4.0" id="bstfun-040">bstfun 0.4.0<a class="anchor" aria-label="anchor" href="#bstfun-040"></a></h2>
+<ul><li><p>Overhaul to <code><a href="../reference/create_project.html">create_bst_project()</a></code> including updated interface and templates.</p></li>
+<li><p>Updated <code><a href="../reference/auc.html">auc_density()</a></code> to better handle cut points and 0 and 1 and improved output structure by adding sensitivity and specificity estimates to a tibble.</p></li>
 <li><p>Added new functions <code><a href="../reference/tbl_likert.html">add_n.tbl_likert()</a></code> and <code>add_continuous_stat().tbl_likert()</code> (<a href="https://github.com/ddsjoberg/bstfun/issues/55" class="external-link">#55</a>)</p></li>
 <li><p>Updated templates associated with <code><a href="../reference/create_project.html">create_bst_project()</a></code> including adding a SAS template (<a href="https://github.com/ddsjoberg/bstfun/issues/84" class="external-link">#84</a>)</p></li>
 </ul></div>
@@ -132,7 +138,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.5" id="bstfun-025">bstfun 0.2.5<a class="anchor" aria-label="anchor" href="#bstfun-025"></a></h2>
-<ul><li><p>Deprecated <code><a href="../reference/deprecated.html">bstfun::tbl_split()</a></code>, <code>bstfun::gts_add_p_footnote()</code>, and <code><a href="../reference/deprecated.html">bstfun::gtsummary_butcher()</a></code> in lieu of <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_split.html" class="external-link">gtsummary::tbl_split()</a></code>, <code>gtsummary::separate_p_footnote()</code>, and <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_butcher.html" class="external-link">gtsummary::tbl_butcher()</a></code>.</p></li>
+<ul><li><p>Deprecated <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_split.html" class="external-link">bstfun::tbl_split()</a></code>, <code>bstfun::gts_add_p_footnote()</code>, and <code><a href="../reference/deprecated.html">bstfun::gtsummary_butcher()</a></code> in lieu of <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_split.html" class="external-link">gtsummary::tbl_split()</a></code>, <code>gtsummary::separate_p_footnote()</code>, and <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_butcher.html" class="external-link">gtsummary::tbl_butcher()</a></code>.</p></li>
 <li><p>Removed {tidyselect} dependency.</p></li>
 <li><p>Added new function <code><a href="../reference/as_forest_plot.html">as_forest_plot()</a></code> that converts a gtsummary table into a forest plot using <code><a href="https://rdrr.io/pkg/forestplot/man/forestplot.html" class="external-link">forestplot::forestplot()</a></code>.</p></li>
 <li><p>Added new function <code><a href="../reference/add_cuminc_risktable.html">add_cuminc_risktable()</a></code> to plot cumulative incidence estimates with both the at-risk table and the estimates printed below the table.</p></li>
@@ -183,7 +189,7 @@
 <h2 class="page-header" data-toc-text="0.1.4" id="bstfun-014">bstfun 0.1.4<a class="anchor" aria-label="anchor" href="#bstfun-014"></a></h2>
 <ul><li><p>Added <code><a href="../reference/hpcc.html">hpcc_get_arg()</a></code> and <code><a href="../reference/hpcc.html">hpcc_get_seq_number()</a></code> functions to aid working with the high performance computing cluster. (<a href="https://github.com/ddsjoberg/bstfun/issues/19" class="external-link">#19</a>)</p></li>
 <li><p>Added <code><a href="../reference/as_ggplot.html">as_ggplot()</a></code> function to convert gt and gtsummary tables to ggplot</p></li>
-<li><p>Added <code><a href="../reference/deprecated.html">tbl_split()</a></code> function to actively split a gtsummary table to more easily show on multiple pages.</p></li>
+<li><p>Added <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_split.html" class="external-link">tbl_split()</a></code> function to actively split a gtsummary table to more easily show on multiple pages.</p></li>
 <li><p>Added <code>"leej"</code> theme to <code><a href="../reference/theme_gtsummary_msk.html">theme_gtsummary_msk()</a></code></p></li>
 </ul></div>
     <div class="section level2">
