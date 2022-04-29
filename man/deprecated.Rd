@@ -3,7 +3,6 @@
 \name{deprecated}
 \alias{deprecated}
 \alias{tbl_2way_summary}
-\alias{tbl_split}
 \alias{gtsummary_butcher}
 \alias{gts_add_p_footnotes}
 \title{Deprecated functions}
@@ -16,8 +15,6 @@ tbl_2way_summary(
   label = NULL,
   statistic = "{median} ({p25}, {p75})"
 )
-
-tbl_split(x, variables)
 
 gtsummary_butcher(x)
 
