@@ -1,4 +1,6 @@
-# bstfun (development version)
+# bstfun 0.4.2
+
+* Removed `"as_flex_table-lgl:use_ftExtra"` gtsummary theme element from HOT template. There seems to be an issue with {ftExtra} when the package is knit (but works interactively).
 
 # bstfun 0.4.1
 
