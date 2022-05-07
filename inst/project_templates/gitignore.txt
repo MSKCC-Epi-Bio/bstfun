@@ -48,6 +48,6 @@ renv/python/
 renv/staging/
 
 # dont ignore derived variables xlsx file
-!derived variables*.xlsx
+!derived_variables*.xlsx
 !derived_variables*.xls
 !data_date.txt
