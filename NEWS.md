@@ -1,3 +1,7 @@
+# bstfun 0.4.4
+
+* Update to the HOT project template.
+
 # bstfun 0.4.3
 
 * Updated project template `.gitignore` file.
