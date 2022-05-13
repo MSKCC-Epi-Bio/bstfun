@@ -1,3 +1,5 @@
+# bstfun (development version)
+
 # bstfun 0.4.4
 
 * Update to the HOT project template.
