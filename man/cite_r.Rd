@@ -24,16 +24,20 @@ Add citations to R and R packages in an R Markdown report.
 
 
 Below is an example how the \code{cite_r()} function would be used in an R
-Markdown report.\preformatted{---
+Markdown report.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{---
 output: html_document
 bibliography: references.bib
 ---
 
 Analyses were conducted with `r bstfun::cite_r(pkgs = "tidyverse")`.
-}
+}\if{html}{\out{</div>}}
 
 This assumes there is a bib file of references called \code{references.bib} that
-contain the following entries.\preformatted{  @Manual\{r,
+contain the following entries.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{  @Manual\{r,
     title = \{R: A Language and Environment for Statistical Computing\},
     author = \{\{R Core Team\}\},
     organization = \{R Foundation for Statistical Computing\},
@@ -52,7 +56,7 @@ contain the following entries.\preformatted{  @Manual\{r,
     pages = \{1686\},
     doi = \{10.21105/joss.01686\},
   \}
-}
+}\if{html}{\out{</div>}}
 }
 
 \examples{

@@ -1,15 +1,14 @@
 test_that("add_sparkline() works", {
   tbl <-
     trial %>%
-    select(age, marker) %>%
+    dplyr::select(age, marker) %>%
     gtsummary::tbl_summary(missing = "always")
 
   expect_error(
-    tbl %>% add_sparkline(type = "histogram"),
-    NA
-  )
-  expect_error(
-    tbl %>% add_sparkline(type = "sparkline"),
+    purrr::map(
+      c("boxplot", "histogram", "rug_strip", "density", "sparkline"),
+      ~ add_sparkline(tbl, type = .)
+    ),
     NA
   )
 

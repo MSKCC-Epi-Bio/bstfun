@@ -6,7 +6,7 @@
 \usage{
 add_sparkline(
   x,
-  type = c("histogram", "sparkline"),
+  type = c("boxplot", "histogram", "rug_strip", "density", "sparkline"),
   column_header = NULL,
   same_limit = FALSE,
   ...
@@ -15,29 +15,27 @@ add_sparkline(
 \arguments{
 \item{x}{'tbl_summary' object}
 
-\item{type}{sparkline type. Must be one of \code{c("histogram", "sparkline")}}
+\item{type}{sparkline type. Must be one of \code{c("boxplot", "histogram", "rug_strip", "density", "sparkline")}}
 
 \item{column_header}{string indicating column header}
 
 \item{same_limit}{A logical indicating that the plots will use the same axis range (\code{TRUE}) or have individual axis ranges (\code{FALSE}).}
 
 \item{...}{
-  Arguments passed on to \code{\link[gtExtras:gt_sparkline]{gtExtras::gt_sparkline}}
+  Arguments passed on to \code{\link[gtExtras:gt_plt_dist]{gtExtras::gt_plt_dist}}
   \describe{
-    \item{\code{width}}{A number indicating the width of the plot in mm at a DPI of 25.4, defaults to 30}
+    \item{\code{fig_dim}}{A vector of two numbers indicating the height/width of the plot in mm at a DPI of 25.4, defaults to \code{c(5,30)}}
     \item{\code{line_color}}{Color for the line, defaults to \code{"black"}. Accepts a named color (eg 'blue') or a hex color.}
-    \item{\code{range_colors}}{A vector of two valid color names or hex codes, the first color represents the min values and the second color represents the highest point per plot. Defaults to \code{c("blue", "blue")}. Accepts a named color (eg \code{'blue'}) or a hex color like \code{"#fafafa"}.}
     \item{\code{fill_color}}{Color for the fill of histograms/density plots, defaults to \code{"grey"}. Accepts a named color (eg \code{'blue'}) or a hex color.}
     \item{\code{bw}}{The bandwidth or binwidth, passed to \code{density()} or \code{ggplot2::geom_histogram()}. If \code{type = "density"}, then \code{bw} is passed to the \code{bw} argument, if \code{type = "histogram"}, then \code{bw} is passed to the \code{binwidth} argument.}
     \item{\code{trim}}{A logical indicating whether to trim the values in \code{type = "density"} to a slight expansion beyond the observable range. Can help with long tails in \code{density} plots.}
-    \item{\code{label}}{A logical indicating whether the sparkline will have a numeric label at the end of the plot.}
   }}
 }
 \value{
 a gt table
 }
 \description{
-This function wraps \code{gtExtras::gt_sparkline()} and adds a new column
+This function wraps \code{gtExtras::gt_plt_dist()} and adds a new column
 illustrating the distribution of a continuous variable. This function converts
 the gtsummary table into a gt table.
 }
