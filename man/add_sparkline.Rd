@@ -6,7 +6,7 @@
 \usage{
 add_sparkline(
   x,
-  type = c("histogram", "sparkline"),
+  type = c("boxplot", "histogram", "rug_strip", "density", "sparkline"),
   column_header = NULL,
   same_limit = FALSE,
   ...
@@ -15,7 +15,7 @@ add_sparkline(
 \arguments{
 \item{x}{'tbl_summary' object}
 
-\item{type}{sparkline type. Must be one of \code{c("histogram", "sparkline")}}
+\item{type}{sparkline type. Must be one of \code{c("boxplot", "histogram", "rug_strip", "density", "sparkline")}}
 
 \item{column_header}{string indicating column header}
 

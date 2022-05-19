@@ -5,7 +5,7 @@
 #' the gtsummary table into a gt table.
 #'
 #' @param x 'tbl_summary' object
-#' @param type sparkline type. Must be one of `c("histogram", "sparkline")`
+#' @param type sparkline type. Must be one of `c("boxplot", "histogram", "rug_strip", "density", "sparkline")`
 #' @param column_header string indicating column header
 #' @inheritParams gtExtras::gt_plt_dist
 #' @inheritDotParams gtExtras::gt_plt_dist -gt_object -column -same_limit -type
@@ -27,11 +27,11 @@
 #'
 #' \if{html}{\figure{add_sparkline_ex1.png}{options: width=50\%}}
 add_sparkline <- function(x,
-                          type = c("histogram", "sparkline"),
+                          type = c("boxplot", "histogram", "rug_strip", "density", "sparkline"),
                           column_header = NULL,
                           same_limit = FALSE,
                           ...) {
-  assert_package("gtExtras", "gts_sparkline()")
+  assert_package("gtExtras", "add_sparkline()")
   if (!inherits(x, "tbl_summary")) {
     stop("`x=` must be class 'tbl_summary'", call. = FALSE)
   }
@@ -49,12 +49,18 @@ add_sparkline <- function(x,
       type,
       "histogram" = "**Histogram**",
       "density" = "**Density**",
+      "boxplot" = "**Box Plot**",
+      "rug_strip" = "**Rug Strip**",
       "sparkline" = "**Sparkline**"
-    )
+    ) %||%
+    "*Distribution**"
   stopifnot(rlang::is_string(column_header))
   if (!is.null(x$by)) {
     message("Input table is stratified, but sparkline figure is not.")
   }
+
+  gtExtras_gt_plt_fun <-
+    if (type %in% "sparkline") gtExtras::gt_plt_sparkline else gtExtras::gt_plt_dist
 
   x %>%
     # merge in variables' distribution data
@@ -85,7 +91,7 @@ add_sparkline <- function(x,
     gtsummary::modify_header(..sparkline_data.. = column_header) %>%
     # convert to gt and add gtExtras sparkline
     as_gt() %>%
-    gtExtras::gt_plt_dist(
+    gtExtras_gt_plt_fun(
       column = .data$..sparkline_data..,
       type = type,
       same_limit = same_limit,
