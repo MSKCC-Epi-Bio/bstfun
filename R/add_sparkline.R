@@ -1,14 +1,14 @@
 #' Add Sparkline Figure
 #'
-#' This function wraps `gtExtras::gt_sparkline()` and adds a new column
+#' This function wraps `gtExtras::gt_plt_dist()` and adds a new column
 #' illustrating the distribution of a continuous variable. This function converts
 #' the gtsummary table into a gt table.
 #'
 #' @param x 'tbl_summary' object
 #' @param type sparkline type. Must be one of `c("histogram", "sparkline")`
 #' @param column_header string indicating column header
-#' @inheritParams gtExtras::gt_sparkline
-#' @inheritDotParams gtExtras::gt_sparkline -gt_object -column -same_limit -type
+#' @inheritParams gtExtras::gt_plt_dist
+#' @inheritDotParams gtExtras::gt_plt_dist -gt_object -column -same_limit -type
 #'
 #' @return a gt table
 #' @family gtsummary-related functions
@@ -85,7 +85,7 @@ add_sparkline <- function(x,
     gtsummary::modify_header(..sparkline_data.. = column_header) %>%
     # convert to gt and add gtExtras sparkline
     as_gt() %>%
-    gtExtras::gt_sparkline(
+    gtExtras::gt_plt_dist(
       column = .data$..sparkline_data..,
       type = type,
       same_limit = same_limit,

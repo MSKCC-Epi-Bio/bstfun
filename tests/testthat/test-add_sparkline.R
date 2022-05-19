@@ -1,7 +1,7 @@
 test_that("add_sparkline() works", {
   tbl <-
     trial %>%
-    select(age, marker) %>%
+    dplyr::select(age, marker) %>%
     gtsummary::tbl_summary(missing = "always")
 
   expect_error(
