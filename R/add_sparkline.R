@@ -59,10 +59,16 @@ add_sparkline <- function(x,
     message("Input table is stratified, but sparkline figure is not.")
   }
 
-  gtExtras_gt_plt_fun <-
-    if (type %in% "sparkline") purrr::partial(gtExtras::gt_plt_sparkline, type = "default") else purrr::partial(gtExtras::gt_plt_dist, type = type)
+  if (type %in% "sparkline") {
+    gtExtras_gt_plt_fun <- gtExtras::gt_plt_sparkline
+    type <- "default"
+  }
+  else {
+    gtExtras_gt_plt_fun <- gtExtras::gt_plt_dist
+  }
 
-   x %>%
+  tbl <-
+    x %>%
     # merge in variables' distribution data
     gtsummary::modify_table_body(
       function(table_body) {
@@ -80,19 +86,20 @@ add_sparkline <- function(x,
                 )
             ),
           by = c("variable", "row_type")
-        ) %>%
-        mutate(
-          ..sparkline_data.. =
-            map(.data$..sparkline_data.., ~switch(!is.null(.x), .x) %||% list(NA))
         )
       }
     ) %>%
     # add a column header
     gtsummary::modify_header(..sparkline_data.. = column_header) %>%
     # convert to gt and add gtExtras sparkline
-    as_gt() %>%
-    gtExtras_gt_plt_fun(
-      column = .data$..sparkline_data..,
-      same_limit = same_limit,
-      ...)
+    as_gt()
+
+
+  gtExtras_gt_plt_fun(
+    tbl,
+    column = .data$..sparkline_data..,
+    type = type,
+    same_limit = same_limit,
+    ...
+  )
 }
