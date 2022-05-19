@@ -60,9 +60,9 @@ add_sparkline <- function(x,
   }
 
   gtExtras_gt_plt_fun <-
-    if (type %in% "sparkline") gtExtras::gt_plt_sparkline else gtExtras::gt_plt_dist
-  if (type %in% "sparkline") type <- "default"
-  x %>%
+    if (type %in% "sparkline") purrr::partial(gtExtras::gt_plt_sparkline, type = "default") else purrr::partial(gtExtras::gt_plt_dist, type = type)
+
+   x %>%
     # merge in variables' distribution data
     gtsummary::modify_table_body(
       function(table_body) {
@@ -93,7 +93,6 @@ add_sparkline <- function(x,
     as_gt() %>%
     gtExtras_gt_plt_fun(
       column = .data$..sparkline_data..,
-      type = type,
       same_limit = same_limit,
       ...)
 }

@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Update to `add_sparkline()` to handle updated API in {gtExtras}. (#101)
+
 # bstfun 0.4.4
 
 * Update to the HOT project template.
