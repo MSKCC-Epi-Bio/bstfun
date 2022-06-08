@@ -26,7 +26,7 @@ use_bst_rstudio_prefs <- function(profile = tolower(Sys.info()[["user"]])) {
     cli::cli_alert_info("Adding {.val {profile}} preferences...")
     bst_prefs <-
       bst_prefs %>%
-      purrr::list_modify(!!!prefs_for_users[[profile]])
+      purrr::list_modify(!!!profile_prefs[[profile]])
   }
 
   # apply preferences ----------------------------------------------------------
@@ -52,7 +52,7 @@ bst_prefs <-
     show_invisibles = TRUE
   )
 
-prefs_for_users <-
+profile_prefs <-
   list(
     "sjobergd" = list(highlight_selected_line = TRUE,
                       show_indent_guides = TRUE,
