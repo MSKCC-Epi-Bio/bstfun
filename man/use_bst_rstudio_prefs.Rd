@@ -4,7 +4,11 @@
 \alias{use_bst_rstudio_prefs}
 \title{Use Biostatistics RStudio Preferences}
 \usage{
-use_bst_rstudio_prefs()
+use_bst_rstudio_prefs(profile = tolower(Sys.info()[["user"]]))
+}
+\arguments{
+\item{profile}{Used to set additional preferences saved under specified profile.
+Default is your current system username. If no profile exists, it is ignored.}
 }
 \description{
 The function wraps \code{rstudio.prefs::use_rstudio_prefs()} and sets the following
@@ -13,16 +17,16 @@ preferences in RStudio.\tabular{ll}{
    always_save_history \tab FALSE \cr
    graphics_backend \tab ragg \cr
    load_workspace \tab FALSE \cr
+   show_hidden_files \tab TRUE \cr
+   show_line_numbers \tab TRUE \cr
    margin_column \tab 80 \cr
+   save_workspace \tab never \cr
    rainbow_parentheses \tab TRUE \cr
    restore_last_project \tab FALSE \cr
    rmd_chunk_output_inline \tab FALSE \cr
-   show_hidden_files \tab TRUE \cr
-   show_invisibles \tab TRUE \cr
    show_last_dot_value \tab TRUE \cr
-   show_line_numbers \tab TRUE \cr
    show_margin \tab TRUE \cr
-   save_workspace \tab never \cr
+   show_invisibles \tab TRUE \cr
 }
 }
 \examples{

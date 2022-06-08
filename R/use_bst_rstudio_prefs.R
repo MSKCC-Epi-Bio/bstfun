@@ -12,29 +12,56 @@
 #'   rlang::set_names(c("**Preference**", "**Value**")) %>%
 #'   knitr::kable()
 #' ```
+#' @param profile Used to set additional preferences saved under specified profile.
+#' Default is your current system username. If no profile exists, it is ignored.
 #'
 #' @export
 #'
 #' @examplesIf FALSE
 #' use_bst_rstudio_prefs()
 
-use_bst_rstudio_prefs <- function() {
+use_bst_rstudio_prefs <- function(profile = tolower(Sys.info()[["user"]])) {
+  # adding user-specific preferences -------------------------------------------
+  if (profile %in% names(prefs_for_users)) {
+    cli::cli_alert_info("Adding {.val {profile}} preferences...")
+    bst_prefs <-
+      bst_prefs %>%
+      purrr::list_modify(!!!prefs_for_users[[profile]])
+  }
+
   # apply preferences ----------------------------------------------------------
   rstudio.prefs::use_rstudio_prefs(!!!bst_prefs)
 }
 
+
 # save preferences in list -----------------------------------------------------
 bst_prefs <-
-  list(always_save_history = FALSE,
-       graphics_backend = "ragg",
-       load_workspace = FALSE,
-       margin_column = 80L,
-       rainbow_parentheses = TRUE,
-       restore_last_project = FALSE,
-       rmd_chunk_output_inline = FALSE,
-       show_hidden_files = TRUE,
-       show_invisibles = TRUE,
-       show_last_dot_value = TRUE,
-       show_line_numbers = TRUE,
-       show_margin = TRUE,
-       save_workspace = "never")
+  list(
+    always_save_history = FALSE,
+    graphics_backend = "ragg",
+    load_workspace = FALSE,
+    show_hidden_files = TRUE,
+    show_line_numbers = TRUE,
+    margin_column = 80L,
+    save_workspace = "never",
+    rainbow_parentheses = TRUE,
+    restore_last_project = FALSE,
+    rmd_chunk_output_inline = FALSE,
+    show_last_dot_value = TRUE,
+    show_margin = TRUE,
+    show_invisibles = TRUE
+  )
+
+prefs_for_users <-
+  list(
+    "sjobergd" = list(highlight_selected_line = TRUE,
+                      show_indent_guides = TRUE,
+                      show_terminal_tab = TRUE,
+                      use_tinytex = TRUE,
+                      auto_save_on_blur = TRUE,
+                      code_completion_delay = 150,
+                      document_author = "Daniel D. Sjoberg",
+                      insert_native_pipe_operator = TRUE,
+                      show_invisibles = FALSE)
+  )
+
