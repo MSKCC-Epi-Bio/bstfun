@@ -2,6 +2,8 @@
 
 * Update to `add_sparkline()` to handle updated API in {gtExtras}. (#101)
 
+* Added `use_bst_rstudio_prefs(profile=)` argument allowing users to modify the standard biostatistics preferences.
+
 # bstfun 0.4.4
 
 * Update to the HOT project template.
