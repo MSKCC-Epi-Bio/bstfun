@@ -22,7 +22,7 @@
 
 use_bst_rstudio_prefs <- function(profile = tolower(Sys.info()[["user"]])) {
   # adding user-specific preferences -------------------------------------------
-  if (profile %in% names(prefs_for_users)) {
+  if (profile %in% names(profile_prefs)) {
     cli::cli_alert_info("Adding {.val {profile}} preferences...")
     bst_prefs <-
       bst_prefs %>%
