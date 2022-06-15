@@ -79,7 +79,7 @@ Suggests:
     forestplot (>= 2.0.1),
     ggplot2 (>= 3.3.5),
     ggtext (>= 0.1.1),
-    gtExtras (>= 0.3.3),
+    gtExtras (>= 0.4.0),
     Hmisc,
     huxtable (>= 5.4.0),
     kableExtra (>= 1.3.4),
@@ -98,8 +98,6 @@ Suggests:
     usethis (>= 1.6.1)
 RdMacros: 
     lifecycle
-Remotes:
-    jthomasmock/gtExtras
 Encoding: UTF-8
 Language: en-US
 LazyData: true
