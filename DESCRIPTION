@@ -73,6 +73,7 @@ Imports:
     tibble (>= 3.0.3),
     tidyr (>= 1.1.1)
 Suggests: 
+    binom,
     cmprsk (>= 2.2.10),
     covr (>= 3.5.0),
     flextable (>= 0.5.10),

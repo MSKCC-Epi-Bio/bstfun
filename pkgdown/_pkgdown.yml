@@ -80,6 +80,7 @@ reference:
 
   - title: "Other Functions"
     contents:
+      - ggcalibration
       - add_cuminc_risktable
       - followup_time
       - auc
