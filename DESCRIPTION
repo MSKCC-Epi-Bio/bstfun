@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Misc functions for the dept
-Version: 0.4.4.9002
+Version: 0.4.4.9003
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",
@@ -73,6 +73,7 @@ Imports:
     tibble (>= 3.0.3),
     tidyr (>= 1.1.1)
 Suggests: 
+    binom,
     cmprsk (>= 2.2.10),
     covr (>= 3.5.0),
     flextable (>= 0.5.10),
