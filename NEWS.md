@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Added `ggcalibration()` function.
+
 * Update to `add_sparkline()` to handle updated API in {gtExtras}. (#101)
 
 * Added `use_bst_rstudio_prefs(profile=)` argument allowing users to modify the standard biostatistics preferences.
