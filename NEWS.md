@@ -1,4 +1,4 @@
-# bstfun (development version)
+# bstfun 0.4.5
 
 * Deprecated `reinstall_prior_pkgs()` in favor of `updater::install_pkgs()`.
 
