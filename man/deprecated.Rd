@@ -2,11 +2,14 @@
 % Please edit documentation in R/deprecated.R
 \name{deprecated}
 \alias{deprecated}
+\alias{reinstall_prior_pkgs}
 \alias{tbl_2way_summary}
 \alias{gtsummary_butcher}
 \alias{gts_add_p_footnotes}
 \title{Deprecated functions}
 \usage{
+reinstall_prior_pkgs(...)
+
 tbl_2way_summary(
   data,
   row,

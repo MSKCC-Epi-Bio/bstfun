@@ -8,6 +8,17 @@
 #' @keywords internal
 NULL
 
+# v0.4.5 (2022-06-21) ----------------------------------------------------------
+#' @rdname deprecated
+#' @export
+reinstall_prior_pkgs <- function(...) {
+  lifecycle::deprecate_stop(
+    when = "0.4.5",
+    "bstfun::reinstall_prior_pkgs()",
+    "updater::install_pkgs()"
+  )
+}
+
 # v0.2.5 (2020-10-16) ----------------------------------------------------------
 #' @rdname deprecated
 #' @export

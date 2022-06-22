@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Deprecated `reinstall_prior_pkgs()` in favor of `updater::install_pkgs()`.
+
 * Added `ggcalibration()` function.
 
 * Update to `add_sparkline()` to handle updated API in {gtExtras}. (#101)
