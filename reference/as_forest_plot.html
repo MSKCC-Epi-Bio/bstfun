@@ -20,7 +20,7 @@ forest plot using forestplot::forestplot()."><!-- mathjax --><script src="https:
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
       </span>
     </div>
 
@@ -134,7 +134,7 @@ the tick marks properly.</p></dd>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Example 3 ----------------------------------</span></span>
 <span class="r-in"><span class="va">tbl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in"><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/modify_cols_merge.html" class="external-link">modify_cols_merge</a></span><span class="op">(</span></span>
+<span class="r-in"><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/deprecated.html" class="external-link">modify_cols_merge</a></span><span class="op">(</span></span>
 <span class="r-in">  pattern <span class="op">=</span> <span class="st">"{estimate} ({ci})"</span>,</span>
 <span class="r-in">  rows <span class="op">=</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">estimate</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -144,6 +144,10 @@ the tick marks properly.</p></dd>
 <span class="r-in">  boxsize <span class="op">=</span> <span class="fl">0.2</span>,</span>
 <span class="r-in">  col <span class="op">=</span> <span class="fu">forestplot</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/forestplot/man/fpColors.html" class="external-link">fpColors</a></span><span class="op">(</span>box <span class="op">=</span> <span class="st">"darkred"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>`modify_cols_merge()` was deprecated in gtsummary 1.6.1.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> Please use `modify_column_merge()` instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</span></span>
 <span class="r-plt img"><img src="as_forest_plot-3.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
