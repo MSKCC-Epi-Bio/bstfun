@@ -13,7 +13,8 @@ ggcalibration(
   methods = c("exact", "ac", "asymptotic", "wilson", "prop.test", "bayes", "logit",
     "cloglog", "probit"),
   geom_errorbar.args = list(width = 0),
-  geom_point.args = list()
+  geom_point.args = list(),
+  geom_function.args = list(colour = "gray", linetype = "dashed")
 )
 }
 \arguments{
@@ -35,6 +36,10 @@ to \code{ggplot2::geom_errorbar()}. Default is \code{list(width = 0)}}
 
 \item{geom_point.args}{named list of arguments that will be passed
 to \code{ggplot2::geom_point()}. Default is \code{list()}}
+
+\item{geom_function.args}{named list of arguments that will be passed
+to \code{ggplot2::geom_function()} and is the function that adds the 45 degree
+guideline. Default is \code{list(colour = "gray", linetype = "dashed")}}
 }
 \value{
 ggplot
@@ -45,5 +50,7 @@ Assess a model's calibration via a calibration plot.
 \examples{
 glm(response ~ age + marker + grade, trial, family = binomial) \%>\%
   broom::augment(type.predict = "response") \%>\%
-  ggcalibration(y = response, x = .fitted, n.groups = 6)
+  ggcalibration(y = response, x = .fitted, n.groups = 6) +
+  ggplot2::xlim(0, 1) +
+  ggplot2::labs(x = "Model Risk")
 }

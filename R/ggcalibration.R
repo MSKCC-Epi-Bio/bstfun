@@ -13,6 +13,9 @@
 #' to `ggplot2::geom_errorbar()`. Default is `list(width = 0)`
 #' @param geom_point.args named list of arguments that will be passed
 #' to `ggplot2::geom_point()`. Default is `list()`
+#' @param geom_function.args named list of arguments that will be passed
+#' to `ggplot2::geom_function()` and is the function that adds the 45 degree
+#' guideline. Default is `list(colour = "gray", linetype = "dashed")`
 #'
 #' @return ggplot
 #' @export
@@ -20,12 +23,15 @@
 #' @examples
 #' glm(response ~ age + marker + grade, trial, family = binomial) %>%
 #'   broom::augment(type.predict = "response") %>%
-#'   ggcalibration(y = response, x = .fitted, n.groups = 6)
+#'   ggcalibration(y = response, x = .fitted, n.groups = 6) +
+#'   ggplot2::xlim(0, 1) +
+#'   ggplot2::labs(x = "Model Risk")
 ggcalibration <- function(data, y, x, n.groups = 10,  conf.level = 0.95,
                           methods = c("exact", "ac", "asymptotic", "wilson",
                                       "prop.test", "bayes", "logit", "cloglog", "probit"),
                           geom_errorbar.args = list(width = 0),
-                          geom_point.args = list()) {
+                          geom_point.args = list(),
+                          geom_function.args = list(colour = "gray", linetype = "dashed")) {
   rlang::check_installed("binom")
   methods <- match.arg(methods)
   # convert x,y inputs to character --------------------------------------------
@@ -74,6 +80,7 @@ ggcalibration <- function(data, y, x, n.groups = 10,  conf.level = 0.95,
   # plot results ---------------------------------------------------------------
   lst_gg_cmds <-
     rlang::list2(
+      rlang::inject(ggplot2::geom_function(fun = identity, !!!geom_function.args)),
       rlang::inject(ggplot2::geom_point(!!!geom_point.args)),
       rlang::inject(ggplot2::geom_errorbar(!!!geom_errorbar.args)),
       ggplot2::labs(y = attr(data[[y]], "label") %||% y,
