@@ -1,3 +1,7 @@
+# bstfun 0.4.6
+
+* Added ability to add a smooth line in `ggcalibrate()`.
+
 # bstfun 0.4.5
 
 * Deprecated `reinstall_prior_pkgs()` in favor of `updater::install_pkgs()`.
