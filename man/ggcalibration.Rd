@@ -10,8 +10,10 @@ ggcalibration(
   x,
   n.groups = 10,
   conf.level = 0.95,
-  methods = c("exact", "ac", "asymptotic", "wilson", "prop.test", "bayes", "logit",
+  ci.method = c("exact", "ac", "asymptotic", "wilson", "prop.test", "bayes", "logit",
     "cloglog", "probit"),
+  geom_smooth.args = list(method = "loess", se = FALSE, formula = y ~ x, color =
+    "black"),
   geom_errorbar.args = list(width = 0),
   geom_point.args = list(),
   geom_function.args = list(colour = "gray", linetype = "dashed")
@@ -28,8 +30,12 @@ ggcalibration(
 
 \item{conf.level}{level of confidence to be used in the confidence interval}
 
-\item{methods}{method to use to construct the interval.
+\item{ci.method}{method to use to construct the interval.
 See \code{\link[binom:binom.confint]{binom::binom.confint()}} for details}
+
+\item{geom_smooth.args}{named list of arguments that will be passed
+to \code{ggplot2::geom_smooth()}. Default is
+\code{list(method = "loess", se = FALSE, formula = y ~ x, color = "black")}}
 
 \item{geom_errorbar.args}{named list of arguments that will be passed
 to \code{ggplot2::geom_errorbar()}. Default is \code{list(width = 0)}}
