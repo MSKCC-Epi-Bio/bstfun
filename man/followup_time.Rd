@@ -12,14 +12,15 @@ followup_time(
 )
 }
 \arguments{
-\item{Surv}{An object of class \code{"Surv"} created with \code{survival::Surv()}}
+\item{Surv}{An object of class \code{"Surv"} created with \code{survival::Surv()}---not a multi-state endpoint.}
 
 \item{data}{A data frame}
 
 \item{pattern}{Statistics pattern to return. Default is
 \code{"{median} (IQR {p25}, {p75})"}. User may select the following summary
 statistics to report, \code{"{median}"}, \code{"{mean}"}, \code{"{p25}"}, \code{"{p75}"},
-\code{"{sd}"}, \code{"{var}"}, \code{"{min}"}, and \code{"{max}"}.}
+\code{"{sd}"}, \code{"{var}"}, \code{"{min}"}, and \code{"{max}"}. Also available are
+\code{"{n}"} (the number of events) and \code{"{N}"} (number of non-missing observations).}
 
 \item{style_fun}{Function used to style/format the summary statistics.
 Default is \code{gtsummary::style_sigfig}. Argument accepts anonymous function
@@ -43,5 +44,11 @@ followup_time(
   Surv(time, status), data = lung,
   pattern = "{median} days",
   style_fun = ~gtsummary::style_sigfig(., digits = 4)
+)
+
+followup_time(
+  survival::Surv(time, status),
+  data = survival::lung,
+  pattern = "{n} events with a follow-up time of {median} days (IQR {p25}, {p75})"
 )
 }

@@ -1,3 +1,7 @@
+# bstfun 0.4.7
+
+* Added ability to report the number of events and the total number of observations in `followup_time()`.
+
 # bstfun 0.4.6
 
 * Added ability to add a smooth line in `ggcalibrate()`.
