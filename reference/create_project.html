@@ -21,7 +21,7 @@ is used in file naming.'><!-- mathjax --><script src="https://cdnjs.cloudflare.c
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.7</span>
       </span>
     </div>
 
@@ -67,9 +67,9 @@ is used in file naming.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_bst_project</span><span class="op">(</span><span class="va">path</span>, path_data <span class="op">=</span> <span class="cn">NULL</span>, git <span class="op">=</span> <span class="cn">NA</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">create_hot_project</span><span class="op">(</span><span class="va">path</span>, path_data <span class="op">=</span> <span class="cn">NULL</span>, git <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_bst_project</span><span class="op">(</span><span class="va">path</span>, path_data <span class="op">=</span> <span class="cn">NULL</span>, git <span class="op">=</span> <span class="cn">NA</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">create_hot_project</span><span class="op">(</span><span class="va">path</span>, path_data <span class="op">=</span> <span class="cn">NULL</span>, git <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -77,12 +77,18 @@ is used in file naming.</p>
     <dl><dt>path</dt>
 <dd><p>A path. If it exists, it is used. If it does not exist, it is
 created.</p></dd>
+
+
 <dt>path_data</dt>
 <dd><p>A path. The directory where the secure data exist. Default is
 <code>NULL</code>.  When supplied, a symbolic link to data folder will be created.</p></dd>
+
+
 <dt>git</dt>
 <dd><p>Logical indicating whether to create Git repository.  Default is <code>TRUE</code>
 When <code>NA</code>, user will be prompted whether to initialise Git repo.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Arguments passed on to <code><a href="https://rdrr.io/pkg/starter/man/create_project.html" class="external-link">starter::create_project</a></code></p><dl><dt><code>renv</code></dt>
 <dd><p>Logical indicating whether to add renv to a project.
@@ -107,6 +113,7 @@ session</p></dd>
 
   
 </dl></dd>
+
 </dl></div>
     <div id="see-also">
     <h2>See also</h2>
@@ -115,17 +122,17 @@ session</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co"># specifying project folder location (folder does not yet exist)</span></span>
-<span class="r-in"><span class="va">project_path</span> <span class="op">&lt;-</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path.html" class="external-link">path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"My Project Folder"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># creating folder where secure data would be stored (typically will be a network drive)</span></span>
-<span class="r-in"><span class="va">secure_data_path</span> <span class="op">&lt;-</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path.html" class="external-link">path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"secure_data"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="va">secure_data_path</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># creating new project folder</span></span>
-<span class="r-in"><span class="fu">create_bst_project</span><span class="op">(</span><span class="va">project_path</span>, path_data <span class="op">=</span> <span class="va">secure_data_path</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co"># specifying project folder location (folder does not yet exist)</span></span></span>
+<span class="r-in"><span><span class="va">project_path</span> <span class="op">&lt;-</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path.html" class="external-link">path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"My Project Folder"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># creating folder where secure data would be stored (typically will be a network drive)</span></span></span>
+<span class="r-in"><span><span class="va">secure_data_path</span> <span class="op">&lt;-</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path.html" class="external-link">path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"secure_data"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="va">secure_data_path</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># creating new project folder</span></span></span>
+<span class="r-in"><span><span class="fu">create_bst_project</span><span class="op">(</span><span class="va">project_path</span>, path_data <span class="op">=</span> <span class="va">secure_data_path</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -140,7 +147,7 @@ session</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

@@ -26,7 +26,7 @@ set boot_n = 1 to avoid long, unused computation."><!-- mathjax --><script src="
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.7</span>
       </span>
     </div>
 
@@ -77,47 +77,66 @@ set <code>boot_n = 1</code> to avoid long, unused computation.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">logistic_reg_adj_diff</span><span class="op">(</span>
-  <span class="va">data</span>,
-  <span class="va">variable</span>,
-  <span class="va">by</span>,
-  <span class="va">adj.vars</span>,
-  <span class="va">conf.level</span>,
-  <span class="va">type</span>,
-  ci_type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"sd"</span>, <span class="st">"centile"</span><span class="op">)</span>,
-  boot_n <span class="op">=</span> <span class="fl">250</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">logistic_reg_adj_diff</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">variable</span>,</span>
+<span>  <span class="va">by</span>,</span>
+<span>  <span class="va">adj.vars</span>,</span>
+<span>  <span class="va">conf.level</span>,</span>
+<span>  <span class="va">type</span>,</span>
+<span>  ci_type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"sd"</span>, <span class="st">"centile"</span><span class="op">)</span>,</span>
+<span>  boot_n <span class="op">=</span> <span class="fl">250</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>data</dt>
 <dd><p>a data frame</p></dd>
+
+
 <dt>variable</dt>
 <dd><p>string of binary variable in <code>data=</code></p></dd>
+
+
 <dt>by</dt>
 <dd><p>string of the <code>by=</code> variable name</p></dd>
+
+
 <dt>adj.vars</dt>
 <dd><p>character vector of variable names to adjust model for</p></dd>
+
+
 <dt>conf.level</dt>
 <dd><p>Must be strictly greater than 0 and less than 1.
 Defaults to 0.95, which corresponds to a 95 percent confidence interval.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>string indicating the summary type</p></dd>
+
+
 <dt>ci_type</dt>
 <dd><p>string dictation bootstrap method for CI estimation.
 Must be one of <code>c("sd", "centile")</code>.</p></dd>
+
+
 <dt>boot_n</dt>
 <dd><p>number of bootstrap iterations to use. In most cases, it is
 reasonable to used 250 for the <code>"sd"</code> method and 5000 for the <code>"centile"</code>
 method.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>not used</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>tibble with difference estimate</p>
+    
+
+<p>tibble with difference estimate</p>
     </div>
     <div id="example-output">
     <h2>Example Output</h2>
@@ -142,27 +161,27 @@ method.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="va">tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">tbl_summary</a></span><span class="op">(</span><span class="va">trial</span>, by <span class="op">=</span> <span class="va">trt</span>, include  <span class="op">=</span> <span class="va">response</span>, missing <span class="op">=</span> <span class="st">"no"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Example 1 -----------------------------------------------------------------</span></span>
-<span class="r-in"><span class="va">logistic_reg_adj_diff_ex1</span> <span class="op">&lt;-</span></span>
-<span class="r-in">  <span class="va">tbl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_difference.html" class="external-link">add_difference</a></span><span class="op">(</span></span>
-<span class="r-in">    test <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="va">logistic_reg_adj_diff</span>,</span>
-<span class="r-in">    adj.vars <span class="op">=</span> <span class="st">"stage"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Example 2 -----------------------------------------------------------------</span></span>
-<span class="r-in"><span class="co"># Use the centile method, and</span></span>
-<span class="r-in"><span class="co"># change the number of bootstrap resamples to perform</span></span>
-<span class="r-in"><span class="va">logistic_reg_adj_diff_ex2</span> <span class="op">&lt;-</span></span>
-<span class="r-in">  <span class="va">tbl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_difference.html" class="external-link">add_difference</a></span><span class="op">(</span></span>
-<span class="r-in">    test <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span></span>
-<span class="r-in">      <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/partial.html" class="external-link">partial</a></span><span class="op">(</span><span class="va">logistic_reg_adj_diff</span>, ci_type <span class="op">=</span> <span class="st">"centile"</span>, boot_n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>,</span>
-<span class="r-in">    adj.vars <span class="op">=</span> <span class="st">"stage"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">tbl_summary</a></span><span class="op">(</span><span class="va">trial</span>, by <span class="op">=</span> <span class="va">trt</span>, include  <span class="op">=</span> <span class="va">response</span>, missing <span class="op">=</span> <span class="st">"no"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Example 1 -----------------------------------------------------------------</span></span></span>
+<span class="r-in"><span><span class="va">logistic_reg_adj_diff_ex1</span> <span class="op">&lt;-</span></span></span>
+<span class="r-in"><span>  <span class="va">tbl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_difference.html" class="external-link">add_difference</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    test <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="va">logistic_reg_adj_diff</span>,</span></span>
+<span class="r-in"><span>    adj.vars <span class="op">=</span> <span class="st">"stage"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Example 2 -----------------------------------------------------------------</span></span></span>
+<span class="r-in"><span><span class="co"># Use the centile method, and</span></span></span>
+<span class="r-in"><span><span class="co"># change the number of bootstrap resamples to perform</span></span></span>
+<span class="r-in"><span><span class="va">logistic_reg_adj_diff_ex2</span> <span class="op">&lt;-</span></span></span>
+<span class="r-in"><span>  <span class="va">tbl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_difference.html" class="external-link">add_difference</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    test <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span></span></span>
+<span class="r-in"><span>      <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/partial.html" class="external-link">partial</a></span><span class="op">(</span><span class="va">logistic_reg_adj_diff</span>, ci_type <span class="op">=</span> <span class="st">"centile"</span>, boot_n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    adj.vars <span class="op">=</span> <span class="st">"stage"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -177,7 +196,7 @@ method.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

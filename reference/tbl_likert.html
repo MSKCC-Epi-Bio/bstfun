@@ -21,7 +21,7 @@ continuous statistics based on this score."><!-- mathjax --><script src="https:/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.7</span>
       </span>
     </div>
 
@@ -67,82 +67,107 @@ continuous statistics based on this score.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">tbl_likert</span><span class="op">(</span>
-  <span class="va">data</span>,
-  label <span class="op">=</span> <span class="cn">NULL</span>,
-  statistic <span class="op">=</span> <span class="cn">NULL</span>,
-  digits <span class="op">=</span> <span class="cn">NULL</span>,
-  include <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span>,
-  sort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"default"</span>, <span class="st">"ascending"</span>, <span class="st">"descending"</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="co"># S3 method for tbl_likert</span>
-<span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span>
-  <span class="va">x</span>,
-  statistic <span class="op">=</span> <span class="st">"{n}"</span>,
-  col_label <span class="op">=</span> <span class="st">"**N**"</span>,
-  footnote <span class="op">=</span> <span class="cn">FALSE</span>,
-  last <span class="op">=</span> <span class="cn">FALSE</span>,
-  <span class="va">...</span>
-<span class="op">)</span>
-
-<span class="fu">add_continuous_stat</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="co"># S3 method for tbl_likert</span>
-<span class="fu">add_continuous_stat</span><span class="op">(</span>
-  <span class="va">x</span>,
-  statistic <span class="op">=</span> <span class="st">"{mean}"</span>,
-  digits <span class="op">=</span> <span class="cn">NULL</span>,
-  col_label <span class="op">=</span> <span class="cn">NULL</span>,
-  footnote <span class="op">=</span> <span class="cn">FALSE</span>,
-  last <span class="op">=</span> <span class="cn">TRUE</span>,
-  score_values <span class="op">=</span> <span class="cn">NULL</span>,
-  stat_col_name <span class="op">=</span> <span class="cn">NULL</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">tbl_likert</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  label <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  statistic <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  digits <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  include <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  sort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"default"</span>, <span class="st">"ascending"</span>, <span class="st">"descending"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S3 method for tbl_likert</span></span>
+<span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  statistic <span class="op">=</span> <span class="st">"{n}"</span>,</span>
+<span>  col_label <span class="op">=</span> <span class="st">"**N**"</span>,</span>
+<span>  footnote <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  last <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">add_continuous_stat</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S3 method for tbl_likert</span></span>
+<span><span class="fu">add_continuous_stat</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  statistic <span class="op">=</span> <span class="st">"{mean}"</span>,</span>
+<span>  digits <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  col_label <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  footnote <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  last <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  score_values <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  stat_col_name <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>data</dt>
 <dd><p>A data frame</p></dd>
+
+
 <dt>label</dt>
 <dd><p>List of formulas specifying variables labels,
 e.g. <code>list(age ~ "Age", stage ~ "Path T Stage")</code>.  If a
 variable's label is not specified here, the label attribute
 (<code>attr(data$age, "label")</code>) is used.  If
 attribute label is <code>NULL</code>, the variable name will be used.</p></dd>
+
+
 <dt>statistic</dt>
 <dd><p>String or formula indicating the statistic to be reported.
 Default is the mean score. Other possible continuous statistics are described
 in <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">gtsummary::tbl_summary()</a></code> help page, section <em>statistic argument</em>.</p></dd>
+
+
 <dt>digits</dt>
 <dd><p>Formula or list of formulas indicating how to display the
 computed statistics, see <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html" class="external-link">gtsummary::tbl_summary()</a></code> help page</p></dd>
+
+
 <dt>include</dt>
 <dd><p>variables to include in the summary table. Default is <code><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything()</a></code></p></dd>
+
+
 <dt>sort</dt>
 <dd><p>Sort table based on mean scores? Must be one of
 <code>c("default", "ascending", "descending")</code></p></dd>
+
+
 <dt>x</dt>
 <dd><p>Object with class <code>tbl_likert</code> from the <code>tbl_likert()</code> function</p></dd>
+
+
 <dt>col_label</dt>
 <dd><p>String indicating the column label. Default is generated
 from <code>statistic</code>.</p></dd>
+
+
 <dt>footnote</dt>
 <dd><p>Logical argument indicating whether to print a footnote
 clarifying the statistics presented. Default is <code>FALSE</code></p></dd>
+
+
 <dt>last</dt>
 <dd><p>Logical indicator to include the new column last in table.
 Default is <code>TRUE</code></p></dd>
+
+
 <dt>...</dt>
 <dd><p>not used</p></dd>
+
+
 <dt>score_values</dt>
 <dd><p>Vector indicating the numeric value of each factor level.
 Default is <code>1:n</code> where <code>n</code> indicates the number of levels.</p></dd>
+
+
 <dt>stat_col_name</dt>
 <dd><p>Optional string indicating the name of the new column
 added to <code>x$table_body</code></p></dd>
+
 </dl></div>
     <div id="example-output">
     <h2>Example Output</h2>
@@ -165,7 +190,7 @@ added to <code>x$table_body</code></p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: ‘dplyr’</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from ‘package:stats’:</span>
@@ -174,22 +199,22 @@ added to <code>x$table_body</code></p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from ‘package:base’:</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     intersect, setdiff, setequal, union</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1123</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">likert_lvls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Never"</span>, <span class="st">"Sometimes"</span>,  <span class="st">"Often"</span>, <span class="st">"Always"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">df</span> <span class="op">&lt;-</span></span>
-<span class="r-in">  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
-<span class="r-in">    Q1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">likert_lvls</span>, size <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span class="r-in">    Q2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">likert_lvls</span>, size <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html" class="external-link">across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">Q1</span>, <span class="va">Q2</span><span class="op">)</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">.</span>, levels <span class="op">=</span> <span class="va">likert_lvls</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">tbl_likert_ex1</span> <span class="op">&lt;-</span></span>
-<span class="r-in">  <span class="fu">tbl_likert</span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">add_continuous_stat</span><span class="op">(</span>statistic <span class="op">=</span> <span class="st">"{mean}"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">add_continuous_stat</span><span class="op">(</span>statistic <span class="op">=</span> <span class="st">"{sd}"</span><span class="op">)</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1123</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">likert_lvls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Never"</span>, <span class="st">"Sometimes"</span>,  <span class="st">"Often"</span>, <span class="st">"Always"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">df</span> <span class="op">&lt;-</span></span></span>
+<span class="r-in"><span>  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    Q1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">likert_lvls</span>, size <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    Q2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">likert_lvls</span>, size <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html" class="external-link">across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">Q1</span>, <span class="va">Q2</span><span class="op">)</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">.</span>, levels <span class="op">=</span> <span class="va">likert_lvls</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">tbl_likert_ex1</span> <span class="op">&lt;-</span></span></span>
+<span class="r-in"><span>  <span class="fu">tbl_likert</span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/add_n.html" class="external-link">add_n</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">add_continuous_stat</span><span class="op">(</span>statistic <span class="op">=</span> <span class="st">"{mean}"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">add_continuous_stat</span><span class="op">(</span>statistic <span class="op">=</span> <span class="st">"{sd}"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -204,7 +229,7 @@ added to <code>x$table_body</code></p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

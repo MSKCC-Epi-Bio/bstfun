@@ -24,7 +24,7 @@ AUC of the model."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.7</span>
       </span>
     </div>
 
@@ -73,9 +73,9 @@ AUC of the model.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">auc_density</span><span class="op">(</span><span class="va">density</span>, cut.points <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">1</span>, by <span class="op">=</span> <span class="fl">0.001</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">auc_histogram</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">auc_density</span><span class="op">(</span><span class="va">density</span>, cut.points <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">1</span>, by <span class="op">=</span> <span class="fl">0.001</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">auc_histogram</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -83,18 +83,27 @@ AUC of the model.</p>
     <dl><dt>density</dt>
 <dd><p>a function name that describes the continuous probability density function of the
 risk from 0 to 1.</p></dd>
+
+
 <dt>cut.points</dt>
 <dd><p>sequence of points in [0, 1] where the sensitivity and specificity are calculated.
 More points lead to a more precise estimate of the AUC.  Default is seq(from = 0, to = 1,by = 0.001).</p></dd>
+
+
 <dt>...</dt>
 <dd><p>arguments for the function specified in density.  For example, dbeta(x, shape1=1, shape2=1)
 has need for two additional arguments to specify the density function (shape1 and shape2).</p></dd>
+
+
 <dt>x</dt>
 <dd><p>histogram object from <a href="https://rdrr.io/r/graphics/hist.html" class="external-link">graphics::hist</a></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns a list sensitivity and specificity at each cut point, the expected value or
+    
+
+<p>Returns a list sensitivity and specificity at each cut point, the expected value or
 mean risk, and the AUC associated with the distribution.</p>
     </div>
     <div id="author">
@@ -104,7 +113,7 @@ mean risk, and the AUC associated with the distribution.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">auc_density</span><span class="op">(</span>density <span class="op">=</span> <span class="va">dbeta</span>, shape1 <span class="op">=</span> <span class="fl">1</span>, shape2 <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">auc_density</span><span class="op">(</span>density <span class="op">=</span> <span class="va">dbeta</span>, shape1 <span class="op">=</span> <span class="fl">1</span>, shape2 <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $details</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,001 × 3</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    threshold sensitivity specificity</span>
@@ -127,10 +136,10 @@ mean risk, and the AUC associated with the distribution.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $auc</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.833333</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10000</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html" class="external-link">hist</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fl">250</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">auc_histogram</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10000</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html" class="external-link">hist</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fl">250</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">auc_histogram</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="auc-1.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8272792</span>
 </code></pre></div>
@@ -147,7 +156,7 @@ mean risk, and the AUC associated with the distribution.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

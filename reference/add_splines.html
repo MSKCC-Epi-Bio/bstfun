@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.7</span>
       </span>
     </div>
 
@@ -59,15 +59,19 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">add_splines</span><span class="op">(</span><span class="va">data</span>, <span class="va">variable</span>, knots <span class="op">=</span> <span class="cn">NULL</span>, nk <span class="op">=</span> <span class="fl">5</span>, norm <span class="op">=</span> <span class="fl">2</span>, new_names <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">add_splines</span><span class="op">(</span><span class="va">data</span>, <span class="va">variable</span>, knots <span class="op">=</span> <span class="cn">NULL</span>, nk <span class="op">=</span> <span class="fl">5</span>, norm <span class="op">=</span> <span class="fl">2</span>, new_names <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>data</dt>
 <dd><p>a data frame</p></dd>
+
+
 <dt>variable</dt>
 <dd><p>name of column in data</p></dd>
+
+
 <dt>knots</dt>
 <dd><p>knot locations. If not given, knots will be estimated using default
     quantiles of <code>x</code>. For 3 knots, the outer quantiles used are 0.10
@@ -76,8 +80,12 @@
     knots are equally spaced between these on the quantile scale. For
     fewer than 100 non-missing values of <code>x</code>, the outer knots are
     the 5th smallest and largest <code>x</code>.</p></dd>
+
+
 <dt>nk</dt>
 <dd><p>number of knots. Default is 5. The minimum value is 3.</p></dd>
+
+
 <dt>norm</dt>
 <dd><p><samp>0</samp> to use the terms as originally given by <cite>Devlin and
       Weeks (1986)</cite>, <samp>1</samp> to normalize non-linear terms by the cube
@@ -85,12 +93,17 @@
     the square of the spacing between the first and last knots (the
     default). <code>norm=2</code> has the advantage of making all nonlinear
     terms beon the x-scale.</p></dd>
+
+
 <dt>new_names</dt>
 <dd><p>Optionally specify names of new spline columns</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>data frame</p>
+    
+
+<p>data frame</p>
     </div>
     <div id="knot-locations">
     <h2>Knot Locations</h2>
@@ -101,8 +114,8 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">trial</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">add_splines</span><span class="op">(</span><span class="va">age</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">trial</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">add_splines</span><span class="op">(</span><span class="va">age</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 200 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    trt     age spage1   spage2  spage3 marker stage grade response death ttdeath</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
@@ -131,7 +144,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>
