@@ -59,7 +59,7 @@ profile_prefs <-
                       show_terminal_tab = TRUE,
                       use_tinytex = TRUE,
                       auto_save_on_blur = TRUE,
-                      code_completion_delay = 150,
+                      code_completion_delay = 150L,
                       document_author = "Daniel D. Sjoberg",
                       insert_native_pipe_operator = TRUE,
                       show_invisibles = FALSE)
