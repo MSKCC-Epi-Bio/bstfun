@@ -12,8 +12,7 @@ ggcalibration(
   conf.level = 0.95,
   ci.method = c("exact", "ac", "asymptotic", "wilson", "prop.test", "bayes", "logit",
     "cloglog", "probit"),
-  geom_smooth.args = list(method = "loess", se = FALSE, formula = y ~ x, color =
-    "black"),
+  geom_smooth.args = list(method = "loess", se = FALSE, formula = y ~ x, color = "black"),
   geom_errorbar.args = list(width = 0),
   geom_point.args = list(),
   geom_function.args = list(colour = "gray", linetype = "dashed")

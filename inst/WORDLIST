@@ -26,10 +26,13 @@ dL
 dbeta
 eGFR
 eg
+emmeans
 flextable
 ftExtra
 ggplot
+ggsurvfit
 gtExtras
+gtreg
 gtsummary
 hotfun
 https
@@ -42,7 +45,6 @@ mL
 magick
 mskcc
 ng
-pkgs
 ragg
 regressoin
 renv
@@ -55,6 +57,7 @@ tbl
 templating
 th
 tibble
+tidycmprsk
 tidyselect
 unlabelled
 xls
