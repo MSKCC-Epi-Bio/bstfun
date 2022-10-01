@@ -1,3 +1,7 @@
+# bstfun 0.4.9
+
+* Added gtreg, emmeans, ggsurvfit, and tidycmprsk to the template references document. (#112)
+
 # bstfun 0.4.8
 
 * Update to to RStudio preferences function.
