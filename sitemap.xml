@@ -4,22 +4,22 @@
     <loc>http://www.danieldsjoberg.com/bstfun/404.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/authors.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/index.html</loc>
-  </url>
-  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/LICENSE-text.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/LICENSE.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/news/index.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/PULL_REQUEST_TEMPLATE.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/PULL_REQUEST_TEMPLATE.html</loc>
+    <loc>http://www.danieldsjoberg.com/bstfun/authors.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/index.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/news/index.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/add_cuminc_risktable.html</loc>
@@ -37,13 +37,13 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/add_variable_grouping.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/assign_timepoint.html</loc>
-  </url>
-  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/as_forest_plot.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/as_ggplot.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/assign_timepoint.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/auc.html</loc>
