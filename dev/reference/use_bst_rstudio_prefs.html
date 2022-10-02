@@ -5,16 +5,16 @@ PreferenceValue
 always_save_historyFALSE
 graphics_backendragg
 load_workspaceFALSE
+show_hidden_filesTRUE
+show_line_numbersTRUE
 margin_column80
+save_workspacenever
 rainbow_parenthesesTRUE
 restore_last_projectFALSE
 rmd_chunk_output_inlineFALSE
-show_hidden_filesTRUE
-show_invisiblesTRUE
 show_last_dot_valueTRUE
-show_line_numbersTRUE
 show_marginTRUE
-save_workspacenever
+show_invisiblesTRUE
 
 
 "><meta name="robots" content="noindex"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -35,7 +35,7 @@ save_workspacenever
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.4.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.9.9000</span>
       </span>
     </div>
 
@@ -74,18 +74,25 @@ save_workspacenever
 
     <div class="ref-description">
     <p>The function wraps <code><a href="https://rdrr.io/pkg/rstudio.prefs/man/use_rstudio_prefs.html" class="external-link">rstudio.prefs::use_rstudio_prefs()</a></code> and sets the following
-preferences in RStudio.</p><table class="table table"><tr><td><strong>Preference</strong></td><td><strong>Value</strong></td></tr><tr><td>always_save_history</td><td>FALSE</td></tr><tr><td>graphics_backend</td><td>ragg</td></tr><tr><td>load_workspace</td><td>FALSE</td></tr><tr><td>margin_column</td><td>80</td></tr><tr><td>rainbow_parentheses</td><td>TRUE</td></tr><tr><td>restore_last_project</td><td>FALSE</td></tr><tr><td>rmd_chunk_output_inline</td><td>FALSE</td></tr><tr><td>show_hidden_files</td><td>TRUE</td></tr><tr><td>show_invisibles</td><td>TRUE</td></tr><tr><td>show_last_dot_value</td><td>TRUE</td></tr><tr><td>show_line_numbers</td><td>TRUE</td></tr><tr><td>show_margin</td><td>TRUE</td></tr><tr><td>save_workspace</td><td>never</td></tr></table></div>
+preferences in RStudio.</p><table class="table table"><tr><td><strong>Preference</strong></td><td><strong>Value</strong></td></tr><tr><td>always_save_history</td><td>FALSE</td></tr><tr><td>graphics_backend</td><td>ragg</td></tr><tr><td>load_workspace</td><td>FALSE</td></tr><tr><td>show_hidden_files</td><td>TRUE</td></tr><tr><td>show_line_numbers</td><td>TRUE</td></tr><tr><td>margin_column</td><td>80</td></tr><tr><td>save_workspace</td><td>never</td></tr><tr><td>rainbow_parentheses</td><td>TRUE</td></tr><tr><td>restore_last_project</td><td>FALSE</td></tr><tr><td>rmd_chunk_output_inline</td><td>FALSE</td></tr><tr><td>show_last_dot_value</td><td>TRUE</td></tr><tr><td>show_margin</td><td>TRUE</td></tr><tr><td>show_invisibles</td><td>TRUE</td></tr></table></div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">use_bst_rstudio_prefs</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">use_bst_rstudio_prefs</span><span class="op">(</span>profile <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/chartr.html" class="external-link">tolower</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html" class="external-link">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">"user"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>profile</dt>
+<dd><p>Used to set additional preferences saved under specified profile.
+Default is your current system username. If no profile exists, it is ignored.</p></dd>
+
+</dl></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu">use_bst_rstudio_prefs</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">use_bst_rstudio_prefs</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -100,7 +107,7 @@ preferences in RStudio.</p><table class="table table"><tr><td><strong>Preference
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

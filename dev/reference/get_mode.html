@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.4.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.9.9000</span>
       </span>
     </div>
 
@@ -59,33 +59,40 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_mode</span><span class="op">(</span><span class="va">x</span>, moden <span class="op">=</span> <span class="fl">1</span>, quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_mode</span><span class="op">(</span><span class="va">x</span>, moden <span class="op">=</span> <span class="fl">1</span>, quiet <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A variable or vector (numeric, character or factor)</p></dd>
+
+
 <dt>moden</dt>
 <dd><p>If there are multiple modes, which mode to use. The default is the first mode.</p></dd>
+
+
 <dt>quiet</dt>
 <dd><p>By default, messages are printed if multiple modes are selected. To hide these messages, set <code>quiet</code> to <code>TRUE</code></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A vector of length 1 containing the mode</p>
+    
+
+<p>A vector of length 1 containing the mode</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">get_mode</span><span class="op">(</span><span class="va">trial</span><span class="op">$</span><span class="va">stage</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_mode</span><span class="op">(</span><span class="va">trial</span><span class="op">$</span><span class="va">stage</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] T2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Levels: T1 T2 T3 T4</span>
-<span class="r-in"><span class="fu">get_mode</span><span class="op">(</span><span class="va">trial</span><span class="op">$</span><span class="va">trt</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">get_mode</span><span class="op">(</span><span class="va">trial</span><span class="op">$</span><span class="va">trt</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Drug B"</span>
-<span class="r-in"><span class="fu">get_mode</span><span class="op">(</span><span class="va">trial</span><span class="op">$</span><span class="va">response</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">get_mode</span><span class="op">(</span><span class="va">trial</span><span class="op">$</span><span class="va">response</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
-<span class="r-in"><span class="fu">get_mode</span><span class="op">(</span><span class="va">trial</span><span class="op">$</span><span class="va">grade</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">get_mode</span><span class="op">(</span><span class="va">trial</span><span class="op">$</span><span class="va">grade</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> There are multiple modes in this dataset: I II. By default, the first mode 'I' was selected. The selected mode can be changed using the `moden=` option.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] I</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Levels: I II III</span>
@@ -103,7 +110,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

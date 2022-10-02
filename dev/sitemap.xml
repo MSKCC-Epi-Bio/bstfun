@@ -82,6 +82,9 @@
     <loc>http://www.danieldsjoberg.com/bstfun/reference/get_mode.html</loc>
   </url>
   <url>
+    <loc>http://www.danieldsjoberg.com/bstfun/reference/ggcalibration.html</loc>
+  </url>
+  <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/here_data.html</loc>
   </url>
   <url>
@@ -101,9 +104,6 @@
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/bstfun/reference/reinstall_prior_pkgs.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/bstfun/reference/rm_logs.html</loc>

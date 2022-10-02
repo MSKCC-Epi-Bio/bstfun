@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.4.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.9.9000</span>
       </span>
     </div>
 
@@ -59,15 +59,19 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">add_splines</span><span class="op">(</span><span class="va">data</span>, <span class="va">variable</span>, knots <span class="op">=</span> <span class="cn">NULL</span>, nk <span class="op">=</span> <span class="fl">5</span>, norm <span class="op">=</span> <span class="fl">2</span>, new_names <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">add_splines</span><span class="op">(</span><span class="va">data</span>, <span class="va">variable</span>, knots <span class="op">=</span> <span class="cn">NULL</span>, nk <span class="op">=</span> <span class="fl">5</span>, norm <span class="op">=</span> <span class="fl">2</span>, new_names <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>data</dt>
 <dd><p>a data frame</p></dd>
+
+
 <dt>variable</dt>
 <dd><p>name of column in data</p></dd>
+
+
 <dt>knots</dt>
 <dd><p>knot locations. If not given, knots will be estimated using default
     quantiles of <code>x</code>. For 3 knots, the outer quantiles used are 0.10
@@ -76,8 +80,12 @@
     knots are equally spaced between these on the quantile scale. For
     fewer than 100 non-missing values of <code>x</code>, the outer knots are
     the 5th smallest and largest <code>x</code>.</p></dd>
+
+
 <dt>nk</dt>
 <dd><p>number of knots. Default is 5. The minimum value is 3.</p></dd>
+
+
 <dt>norm</dt>
 <dd><p><samp>0</samp> to use the terms as originally given by <cite>Devlin and
       Weeks (1986)</cite>, <samp>1</samp> to normalize non-linear terms by the cube
@@ -85,12 +93,17 @@
     the square of the spacing between the first and last knots (the
     default). <code>norm=2</code> has the advantage of making all nonlinear
     terms beon the x-scale.</p></dd>
+
+
 <dt>new_names</dt>
 <dd><p>Optionally specify names of new spline columns</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>data frame</p>
+    
+
+<p>data frame</p>
     </div>
     <div id="knot-locations">
     <h2>Knot Locations</h2>
@@ -101,22 +114,22 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">trial</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">add_splines</span><span class="op">(</span><span class="va">age</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">trial</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">add_splines</span><span class="op">(</span><span class="va">age</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 200 × 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    trt     age spage1   spage2  spage3 marker stage grade response death ttdeath</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Drug…    23  0      0   <span style="color: #949494;"> </span>    0       0.16  T1    II           0     0    24  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Drug…     9  0      0   <span style="color: #949494;"> </span>    0       1.11  T2    I            1     0    24  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Drug…    31  0.178  0   <span style="color: #949494;"> </span>    0       0.277 T1    II           0     0    24  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Drug…    <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>     <span style="color: #BB0000;">NA</span>   <span style="color: #949494;"> </span>   <span style="color: #BB0000;">NA</span>       2.07  T3    III          1     1    17.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Drug…    51  9.59   1.05<span style="color: #949494;">e</span>+0  0.030<span style="text-decoration: underline;">5</span>  2.77  T4    III          1     1    16.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Drug…    39  1.67   4.77<span style="color: #949494;">e</span><span style="color: #BB0000;">-4</span>  0       0.613 T4    I            0     1    15.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Drug…    37  1.10   0   <span style="color: #949494;"> </span>    0       0.354 T1    II           0     0    24  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Drug…    32  0.263  0   <span style="color: #949494;"> </span>    0       1.74  T1    I            0     1    18.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Drug…    31  0.178  0   <span style="color: #949494;"> </span>    0       0.144 T1    II           0     0    24  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Drug…    34  0.506  0   <span style="color: #949494;"> </span>    0       0.205 T3    I            0     1    10.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 190 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    trt      age spage1   spage2  spage3 marker stage grade respo…¹ death ttdeath</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Drug A    23  0      0   <span style="color: #949494;"> </span>    0       0.16  T1    II          0     0    24  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Drug B     9  0      0   <span style="color: #949494;"> </span>    0       1.11  T2    I           1     0    24  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Drug A    31  0.178  0   <span style="color: #949494;"> </span>    0       0.277 T1    II          0     0    24  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Drug A    <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>     <span style="color: #BB0000;">NA</span>   <span style="color: #949494;"> </span>   <span style="color: #BB0000;">NA</span>       2.07  T3    III         1     1    17.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Drug A    51  9.59   1.05<span style="color: #949494;">e</span>+0  0.030<span style="text-decoration: underline;">5</span>  2.77  T4    III         1     1    16.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Drug B    39  1.67   4.77<span style="color: #949494;">e</span><span style="color: #BB0000;">-4</span>  0       0.613 T4    I           0     1    15.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Drug A    37  1.10   0   <span style="color: #949494;"> </span>    0       0.354 T1    II          0     0    24  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Drug A    32  0.263  0   <span style="color: #949494;"> </span>    0       1.74  T1    I           0     1    18.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Drug A    31  0.178  0   <span style="color: #949494;"> </span>    0       0.144 T1    II          0     0    24  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Drug B    34  0.506  0   <span style="color: #949494;"> </span>    0       0.205 T3    I           0     1    10.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 190 more rows, and abbreviated variable name ¹​response</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -131,7 +144,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

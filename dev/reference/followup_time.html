@@ -20,7 +20,7 @@ R Markdown reports."><meta name="robots" content="noindex"><!-- mathjax --><scri
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.4.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.9.9000</span>
       </span>
     </div>
 
@@ -65,48 +65,65 @@ R Markdown reports.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">followup_time</span><span class="op">(</span>
-  <span class="va">Surv</span>,
-  data <span class="op">=</span> <span class="cn">NULL</span>,
-  pattern <span class="op">=</span> <span class="st">"{median} (IQR {p25}, {p75})"</span>,
-  style_fun <span class="op">=</span> <span class="fu">gtsummary</span><span class="fu">::</span><span class="va"><a href="https://www.danieldsjoberg.com/gtsummary/reference/style_sigfig.html" class="external-link">style_sigfig</a></span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">followup_time</span><span class="op">(</span></span>
+<span>  <span class="va">Surv</span>,</span>
+<span>  data <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  pattern <span class="op">=</span> <span class="st">"{median} (IQR {p25}, {p75})"</span>,</span>
+<span>  style_fun <span class="op">=</span> <span class="fu">gtsummary</span><span class="fu">::</span><span class="va"><a href="https://www.danieldsjoberg.com/gtsummary/reference/style_sigfig.html" class="external-link">style_sigfig</a></span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>Surv</dt>
-<dd><p>An object of class <code>"Surv"</code> created with <code><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">survival::Surv()</a></code></p></dd>
+<dd><p>An object of class <code>"Surv"</code> created with <code><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">survival::Surv()</a></code>---not a multi-state endpoint.</p></dd>
+
+
 <dt>data</dt>
 <dd><p>A data frame</p></dd>
+
+
 <dt>pattern</dt>
 <dd><p>Statistics pattern to return. Default is
 <code>"{median} (IQR {p25}, {p75})"</code>. User may select the following summary
 statistics to report, <code>"{median}"</code>, <code>"{mean}"</code>, <code>"{p25}"</code>, <code>"{p75}"</code>,
-<code>"{sd}"</code>, <code>"{var}"</code>, <code>"{min}"</code>, and <code>"{max}"</code>.</p></dd>
+<code>"{sd}"</code>, <code>"{var}"</code>, <code>"{min}"</code>, and <code>"{max}"</code>. Also available are
+<code>"{n}"</code> (the number of events) and <code>"{N}"</code> (number of non-missing observations).</p></dd>
+
+
 <dt>style_fun</dt>
 <dd><p>Function used to style/format the summary statistics.
 Default is <code><a href="https://www.danieldsjoberg.com/gtsummary/reference/style_sigfig.html" class="external-link">gtsummary::style_sigfig</a></code>. Argument accepts anonymous function
 notation, e.g. <code>~gtsummary::style_sigfig(., digits = 3)</code></p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>string of summary statistics</p>
+    
+
+<p>string of summary statistics</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">followup_time</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">lung</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">followup_time</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">lung</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 284 (IQR 222, 428)</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">followup_time</span><span class="op">(</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">lung</span>,</span>
-<span class="r-in">  pattern <span class="op">=</span> <span class="st">"{median} days"</span>,</span>
-<span class="r-in">  style_fun <span class="op">=</span> <span class="op">~</span><span class="fu">gtsummary</span><span class="fu">::</span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/style_sigfig.html" class="external-link">style_sigfig</a></span><span class="op">(</span><span class="va">.</span>, digits <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">followup_time</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">lung</span>,</span></span>
+<span class="r-in"><span>  pattern <span class="op">=</span> <span class="st">"{median} days"</span>,</span></span>
+<span class="r-in"><span>  style_fun <span class="op">=</span> <span class="op">~</span><span class="fu">gtsummary</span><span class="fu">::</span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/style_sigfig.html" class="external-link">style_sigfig</a></span><span class="op">(</span><span class="va">.</span>, digits <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 284.0 days</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">followup_time</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu">survival</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  data <span class="op">=</span> <span class="fu">survival</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/survival/man/lung.html" class="external-link">lung</a></span>,</span></span>
+<span class="r-in"><span>  pattern <span class="op">=</span> <span class="st">"{n} events with a follow-up time of {median} days (IQR {p25}, {p75})"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165 events with a follow-up time of 284 days (IQR 222, 428)</span>
 </code></pre></div>
     </div>
   </div>
@@ -121,7 +138,7 @@ notation, e.g. <code>~gtsummary::style_sigfig(., digits = 3)</code></p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

@@ -19,7 +19,7 @@ closest to 3 months within a defined window."><meta name="robots" content="noind
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.4.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.4.9.9000</span>
       </span>
     </div>
 
@@ -63,67 +63,90 @@ closest to 3 months within a defined window.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">assign_timepoint</span><span class="op">(</span>
-  <span class="va">data</span>,
-  <span class="va">id</span>,
-  <span class="va">ref_date</span>,
-  <span class="va">measure_date</span>,
-  <span class="va">timepoints</span>,
-  <span class="va">windows</span>,
-  time_units <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"days"</span>, <span class="st">"weeks"</span>, <span class="st">"months"</span>, <span class="st">"years"</span><span class="op">)</span>,
-  new_var <span class="op">=</span> <span class="st">"timepoint"</span>,
-  keep_all_obs <span class="op">=</span> <span class="cn">FALSE</span>,
-  keep_all_vars <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">assign_timepoint</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">id</span>,</span>
+<span>  <span class="va">ref_date</span>,</span>
+<span>  <span class="va">measure_date</span>,</span>
+<span>  <span class="va">timepoints</span>,</span>
+<span>  <span class="va">windows</span>,</span>
+<span>  time_units <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"days"</span>, <span class="st">"weeks"</span>, <span class="st">"months"</span>, <span class="st">"years"</span><span class="op">)</span>,</span>
+<span>  new_var <span class="op">=</span> <span class="st">"timepoint"</span>,</span>
+<span>  keep_all_obs <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  keep_all_vars <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>data</dt>
 <dd><p>data frame</p></dd>
+
+
 <dt>id</dt>
 <dd><p>id variable name, such as <code>"mrn"</code></p></dd>
+
+
 <dt>ref_date</dt>
 <dd><p>baseline or reference date column name</p></dd>
+
+
 <dt>measure_date</dt>
 <dd><p>date the measure was collected</p></dd>
+
+
 <dt>timepoints</dt>
 <dd><p>vector of time point to identify</p></dd>
+
+
 <dt>windows</dt>
 <dd><p>list of windows around a time point that are acceptable</p></dd>
+
+
 <dt>time_units</dt>
 <dd><p>one of <code>c("days", "weeks", "months", "years")</code></p></dd>
+
+
 <dt>new_var</dt>
 <dd><p>name of new variable, default is <code>"timepoint"</code></p></dd>
+
+
 <dt>keep_all_obs</dt>
 <dd><p>logical indicating whether to return a data frame
 with only the assigned time points (default), or to return a data frame
 with all rows.</p></dd>
+
+
 <dt>keep_all_vars</dt>
 <dd><p>logical indicating whether to return a data frame
 with all the variables in <code>data=</code> and the new time point column (default),
 or a limited data frame including only the column involved in assigning
 a time point.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>data frame passed in <code>data</code> with additional column <code>new_var</code></p>
+    
+
+<p>data frame passed in <code>data</code> with additional column <code>new_var</code></p>
+
+
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/economics.html" class="external-link">economics_long</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">variable</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>min_date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">  <span class="fu">assign_timepoint</span><span class="op">(</span></span>
-<span class="r-in">    id <span class="op">=</span> <span class="va">variable</span>,</span>
-<span class="r-in">    ref_date <span class="op">=</span> <span class="va">min_date</span>,</span>
-<span class="r-in">    measure_date <span class="op">=</span> <span class="va">date</span>,</span>
-<span class="r-in">    timepoints <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">6</span>, <span class="fl">12</span>, <span class="fl">24</span><span class="op">)</span>,</span>
-<span class="r-in">    windows <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">    time_units <span class="op">=</span> <span class="st">"months"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">ggplot2</span><span class="fu">::</span><span class="va"><a href="https://ggplot2.tidyverse.org/reference/economics.html" class="external-link">economics_long</a></span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">variable</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>min_date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">assign_timepoint</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    id <span class="op">=</span> <span class="va">variable</span>,</span></span>
+<span class="r-in"><span>    ref_date <span class="op">=</span> <span class="va">min_date</span>,</span></span>
+<span class="r-in"><span>    measure_date <span class="op">=</span> <span class="va">date</span>,</span></span>
+<span class="r-in"><span>    timepoints <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">6</span>, <span class="fl">12</span>, <span class="fl">24</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    windows <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    time_units <span class="op">=</span> <span class="st">"months"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 15 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    date       variable    value value01 min_date   timepoint</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
@@ -156,7 +179,7 @@ a time point.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
