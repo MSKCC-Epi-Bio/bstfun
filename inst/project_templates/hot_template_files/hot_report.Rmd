@@ -28,7 +28,7 @@ library(hotverse); library(tidyverse)
 theme_set(mskRvis::theme_biostat()); theme_gtsummary_msk("hot"); mskRvis::set_msk_palette()
 
 # Import analysis result objects here
-results <- load(here_data("results.Rdata"))
+load(here_data("results.Rdata"))
 ```
 
 ```{r inline_text, include = FALSE}
