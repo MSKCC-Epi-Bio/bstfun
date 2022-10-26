@@ -3,12 +3,9 @@
 \name{create_project}
 \alias{create_project}
 \alias{create_bst_project}
-\alias{create_hot_project}
 \title{Start a New Biostatistics project}
 \usage{
 create_bst_project(path, path_data = NULL, git = NA, ...)
-
-create_hot_project(path, path_data = NULL, git = TRUE, ...)
 }
 \arguments{
 \item{path}{A path. If it exists, it is used. If it does not exist, it is
