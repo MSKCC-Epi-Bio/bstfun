@@ -16,7 +16,7 @@ is_hot <- function() {
       # research fellows
       "scuderis", "beechb",
       # amplio team
-      "aikenw", "chenl3", "woods")
+      "aikenw", "chenl3", "woods", "fogliaa", "mccreadt")
 }
 
 # NOT EXPORTING AT THIS TIME!
