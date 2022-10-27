@@ -2,21 +2,25 @@
 title: "{{stringr::str_replace_all(folder_name, stringr::fixed('-'), stringr::fixed(' '))}}"
 subtitle: "Analysis"
 date: "`r Sys.Date()`"
-output:
-  html_document:
+format:
+  html:
     toc: true
-    toc_float: true
-    toc_depth: 2
+    toc-float: true
+    toc-depth: 2
+    toc-location: left
 ---
 
-```{r setup, include=FALSE}
+```{r}
+#| label: setup
+#| include: false
 knitr::opts_chunk$set(echo = TRUE)
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
 
 # Analytic Data Import
 
-```{r import}
+```{r}
+#| label: import
 library(hotverse); library(tidyverse)
 
 # setting MSK ggplot theme, gtsummary theme, and color palette
@@ -29,13 +33,15 @@ df_main <- readRDS(file = here_data("df_main.Rds"))
 
 # Analysis
 
-```{r analysis1}
+```{r}
+#| label: analysis1
 
 ```
 
 # Save Results
 
-```{r save}
+```{r}
+#| label: save
 # list result objects here. save only those needed for the final report
 save(
   df_results, gt_table1,
