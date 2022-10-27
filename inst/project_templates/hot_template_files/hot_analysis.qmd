@@ -21,7 +21,7 @@ set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 
 ```{r}
 #| label: import
-library(hotverse); library(tidyverse)
+library(biostatR); library(tidyverse)
 
 # setting MSK ggplot theme, gtsummary theme, and color palette
 theme_set(mskRvis::theme_biostat()); theme_gtsummary_msk("hot"); mskRvis::set_msk_palette()
