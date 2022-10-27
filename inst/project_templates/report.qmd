@@ -3,19 +3,23 @@ title: "Report"
 editor: source
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
 self-contained: true
+project:
+  execute-dir: project
 format: 
-  html:
-    toc: true
-    toc-depth: 2
+  html
   docx:
-    reference-doc: "`r here::here('templates/doc_template.docx')`"
-    bibliography: "`r here::here('templates/references.bib')`"
+    reference-doc: doc_template.docx
+bibliography: references.bib
+toc: true
+toc-depth: 2
 ---
 
 
 <!-- YAML options for both HTML and Word documents are given here. Delete output type not being used. -->
 <!-- To cite a reference within the document, the ref must be included in the `templates/references.bib` file. Use square brackets and @ with the shorthand term. Ex: The generalized additive model models the relationship between the mean of the response variable and sum of smooth functions of the explanatory variables [@hastie1986gam]. -->
 <!-- This is a Quarto template. Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>. When you click the **Render** button a document will be generated that includes both content and the output of embedded code. -->
+
+This is a test report document.
 
 
 ```{r setup}
@@ -36,7 +40,7 @@ theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
 {{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')"), "theme_gtsummary_compact()"))}}
 
 # Import analysis result objects here
-load(here_data("results.Rdata"))
+# load(here_data("results.Rdata"))
 ```
 
 ```{r inline_text}
@@ -45,6 +49,15 @@ load(here_data("results.Rdata"))
 
 # define complex inline-reporting objects here
 ```
+
+
+<!-- An example of how to cross reference a figure is included below. More information 
+can be found here: https://quarto.org/docs/authoring/cross-references.html
+
+![Elephant](elephant.png){#fig-elephant}
+
+See @fig-elephant for an illustration.-->
+
 
 # Methods
 
