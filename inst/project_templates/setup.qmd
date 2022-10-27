@@ -1,0 +1,68 @@
+---
+title: "Initial Setup"
+editor: source
+date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+self-contained: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+```{r setup}
+#|: include=FALSE
+
+
+knitr::opts_chunk$set(echo = TRUE)
+
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+```
+
+# Raw Data Import
+
+```{r import}
+library(biostatR); library(tidyverse)
+
+# setting MSK ggplot theme, color palette, and gtsummary theme
+theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
+{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')"), "theme_gtsummary_compact()"))}}
+here_data() # current path to data
+
+# example code for importing excel file
+df_raw_data <-
+  readxl::read_excel(
+    path = here_data("Raw Data from PI.xlsx")
+  ) %>%
+  janitor::clean_names(case = "all_caps") %>% # uppercase col names
+  mutate(across(where(lubridate::is.POSIXt), lubridate::as_date)) # use lubridates
+```
+
+# Create Master Analytic Data Set
+
+```{r cleaning}
+
+```
+
+
+# Check Variables
+
+```{r checking}
+
+```
+
+# Save Analytic Data
+
+```{r save}
+# applying variable labels, and dropping raw variables
+df_main <- df_main %>%
+  set_derived_variables(path = here::here("scripts/derived_variables.xlsx"))
+
+# overview of master analytic dataset
+skimr::skim(df_main)
+
+# saving master analytic data set
+saveRDS(
+  object = df_main,
+  file = here_data("df_main.Rds")
+)
+```
