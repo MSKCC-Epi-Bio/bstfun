@@ -3,10 +3,11 @@ title: "Initial Setup"
 editor: source
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
 self-contained: true
-format: 
-  html:
-    toc: true
-    toc-depth: 2
+format:
+  html
+bibliography: references.bib
+toc: true
+toc-depth: 2
 ---
 
 ```{r setup}
