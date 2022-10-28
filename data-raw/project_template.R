@@ -53,17 +53,17 @@ project_template_default <-
     list(
       setup = rlang::expr(list(
         template_filename = fs::path_package("project_templates/setup.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/10-setup_{folder_first_word}.Rmd"),
+        filename = glue::glue("scripts/10-setup_{folder_first_word}.qmd"),
         copy = FALSE
       )),
       analysis = rlang::expr(list(
         template_filename = fs::path_package("project_templates/analysis.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/20-analysis_{folder_first_word}.Rmd"),
+        filename = glue::glue("scripts/20-analysis_{folder_first_word}.qmd"),
         copy = FALSE
       )),
       report = rlang::expr(list(
         template_filename = fs::path_package("project_templates/report.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/30-report_{folder_first_word}.Rmd"),
+        filename = glue::glue("scripts/30-report_{folder_first_word}.qmd"),
         copy = FALSE
       )),
       doc_template = rlang::expr(list(
@@ -75,12 +75,17 @@ project_template_default <-
         template_filename = fs::path_package("project_templates/references.bib", package = "bstfun"),
         filename = glue::glue("scripts/templates/references.bib"),
         copy = TRUE
+      )),
+      csl = rlang::expr(list(
+        template_filename = fs::path_package("project_templates/european-urology.csl", package = "bstfun"),
+        filename = "scripts/templates/european-urology.csl",
+        copy = TRUE
       ))
     )
   )
 attr(project_template_default, "script_path") <-
   expression(fs::path_package("project_templates/script_phi_private.R", package = "bstfun"))
-attr(project_template_default, "label") <- "Biostatistics Project Template"
+attr(project_template_default, "label") <- "Biostatistics Project Template (Quarto)"
 
 ## scripts+results in separate folders -----------------------------------------
 project_template_results_folder <- project_template_default
@@ -104,7 +109,7 @@ project_template_results_folder[["report"]] <-
   ))
 attr(project_template_results_folder, "script_path") <-
   rlang::expr(fs::path_package("project_templates/results_scripts_folders/results_scripts_folders.R", package = "bstfun"))
-attr(project_template_results_folder, "label") <- "Biostatistics Project Template"
+attr(project_template_results_folder, "label") <- "Biostatistics Project Template (Rmd)"
 
 
 ## SAS project template ---------------------------------------------------------

@@ -2,14 +2,18 @@
 title: "Initial Setup"
 editor: source
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
-self-contained: true
-format: 
+embed-resources: true
+format:
   html:
     toc: true
     toc-depth: 2
+bibliography: references.bib
+
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
+#|: include=FALSE
+
 
 knitr::opts_chunk$set(echo = TRUE)
 

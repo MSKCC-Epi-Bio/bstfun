@@ -1,0 +1,76 @@
+---
+title: "Report"
+editor: source
+date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+embed-resources: true
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+  docx:
+    reference-doc: doc_template.docx
+bibliography: references.bib
+csl: european-urology.csl
+---
+
+
+<!-- YAML options for both HTML and Word documents are given here. Delete output type not being used. -->
+<!-- To cite a reference within the document, the ref must be included in the `templates/references.bib` file. Use square brackets and @ with the shorthand term. Ex: The generalized additive model models the relationship between the mean of the response variable and sum of smooth functions of the explanatory variables [@hastie1986gam]. -->
+<!-- This is a Quarto template. Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>. When you click the **Render** button a document will be generated that includes both content and the output of embedded code. -->
+
+
+
+
+```{r setup}
+#| include: false
+
+# set chunk defaults
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+```
+
+```{r import}
+#| include: false
+
+library(biostatR); library(tidyverse)
+
+# setting MSK ggplot theme, color palette, and gtsummary theme
+theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
+{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')"), "theme_gtsummary_compact()"))}}
+
+# Import analysis result objects here
+# load(here_data("results.Rdata"))
+```
+
+```{r inline_text}
+#| include: false
+#| echo: false
+
+# define complex inline-reporting objects here
+```
+
+
+
+# Methods
+
+Describe cohort and analytic methods here.
+
+All analyses were conducted using `r cite_r(pkgs = c("tidyverse", "gtsummary"), add_citation = TRUE)`.
+
+# Results
+
+Describe analytic results here.
+
+# Tables & Figures
+
+# References
+
+
+
+
+
+
+
+
+
+
