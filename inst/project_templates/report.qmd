@@ -4,13 +4,13 @@ editor: source
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
 embed-resources: true
 format: 
-  html
+  html:
+    toc: true
+    toc-depth: 2
   docx:
     reference-doc: doc_template.docx
 bibliography: references.bib
 csl: european-urology.csl
-toc: true
-toc-depth: 2
 ---
 
 
