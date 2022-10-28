@@ -32,7 +32,8 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
   lst_theme_hot <- list(
     "pkgwide-str:theme_name" = "H.O.T.",
     # display a greek beta as header in tbl_regression
-    "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
+    "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
+    "as_flex_table-lst:addl_cmds" = list(autofit = list(rlang::expr(flextable::font(fontname = "Calibri", part = "all"))))
   ) %>%
     # adding compact theme (removing name, however)
     c(gtsummary::theme_gtsummary_compact(set_theme = FALSE, font_size = font_size)[-1])
