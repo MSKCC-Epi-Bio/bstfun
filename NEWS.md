@@ -1,5 +1,9 @@
 # bstfun (development version)
 
+* The `create_hot_project()` has been deprecated in favor of `create_bst_project()`. Members of the H.O.T. Team will see an option for the HOT template when `create_bst_project()` is run.
+  - Similarly, functions `use_hot_file()`, `use_hot_gitignore()`, `use_hot_readme()`, `use_hot_setup()`, `use_hot_analysis()`, and `use_hot_report()` have been deprecated in favor of the 'bst' alternatives.
+  - New functions `use_bst_setup()`, `use_bst_analysis()`, and `use_bst_report()` have been added to the package.
+
 # bstfun 0.4.9
 
 * Added gtreg, emmeans, ggsurvfit, and tidycmprsk to the template references document. (#112)

@@ -4,7 +4,7 @@
 \name{bstfun-package}
 \alias{bstfun}
 \alias{bstfun-package}
-\title{bstfun: Misc functions for the dept}
+\title{bstfun: Functions for the MSK Biostatistics Department}
 \description{
 A miscellaneous collection of functions to used by members of the Biostatistics Department at MSKCC.
 }

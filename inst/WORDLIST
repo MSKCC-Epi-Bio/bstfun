@@ -20,6 +20,7 @@ bibtex
 binwidth
 biostatR
 biostatistics
+bst
 centiles
 creatinine
 dL
@@ -46,7 +47,6 @@ magick
 mskcc
 ng
 ragg
-regressoin
 renv
 repo
 rmd
