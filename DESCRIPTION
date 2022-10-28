@@ -1,6 +1,6 @@
 Package: bstfun
-Title: Misc functions for the dept
-Version: 0.4.9.9001
+Title: Functions for the MSK Biostatistics Department
+Version: 0.4.9.9002
 Authors@R: 
     c(person(given = "Daniel D.",
              family = "Sjoberg",

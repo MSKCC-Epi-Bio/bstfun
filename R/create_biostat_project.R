@@ -69,18 +69,6 @@ create_bst_project <- function(path,
   )
 }
 
-#' @export
-#' @rdname create_project
-create_hot_project <- function(path, path_data = NULL, git = TRUE, ...) {
-  starter::create_project(
-    path = path,
-    path_data = path_data,
-    template = bstfun::project_templates[["hot"]],
-    git = git,
-    ...
-  )
-}
-
 
 .is_git <- function(path) {
   isTRUE(fs::dir_exists(fs::path(path, ".git")))
@@ -98,6 +86,14 @@ create_hot_project <- function(path, path_data = NULL, git = TRUE, ...) {
            bstfun::project_templates[["default"]],
          "Scripts+Results in Separate Folders" =
            bstfun::project_templates[["results_folder"]])
+
+  # adding H.O.T. template if user is on Team HOT
+  if (is_hot()) {
+    templates <-
+      c(templates,
+        list("H.O.T. template" = bstfun::project_templates[["hot"]]))
+  }
+
   # adding user-defined template if it exists
   if (!is.null(bstfun::project_templates[[tolower(Sys.info()[["user"]])]])) {
     templates <-
