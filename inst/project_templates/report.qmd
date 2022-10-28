@@ -50,13 +50,6 @@ theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
 ```
 
 
-<!-- An example of how to cross reference a figure is included below. More information 
-can be found here: https://quarto.org/docs/authoring/cross-references.html
-
-![Elephant](elephant.png){#fig-elephant}
-
-See @fig-elephant for an illustration.-->
-
 
 # Methods
 
