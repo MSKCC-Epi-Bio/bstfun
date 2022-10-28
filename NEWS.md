@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* Updated 'H.O.T.' gtsummary theme and now flextables are printed in Calibri font to match the rest of the document.
+
 # bstfun 0.4.9
 
 * Added gtreg, emmeans, ggsurvfit, and tidycmprsk to the template references document. (#112)
