@@ -2,7 +2,7 @@
 title: "Report"
 editor: source
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
-self-contained: true
+embed-resources: true
 format: 
   html
   docx:
