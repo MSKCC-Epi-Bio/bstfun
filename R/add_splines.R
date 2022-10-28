@@ -47,7 +47,7 @@ add_splines <- function(data, variable, knots = NULL, nk = 5, norm = 2, new_name
   # combining original data with splines ---------------------------------------
   df_return <-
     dplyr::bind_cols(data, df_sp) %>%
-    dplyr::relocate(new_names, .after = variable)
+    dplyr::relocate(all_of(new_names), .after = all_of(variable))
 
   # attaching knot locations to the base variable column
   attr(df_return[[variable]], "knots") <- attr(mtx_sp, "knots")

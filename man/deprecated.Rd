@@ -2,12 +2,33 @@
 % Please edit documentation in R/deprecated.R
 \name{deprecated}
 \alias{deprecated}
+\alias{create_hot_project}
+\alias{use_hot_file}
+\alias{use_hot_gitignore}
+\alias{use_hot_readme}
+\alias{use_hot_setup}
+\alias{use_hot_analysis}
+\alias{use_hot_report}
 \alias{reinstall_prior_pkgs}
 \alias{tbl_2way_summary}
 \alias{gtsummary_butcher}
 \alias{gts_add_p_footnotes}
 \title{Deprecated functions}
 \usage{
+create_hot_project(...)
+
+use_hot_file(...)
+
+use_hot_gitignore(...)
+
+use_hot_readme(...)
+
+use_hot_setup(...)
+
+use_hot_analysis(...)
+
+use_hot_report(...)
+
 reinstall_prior_pkgs(...)
 
 tbl_2way_summary(

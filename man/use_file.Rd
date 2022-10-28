@@ -5,12 +5,9 @@
 \alias{use_bst_file}
 \alias{use_bst_gitignore}
 \alias{use_bst_readme}
-\alias{use_hot_file}
-\alias{use_hot_gitignore}
-\alias{use_hot_readme}
-\alias{use_hot_setup}
-\alias{use_hot_analysis}
-\alias{use_hot_report}
+\alias{use_bst_setup}
+\alias{use_bst_analysis}
+\alias{use_bst_report}
 \title{Write a template file}
 \usage{
 use_bst_file(name = NULL, filename = NULL, open = interactive())
@@ -19,17 +16,11 @@ use_bst_gitignore(filename = NULL)
 
 use_bst_readme(filename = NULL)
 
-use_hot_file(name = NULL, filename = NULL, open = interactive())
+use_bst_setup(filename = NULL)
 
-use_hot_gitignore(filename = NULL)
+use_bst_analysis(filename = NULL)
 
-use_hot_readme(filename = NULL)
-
-use_hot_setup(filename = NULL)
-
-use_hot_analysis(filename = NULL)
-
-use_hot_report(filename = NULL)
+use_bst_report(filename = NULL)
 }
 \arguments{
 \item{name}{Name of file to write.  Not sure of the files available to you?

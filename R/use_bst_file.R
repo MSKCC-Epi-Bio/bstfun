@@ -36,53 +36,32 @@ use_bst_file <- function(name = NULL,
 #' @rdname use_file
 #' @export
 use_bst_gitignore <- function(filename = NULL) {
-  starter::use_project_file(name = "gitignore", filename = filename,
-                            template = bstfun::project_templates[["default"]])
+  use_bst_file(name = "gitignore", filename = filename)
 }
 
 #' @rdname use_file
 #' @export
 use_bst_readme <- function(filename = NULL) {
-  starter::use_project_file(name = "readme", filename = filename,
-                            template = bstfun::project_templates[["default"]])
+  use_bst_file(name = "readme", filename = filename)
+}
+
+
+#' @rdname use_file
+#' @export
+use_bst_setup <- function(filename = NULL) {
+  use_bst_file(name = "setup", filename = filename)
 }
 
 #' @rdname use_file
 #' @export
-use_hot_file <- function(name = NULL, filename = NULL, open = interactive()) {
-  starter::use_project_file(name = name, filename = filename,
-                            template = bstfun::project_templates[["hot"]],
-                            open = open)
+use_bst_analysis <- function(filename = NULL) {
+  use_bst_file(name = "analysis", filename = filename)
 }
 
 #' @rdname use_file
 #' @export
-use_hot_gitignore <- function(filename = NULL) {
-  use_hot_file(name = "gitignore", filename = filename)
-}
-
-#' @rdname use_file
-#' @export
-use_hot_readme <- function(filename = NULL) {
-  use_hot_file(name = "readme", filename = filename)
-}
-
-#' @rdname use_file
-#' @export
-use_hot_setup <- function(filename = NULL) {
-  use_hot_file(name = "setup", filename = filename)
-}
-
-#' @rdname use_file
-#' @export
-use_hot_analysis <- function(filename = NULL) {
-  use_hot_file(name = "analysis", filename = filename)
-}
-
-#' @rdname use_file
-#' @export
-use_hot_report <- function(filename = NULL) {
-  use_hot_file(name = "report", filename = filename)
+use_bst_report <- function(filename = NULL) {
+  use_bst_file(name = "report", filename = filename)
 }
 
 

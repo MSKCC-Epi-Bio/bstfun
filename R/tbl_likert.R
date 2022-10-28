@@ -149,7 +149,6 @@ tbl_likert <- function(data,
           label = list(...all_true... = (label[[.x]] %||% data_lbls[[.x]] %||% .x))
         ) %>%
         gtsummary::modify_header(gtsummary::all_stat_cols() ~ "**{level}**") %>%
-        gtsummary::tbl_butcher() %>%
         gtsummary::modify_table_body(
           function(table_body) {
             table_body %>% dplyr::mutate(variable = .x)
@@ -157,8 +156,10 @@ tbl_likert <- function(data,
         )
     ) %>%
     gtsummary::tbl_stack(quiet = TRUE) %>%
+    gtsummary::tbl_butcher() %>%
     # add function inputs to returned list list
-    purrr::list_modify(inputs = func_inputs)
+    purrr::list_modify(inputs = func_inputs) %>%
+    structure(class = c("tbl_likert", "gtsummary"))
 
   # sorting if needed ----------------------------------------------------------
   if (sort %in% c("ascending", "descending")) {

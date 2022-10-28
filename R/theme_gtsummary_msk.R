@@ -36,6 +36,9 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
   ) %>%
     # adding compact theme (removing name, however)
     c(gtsummary::theme_gtsummary_compact(set_theme = FALSE, font_size = font_size)[-1])
+  lst_theme_hot$`as_flex_table-lst:addl_cmds`$valign <-
+    c(lst_theme_hot$`as_flex_table-lst:addl_cmds`$valign,
+      list(rlang::expr(flextable::font(fontname = "Calibri", part = "all"))))
 
   # selecting theme list
   switch(
