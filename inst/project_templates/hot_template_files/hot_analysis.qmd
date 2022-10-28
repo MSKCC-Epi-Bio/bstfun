@@ -8,6 +8,7 @@ format:
     toc-float: true
     toc-depth: 2
     toc-location: left
+embed-resources: true
 ---
 
 ```{r}

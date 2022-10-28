@@ -150,18 +150,18 @@ hot_project_template <-
   project_template_default[c("readme", "gitignore", "data_date", "doc_template", "rproj", "rprofile")] |>
   purrr::list_modify(
     setup = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/10-setup_{folder_first_word}.Rmd"),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.qmd", package = "bstfun"),
+      filename = glue::glue("scripts/10-setup_{folder_first_word}.qmd"),
       copy = FALSE
     )),
     analysis = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_analysis.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/20-analysis_{folder_first_word}.Rmd"),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_analysis.qmd", package = "bstfun"),
+      filename = glue::glue("scripts/20-analysis_{folder_first_word}.qmd"),
       copy = FALSE
     )),
     report = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_report.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/30-report_{folder_first_word}.Rmd"),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_report.qmd", package = "bstfun"),
+      filename = glue::glue("scripts/30-report_{folder_first_word}.qmd"),
       copy = FALSE
     )),
     sap = rlang::expr(list(

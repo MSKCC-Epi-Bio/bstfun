@@ -9,6 +9,7 @@ format:
     toc-float: true
     toc-depth: 2
     toc-location: left
+embed-resources: true
 bibliography: templates/references.bib
 csl: templates/european-urology.csl
 ---
@@ -45,12 +46,13 @@ load(here_data("results.Rdata"))
 
 Describe cohort and analytic methods here.
 
-All analyses were conducted using `r bstfun::cite_r(pkgs = c("gtsummary", "tidyverse"), add_citation = TRUE)`.
+All analyses were conducted using `r cite_r(pkgs = c("gtsummary", "tidyverse"), add_citation = TRUE)`.
 
 # Results
 
 Describe analytic results here.
 
 # Tables & Figures
+
 
 # References
