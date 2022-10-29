@@ -4,22 +4,18 @@ editor: source
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
 embed-resources: true
 format: 
+  docx:
+    reference-doc: templates/doc_template.docx
   html:
     toc: true
     toc-depth: 2
-  docx:
-    reference-doc: doc_template.docx
-bibliography: references.bib
-csl: european-urology.csl
+bibliography: templates/references.bib
+csl: templates/european-urology.csl
 ---
-
 
 <!-- YAML options for both HTML and Word documents are given here. Delete output type not being used. -->
 <!-- To cite a reference within the document, the ref must be included in the `templates/references.bib` file. Use square brackets and @ with the shorthand term. Ex: The generalized additive model models the relationship between the mean of the response variable and sum of smooth functions of the explanatory variables [@hastie1986gam]. -->
 <!-- This is a Quarto template. Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>. When you click the **Render** button a document will be generated that includes both content and the output of embedded code. -->
-
-
-
 
 ```{r setup}
 #| include: false

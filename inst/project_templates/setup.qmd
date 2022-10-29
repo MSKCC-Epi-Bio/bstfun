@@ -7,8 +7,6 @@ format:
   html:
     toc: true
     toc-depth: 2
-bibliography: references.bib
-
 ---
 
 ```{r setup}

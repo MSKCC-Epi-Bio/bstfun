@@ -43,7 +43,12 @@ project_template_base <-
                            filename = stringr::str_glue(".Rprofile"),
                            glue = TRUE
                          )
-      ))
+      )),
+    csl = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/european-urology.csl", package = "bstfun"),
+      filename = "scripts/templates/european-urology.csl",
+      copy = TRUE
+    ))
   )
 
 ## default bst template (scripts/results in folder) ----------------------------
@@ -52,17 +57,17 @@ project_template_default <-
     project_template_base,
     list(
       setup = rlang::expr(list(
-        template_filename = fs::path_package("project_templates/setup.Rmd", package = "bstfun"),
+        template_filename = fs::path_package("project_templates/setup.qmd", package = "bstfun"),
         filename = glue::glue("scripts/10-setup_{folder_first_word}.qmd"),
         copy = FALSE
       )),
       analysis = rlang::expr(list(
-        template_filename = fs::path_package("project_templates/analysis.Rmd", package = "bstfun"),
+        template_filename = fs::path_package("project_templates/analysis.qmd", package = "bstfun"),
         filename = glue::glue("scripts/20-analysis_{folder_first_word}.qmd"),
         copy = FALSE
       )),
       report = rlang::expr(list(
-        template_filename = fs::path_package("project_templates/report.Rmd", package = "bstfun"),
+        template_filename = fs::path_package("project_templates/report.qmd", package = "bstfun"),
         filename = glue::glue("scripts/30-report_{folder_first_word}.qmd"),
         copy = FALSE
       )),
@@ -74,11 +79,6 @@ project_template_default <-
       references = rlang::expr(list(
         template_filename = fs::path_package("project_templates/references.bib", package = "bstfun"),
         filename = glue::glue("scripts/templates/references.bib"),
-        copy = TRUE
-      )),
-      csl = rlang::expr(list(
-        template_filename = fs::path_package("project_templates/european-urology.csl", package = "bstfun"),
-        filename = "scripts/templates/european-urology.csl",
         copy = TRUE
       ))
     )
@@ -152,7 +152,7 @@ attr(project_template_sas, "arg_override") <- list(renv = FALSE, open = FALSE)
 
 # hot template -----------------------------------------------------------------
 hot_project_template <-
-  project_template_default[c("readme", "gitignore", "data_date", "doc_template", "rproj", "rprofile")] |>
+  project_template_default[c("readme", "gitignore", "data_date", "doc_template", "rproj", "rprofile", "csl")] |>
   purrr::list_modify(
     setup = rlang::expr(list(
       template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.qmd", package = "bstfun"),
@@ -187,11 +187,6 @@ hot_project_template <-
     references = rlang::expr(list(
       template_filename = fs::path_package("project_templates/references.bib", package = "bstfun"),
       filename = "scripts/templates/references.bib",
-      copy = TRUE
-    )),
-    csl = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/european-urology.csl", package = "bstfun"),
-      filename = "scripts/templates/european-urology.csl",
       copy = TRUE
     ))
   )
