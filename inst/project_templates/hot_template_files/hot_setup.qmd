@@ -34,7 +34,7 @@ df_raw_data <-
     path = here_data("Raw Data from PI.xlsx")
   ) %>%
   janitor::clean_names(case = "all_caps") %>% # uppercase col names
-  mutate_if(lubridate::is.POSIXt, lubridate::as_date) # use lubridates
+  mutate(across(where(is.POSIXt), as_date)) # use lubridates
 ```
 
 # Create Master Analytic Data Set
