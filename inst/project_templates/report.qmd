@@ -3,6 +3,10 @@ title: "Report"
 editor: source
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
 embed-resources: true
+execute: 
+  echo: false
+  warning: false
+  message: false
 format: 
   docx:
     reference-doc: templates/doc_template.docx
@@ -19,9 +23,6 @@ csl: templates/european-urology.csl
 
 ```{r setup}
 #| include: false
-
-# set chunk defaults
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
 
@@ -40,7 +41,6 @@ theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
 
 ```{r inline_text}
 #| include: false
-#| echo: false
 
 # define complex inline-reporting objects here
 ```

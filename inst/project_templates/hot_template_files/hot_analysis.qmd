@@ -2,6 +2,8 @@
 title: "{{stringr::str_replace_all(folder_name, stringr::fixed('-'), stringr::fixed(' '))}}"
 subtitle: "Analysis"
 date: "`r Sys.Date()`"
+execute: 
+  echo: true
 format:
   html:
     toc: true
@@ -14,7 +16,6 @@ embed-resources: true
 ```{r}
 #| label: setup
 #| include: false
-knitr::opts_chunk$set(echo = TRUE)
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
 

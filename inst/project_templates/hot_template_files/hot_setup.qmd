@@ -9,12 +9,14 @@ format:
     toc-depth: 2
     toc-location: left
 embed-resources: true
+execute: 
+  echo: true
+  
 ---
 
 ```{r}
 #| label: setup
 #| include: false
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
 
