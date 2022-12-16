@@ -16,12 +16,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Daniel D. Sjoberg \email{danield.sjoberg@gmail.com} (\href{https://orcid.org/0000-0003-0862-2018}{ORCID})
+\strong{Maintainer}: Karissa Whiting (\href{https://orcid.org/0000-0002-4683-1868}{ORCID})
 
 Authors:
 \itemize{
+  \item Daniel D. Sjoberg \email{danield.sjoberg@gmail.com} (\href{https://orcid.org/0000-0003-0862-2018}{ORCID}) [conceptor]
   \item Jessica A. Lavery
-  \item Karissa Whiting (\href{https://orcid.org/0000-0002-4683-1868}{ORCID})
 }
 
 Other contributors:
