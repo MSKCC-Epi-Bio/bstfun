@@ -20,7 +20,7 @@ forest plot using forestplot::forestplot()."><!-- mathjax --><script src="https:
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bstfun</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -38,7 +38,7 @@ forest plot using forestplot::forestplot()."><!-- mathjax --><script src="https:
   <a href="../news/index.html">News</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/ddsjoberg/bstfun" class="external-link">
+  <a href="https://github.com/MSKCC-Epi-Bio/bstfun" class="external-link">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -53,7 +53,7 @@ forest plot using forestplot::forestplot()."><!-- mathjax --><script src="https:
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create Forest Plot</h1>
-    <small class="dont-index">Source: <a href="https://github.com/ddsjoberg/bstfun/blob/HEAD/R/as_forest_plot.R" class="external-link"><code>R/as_forest_plot.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/MSKCC-Epi-Bio/bstfun/blob/HEAD/R/as_forest_plot.R" class="external-link"><code>R/as_forest_plot.R</code></a></small>
     <div class="hidden name"><code>as_forest_plot.Rd</code></div>
     </div>
 
@@ -104,7 +104,7 @@ Default is <code>"darkblue"</code></p></dd>
 
 <dt>xlog</dt>
 <dd><p>If TRUE, x-axis tick marks are to follow a logarithmic scale, e.g. for
-logistic regressoin (OR), survival estimates (HR), Poisson regression etc.
+logistic regression (OR), survival estimates (HR), Poisson regression etc.
 <em>Note:</em> This is an intentional break with the original <code>forestplot</code>
 function as I've found that exponentiated ticks/clips/zero effect are more
 difficult to for non-statisticians and there are sometimes issues with rounding
@@ -158,7 +158,7 @@ the tick marks properly.</p></dd>
 <span class="r-in"><span>  col <span class="op">=</span> <span class="fu">forestplot</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/forestplot/man/fpColors.html" class="external-link">fpColors</a></span><span class="op">(</span>box <span class="op">=</span> <span class="st">"darkred"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>`modify_cols_merge()` was deprecated in gtsummary 1.6.1.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Please use `modify_column_merge()` instead.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Please use `modify_column_merge()` instead.</span>
 <span class="r-plt img"><img src="as_forest_plot-3.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
@@ -170,11 +170,11 @@ the tick marks properly.</p></dd>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by <a href="http://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, Jessica A. Lavery, Karissa Whiting.</p>
+  <p></p><p>Developed by Karissa Whiting, <a href="http://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, Jessica A. Lavery.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
