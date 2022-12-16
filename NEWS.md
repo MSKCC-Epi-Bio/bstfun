@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* The primary biostatistics project template and the HOT template have been converted to Quarto. (#117)
+
 * Updated 'H.O.T.' gtsummary theme and now flextables are printed in Calibri font to match the rest of the document.
 
 * The `create_hot_project()` has been deprecated in favor of `create_bst_project()`. Members of the H.O.T. Team will see an option for the HOT template when `create_bst_project()` is run.
