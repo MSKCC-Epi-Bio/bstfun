@@ -43,7 +43,12 @@ project_template_base <-
                            filename = stringr::str_glue(".Rprofile"),
                            glue = TRUE
                          )
-      ))
+      )),
+    csl = rlang::expr(list(
+      template_filename = fs::path_package("project_templates/european-urology.csl", package = "bstfun"),
+      filename = "scripts/templates/european-urology.csl",
+      copy = TRUE
+    ))
   )
 
 ## default bst template (scripts/results in folder) ----------------------------
@@ -52,18 +57,18 @@ project_template_default <-
     project_template_base,
     list(
       setup = rlang::expr(list(
-        template_filename = fs::path_package("project_templates/setup.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/10-setup_{folder_first_word}.Rmd"),
+        template_filename = fs::path_package("project_templates/setup.qmd", package = "bstfun"),
+        filename = glue::glue("scripts/10-setup_{folder_first_word}.qmd"),
         copy = FALSE
       )),
       analysis = rlang::expr(list(
-        template_filename = fs::path_package("project_templates/analysis.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/20-analysis_{folder_first_word}.Rmd"),
+        template_filename = fs::path_package("project_templates/analysis.qmd", package = "bstfun"),
+        filename = glue::glue("scripts/20-analysis_{folder_first_word}.qmd"),
         copy = FALSE
       )),
       report = rlang::expr(list(
-        template_filename = fs::path_package("project_templates/report.Rmd", package = "bstfun"),
-        filename = glue::glue("scripts/30-report_{folder_first_word}.Rmd"),
+        template_filename = fs::path_package("project_templates/report.qmd", package = "bstfun"),
+        filename = glue::glue("scripts/30-report_{folder_first_word}.qmd"),
         copy = FALSE
       )),
       doc_template = rlang::expr(list(
@@ -80,7 +85,7 @@ project_template_default <-
   )
 attr(project_template_default, "script_path") <-
   expression(fs::path_package("project_templates/script_phi_private.R", package = "bstfun"))
-attr(project_template_default, "label") <- "Biostatistics Project Template"
+attr(project_template_default, "label") <- "Biostatistics Project Template (Quarto)"
 
 ## scripts+results in separate folders -----------------------------------------
 project_template_results_folder <- project_template_default
@@ -104,7 +109,7 @@ project_template_results_folder[["report"]] <-
   ))
 attr(project_template_results_folder, "script_path") <-
   rlang::expr(fs::path_package("project_templates/results_scripts_folders/results_scripts_folders.R", package = "bstfun"))
-attr(project_template_results_folder, "label") <- "Biostatistics Project Template"
+attr(project_template_results_folder, "label") <- "Biostatistics Project Template (Rmd)"
 
 
 ## SAS project template ---------------------------------------------------------
@@ -147,21 +152,21 @@ attr(project_template_sas, "arg_override") <- list(renv = FALSE, open = FALSE)
 
 # hot template -----------------------------------------------------------------
 hot_project_template <-
-  project_template_default[c("readme", "gitignore", "data_date", "doc_template", "rproj", "rprofile")] |>
+  project_template_default[c("readme", "gitignore", "data_date", "doc_template", "rproj", "rprofile", "csl")] |>
   purrr::list_modify(
     setup = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/10-setup_{folder_first_word}.Rmd"),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_setup.qmd", package = "bstfun"),
+      filename = glue::glue("scripts/10-setup_{folder_first_word}.qmd"),
       copy = FALSE
     )),
     analysis = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_analysis.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/20-analysis_{folder_first_word}.Rmd"),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_analysis.qmd", package = "bstfun"),
+      filename = glue::glue("scripts/20-analysis_{folder_first_word}.qmd"),
       copy = FALSE
     )),
     report = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/hot_report.Rmd", package = "bstfun"),
-      filename = glue::glue("scripts/30-report_{folder_first_word}.Rmd"),
+      template_filename = fs::path_package("project_templates/hot_template_files/hot_report.qmd", package = "bstfun"),
+      filename = glue::glue("scripts/30-report_{folder_first_word}.qmd"),
       copy = FALSE
     )),
     sap = rlang::expr(list(
@@ -182,11 +187,6 @@ hot_project_template <-
     references = rlang::expr(list(
       template_filename = fs::path_package("project_templates/references.bib", package = "bstfun"),
       filename = "scripts/templates/references.bib",
-      copy = TRUE
-    )),
-    csl = rlang::expr(list(
-      template_filename = fs::path_package("project_templates/hot_template_files/european-urology.csl", package = "bstfun"),
-      filename = "scripts/templates/european-urology.csl",
       copy = TRUE
     ))
   )

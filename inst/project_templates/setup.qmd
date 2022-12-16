@@ -2,17 +2,17 @@
 title: "Initial Setup"
 editor: source
 date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
-self-contained: true
-format: 
+embed-resources: true
+execute: 
+  echo: true
+format:
   html:
     toc: true
     toc-depth: 2
 ---
 
-```{r setup, include=FALSE}
-
-knitr::opts_chunk$set(echo = TRUE)
-
+```{r setup}
+#|: include=FALSE
 set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
 ```
 

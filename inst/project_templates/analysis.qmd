@@ -1,0 +1,47 @@
+---
+title: "Initial Setup"
+editor: source
+date: "Last Updated: `r format(Sys.Date(), format = '%B %d, %Y')`"
+embed-resources: true
+execute:
+  echo: true
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+```{r setup}
+#|: include = FALSE
+set.seed({{format(Sys.Date(), format = "%Y%m%d")}})
+```
+
+# Analytic Data Import
+
+```{r import}
+library(biostatR); library(tidyverse)
+
+# setting MSK ggplot theme, color palette, and gtsummary theme
+theme_set(mskRvis::theme_biostat()); mskRvis::set_msk_palette()
+{{(ifelse(tolower(Sys.info()[["user"]]) %in% eval(as.list(bstfun::theme_gtsummary_msk)$name), glue::glue("theme_gtsummary_msk('{tolower(Sys.info()[['user']])}')"), "theme_gtsummary_compact()"))}}
+
+# importing master analytic data set
+df_main <- readRDS(file = here_data("df_main.Rds"))
+```
+
+
+# Analysis
+
+```{r analysis1}
+
+```
+
+# Save Results
+
+```{r save}
+# list result objects here. save only those needed for the final report
+save(
+  df_results, gts_table1,
+  file = here_data("results.Rdata")
+)
+```
