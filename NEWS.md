@@ -1,4 +1,4 @@
-# bstfun (development version)
+# bstfun 0.5.0
 
 * The primary biostatistics project template and the HOT template have been converted to Quarto. (#117)
 
