@@ -1,5 +1,6 @@
 Biostatistics
 CMD
+Calibri
 Codecov
 Devlin
 HPCC
@@ -22,6 +23,7 @@ biostatR
 biostatistics
 bst
 centiles
+conceptor
 creatinine
 dL
 dbeta
@@ -29,6 +31,7 @@ eGFR
 eg
 emmeans
 flextable
+flextables
 ftExtra
 ggplot
 ggsurvfit

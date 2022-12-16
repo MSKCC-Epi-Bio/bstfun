@@ -11,7 +11,7 @@ A miscellaneous collection of functions to used by members of the Biostatistics 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ddsjoberg/bstfun}
+  \item \url{https://github.com/MSKCC-Epi-Bio/bstfun}
 }
 
 }

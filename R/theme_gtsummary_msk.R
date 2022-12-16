@@ -3,7 +3,7 @@
 #' This is a place for any member of the MSK community to add a personal gtsummary theme.
 #' Reach out if you're interested in adding yours!
 #'
-#' Visit the [gtsummary themes vignette](http://www.danieldsjoberg.com/gtsummary/articles/themes.html#writing-themes-1) for a full list of preferences that can be set.
+#' Visit the [gtsummary themes vignette](https://www.danieldsjoberg.com/gtsummary/articles/themes.html#writing-themes-1) for a full list of preferences that can be set.
 #'
 #' @param name string indicating the custom theme to set.
 #' @inheritParams gtsummary::theme_gtsummary_compact

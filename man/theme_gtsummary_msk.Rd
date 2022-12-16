@@ -22,7 +22,7 @@ This is a place for any member of the MSK community to add a personal gtsummary 
 Reach out if you're interested in adding yours!
 }
 \details{
-Visit the \href{http://www.danieldsjoberg.com/gtsummary/articles/themes.html#writing-themes-1}{gtsummary themes vignette} for a full list of preferences that can be set.
+Visit the \href{https://www.danieldsjoberg.com/gtsummary/articles/themes.html#writing-themes-1}{gtsummary themes vignette} for a full list of preferences that can be set.
 }
 \examples{
 theme_gtsummary_msk("hot")
