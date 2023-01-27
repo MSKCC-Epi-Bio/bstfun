@@ -70,7 +70,7 @@ add_inline_forest_plot <- function(x, header = "**Forest Plot**",
           )
         ) %>%
         # move forest plot to before the coef
-        dplyr::relocate(.data$forest_plot, .before = .data$estimate) %>%
+        dplyr::relocate("forest_plot", .before = "estimate") %>%
         # remove empty forest plots
         dplyr::mutate(forest_plot = map2(.data$estimate, .data$forest_plot,
                                          ~switch(!is.na(.x), .y)))

@@ -79,7 +79,7 @@ ggcalibration <- function(data, y, x, n.groups = 10,  conf.level = 0.95,
         ) %>%
         list()
     ) %>%
-    tidyr::unnest(.data$y.binom) %>%
+    tidyr::unnest("y.binom") %>%
     dplyr::ungroup()
 
   # plot results ---------------------------------------------------------------

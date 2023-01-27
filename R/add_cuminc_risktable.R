@@ -160,7 +160,7 @@ add_cuminc_risktable <- function(cuminc, survfit, timepts, lg, numgrps,
     # number at Risk for 2 groups
     nrisk <- cbind(aa1$strata, aa1$n.risk, aa1$time)
     # make wide dataset by time
-    nriskmat <- tidyr::spread(as_tibble(nrisk), key = .data$V1, value = .data$V2)
+    nriskmat <- tidyr::spread(as_tibble(nrisk), key = "V1", value = "V2")
     # nriskmat = as_tibble(nrisk) %>%
     #   tidyr::spread(V1,V2)
     # replace NA with 0, if needed
@@ -234,7 +234,7 @@ add_cuminc_risktable <- function(cuminc, survfit, timepts, lg, numgrps,
     # number at Risk for 3 groups
     nrisk <- cbind(aa1$strata, aa1$n.risk, aa1$time)
     # make wide dataset by time
-    nriskmat <- tidyr::spread(as_tibble(nrisk), key = .data$V1, value = .data$V2)
+    nriskmat <- tidyr::spread(as_tibble(nrisk), key = "V1", value = "V2")
     # nriskmat = as_tibble(nrisk) %>%
     #   tidyr::spread(V1,V2)
     # replace NA with 0, if needed

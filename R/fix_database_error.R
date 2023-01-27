@@ -66,7 +66,7 @@ fix_database_error <- function(data, engine = readr::read_csv, ...) {
 
   # checking there are no duplicates in file
   dup_n <- database_fixes %>% dplyr::group_by(.data$id, .data$variable) %>%
-    dplyr::mutate(n = dplyr::n()) %>% dplyr::pull(.data$n) %>% max()
+    dplyr::mutate(n = dplyr::n()) %>% dplyr::pull("n") %>% max()
   if (dup_n > 1) {
     stop("There are duplicates in the database fixes.", call. = FALSE)
   }
@@ -118,7 +118,7 @@ fix_database_error <- function(data, engine = readr::read_csv, ...) {
       glue::glue(
         "The following IDs did not match any rows: ",
         glue::glue_collapse(
-          database_fixes2 %>% dplyr::filter(.data$nrows_modified == 0) %>% dplyr::pull(.data$id),
+          database_fixes2 %>% dplyr::filter(.data$nrows_modified == 0) %>% dplyr::pull("id"),
           sep = ", ")))
   }
 
