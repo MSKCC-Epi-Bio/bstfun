@@ -1,3 +1,7 @@
+# bstfun 0.5.1
+
+* Making another release for RSPM testing.
+
 # bstfun 0.5.0
 
 * The primary biostatistics project template and the HOT template have been converted to Quarto. (#117)
