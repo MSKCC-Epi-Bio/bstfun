@@ -7,7 +7,7 @@
 
 [![R-CMD-check](https://github.com/MSKCC-Epi-Bio/bstfun/workflows/R-CMD-check/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/MSKCC-Epi-Bio/bstfun/branch/master/graph/badge.svg)](https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=master)
+coverage](https://codecov.io/gh/MSKCC-Epi-Bio/bstfun/branch/master/graph/badge.svg)](https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=main)
 <!-- badges: end -->
 
 A miscellaneous collection of functions to used by members of the

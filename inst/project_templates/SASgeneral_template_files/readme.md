@@ -14,7 +14,7 @@ Depending on various arg definitions when calling bstfun::create_bst_project, th
 
 ## Getting R Template Files
 - If you want to use R for this project, you can write a single file from any bstfun project template to your project folder using the bstfun::use_bst_file function. 
-- Project template files can be viewed [here](https://github.com/MSKCC-Epi-Bio/bstfun/tree/master/inst/project_templates)
+- Project template files can be viewed [here](https://github.com/MSKCC-Epi-Bio/bstfun/tree/main/inst/project_templates)
 
 ## Project Log
 **{{Sys.Date()}}**  
