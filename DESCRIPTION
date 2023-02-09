@@ -1,6 +1,6 @@
 Package: bstfun
 Title: Functions for the MSK Biostatistics Department
-Version: 0.5.1
+Version: 0.5.1.9000
 Authors@R: 
     c(person(given = "Karissa",
              family = "Whiting",
