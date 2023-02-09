@@ -4,6 +4,8 @@
 
 * deprecate `style_tab_compact()` function and warn
 
+* deprecate `add_cuminc_risktable()` function and warn
+
 # bstfun 0.5.1
 
 * Making another release for RSPM testing.

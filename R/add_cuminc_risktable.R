@@ -3,6 +3,12 @@
 #' Plot cumulative incidence estimates with a risk table and estimates below
 #' the figure.
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' See `ggsurvfit::ggcuminc()` for improved options for reporting cumulative
+#' incidence estimates (e.g. `add_quantile(x_value)`).
+#'
 #' @param cuminc `cmprsk::cuminc()` object
 #' @param survfit `survival::survfit()` object
 #' @param timepts a numeric vector of time points of the estimates to display.
@@ -103,6 +109,9 @@
 add_cuminc_risktable <- function(cuminc, survfit, timepts, lg, numgrps,
                                  line = 3, at = -1,
                                  col.list = 1) {
+
+  lifecycle::deprecate_soft("0.5.2", "add_cuminc_risktable()",
+                            details = "See `ggsurvfit::ggcuminc()` for improved options for reporting cumulative incidence estimates (e.g. `add_quantile(x_value)`")
   assert_package("cmprsk", "add_cuminc_risktable()")
 
   # CIR estimates

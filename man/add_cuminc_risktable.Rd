@@ -38,6 +38,12 @@ table up, a larger value will shift table down; default is 3}
 of plot legend. Default is 1 (black).}
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+See \code{ggsurvfit::ggcuminc()} for improved options for reporting cumulative
+incidence estimates (e.g. \code{add_quantile(x_value)}).
+}
+\details{
 Plot cumulative incidence estimates with a risk table and estimates below
 the figure.
 }
