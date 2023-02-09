@@ -10,7 +10,9 @@ list_labels(data)
 \item{data}{Data frame}
 }
 \description{
-Get variable labels and store in named list
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+Use \code{map(data, ~ attr(.x, "label"))} instead.
 }
 \examples{
 list_labels(trial)

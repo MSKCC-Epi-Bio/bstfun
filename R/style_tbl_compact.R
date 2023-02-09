@@ -4,6 +4,12 @@
 #' `gtsummary::theme_gtsummary_compact()` to any
 #' {gt}, {flextable}, {huxtable}, or `knitr::kable()` table.
 #' `knitr::kable()` stlying uses the {kableExtra} package
+#'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' Use `gtsummary::theme_gtsummary_compact()`
+#' and `gtreg::tbl_listing()` to apply {gtsummary} compact formatting to any type of table.
 #' @param data a {gt}, {flextable}, {huxtable}, or `knitr::kable()` table.
 #' @export
 #'
@@ -20,6 +26,10 @@
 #' \if{html}{\figure{style_tbl_compact_ex1.png}{options: width=50\%}}
 
 style_tbl_compact <- function(data) {
+
+  lifecycle::deprecate_soft("0.5.2", "style_tbl_compact()",
+                            details = "Set `gtsummary::theme_gtsummary_compact()` and use `gtreg::tbl_listing()` to apply {gtsummary} compact formatting to any type of table.")
+
   # first extract the theme element names of the commands that make tables compact
   # from the `gtsummary::theme_gtsummary_compact()` theme function
   if (inherits(data, "gt_tbl")) theme_name <- "as_gt-lst:addl_cmds"

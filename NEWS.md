@@ -1,5 +1,9 @@
 # bstfun (development version)
 
+* deprecate `list_labels()` function and warn 
+
+* deprecate `style_tab_compact()` function and warn
+
 # bstfun 0.5.1
 
 * Making another release for RSPM testing.
