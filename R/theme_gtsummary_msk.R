@@ -32,7 +32,9 @@ theme_gtsummary_msk <- function(name = c("hot", "karissa", "ally", "mauguen",
   lst_theme_hot <- list(
     "pkgwide-str:theme_name" = "H.O.T.",
     # display a greek beta as header in tbl_regression
-    "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2"))
+    "tbl_regression-str:coef_header" = rlang::expr(ifelse(exponentiate == TRUE, "exp(\U03B2)", "\U03B2")),
+    # when there is a by variable in tbl_summary, use a line break instead of a comma
+    "tbl_summary-str:header-withby" = rlang::expr("**{level}**  \nN={n}")
   ) %>%
     # adding compact theme (removing name, however)
     c(gtsummary::theme_gtsummary_compact(set_theme = FALSE, font_size = font_size)[-1])
