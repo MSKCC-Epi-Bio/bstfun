@@ -4,33 +4,33 @@
   "identifier": "bstfun",
   "description": "A miscellaneous collection of functions to used by members of the Biostatistics Department at MSKCC.",
   "name": "bstfun: Functions for the MSK Biostatistics Department",
-  "codeRepository": "https://github.com/ddsjoberg/bstfun",
+  "codeRepository": "https://github.com/MSKCC-Epi-Bio/bstfun",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.4.9.9002",
+  "version": "0.5.1.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.2.0 (2022-04-22 ucrt)",
+  "runtimePlatform": "R version 4.2.2 (2022-10-31)",
   "author": [
+    {
+      "@type": "Person",
+      "givenName": "Karissa",
+      "familyName": "Whiting",
+      "email": "karissa.whiting@gmail.com",
+      "@id": "https://orcid.org/0000-0002-4683-1868"
+    },
     {
       "@type": "Person",
       "givenName": "Daniel D.",
       "familyName": "Sjoberg",
-      "email": "danield.sjoberg@gmail.com",
       "@id": "https://orcid.org/0000-0003-0862-2018"
     },
     {
       "@type": "Person",
       "givenName": "Jessica A.",
       "familyName": "Lavery"
-    },
-    {
-      "@type": "Person",
-      "givenName": "Karissa",
-      "familyName": "Whiting",
-      "@id": "https://orcid.org/0000-0002-4683-1868"
     }
   ],
   "contributor": [
@@ -86,10 +86,10 @@
   "maintainer": [
     {
       "@type": "Person",
-      "givenName": "Daniel D.",
-      "familyName": "Sjoberg",
-      "email": "danield.sjoberg@gmail.com",
-      "@id": "https://orcid.org/0000-0003-0862-2018"
+      "givenName": "Karissa",
+      "familyName": "Whiting",
+      "email": "karissa.whiting@gmail.com",
+      "@id": "https://orcid.org/0000-0002-4683-1868"
     }
   ],
   "softwareSuggestions": [
@@ -413,7 +413,7 @@
       "@type": "SoftwareApplication",
       "identifier": "broom.helpers",
       "name": "broom.helpers",
-      "version": ">= 1.6.0",
+      "version": ">= 1.9.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -426,7 +426,7 @@
       "@type": "SoftwareApplication",
       "identifier": "broom",
       "name": "broom",
-      "version": ">= 0.8.0",
+      "version": ">= 1.0.1",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -504,7 +504,7 @@
       "@type": "SoftwareApplication",
       "identifier": "gt",
       "name": "gt",
-      "version": ">= 0.4.0",
+      "version": ">= 0.7.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -517,7 +517,7 @@
       "@type": "SoftwareApplication",
       "identifier": "gtsummary",
       "name": "gtsummary",
-      "version": ">= 1.6.0",
+      "version": ">= 1.7.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -595,7 +595,7 @@
       "@type": "SoftwareApplication",
       "identifier": "rstudio.prefs",
       "name": "rstudio.prefs",
-      "version": ">= 0.1.8",
+      "version": ">= 0.1.9",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -621,7 +621,7 @@
       "@type": "SoftwareApplication",
       "identifier": "starter",
       "name": "starter",
-      "version": ">= 0.1.9",
+      "version": ">= 0.1.12",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -671,8 +671,8 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "489.237KB",
-  "releaseNotes": "https://github.com/ddsjoberg/bstfun/blob/master/NEWS.md",
-  "readme": "https://github.com/ddsjoberg/bstfun/blob/master/README.md",
-  "contIntegration": ["https://github.com/ddsjoberg/bstfun/actions", "https://codecov.io/gh/ddsjoberg/bstfun?branch=master"]
+  "fileSize": "486.533KB",
+  "releaseNotes": "https://github.com/MSKCC-Epi-Bio/bstfun/blob/master/NEWS.md",
+  "readme": "https://github.com/MSKCC-Epi-Bio/bstfun/blob/main/README.md",
+  "contIntegration": ["https://github.com/MSKCC-Epi-Bio/bstfun/actions", "https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=main"]
 }
