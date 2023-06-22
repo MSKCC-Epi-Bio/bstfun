@@ -1,5 +1,7 @@
 # bstfun (development version)
 
+* gtsummary HOT theme (`lst_theme_hot`) uses a line break in the header (rather than a comma) between the "by" group levels and the N count when there is a "by" variable. 
+
 # bstfun 0.5.1
 
 * Making another release for RSPM testing.
