@@ -400,6 +400,18 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "withr",
+      "name": "withr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=withr"
     }
   ],
   "softwareRequirements": {
@@ -671,7 +683,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "486.533KB",
+  "fileSize": "501.128KB",
   "releaseNotes": "https://github.com/MSKCC-Epi-Bio/bstfun/blob/master/NEWS.md",
   "readme": "https://github.com/MSKCC-Epi-Bio/bstfun/blob/main/README.md",
   "contIntegration": ["https://github.com/MSKCC-Epi-Bio/bstfun/actions", "https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=main"]
