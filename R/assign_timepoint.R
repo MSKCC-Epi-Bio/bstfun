@@ -123,7 +123,7 @@ assign_timepoint <- function(data, id, ref_date, measure_date, timepoints, windo
     data %>%
     dplyr::ungroup() %>%
     dplyr::arrange(!!!rlang::syms(id), .data[["..time_diff.."]]) %>%
-    dplyr::select(-.data[["..time_diff.."]])
+     dplyr::select(-"..time_diff..")
 
   # deleting obs that were not a selected timepoint
   if (!keep_all_obs) {

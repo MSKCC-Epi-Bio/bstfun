@@ -6,13 +6,13 @@
   "name": "bstfun: Functions for the MSK Biostatistics Department",
   "codeRepository": "https://github.com/MSKCC-Epi-Bio/bstfun",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.5.1.9000",
+  "version": "0.5.1.9001",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.2.2 (2022-10-31)",
+  "runtimePlatform": "R version 4.3.0 (2023-04-21 ucrt)",
   "author": [
     {
       "@type": "Person",
@@ -683,7 +683,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "501.128KB",
+  "fileSize": "510.889KB",
   "releaseNotes": "https://github.com/MSKCC-Epi-Bio/bstfun/blob/master/NEWS.md",
   "readme": "https://github.com/MSKCC-Epi-Bio/bstfun/blob/main/README.md",
   "contIntegration": ["https://github.com/MSKCC-Epi-Bio/bstfun/actions", "https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=main"]
