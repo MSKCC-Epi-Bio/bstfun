@@ -10,6 +10,12 @@ style_tbl_compact(data)
 \item{data}{a {gt}, {flextable}, {huxtable}, or \code{knitr::kable()} table.}
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+Use \code{gtsummary::theme_gtsummary_compact()}
+and \code{gtreg::tbl_listing()} to apply {gtsummary} compact formatting to any type of table.
+}
+\details{
 Apply the same compact styling available from
 \code{gtsummary::theme_gtsummary_compact()} to any
 {gt}, {flextable}, {huxtable}, or \code{knitr::kable()} table.
