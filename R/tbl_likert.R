@@ -178,7 +178,7 @@ tbl_likert <- function(data,
       result %>%
       gtsummary::modify_table_body(
         ~dplyr::left_join(
-          df_means %>% select(.data$variable),
+          df_means %>% select("variable"),
           .x,
           by = "variable"
         )
@@ -223,7 +223,7 @@ add_n.tbl_likert <- function(x,
     gtsummary::tbl_summary(
       data,
       statistic = ~ "{length}", # at least one stat required
-      include = include,
+      include = all_of(include),
       type = ~ "continuous",
       missing = "no"
     ) %>%
@@ -247,12 +247,12 @@ add_n.tbl_likert <- function(x,
         by = "variable"
       ) %>%
         dplyr::relocate(
-          .data$n,
+          "n",
           .after = ifelse(last, dplyr::last_col(), dplyr::all_of("label"))
         )
     ) %>%
     gtsummary::modify_table_styling(
-      columns = .data$n,
+      columns = all_of("n"),
       hide = FALSE,
       label = col_label
     )
@@ -330,7 +330,7 @@ add_continuous_stat.tbl_likert <- function(x,
       data,
       statistic = statistic,
       digits = digits,
-      include = include,
+      include = all_of(include),
       type = ~ "continuous",
       missing = "no"
     )

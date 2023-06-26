@@ -97,7 +97,7 @@ add_sparkline <- function(x,
 
   gtExtras_gt_plt_fun(
     tbl,
-    column = .data$..sparkline_data..,
+    column = "..sparkline_data..",
     type = type,
     same_limit = same_limit,
     ...

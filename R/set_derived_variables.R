@@ -28,8 +28,8 @@ set_derived_variables <- function(data, path, sheet = NULL, drop = TRUE) {
   lst_variable_labels <-
     tibble(varname = names(data)) %>%
     dplyr::inner_join(df_derived_variables, by = "varname") %>%
-    dplyr::select(.data$varname, .data$label) %>%
-    tidyr::spread(.data$varname, .data$label) %>%
+    dplyr::select("varname", "label") %>%
+    tidyr::spread("varname", "label") %>%
     map(I)
 
   # applying the labels

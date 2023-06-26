@@ -33,7 +33,7 @@ if (!is.null(path_data) && fs::dir_exists(fs::path(path, ".git"))) {
     remote_origin_url <-
       gert::git_remote_list(repo = path) |>
       dplyr::filter(.data$name %in% "origin") |>
-      dplyr::pull(.data$url) |>
+      dplyr::pull("url") |>
       stringr::str_remove(".git$")
 
     if (!rlang::is_empty(remote_origin_url)) {
