@@ -111,7 +111,7 @@ add_cuminc_risktable <- function(cuminc, survfit, timepts, lg, numgrps,
                                  col.list = 1) {
 
   lifecycle::deprecate_soft("0.5.2", "add_cuminc_risktable()",
-                            details = "See `ggsurvfit::ggcuminc()` for improved options for reporting cumulative incidence estimates (e.g. `add_quantile(x_value)`")
+                            details = "See `ggsurvfit::ggcuminc()` for improved options for reporting cumulative incidence estimates (e.g. `add_quantile(x_value)`)")
   assert_package("cmprsk", "add_cuminc_risktable()")
 
   # CIR estimates
