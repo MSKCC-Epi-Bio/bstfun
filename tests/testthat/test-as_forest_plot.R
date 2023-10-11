@@ -14,3 +14,15 @@ test_that("as_forest_plot() works", {
     NA
   )
 })
+
+### ensuring "Error: `x=` must be class 'tbl_regression' or 'tbl_uvregression'"
+test_that("as_forest_plot() works", {
+  expect_error((
+    tbl_summary(
+      trial[c("response", "age", "grade")],
+      by = "response")
+    ) %>%
+      as_forest_plot(),
+    "`x=` must be class 'tbl_regression' or 'tbl_uvregression'"
+  )
+})
