@@ -18,7 +18,7 @@ test_that("add_sparkline() works", {
 
 ### expecting "stop("`x=` must be class 'tbl_summary'", call. = FALSE)" works
   tbl_regression_ex <-
-    tbl_uvregression(
+    gtsummary::tbl_uvregression(
       trial[c("response", "age", "grade")],
       method = glm,
       y = response,
