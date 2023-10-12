@@ -9,6 +9,7 @@ df <-
       factor(levels = 1:3, labels = c("bad", "meh", "good")),
   )
 
+### expecting class is the same
 test_that("data for tbl_likert() works", {
   expect_equal(
     str(df),
