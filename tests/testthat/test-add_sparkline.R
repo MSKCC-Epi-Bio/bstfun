@@ -27,7 +27,8 @@ test_that("add_sparkline() works", {
     )
 
   expect_error(
-    add_sparkline(tbl_reg_ex)
+    add_sparkline(tbl_regression_ex),
+    "`x=` must be class 'tbl_summary'", fixed = TRUE
   )
 
 ### expecting message to be thrown
