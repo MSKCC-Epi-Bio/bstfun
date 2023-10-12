@@ -97,5 +97,3 @@ test_that("fix_database_error does not allow non-logical expressions in `id`", {
     "*"
   )
 })
-
-
