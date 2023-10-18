@@ -9,6 +9,22 @@ df <-
       factor(levels = 1:3, labels = c("bad", "meh", "good")),
   )
 
+### expecting class is the same
+test_that("data for tbl_likert() works", {
+  expect_equal(
+    str(df),
+    df %>%
+      mutate(
+        dplyr::across(
+          .cols = everything(),
+          function(.x){
+            if (inherits(.x, "factor")) return(.x)
+            factor(.x)
+          }
+        )
+      ) %>% str()
+  )
+})
 
 test_that("tbl_likert() works", {
   expect_error(
@@ -30,6 +46,8 @@ test_that("tbl_likert() works", {
       dplyr::pull(label),
     c("f2", "f1")
   )
+
+
 })
 
 test_that("add_n.tbl_likert() works", {
@@ -55,6 +73,8 @@ test_that("add_n.tbl_likert() works", {
     tbl %>% add_n(last = TRUE) %>% gtsummary::as_tibble() %>% dplyr::pull(5),
     c("100", "100")
   )
+
+
 })
 
 
