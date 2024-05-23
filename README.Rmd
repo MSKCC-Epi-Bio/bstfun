@@ -16,9 +16,9 @@ knitr::opts_chunk$set(
 # bstfun
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/MSKCC-Epi-Bio/bstfun/workflows/R-CMD-check/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions)
 [![Codecov test coverage](https://codecov.io/gh/MSKCC-Epi-Bio/bstfun/branch/main/graph/badge.svg)](https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=main)
 [![R-CMD-check](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/R-CMD-check.yaml)
+[![test-coverage](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
 A miscellaneous collection of functions to used by members of the Biostatistics Department at MSKCC. Functions in the {bstfun} package do not fall within the well-defined packages with more narrow scope used by the department. 
@@ -33,3 +33,18 @@ You can install the development version of {bstfun} with:
 ``` r
 devtools::install_github("MSKCC-Epi-Bio/bstfun")
 ```
+
+
+## Contributing
+
+Thank you to all contributors, including:
+
+[&#x0040;ddsjoberg](https://github.com/ddsjoberg)
+[&#x0040;karissawhiting](https://github.com/karissawhiting)
+[&#x0040;stl2137](https://github.com/stl2137),
+[&#x0040;vertosie](https://github.com/vertosie),
+[&#x0040;jalavery](https://github.com/jalavery),
+[&#x0040;larmarange](https://github.com/larmarange),
+[&#x0040;slobaugh](https://github.com/slobaugh), 
+[&#x0040;leejasme](https://github.com/leejasme)
+

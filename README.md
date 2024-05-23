@@ -5,9 +5,10 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/MSKCC-Epi-Bio/bstfun/workflows/R-CMD-check/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/MSKCC-Epi-Bio/bstfun/branch/master/graph/badge.svg)](https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=main)
+coverage](https://codecov.io/gh/MSKCC-Epi-Bio/bstfun/branch/main/graph/badge.svg)](https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=main)
+[![R-CMD-check](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/R-CMD-check.yaml)
+[![test-coverage](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
 A miscellaneous collection of functions to used by members of the
@@ -26,4 +27,16 @@ You can install the development version of {bstfun} with:
 ``` r
 devtools::install_github("MSKCC-Epi-Bio/bstfun")
 ```
- 
+
+## Contributing
+
+Thank you to all contributors, including:
+
+[@ddsjoberg](https://github.com/ddsjoberg)
+[@karissawhiting](https://github.com/karissawhiting)
+[@stl2137](https://github.com/stl2137),
+[@vertosie](https://github.com/vertosie),
+[@jalavery](https://github.com/jalavery),
+[@larmarange](https://github.com/larmarange),
+[@slobaugh](https://github.com/slobaugh),
+[@leejasme](https://github.com/leejasme)
