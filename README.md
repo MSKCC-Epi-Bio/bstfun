@@ -26,3 +26,4 @@ You can install the development version of {bstfun} with:
 ``` r
 devtools::install_github("MSKCC-Epi-Bio/bstfun")
 ```
+ 
