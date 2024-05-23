@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/MSKCC-Epi-Bio/bstfun/workflows/R-CMD-check/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions)
 [![Codecov test coverage](https://codecov.io/gh/MSKCC-Epi-Bio/bstfun/branch/main/graph/badge.svg)](https://app.codecov.io/gh/MSKCC-Epi-Bio/bstfun?branch=main)
+[![R-CMD-check](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MSKCC-Epi-Bio/bstfun/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 A miscellaneous collection of functions to used by members of the Biostatistics Department at MSKCC. Functions in the {bstfun} package do not fall within the well-defined packages with more narrow scope used by the department. 
